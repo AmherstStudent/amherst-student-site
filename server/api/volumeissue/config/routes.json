@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/volumeissue",
+      "handler": "Volumeissue.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/volumeissue/count",
+      "handler": "Volumeissue.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/volumeissue/:_id",
+      "handler": "Volumeissue.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/volumeissue",
+      "handler": "Volumeissue.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/volumeissue/:_id",
+      "handler": "Volumeissue.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/volumeissue/:_id",
+      "handler": "Volumeissue.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

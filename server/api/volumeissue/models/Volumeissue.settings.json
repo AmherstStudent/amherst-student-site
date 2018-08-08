@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "volumeissue",
+  "info": {
+    "name": "volumeissue",
+    "description": "Volume-Issue Number"
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "Volume-Issue Number": {
+      "type": "string"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "volumeIssue"
+    }
+  },
+  "autoCreatedAt": false,
+  "autoUpdatedAt": false
+}

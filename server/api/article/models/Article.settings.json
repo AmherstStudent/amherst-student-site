@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "article",
+  "info": {
+    "name": "article",
+    "description": "Write your article here."
+  },
+  "options": {
+    "timestamps": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Featured": {
+      "type": "boolean"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "model": "category",
+      "via": "Category"
+    },
+    "author": {
+      "model": "user",
+      "via": "articles",
+      "plugin": "users-permissions"
+    },
+    "volumeIssue": {
+      "model": "volumeissue",
+      "via": "articles"
+    },
+    "slug": {
+      "unique": true,
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "category",
+  "info": {
+    "name": "category",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "Category": {
+      "collection": "article",
+      "via": "category"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "autoCreatedAt": false,
+  "autoUpdatedAt": false
+}

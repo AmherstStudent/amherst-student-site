@@ -1,0 +1,38 @@
+{
+  "article": {
+    "attributes": {
+      "title": {
+        "appearance": ""
+      },
+      "content": {
+        "appearance": "WYSIWYG"
+      },
+      "Feature?": {
+        "appearance": ""
+      },
+      "Featured": {
+        "appearance": ""
+      },
+      "slug": {
+        "appearance": ""
+      }
+    }
+  },
+  "category": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "Category": {
+        "appearance": ""
+      }
+    }
+  },
+  "volumeIssue": {
+    "attributes": {
+      "Volume-Issue Number": {
+        "appearance": ""
+      }
+    }
+  }
+}
