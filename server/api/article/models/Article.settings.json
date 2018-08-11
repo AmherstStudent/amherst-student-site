@@ -6,7 +6,7 @@
     "description": "Write your article here."
   },
   "options": {
-    "timestamps": false
+    "timestamps": true
   },
   "attributes": {
     "title": {
@@ -43,6 +43,11 @@
       "unique": true,
       "type": "string",
       "required": true
+    },
+    "excerpt": {
+      "default": "Display an excerpt!",
+      "maxLength": 180,
+      "type": "text"
     }
   }
 }

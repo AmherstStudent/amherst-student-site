@@ -1,6 +1,8 @@
 """Write your article here."""
 type Article {
   _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
   title: String!
   Featured: Boolean
   featuredImage: UploadFile
@@ -9,6 +11,7 @@ type Article {
   author: UsersPermissionsUser
   volumeIssue: Volumeissue
   slug: String!
+  excerpt: String
 }
 
 type Category {
