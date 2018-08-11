@@ -1,5 +1,5 @@
 {
-  "name": "amherst-student",
+  "name": "create-next-example-app",
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
