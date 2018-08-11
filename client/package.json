@@ -1,14 +1,16 @@
 {
   "name": "amherst-student",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
-    "dev": "node server.js"
+    "start": "next start"
   },
   "dependencies": {
+    "apollo-client": "^2.3.8",
+    "graphql": "^0.13.2",
     "next": "^6.1.1",
     "react": "^16.4.2",
+    "react-apollo": "^2.1.11",
     "react-dom": "^16.4.2"
   }
 }
