@@ -1,9 +1,10 @@
 {
-  "name": "create-next-example-app",
+  "name": "amherst-student",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dev": "node server.js"
   },
   "dependencies": {
     "next": "^6.1.1",
