@@ -1,8 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import Container from './container.js'
+
+
 
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'Github' }
+  { href: 'https://github.com/segmentio/create-next-app', label: 'HOME' },
+  { href: '/news', label: 'NEWS'},
+  { href: '/arts+living', label: 'ARTS + LIVING'},
+  { href: '/opinion', label: 'SPORTS'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -10,12 +16,12 @@ const links = [
 
 const Nav = () => (
   <nav>
-    <ul>
-      <li>
-        <Link prefetch href="/">
-          <a>Home</a>
-        </Link>
-      </li>
+  <div className="logo">
+  <img src="static/logo.svg" alt="the Amherst Student" />
+  <img src="static/logo-subline.svg" className="subline"/>
+  </div>
+  <hr />
+  <Container>
       <ul>
         {links.map(({ key, href, label }) => (
           <li key={key}>
@@ -25,33 +31,59 @@ const Nav = () => (
           </li>
         ))}
       </ul>
-    </ul>
+  </Container>
 
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
+      nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 200;
+      }
+      hr {
+        color: rgba(255,255,255, 0.3);
+      }
+      .logo{
+        padding-top:20px;
+        margin-bottom:0px;
+        padding-bottom: 10px;
+        max-width:400px;
+        margin: 0 auto;
+      }
+      img {
+        width:100%;
+        height: auto;
       }
       nav {
+        background-color: white;
         text-align: center;
+      }
+      .subline {
+        width: 85%;
+        height:auto;
+        margin-top:-2%;
       }
       ul {
         display: flex;
         justify-content: space-between;
       }
-      nav > ul {
-        padding: 4px 16px;
+      ul{
+        padding-left: 0;
       }
+      nav > ul {
+        border-top: 1px solid rgba(151,151,151, 0.91);
+      }
+
       li {
         display: flex;
-        padding: 6px 8px;
       }
+
       a {
-        color: #067df7;
+        color: #5d3c85;
         text-decoration: none;
         font-size: 13px;
       }
+
     `}</style>
   </nav>
 )

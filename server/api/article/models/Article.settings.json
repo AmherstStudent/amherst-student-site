@@ -3,7 +3,8 @@
   "collectionName": "article",
   "info": {
     "name": "article",
-    "description": "Write your article here."
+    "description": "Write your article here.",
+    "mainField": "title"
   },
   "options": {
     "timestamps": true
