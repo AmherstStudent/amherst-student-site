@@ -1,5 +1,7 @@
 const express = require('express')
 const next = require('next')
+const port = process.env.PORT || 8000;
+const ROOT_URL = process.env.ROOT_URL || `http://localhost:${port}`;
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })

@@ -20,7 +20,6 @@ const Footer = () => (
     background: #333333;
     box-shadow: 0 2px 3px 1px rgba(0,0,0,0.50);
     width: 100%;
-    margin: 0 auto;
     bottom: 0;
   }
 
@@ -28,7 +27,7 @@ const Footer = () => (
     display: flex;
     flex-direction row;
     justify-content: space-between;
-    
+
   }
 
   li {

@@ -4,21 +4,21 @@ import Head from '../components/head'
 import Nav from '../components/nav'
 import {withRouter} from 'next/router'
 
-const Article = () => (
+const Article = (props) => (
   <div>
-    <Head title="Article">
+    <Head title="Article"/>
 
   </div>
 )
 
 Article.getInitialProps = async function() {
-  const articleName = props.router.query.title
-  const res = await fetch('.')
-  const data = await res.json()
+  // // const articleName = props.router.query.title
+  // const res = await fetch('')
+  // const data = await res.json()
 
-  Console.log("Loaded up the article")
+  console.log("Loaded up the article")
   return {
-    article: data
+    
   }
 }
 

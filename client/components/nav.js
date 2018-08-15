@@ -16,6 +16,7 @@ const links = [
 
 const Nav = () => (
   <nav>
+
   <div className="logo">
   <img src="static/logo.svg" alt="the Amherst Student" />
   <img src="static/logo-subline.svg" className="subline"/>
@@ -35,7 +36,7 @@ const Nav = () => (
 
     <style jsx>{`
       nav {
-        position: fixed;
+
         width: 100%;
         top: 0;
         z-index: 200;

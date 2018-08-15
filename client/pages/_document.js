@@ -1,0 +1,30 @@
+// _document is only rendered on the server side and not on the client side
+// Event handlers like onClick can't be added to this file
+
+// ./pages/_document.js
+import Document, { Head, Main, NextScript } from 'next/document'
+import Footer from '../components/footer'
+import Nav from '../components/nav'
+
+export default class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
+  }
+
+  render() {
+    return (
+      <html>
+        <Head>
+          <style>{`body { margin: 0 auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
+        </Head>
+        <body className="home_page">
+          <Nav />
+          <Main />
+          <NextScript />
+          <Footer className="bottom"/>
+        </body>
+      </html>
+    )
+  }
+}

@@ -1,24 +1,26 @@
 import React from 'react'
 import Link from 'next/link'
 import Container from './container.js'
+import Grid from './grid.js'
 
 class Main extends React.Component {
   render() {
     return (
-      <div className="main">
+      <div className="content">
       <Container>
+      <Grid>
         { this.props.children }
+      </Grid>
       </Container>
         <style jsx> {`
-        .main{
-          height: 100vh;
-          width:100vw;
+        .content{
+          min-height: 100vh;
           font-family: 'Adobe Garamond Pro';
           background: #F1F1F1;
-          padding-top:150px;
-
+          padding-top:50px;
+          padding-bottom: 20px;
+          }
         }
-
 
         `}
 

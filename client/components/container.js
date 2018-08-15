@@ -11,7 +11,8 @@ const Container = (props) => (
     .container{
       width: 85%;
       max-width:1200px;
-      margin: auto;
+      height:100%;
+      margin:0 auto;
       position:relative;
     }
 
