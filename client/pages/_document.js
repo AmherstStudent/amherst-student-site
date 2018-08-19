@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <style>{`body { margin: 0 auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
+          <style>{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
         </Head>
         <body className="home_page">
           <Nav />
@@ -24,6 +24,38 @@ export default class MyDocument extends Document {
           <NextScript />
           <Footer className="bottom"/>
         </body>
+
+
+        <style>
+        {`
+          html{
+            width: 100vw;
+          }
+          p {
+          font-family: 'Adobe Garamond Pro';
+          font-weight:300;
+          line-height:1.5em;
+          font-size: 16px;
+          -webkit-margin-before: 0em;
+          -webkit-margin-after: 0em;
+          }
+
+          h1 {
+            font-weight: semibold;
+            font-style: italic;
+            font-size: 44px;
+          }
+
+          h2{
+            font-size: 28px;
+          }
+          .span2{
+            grid-column: 2;
+          }
+        `}
+
+        </style>
+
       </html>
     )
   }

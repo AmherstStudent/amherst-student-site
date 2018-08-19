@@ -9,10 +9,12 @@ const Grid = (props) => (
 
   <style jsx>{`
     .grid{
-      display: flex;
-      flex-direction: column;
-      flex:2;
-      width: 100%;
+      display: grid;
+      max-width:100%;
+      width: 1200px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-gap:20px;
+      grid-auto-rows:auto;
     }
 
 

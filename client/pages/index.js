@@ -3,40 +3,31 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Footer from '../components/footer'
 import Main from '../components/main'
-import Row from '../components/row'
+import FeatureNewsCard from '../components/featurenewscard.js'
 import Container from '../components/container.js'
 import Card from '../components/card.js'
 import Grid from '../components/grid.js'
-
+import MediaCard from '../components/cardwimage.js'
 import fetch from 'isomorphic-fetch'
 
 
 const Home = (props) => (
   <div className="main-content">
     <Head title="Home" />
-
+      <h1>Words</h1>
 
 
 
       <Container>
-      <Row>
-        <Card flexiness={2}><p>Word</p></Card>
-        <Card flexiness={"auto"}>Word</Card>
-      </Row>
-      <Row>
-        <Card flexiness={2}><p>Word</p></Card>
-        <Card flexiness={"auto"}>Word</Card>
-      </Row>
-      <Row>
-        <Card flexiness={2}><p>Word</p></Card>
-        <Card flexiness={"auto"}>Word</Card>
-      </Row>
-      <Row>
-        <Card flexiness={2}><p>Word</p></Card>
-        <Card flexiness={"auto"}>Word</Card>
-      </Row>
-      
+      <Grid>
+        <MediaCard className="span-9"/>
+        <FeatureNewsCard className="span-4"><p>Word</p></FeatureNewsCard>
+        <Card className="span-2"><p>Word</p></Card>
+
+
+      </Grid>
       </Container>
+
 
 
 

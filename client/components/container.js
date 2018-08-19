@@ -9,9 +9,9 @@ const Container = (props) => (
 
   <style jsx>{`
     .container{
-      width: 85%;
+      width: 90%;
       max-width:1200px;
-      height:100%;
+      height:auto;
       margin:0 auto;
       position:relative;
     }

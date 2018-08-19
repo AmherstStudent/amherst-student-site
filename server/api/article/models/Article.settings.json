@@ -49,6 +49,10 @@
       "default": "Display an excerpt!",
       "maxLength": 180,
       "type": "text"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "articles"
     }
   }
 }
