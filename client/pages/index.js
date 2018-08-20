@@ -8,6 +8,7 @@ import Container from '../components/container.js'
 import Card from '../components/card.js'
 import Grid from '../components/grid.js'
 import MediaCard from '../components/cardwimage.js'
+import MediaCard3 from '../components/mediacard3.js'
 import fetch from 'isomorphic-fetch'
 
 
@@ -20,9 +21,27 @@ const Home = (props) => (
 
       <Container>
       <Grid>
-        <MediaCard className="span-9"/>
-        <FeatureNewsCard className="span-4"><p>Word</p></FeatureNewsCard>
-        <Card className="span-2"><p>Word</p></Card>
+        <MediaCard className="span-8"/>
+        <FeatureNewsCard className="span-5"><p>Word</p></FeatureNewsCard>
+        <div className="words">
+          <Card className="third"/>
+          <Card className="third"/>
+          <Card className="third"/>
+        </div>
+        <div className="words2">
+        <MediaCard className="span-7"/>
+        </div>
+        <MediaCard3 className="span-4"/>
+        <MediaCard3 className="span-4"/>
+        <MediaCard3 className="span-4"/>
+        <div className="words">
+          <Card className="third"/>
+          <Card className="third"/>
+          <Card className="third"/>
+        </div>
+        <div className="words2">
+        <MediaCard className="span-7"/>
+        </div>
 
 
       </Grid>
@@ -42,6 +61,27 @@ const Home = (props) => (
         padding-top:50px;
         padding-bottom: 20px;
       }
+      .words{
+        grid-column-start: 1;
+        grid-column-end: 7;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .words:last-child{
+        grid-column-end: end;
+      }
+      .third{
+
+        margin-bottom: 200px !important;
+      }
+
+      .words2{
+        grid-column-start: 7;
+        grid-column-end: 14;
+      }
+
     `}</style>
 
     </div>
