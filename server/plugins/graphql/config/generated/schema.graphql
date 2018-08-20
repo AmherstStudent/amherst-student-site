@@ -33,7 +33,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = Article | Category | Tags | Volumeissue | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Article | Category | Tags | View | Volumeissue | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Query {
   article(id: ID!): Article
@@ -42,6 +42,8 @@ type Query {
   categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
   tag(id: ID!): Tags
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
+  view(id: ID!): View
+  views(sort: String, limit: Int, start: Int, where: JSON): [View]
   volumeissue(id: ID!): Volumeissue
   volumeissues(sort: String, limit: Int, start: Int, where: JSON): [Volumeissue]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
@@ -107,6 +109,18 @@ type UsersPermissionsUser {
   reporterPhoto: UploadFile
   reporterBio: String
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
+}
+
+type View {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  top_article: Article
+  words: String
+  newsfirst_third: Article
+  newssecond_third: Article
+  newsthird_third: Article
+  news_big: Article
 }
 
 """Volume-Issue Number"""

@@ -44,5 +44,12 @@
         "appearance": ""
       }
     }
+  },
+  "view": {
+    "attributes": {
+      "words": {
+        "appearance": ""
+      }
+    }
   }
 }
