@@ -19,7 +19,7 @@ const Nav = () => (
   <nav>
   <div className="logo">
     <img src="static/logo.svg" alt="the Amherst Student" />
-    <img src="static/logo-subline.svg" className="subline"/>
+    <img src="static/logo-subline.svg" alt="the student-supported newspaper since 1868" className="subline"/>
 
   </div>
   <hr />

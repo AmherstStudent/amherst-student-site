@@ -16,6 +16,8 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
           <style>{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
         </Head>
         <body className="home_page">

@@ -17,7 +17,6 @@ app.prepare()
 
   server.get('/article/:slug', (req, res) => {
     const actualPage = '/article'
-    console.log('Words')
     const queryParams = {title: req.params.slug}
     app.render(req, res, actualPage, queryParams)
   })

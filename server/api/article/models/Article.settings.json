@@ -53,6 +53,10 @@
     "tags": {
       "collection": "tags",
       "via": "articles"
+    },
+    "view": {
+      "model": "view",
+      "via": "sports_third"
     }
   }
 }

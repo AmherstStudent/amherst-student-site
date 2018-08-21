@@ -12,6 +12,7 @@ type Article {
   volumeIssue: Volumeissue
   slug: String!
   excerpt: String
+  view: View
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
 }
 
@@ -117,10 +118,20 @@ type View {
   updatedAt: DateTime!
   top_article: Article
   words: String
-  newsfirst_third: Article
-  newssecond_third: Article
-  newsthird_third: Article
-  news_big: Article
+  news_right_first: Article
+  news_right_second: Article
+  news_right_third: Article
+  news_left_big: Article
+  opinion_first: Article
+  opinion_second: Article
+  opinion_third: Article
+  arts_living_first_third: Article
+  arts_living_second_third: Article
+  arts_living_third_third: Article
+  arts_living_big: Article
+  sports_first: Article
+  sports_second: Article
+  sports_third: Article
 }
 
 """Volume-Issue Number"""

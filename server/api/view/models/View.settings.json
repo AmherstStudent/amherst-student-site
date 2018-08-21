@@ -1,0 +1,63 @@
+{
+  "connection": "default",
+  "collectionName": "view",
+  "info": {
+    "name": "view",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "top_article": {
+      "model": "article",
+      "dominant": true
+    },
+    "words": {
+      "type": "string"
+    },
+    "news_right_first": {
+      "model": "article"
+    },
+    "news_right_second": {
+      "model": "article"
+    },
+    "news_right_third": {
+      "model": "article"
+    },
+    "news_left_big": {
+      "model": "article"
+    },
+    "opinion_first": {
+      "model": "article"
+    },
+    "opinion_second": {
+      "model": "article"
+    },
+    "opinion_third": {
+      "model": "article"
+    },
+    "arts_living_first_third": {
+      "model": "article"
+    },
+    "arts_living_second_third": {
+      "model": "article"
+    },
+    "arts_living_third_third": {
+      "model": "article"
+    },
+    "arts_living_big": {
+      "model": "article"
+    },
+    "sports_first": {
+      "model": "article"
+    },
+    "sports_second": {
+      "model": "article"
+    },
+    "sports_third": {
+      "model": "article",
+      "via": "view"
+    }
+  }
+}

@@ -20,6 +20,9 @@ const Card = (props) => (
       box-shadow: 0 1px 0 0 rgba(0,0,0,0.50);
       overflow:hidden;
     }
+    .card:hover{
+      box-shadow: -5px -1px 19px -4px  rgba(133, 108, 176,0.50);
+    }
     .span-3{
       grid-column: span 3;
     }
@@ -48,8 +51,8 @@ const Card = (props) => (
     }
     .third {
 
-      height: 37%;
-      margin-bottom: 3%;
+      min-height: 32%;
+
     }
 
  `}</style>
