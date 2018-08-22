@@ -44,7 +44,9 @@ const FeatureNewsCard = (props) => (
     h3{
       font-family: "Mark Pro";
     }
-
+    .article{
+      max-width:20%;
+    }
 
 
 

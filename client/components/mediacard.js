@@ -23,7 +23,7 @@ const MediaCard = (props) => (<Card className={`${props.className}`}>
   <style jsx="jsx">
     {
       ` .cardHeader {
-        min-height: 400px;
+        min-height: 450px;
         width: 100%;
         overflow: hidden;
         background: bottom;

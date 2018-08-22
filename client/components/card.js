@@ -51,8 +51,11 @@ const Card = (props) => (
     }
     .third {
 
-      min-height: 32%;
-
+      min-height: 30%;
+      margin-bottom: 3%;
+    }
+    .article{
+      margin-bottom: 20px;
     }
 
  `}</style>

@@ -40,16 +40,19 @@ export default class MyDocument extends Document {
           font-size: 16px;
           -webkit-margin-before: 0em;
           -webkit-margin-after: 0em;
+          color: #333;
           }
 
           h1 {
             font-weight: semibold;
             font-style: italic;
             font-size: 44px;
+            color: #333;
           }
 
           h2{
             font-size: 28px;
+            color: #333;
           }
           .span2{
             grid-column: 2;
