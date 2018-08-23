@@ -3,26 +3,23 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 
-const MediaCard = (props) => (<Card className={`${props.className}`}>
+const MediaCard = (props) => (
+  <Card className={`${props.className}`}>
   <div className="cardHeader">
-
     <span>{props.category}</span>
-
   </div>
   <Container>
-    <Link as={`/article/${props.slug}`} href={`/article?title=${props.title}`}>
-      <div className="cardContent">
+    <Link as={`/article/${props.slug}`} href={`/article?title=${props.title}`}><div className="cardContent">
         <h2 className="cardTitle">{props.title}</h2>
-        <p className="cardAuthor">
-          by {props.author}</p>
+        <p className="cardAuthor">by {props.author}</p>
         <p className="cardText">{props.excerpt}.</p>
       </div>
     </Link>
   </Container>
 
   <style jsx="jsx">
-    {
-      ` .cardHeader {
+    {`
+    .cardHeader {
         min-height: 450px;
         width: 100%;
         overflow: hidden;
@@ -42,7 +39,6 @@ const MediaCard = (props) => (<Card className={`${props.className}`}>
         margin-top: 20px;
         padding: 5px;
         margin-left: 4%;
-
       }
       .cardTitle {
         font-style: italic;
@@ -70,8 +66,9 @@ const MediaCard = (props) => (<Card className={`${props.className}`}>
       .cardText {
         padding-top: 5px;
       }
-       `
-    }</style>
-</Card>)
+     `}
+   </style>
+</Card>
+)
 
 export default MediaCard

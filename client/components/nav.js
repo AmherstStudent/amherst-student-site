@@ -6,9 +6,11 @@ import Container from './container.js'
 
 
 const links = [
-  { href: 'https://github.com/segmentio/create-next-app', label: 'HOME' },
+  { href: '/index', label: 'HOME' },
   { href: '/news', label: 'NEWS'},
+  { href: '/news', label: 'OPINION'},
   { href: '/arts+living', label: 'ARTS + LIVING'},
+   { href: '/news', label: 'PRINT ISSUES'},
   { href: '/opinion', label: 'SPORTS'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`

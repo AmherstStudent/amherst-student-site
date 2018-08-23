@@ -18,6 +18,7 @@ app.prepare()
   server.get('/article/:slug', (req, res) => {
     const actualPage = '/article'
     const queryParams = {title: req.params.slug}
+    console.log("Word")
     app.render(req, res, actualPage, queryParams)
   })
   // TODO: ADD LINK TO CATEGORY

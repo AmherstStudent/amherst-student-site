@@ -22,7 +22,7 @@ function createMarkup() {
   return {__html: text};
 }
 const Article = withRouter((props) => (<div className="main-content">
-  <Head title="Article"/>
+  <Head title={props.router.query.title}/>
   <Container>
     <Grid className="news">
       <Card className=" span-12">
@@ -48,7 +48,7 @@ const Article = withRouter((props) => (<div className="main-content">
 
       <article className="span-8">
         <ImageCard />
-        <Card className=" article ting">
+        <Card className="article ting">
           <Container>
             <div>
               <p dangerouslySetInnerHTML={createMarkup()}/>
@@ -83,13 +83,18 @@ const Article = withRouter((props) => (<div className="main-content">
       .span-8 {
         grid-column: 1 / 11;
       }
-
+      article{
+        min-width:100%;
+      }
       .span-8 > * {
         margin-bottom: 15%;
       }
       .span-4 {
         width: 100%;
         grid-column: span 2;
+
+
+
       }
       .header_text {
         margin-left: 20px;
