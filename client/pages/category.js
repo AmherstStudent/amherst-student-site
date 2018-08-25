@@ -1,49 +1,33 @@
-const Home = (props) => (<div className="main-content">
+import React from 'react'
+import Head from '../components/head'
+import Link from 'next/link'
+import Container from '../components/container'
+import Grid from '../components/grid'
+import Card from '../components/card'
+import OneThirdCard from '../components/thirdcard'
+import List_Item from '../components/list_item'
+const Category = (props) => (<div className="main-content">
   <Head title="Home"/>
 
-  <Query query={GET_HOME_PAGE}>
-    {
-      ({loading, error, data}) => {
-        if (loading)
-          return null;
-        if (error)
-          return `Error!: ${error}`;
-        console.log(data);
-        let main_view = data.view.top_article
-
-        return (<Container>
+  <Container>
           <Grid>
 
-            <MediaCard slug={main_view.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
+            <Card className="span-12">
 
-            <FeatureNewsCard className="span-5"/>
-
-          <div className="tripleContainer">
-              <OneThirdCard/>
-              <OneThirdCard/>
-              <OneThirdCard/>
-            </div>
-            <div className="words2">
-              <MediaCard className="span-7"/>
-            </div>
-            <MediaCard3 className="span-4"/>
-            <MediaCard3 className="span-4"/>
-            <MediaCard3 className="span-4"/>
-          <div className="tripleContainer">
-              <OneThirdCard/>
-              <OneThirdCard/>
-              <OneThirdCard/>
-            </div>
-            <div className="words2">
-              <MediaCard className="span-7"/>
-            </div>
+            </Card>
+            <article>
+              <List_Item />
+              <List_Item />
+            </article>
+            <aside className="words2">
+              <Card >
+                yy
+              </Card>
+            </aside>
 
           </Grid>
 
-        </Container>);
-      }
-    }
-  </Query>
+        </Container>
 
   <style jsx="jsx">
     {
@@ -58,6 +42,7 @@ const Home = (props) => (<div className="main-content">
         grid-column-start: 1;
         grid-column-end: 7;
         display: flex;
+        height:200px;
         flex-direction: column;
         justify-content: space-between;
       }
@@ -69,11 +54,52 @@ const Home = (props) => (<div className="main-content">
 
         margin-bottom: 200px !important;
       }
-
-      .words2 {
-        grid-column-start: 7;
+      article{
+        grid-column-start: 1;
+        grid-column-end:10;
+      }
+      aside {
+        grid-column-start: 10;
         grid-column-end: 14;
       }
+      .cardContent{
+        padding: 20px;
+      }
+      h4{
+        font-weight: 600;
+        font-style: italic;
+        font-size: 26px;
+        line-height: 1.15em;
+        color: #000000;
+
+        margin: 15px 0;
+
+      }
+      span{
+        /* THIS WEEK’S HEADLINE: */
+        background: #5D3C85;
+        color: white;
+        font-family: MarkPro-Bold;
+        font-size: 14px;
+        letter-spacing: 0.12px;
+        line-height: 21px;
+        padding: 5px;
+
+      }
+      .author{
+        font-size:14px;
+        margin-bottom: 10px;
+      }
+      p{
+        /* Aziz Khan was picked: */
+        font-family: AGaramondPro-Regular;
+      font-size: 18px;
+        color: #000000;
+          letter-spacing: 0;
+          line-height: 20px;
+      }
+
+
        `
     }</style>
 
@@ -91,4 +117,4 @@ const Home = (props) => (<div className="main-content">
 //
 // }
 
-export default Home
+export default Category

@@ -53,6 +53,9 @@ const OneThirdCard = (props) => (
       letter-spacing: 0;
       line-height: 1.25em;
     }
+    .cleaner > *{
+      padding: 20px;
+    }
 
 
 

@@ -57,7 +57,9 @@ const Card = (props) => (
     .article{
       margin-bottom: 20px;
     }
-
+    .margin-20{
+      margin-bottom: 20px;
+    }
  `}</style>
  </div>
 )
