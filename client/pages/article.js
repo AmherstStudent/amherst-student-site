@@ -62,21 +62,23 @@ function createMarkup(content) {
   return {__html: html};
 }
 const Article = withRouter((props) => (<div className="main-content">
-  <Head title={props.router.query.title}/>
+
   <Container>
     <Query query={query}>
-{({ loading, error, data }) => {
-  if (loading) return null;
-  if (error) return `Error!: ${error}`;
-  console.log(data)
-  let date = moment(data.articles[0].featuredImage.updatedAt).format('MMMM Do YYYY');
-  console.log(date)
-  return (
+        {({ loading, error, data }) => {
+          if (loading) return null;
+          if (error) return `Error!: ${error}`;
+          console.log(data)
+          let date = moment(data.articles[0].featuredImage.updatedAt).format('MMMM Do YYYY');
+          console.log(date)
+          return (
+
     <Grid className="news">
       <Card className=" span-12">
+        <Head title={data.articles[0].title}/>
 
-        <span className="weirdtext">
-          {data.articles[0].category.name}
+        <span className="category_name">
+        {data.articles[0].category.name}
         </span>
         <div className="header_text">
           <h1>{data.articles[0].title}
@@ -135,20 +137,13 @@ const Article = withRouter((props) => (<div className="main-content">
         padding-bottom: 20px;
       }
       .span-8 {
-        grid-column: 1 / 11;
-      }
-      article{
-        min-width:100%;
+        grid-column: span 8;
       }
       .span-8 > * {
         margin-bottom: 15%;
       }
       .span-4 {
-        width: 100%;
-        grid-column: span 2;
-
-
-
+        grid-column: span 4;
       }
       .header_text {
         margin-left: 20px;
@@ -176,16 +171,14 @@ const Article = withRouter((props) => (<div className="main-content">
       }
       hr {
         width: 100%;
-
       }
       .article_details {
         margin-top: 10px;
         margin-left: 20px;
         padding-bottom: 20px;
         display: flex;
-
       }
-      .weirdtext {
+      .category_name {
         background: #5D3C85;
         color: white;
         font-family: MarkPro-Bold;
@@ -196,7 +189,6 @@ const Article = withRouter((props) => (<div className="main-content">
         margin-top: 20px;
         padding: 5px;
         margin-left: 25px;
-
         margin-bottom: 40px;
 
       }

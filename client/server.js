@@ -1,19 +1,27 @@
-const port = process.env.PORT || 8000;
-const ROOT_URL = process.env.ROOT_URL || `http://localhost:${port}`;
-
-
-// server.js
-const next = require('next')
-const routes = require('./routes')
-const app = next({dev: process.env.NODE_ENV !== 'production'})
-const handler = routes.getRequestHandler(app)
-
-// With express
 const express = require('express')
-app.prepare().then(() => {
-  express().use(handler).listen(3000)
-})
-.catch((ex) => {
-  console.error(ex.stack)
-  process.exit(1)
-})
+const next = require('next')
+
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+
+app.prepare()
+  .then(() => {
+    const server = express()
+
+
+
+    server.get('/article/:slug', (req, res) => {
+      return app.render(req, res, '/article', { slug: req.params.slug })
+    })
+
+    server.get('*', (req, res) => {
+      return handle(req, res)
+    })
+
+    server.listen(port, (err) => {
+      if (err) throw err
+      console.log(`> Ready on http://localhost:${port}`)
+    })
+  })
