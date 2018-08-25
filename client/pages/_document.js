@@ -34,10 +34,10 @@ export default class MyDocument extends Document {
             width: 100vw;
           }
           p {
-          font-family: 'Adobe Garamond Pro';
+          font-family: Adobe Garamond Pro;
           font-weight:300;
           line-height:1.5em;
-          font-size: 16px;
+          font-size: 18px;
           -webkit-margin-before: 0em;
           -webkit-margin-after: 0em;
           color: #333;
