@@ -9,15 +9,15 @@ import FeatureNewsCard from '../components/featurenewscard.js'
 import ImageCard from '../components/image_card'
 import {withRouter} from 'next/router'
 import Article_Core from '../components/article_core'
-import { gql } from 'apollo-boost';
-import { Query } from 'react-apollo';
+import {gql} from 'apollo-boost';
+import {Query} from 'react-apollo';
 
 import moment from 'moment'
 
 import CommentsContainer from '../components/comments'
 import Article_Header from '../components/article_header'
 
-const query = gql`
+const query = gql `
   fragment ArticleDetails on Article {
     title
     excerpt
@@ -44,49 +44,44 @@ const query = gql`
 
   }
 
-  query Article_Lookup{
-    articles(where: { slug: "counseling-center-sees-onethird-of-student-body" }) {
+  query Article_Lookup($slug: String!){
+    articles(where: { slug: $slug }) {
       ...ArticleDetails
     }
   }
 `
 
-
-
-
 const Article = withRouter((props) => (<div className="main-content">
 
   <Container>
-    <Query query={query}>
-        {({ loading, error, data }) => {
-          if (loading) return null;
-          if (error) return `Error!: ${error}`;
-          console.log(data)
-          let date = moment(data.articles[0].featuredImage.updatedAt).format('MMMM Do YYYY');
-          console.log(date)
+    <Query query={query} variables={{ slug: props.router.query.slug }}>
+      {
+        ({loading, error, data}) => {
+          if (loading)
+            return null;
+          if (error)
+            return `Error!: ${error}`;
           let article = data.articles[0]
-          return (
+          let image_present = article.featuredImage.url
+          return (<Grid className="news">
+            <Head title={article.title}/>
+            <Article_Header className="header" article={article}/>
 
-    <Grid className="news">
-        <Head title={article.title}/>
-      <Article_Header className="header" article={article} />
+            <article>
+              {image_present ? <ImageCard article={article}/> : ' '}
 
-      <article >
-        <ImageCard article={article} />
-        <Article_Core article={article} />
-        <CommentsContainer article={article} />
-      </article>
+              <Article_Core article={article}/>
+              <CommentsContainer article={article}/>
+            </article>
 
-      <aside className="span-4">
-        <AuthorCard author={data.articles[0].author}/>
-        <FeatureNewsCard className="article"/>
-      </aside>
-  <p></p>
-    </Grid>
-
-  );
-}}
-</Query>
+            <aside className="span-4">
+              <AuthorCard author={data.articles[0].author}/>
+              <FeatureNewsCard className="article"/>
+            </aside>
+          </Grid>)
+        }
+      }
+    </Query>
   </Container>
 
   <style jsx="jsx">
@@ -105,8 +100,8 @@ const Article = withRouter((props) => (<div className="main-content">
 
       }
       @media only screen and (min-width: 1000px) {
-      article {
-        grid-column: 1 / 9;
+        article {
+          grid-column: 1 / 9;
         }
       }
       article > * {
@@ -116,20 +111,13 @@ const Article = withRouter((props) => (<div className="main-content">
         grid-column: span 4;
       }
 
-
       .span-12 {
         height: contain;
       }
 
-
-
-
-
-      .header{
+      .header {
         grid-column: 1/14;
       }
-
-
        `
     }</style>
 </div>))
