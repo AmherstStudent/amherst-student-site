@@ -68,6 +68,7 @@ const Article = withRouter((props) => (<div className="main-content">
           return (
 
     <Grid className="news">
+        <Head title={article.title}/>
       <Article_Header className="header" article={article} />
 
       <article >

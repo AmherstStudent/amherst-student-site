@@ -10,7 +10,7 @@ import moment from 'moment'
 
 const Article_Header = (props) => (
   <Card className={`span-12 ${ props.className }`}>
-      <Head title={props.article.title}/>
+    
 
       <span className="category_name">
       {props.article.category.name}
