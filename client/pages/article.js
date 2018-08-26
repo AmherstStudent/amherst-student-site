@@ -8,11 +8,10 @@ import AuthorCard from '../components/authorcard'
 import FeatureNewsCard from '../components/featurenewscard.js'
 import ImageCard from '../components/image_card'
 import {withRouter} from 'next/router'
-
+import Article_Core from '../components/article_core'
 import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
-import showdown from 'showdown'
-import { Markdown } from 'react-showdown';
+
 import moment from 'moment'
 
 import CommentsContainer from '../components/comments'
@@ -54,14 +53,7 @@ const query = gql`
 
 
 
-function createMarkup(content) {
 
-  var formatted_content = content.replace(/(?:\r\n|\r|\n)/g, '<br >')
-  var converter = new showdown.Converter()
-  var html = converter.makeHtml(formatted_content)
-
-  return {__html: html};
-}
 const Article = withRouter((props) => (<div className="main-content">
 
   <Container>
@@ -79,15 +71,8 @@ const Article = withRouter((props) => (<div className="main-content">
       <Article_Header className="header" article={article} />
 
       <article >
-        <ImageCard caption={article.excerpt} />
-        <Card className="article ting">
-          <Container>
-            <div>
-              <div className="article_core" dangerouslySetInnerHTML={createMarkup(article.content)}/>
-
-            </div>
-          </Container>
-        </Card>
+        <ImageCard article={article} />
+        <Article_Core article={article} />
         <CommentsContainer article={article} />
       </article>
 
@@ -135,18 +120,9 @@ const Article = withRouter((props) => (<div className="main-content">
         height: contain;
       }
 
-      .article_content {
-        padding: 5px;
-        margin-bottom: 25px;
-        line-height: 1.5em;
-      }
-
-      .article_core {
-        margin-top: 20px;
-        margin-bottom: 20px;
 
 
-      }
+
 
       .header{
         grid-column: 1/14;

@@ -6,8 +6,8 @@ import Container from './container.js'
 const Image_Card = (props) => (
   <Card className={`article ${props.className}`}>
     <figure>
-        <img src="https://amherststudent.amherst.edu/sites/default/files/field/image/Screen%20Shot%202018-04-24%20at%2010.02.25%20PM.png"/>
-        <figcaption><em>{props.caption}</em></figcaption>
+        <img src={'http://localhost:1337/' + props.article.featuredImage.url}/>
+        <figcaption><em>{props.article.excerpt}</em></figcaption>
     </figure>
 
 
@@ -25,7 +25,6 @@ const Image_Card = (props) => (
           position:relative;
         }
         figcaption{
-
           position: absolute;
           width: 100%;
           padding: 10px;
@@ -33,9 +32,6 @@ const Image_Card = (props) => (
           left: 0px;
           color: white;
           background: rgba(0,0,0,0.7);
-
-
-
         }
         em{
           margin-left: 3%;
