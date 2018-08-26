@@ -4,21 +4,24 @@ import Link from 'next/link'
 import Container from '../components/container'
 import Grid from '../components/grid'
 import Card from '../components/card'
+import moment from 'moment'
+
 
 const List_Item = (props) => (
   <Card className="list_item margin-20">
     <Container>
+      <Link href={"/article/" + props.article.slug}>
     <div className="cardContent">
-      <span>NEWS</span>
-      <h4>Softball Sweeps Smith, Triumphs In Williams Senior Day Game</h4>
-      <p className="author">by Dylan Momplaisir, Web Design || April 4th 2018</p>
-      <p>Aziz Khan was picked last in his fifth versus sixth grade soccer match. “I actually started late,” Khan remembers. “I was not into sports when I was younger. I was more into arts, drawing and painting.” That day, when Khan was picked last, changed his mind.</p>
+      <span>{props.article.category.name.toUpperCase()}</span>
+      <h4>{props.article.title}</h4>
+      <p className="author">by {props.article.author.username}, {props.article.author.reporterTitle} || {moment(props.article.updatedAt).format('MMMM Do YYYY')}</p>
+      <p>{props.article.excerpt}</p>
     </div>
+    </Link>
     </Container>
     <style jsx="jsx">
       {
         `
-
         .cardContent{
           padding: 20px;
         }
@@ -28,9 +31,8 @@ const List_Item = (props) => (
           font-size: 26px;
           line-height: 1.15em;
           color: #000000;
-
           margin: 15px 0;
-
+          margin-bottom: 0;
         }
         span{
           /* THIS WEEK’S HEADLINE: */
@@ -49,8 +51,8 @@ const List_Item = (props) => (
         }
         p{
           /* Aziz Khan was picked: */
-          font-family: AGaramondPro-Regular;
-        font-size: 18px;
+
+      
           color: #000000;
             letter-spacing: 0;
             line-height: 20px;

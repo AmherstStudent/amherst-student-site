@@ -40,10 +40,8 @@ const Image_Card = (props) => (
         em{
           margin-left: 3%;
           font-weight: 100;
-          font-family: Adobe Garamond;
+          font-style: italic;
           font-size: 16px;
-
-
         }
         img{
           vertical-align: bottom;

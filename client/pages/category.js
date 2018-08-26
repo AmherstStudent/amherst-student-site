@@ -6,6 +6,7 @@ import Grid from '../components/grid'
 import Card from '../components/card'
 import OneThirdCard from '../components/thirdcard'
 import List_Item from '../components/list_item'
+import List_Container from '../components/list_container'
 const Category = (props) => (<div className="main-content">
   <Head title="Home"/>
 
@@ -16,10 +17,9 @@ const Category = (props) => (<div className="main-content">
 
             </Card>
             <article>
-              <List_Item />
-              <List_Item />
+              <List_Container />
             </article>
-            <aside className="words2">
+            <aside >
               <Card >
                 yy
               </Card>
