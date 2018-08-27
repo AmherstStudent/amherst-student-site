@@ -7,15 +7,12 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 
-
-
-
 app.prepare()
   .then(() => {
     const server = express()
 
-    server.get('category/:category'), (req, res) => {
-      return app.render(req, res, '/category', { slug: req.params.category })
+    server.get('/category/:name'), (req, res) => {
+      return app.render(req, res, '/category', { name: req.params.name })
     }
 
     server.get('/article/:slug', (req, res) => {

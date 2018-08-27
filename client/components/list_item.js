@@ -52,8 +52,7 @@ const List_Item = (props) => (
         p{
           /* Aziz Khan was picked: */
 
-      
-          color: #000000;
+            color: #000000;
             letter-spacing: 0;
             line-height: 20px;
         }

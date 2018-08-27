@@ -7,27 +7,55 @@ import Card from '../components/card'
 import OneThirdCard from '../components/thirdcard'
 import List_Item from '../components/list_item'
 import List_Container from '../components/list_container'
-const Category = (props) => (<div className="main-content">
-  <Head title="Home"/>
+import Category_Header from '../components/category_header'
+import Author_Card from '../components/authorcard'
+import {withRouter} from 'next/router'
+import {gql} from 'apollo-boost';
+import {Query} from 'react-apollo';
 
-  <Container>
+const query = gql `
+query EditorsList($name: String!) {
+  categories(where: { name_contains: $name }) {
+  editors{
+    username
+    reporterBio
+    reporterPhoto{
+      url
+    }
+  }
+}
+}
+
+`
+
+const Category = withRouter((props) => (
+  <div className="main-content">
+  <Head title={props.router.query.name}/>
+
+    <Container>
+    <Category_Header className="heads" type={props.router.query.name} name="Word" />
           <Grid>
 
-            <Card className="span-12">
 
-            </Card>
             <article>
-              <List_Container />
+              <List_Container type={props.router.query.name == "Arts%20+%20Living" ? "Arts" : props.router.query.name} />
             </article>
             <aside >
-              <Card >
-                yy
-              </Card>
+              <Query query={query} variables={{ name: props.router.query.name.replace(/ .*/,'') }}>
+                  {({ loading, error, data }) => {
+                    if (loading) return null;
+                    if (error) return `Error!: ${error}`;
+                    const editor = data.categories[0].editors[0];
+                    console.log(props.type)
+                    return (
+              <Author_Card editor={true} author={editor}/>
+              )}}
+            </Query>
             </aside>
 
           </Grid>
+      </Container>
 
-        </Container>
 
   <style jsx="jsx">
     {
@@ -98,12 +126,17 @@ const Category = (props) => (<div className="main-content">
           letter-spacing: 0;
           line-height: 20px;
       }
+      .heads{
+        height: 200px;
+        grid-column: span 14;
+        width: 100vw;
 
+      }
 
        `
     }</style>
 
-</div>)
+</div>))
 
 // Home.getInitialProps = async function() {
 //   const res = await fetch('http://localhost:1337/article')

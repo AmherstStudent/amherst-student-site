@@ -22,6 +22,7 @@ type Category {
   updatedAt: DateTime!
   name: String
   Category(sort: String, limit: Int, start: Int, where: JSON): [Article]
+  editors(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
 }
 
 """
@@ -109,6 +110,7 @@ type UsersPermissionsUser {
   reporterTitle: String
   reporterPhoto: UploadFile
   reporterBio: String
+  category_editor: Category
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }
 

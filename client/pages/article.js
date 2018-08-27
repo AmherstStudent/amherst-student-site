@@ -75,7 +75,7 @@ const Article = withRouter((props) => (<div className="main-content">
             </article>
 
             <aside className="span-4">
-              <AuthorCard author={data.articles[0].author}/>
+              <AuthorCard type="author" author={data.articles[0].author}/>
               <FeatureNewsCard className="article"/>
             </aside>
           </Grid>)

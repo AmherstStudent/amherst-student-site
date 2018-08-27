@@ -7,7 +7,7 @@ import Container from '../components/container'
 const AuthorCard = (props) => (
   <Card className={`article ${ props.className }`}>
       <Container>
-      <h3 className="cardTitle">MEET THE AUTHOR</h3>
+      <h3 className="cardTitle">MEET THE {props.editor ? 'EDITOR' : 'AUTHOR'}</h3>
       <hr />
       <div className="cardContent">
         <img src={ 'http://localhost:1337'+ props.author.reporterPhoto.url}/>
@@ -66,5 +66,15 @@ const AuthorCard = (props) => (
  `}</style>
  </Card>
 )
+
+AuthorCard.defaultProps = {
+  author : {
+    reporterPhoto: {
+      url : 'word'
+    },
+    username: 'word',
+    reporterBio: 'word'
+  }
+}
 
 export default AuthorCard

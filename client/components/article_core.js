@@ -3,7 +3,6 @@ import Card from './card'
 import Container from './container'
 import showdown from 'showdown'
 
-
 function createMarkup(content) {
 
   var formatted_content = content.replace(/(?:\r\n|\r|\n)/g, '<br >')

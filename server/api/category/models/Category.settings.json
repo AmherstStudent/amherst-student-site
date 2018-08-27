@@ -15,6 +15,11 @@
     },
     "name": {
       "type": "string"
+    },
+    "editors": {
+      "collection": "user",
+      "via": "category_editor",
+      "plugin": "users-permissions"
     }
   },
   "autoCreatedAt": false,

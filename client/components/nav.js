@@ -7,11 +7,11 @@ import Container from './container.js'
 
 const links = [
   { href: '/index', label: 'HOME' },
-  { href: '/news', label: 'NEWS'},
-  { href: '/news', label: 'OPINION'},
-  { href: '/arts+living', label: 'ARTS + LIVING'},
-   { href: '/news', label: 'PRINT ISSUES'},
-  { href: '/opinion', label: 'SPORTS'}
+  { href: '/category?name=news', label: 'NEWS'},
+  { href: '/category?name=opinion', label: 'OPINION'},
+  { href: '/category?name=arts and living', label: 'ARTS + LIVING'},
+  { href: '/category?name=sports', label: 'SPORTS'},
+  { href: '/news', label: 'PRINT ISSUES'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -20,8 +20,8 @@ const links = [
 const Nav = () => (
   <nav>
   <div className="logo">
-    <img src="static/logo.svg" alt="the Amherst Student" />
-    <img src="static/logo-subline.svg" alt="the student-supported newspaper since 1868" className="subline"/>
+    <img src="/static/logo.svg" alt="the Amherst Student" />
+    <img src="/static/logo-subline.svg" alt="the student-supported newspaper since 1868" className="subline"/>
 
   </div>
   <hr />

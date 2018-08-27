@@ -6,10 +6,8 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
 const query = gql`
-query {
-  category(id:"5b6aa884450216532ab38c5e"){
-    Category{
-      title
+fragment CategoryArticleDetails on Article {
+  title
       updatedAt
       author{
         username
@@ -21,19 +19,26 @@ query {
         name
       }
       slug
+}
+
+query CategoryLookup($name : String!) {
+  categories(where: { name_contains: $name }) {
+    Category{
+    ...CategoryArticleDetails
     }
   }
-
 }
+
 `
 
 const List_Container = (props) => (
   <div className="list_container">
-    <Query query={query}>
+    <Query query={query} variables={{ name: props.type.replace(/ .*/,'') }}>
         {({ loading, error, data }) => {
           if (loading) return null;
           if (error) return `Error!: ${error}`;
-          const category = data.category.Category;
+          const category = data.categories[0].Category;
+          console.log(props.type)
           return (
             category.map((article) =>
              <List_Item key={article._id} article={article}/>

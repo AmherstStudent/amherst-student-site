@@ -53,6 +53,10 @@
     "articles": {
       "collection": "article",
       "via": "author"
+    },
+    "category_editor": {
+      "model": "category",
+      "via": "editors"
     }
   },
   "collectionName": "users-permissions_user"
