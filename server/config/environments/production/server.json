@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "api.amherststudent.com",
   "port": "${process.env.PORT || 1337}",
   "autoReload": {
     "enabled": false
@@ -8,6 +8,6 @@
     "enabled": false
   },
   "admin": {
-    "path": "/dashboard" 
+    "path": "/dashboard"
   }
 }
