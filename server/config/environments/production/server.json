@@ -6,5 +6,8 @@
   },
   "cron": {
     "enabled": false
+  },
+  "admin": {
+    "path": "/dashboard" 
   }
 }
