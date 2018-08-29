@@ -119,6 +119,11 @@ const Article = withRouter((props) => (
       .span-4 {
         grid-column: span 4;
       }
+      @media only screen and (min-width: 1000px) {
+        aside {
+          margin: 0 auto;
+        }
+      }
 
       .span-12 {
         height: contain;
