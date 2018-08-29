@@ -39,7 +39,8 @@ const Article_Header = (props) => (
     .category_name {
       background: #5D3C85;
       color: white;
-      font-family: MarkPro-Bold;
+      font-family: "europa",sans-serif;
+
       font-size: 14px;
       letter-spacing: 0.12px;
       line-height: 21px;
@@ -70,7 +71,8 @@ const Article_Header = (props) => (
     h5 {
       margin: 0 0 0 10px;
 
-      font-family: Futura;
+      font-family: "europa",sans-serif;
+;
       font-weight: 200;
       font-size: 12px;
     }

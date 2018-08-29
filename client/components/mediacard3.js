@@ -35,7 +35,8 @@ const MediaCard3 = (props) => (
     span {
       background: #5D3C85;
       color:white;
-      font-family: MarkPro-Bold;
+      font-family: "europa",sans-serif;
+
       font-size: 14px;
       letter-spacing: 0.12px;
       line-height: 21px;

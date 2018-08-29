@@ -42,7 +42,9 @@ const OneThirdCard = (props) => (
       padding: 0;
     }
     h3{
-      font-family: "Mark Pro";
+      font-family: "europa",sans-serif;
+
+
     }
     .third {
       display: flex;

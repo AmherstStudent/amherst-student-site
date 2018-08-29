@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css"/>
         <script dangerouslySetInnerHTML={{__html: ga}} />
+          <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet"/>
 
         <style>{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
         </Head>

@@ -42,9 +42,11 @@ const FeatureNewsCard = (props) => (
       margin-top: 20px;
     }
     h3{
-      font-family: "Mark Pro";
+      font-family: "europa",sans-serif;
+
+
     }
-    
+
 
 
 

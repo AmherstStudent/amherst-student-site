@@ -62,7 +62,8 @@ const AuthorCard = (props) => (
       margin-top: 20px;
       padding: 0;
       text-align: center;
-      font-family: MarkPro-Bold;
+      font-family: "europa",sans-serif;
+
     }
     .cardContent{
       margin-bottom:20px;
@@ -70,7 +71,8 @@ const AuthorCard = (props) => (
     h5{
       padding: 10px;
       font-size: 22px;
-      font-family: MarkPro-Bold;
+      font-family: "europa",sans-serif;
+
       margin: 0;
     }
     p{
