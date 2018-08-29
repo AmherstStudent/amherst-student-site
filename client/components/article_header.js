@@ -10,17 +10,18 @@ import moment from 'moment'
 
 const Article_Header = (props) => (
   <Card className={`span-12 ${ props.className }`}>
-    
+
 
       <span className="category_name">
-      {props.article.category.name}
+      {props.article.category.name.toUpperCase()}
       </span>
       <div className="header_text">
         <h1>{props.article.title}
           <span> </span>
           <a href=""><Icon size={32} icon={ic_stars}/></a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=${url.pathname}"><Icon size={32} icon={socialTwitterCircular}/></a>
-          <a href="https://twitter.com/intent/tweet?url=${escapedUrl}&text=${text}"><Icon size={32} icon={socialFacebookCircular}/></a></h1>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=amherststudent.com/${props.article.slug}`}><Icon size={32} icon={socialFacebookCircular}/></a>
+          <a href={`https://twitter.com/intent/tweet?url=amherststudent.com/${props.article.slug}&text=${props.article.excerpt}`}><Icon size={32} icon={socialTwitterCircular}/></a>
+        </h1>
 
       </div>
       <hr/>
@@ -79,7 +80,9 @@ const Article_Header = (props) => (
     .span-12 {
       grid-column: span 14;
     }
-
+    a {
+      color: #5D3C85;
+    }
  `}</style>
 </Card>
 )

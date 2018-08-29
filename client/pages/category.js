@@ -33,7 +33,7 @@ const Category = withRouter((props) => (
   <Head title={props.router.query.name}/>
 
     <Container>
-    <Category_Header className="heads" type={props.router.query.name} name="Word" />
+    <Category_Header className="heads" type={props.router.query.name.toUpperCase()} name="Word" />
           <Grid>
 
 
@@ -45,10 +45,10 @@ const Category = withRouter((props) => (
                   {({ loading, error, data }) => {
                     if (loading) return null;
                     if (error) return `Error!: ${error}`;
-                    const editor = data.categories[0].editors[0];
-                    console.log(props.type)
+                    const editors = data.categories[0].editors;
+                    console.log(props.editors)
                     return (
-              <Author_Card editor={true} author={editor}/>
+              <Author_Card editor={true} author={editors}/>
               )}}
             </Query>
             </aside>

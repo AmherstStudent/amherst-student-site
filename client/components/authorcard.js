@@ -4,18 +4,38 @@ import Card from './card.js'
 import Container from '../components/container'
 
 
+
+
 const AuthorCard = (props) => (
   <Card className={`article ${ props.className }`}>
       <Container>
-      <h3 className="cardTitle">MEET THE {props.editor ? 'EDITOR' : 'AUTHOR'}</h3>
+      <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
       <hr />
+
       <div className="cardContent">
-        <img src={ 'http://localhost:1337'+ props.author.reporterPhoto.url}/>
-          <h5 className="authorName">{props.author.username}</h5>
-          <p className="authorBio">
-            {props.author.reporterBio}
-          </p>
+
+      {props.editor ? Object.keys(props.author).map((item, index) => (
+
+          <div key={index}>
+            <img src={ 'http://localhost:1337'+ props.author[item].reporterPhoto.url}/>
+            <h5 className="authorName">{props.author[item].username}</h5>
+            <p className="authorBio">
+              {props.author[item].reporterBio}
+            </p>
+          </div>
+        ))
+          :
+          (<div>
+            <img src={ 'http://localhost:1337'+ props.author.reporterPhoto.url}/>
+            <h5 className="authorName">{props.author.username}</h5>
+            <p className="authorBio">
+              {props.author.reporterBio}
+            </p>
+          </div>)
+
+      }
       </div>
+
       </Container>
 
 
@@ -51,6 +71,7 @@ const AuthorCard = (props) => (
       padding: 10px;
       font-size: 22px;
       font-family: MarkPro-Bold;
+      margin: 0;
     }
     p{
       font-size: 16px;

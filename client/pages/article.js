@@ -11,16 +11,15 @@ import {withRouter} from 'next/router'
 import Article_Core from '../components/article_core'
 import {gql} from 'apollo-boost';
 import {Query} from 'react-apollo';
-
 import moment from 'moment'
-
 import CommentsContainer from '../components/comments'
 import Article_Header from '../components/article_header'
 
 const query = gql `
-  fragment ArticleDetails on Article {
+  fragment ArticlePageDetails on Article {
     title
     excerpt
+    slug
     category {
       name
     }
@@ -46,12 +45,13 @@ const query = gql `
 
   query Article_Lookup($slug: String!){
     articles(where: { slug: $slug }) {
-      ...ArticleDetails
+      ...ArticlePageDetails
     }
   }
 `
 
-const Article = withRouter((props) => (<div className="main-content">
+const Article = withRouter((props) => (
+  <div className="main-content">
 
   <Container>
     <Query query={query} variables={{ slug: props.router.query.slug }}>
@@ -62,7 +62,14 @@ const Article = withRouter((props) => (<div className="main-content">
           if (error)
             return `Error!: ${error}`;
           let article = data.articles[0]
-          let image_present = article.featuredImage.url
+          function imageChecker(){
+          if (article.featuredImage === null) {
+            return false;
+          }
+          else {
+            return true;
+          }
+          }
           return (<Grid className="news">
             <Head title={article.title}>
               <meta name="description" content={article.excerpt}  />
@@ -70,14 +77,14 @@ const Article = withRouter((props) => (<div className="main-content">
             <Article_Header className="header" article={article}/>
 
             <article>
-              {image_present ? <ImageCard article={article}/> : ' '}
+              {imageChecker() ? <ImageCard article={article}/> : ' '}
 
               <Article_Core article={article}/>
               <CommentsContainer article={article}/>
             </article>
 
             <aside className="span-4">
-              <AuthorCard type="author" author={data.articles[0].author}/>
+              <AuthorCard type="author" author={article.author}/>
               <FeatureNewsCard className="article"/>
             </aside>
           </Grid>)

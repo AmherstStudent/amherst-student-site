@@ -42,6 +42,9 @@ views(limit: 1, sort: "updatedAt:asc"){
   news_right_third{
     ...ArticleDetails
   }
+  news_left_big{
+    ...ArticleDetails
+  }
   opinion_first{
     ...ArticleDetails
   }
@@ -95,7 +98,7 @@ const Home = (props) => (<div className="main-content">
         return (<Container>
           <Grid>
 
-            <MediaCard article={view.top_article} slug={main_view.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
+            <MediaCard article={view.top_article} slug={view.top_article.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
 
             <FeatureNewsCard className="span-5"/>
 
@@ -105,9 +108,9 @@ const Home = (props) => (<div className="main-content">
               <OneThirdCard article={view.news_right_third}/>
             </div>
             <div className="words2">
-              <MediaCard article={view.top_article} slug={main_view.slug} category={'NEWS'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-7"/>
+              <MediaCard article={view.news_left_big} slug={view.news_left_big.slug} category={'NEWS'} author={view.news_left_big.author.username} excerpt={view.news_left_big.excerpt} title={view.news_left_big.title} className="span-7"/>
             </div>
-            <MediaCard3 article={view.opinion_first} className="span-4"/>
+            <MediaCard3 article={view.opinion_first} title={view.opinion_first.title} author={view.opinion_first.author.username} className="span-4"/>
             <MediaCard3 article={view.opinion_second} className="span-4"/>
             <MediaCard3 article={view.opinion_third} className="span-4"/>
           <div className="tripleContainer">
@@ -116,12 +119,12 @@ const Home = (props) => (<div className="main-content">
               <OneThirdCard article={view.arts_living_first_third}/>
             </div>
             <div className="words2">
-              <MediaCard article={view.top_article} slug={main_view.slug} category={'ARTS + LIVING'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-7"/>
+              <MediaCard article={view.arts_living_big} slug={view.arts_living_big.slug} category={'ARTS + LIVING'} author={view.arts_living_big.title} excerpt={view.arts_living_big.title} title={view.arts_living_big.title} className="span-7"/>
             </div>
 
-            <MediaCard3 article={view.opinion_first} className="span-4"/>
-            <MediaCard3 article={view.opinion_second} className="span-4"/>
-            <MediaCard3 article={view.opinion_third} className="span-4"/>
+            <MediaCard3 article={view.sports_first} className="span-4"/>
+            <MediaCard3 article={view.sports_second} className="span-4"/>
+            <MediaCard3 article={view.sports_third} className="span-4"/>
 
           </Grid>
 

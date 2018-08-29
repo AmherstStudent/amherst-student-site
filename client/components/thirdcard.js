@@ -4,18 +4,20 @@ import Card from './card.js'
 import Container from './container.js'
 
 const OneThirdCard = (props) => (
-  <Link>
+  
   <Card className={`third ${ props.className }`}>
 
-
+      <Link href={`/article/${props.article.slug}`}>
+        <div>
       <div className="cardContent">
 
-      <h4 className="cardTitle">{props.article.title}   <br /> <span className="cardAuthor">by {props.article.author.username}</span></h4>
+      <h4 className="cardTitle">{props.article.title} <span className="cardAuthor">by {props.article.author.username}</span></h4>
         <p className="cardText">{props.article.excerpt}</p>
       </div>
       <div className="cardImage">
       </div>
-
+    </div>
+    </Link>
   <style jsx>{`
     h4{
       font-weight: 600;
@@ -71,7 +73,7 @@ const OneThirdCard = (props) => (
 
  `}</style>
  </Card>
- </Link>
+
 )
 
 OneThirdCard.defaultProps = {

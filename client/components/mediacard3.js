@@ -7,15 +7,17 @@ const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
     <div className="cardHeader">
 
-       <span>{props.article.category.name}</span>
+       <span>{props.name}</span>
 
     </div>
     <Container>
+    <Link href={`/article/${props.article.slug}`}>
     <div className="cardContent">
       <h2 className="cardTitle">{props.article.title}</h2>
       <br />
       <p className="cardAuthor">by {props.article.author.username}</p>
     </div>
+    </Link>
     </Container>
 
 
@@ -78,6 +80,7 @@ const MediaCard3 = (props) => (
 )
 MediaCard3.defaultProps = {
   article:{
+    slug: "word",
     category:{
       name:"Card"
     },
