@@ -4,16 +4,17 @@ import Card from './card.js'
 import Container from './container.js'
 
 const MediaCard3 = (props) => (
-  <Card className={`${ props.className }`}>
+  <Card className={`thrds ${ props.className }`}>
     <div className="cardHeader">
 
-       <span>SPORTS</span>
+       <span>{props.article.category.name}</span>
 
     </div>
     <Container>
     <div className="cardContent">
-      <h2 className="cardTitle">Softball Sweeps Smith, Triumphs In Williams Senior Day Game</h2>
-      <p className="cardAuthor">by Dylan Momplaisir</p>
+      <h2 className="cardTitle">{props.article.title}</h2>
+      <br />
+      <p className="cardAuthor">by {props.article.author.username}</p>
     </div>
     </Container>
 
@@ -26,7 +27,7 @@ const MediaCard3 = (props) => (
       background: center;
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url('https://amherststudent.amherst.edu/sites/default/files/field/image/Janelle_Mona%CC%81e_-_Way_Out_West_2014.jpg')
+      background-image: url('{local}')
     }
     span {
       background: #5D3C85;
@@ -43,7 +44,9 @@ const MediaCard3 = (props) => (
     }
     .cardTitle{
       font-style: italic;
+
     }
+
     .cardAuthor{
       font-style:italic;
       font-size: 14px;
@@ -73,5 +76,16 @@ const MediaCard3 = (props) => (
  `}</style>
  </Card>
 )
+MediaCard3.defaultProps = {
+  article:{
+    category:{
+      name:"Card"
+    },
+    title: "Title",
+    author: {
+      username: "Call me"
+    }
+  }
+}
 
 export default MediaCard3

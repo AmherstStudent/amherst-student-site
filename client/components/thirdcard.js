@@ -4,14 +4,14 @@ import Card from './card.js'
 import Container from './container.js'
 
 const OneThirdCard = (props) => (
+  <Link>
   <Card className={`third ${ props.className }`}>
 
 
       <div className="cardContent">
 
-      <h4 className="cardTitle">Softball Sweeps Smith, Triumphs In Williams Senior Day Game <span className="cardAuthor">by Dylan Momplaisir</span></h4>
-
-        <p className="cardText">It was a big week for Amherst softball, as the Mammoths swept Smith College in a mid-week doubleheader and took two of three games from Williams in the weekend series.</p>
+      <h4 className="cardTitle">{props.article.title}   <br /> <span className="cardAuthor">by {props.article.author.username}</span></h4>
+        <p className="cardText">{props.article.excerpt}</p>
       </div>
       <div className="cardImage">
       </div>
@@ -26,6 +26,7 @@ const OneThirdCard = (props) => (
       letter-spacing: 0.05px;
       margin-bottom: 0px;
       margin-top: 10px;
+
     }
     .cardContent{
       margin: 0 0 0 10px;
@@ -37,6 +38,7 @@ const OneThirdCard = (props) => (
     .cardAuthor{
       font-size:14px;
       font-weight: 100;
+      padding: 0;
     }
     h3{
       font-family: "Mark Pro";
@@ -44,6 +46,7 @@ const OneThirdCard = (props) => (
     .third {
       display: flex;
       flex-direction: column;
+
     }
     .cardText{
       /* Aziz Khan was picked: */
@@ -52,6 +55,12 @@ const OneThirdCard = (props) => (
       color: #000000;
       letter-spacing: 0;
       line-height: 1.25em;
+    }
+    @media screen and (max-width: 768px){
+      .cardText{
+        padding-bottom: 20px;
+      }
+
     }
     .cleaner > *{
       padding: 20px;
@@ -62,6 +71,21 @@ const OneThirdCard = (props) => (
 
  `}</style>
  </Card>
+ </Link>
 )
+
+OneThirdCard.defaultProps = {
+  article:{
+    category:{
+      name:"Card"
+    },
+    title: "Title",
+    author: {
+      username: "Call me"
+    },
+    slug: "defaddult",
+    excerpt: "Word"
+  }
+}
 
 export default OneThirdCard

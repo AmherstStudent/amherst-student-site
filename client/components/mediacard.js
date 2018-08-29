@@ -9,9 +9,9 @@ const MediaCard = (props) => (
     <span>{props.category}</span>
   </div>
   <Container>
-    <Link as={`/article/${props.slug}`} href={`/article?slug=${props.slug}`}><div className="cardContent">
+    <Link as={`/article/${props.slug}`} href={`/article?slug={props.article.slug}`}><div className="cardContent">
         <h2 className="cardTitle">{props.title}</h2>
-        <p className="cardAuthor">by {props.author}</p>
+        <p className="cardAuthor">by {props.username}</p>
         <p className="cardText">{props.excerpt}.</p>
       </div>
     </Link>

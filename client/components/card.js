@@ -50,15 +50,22 @@ const Card = (props) => (
       }
     }
     .third {
-
       min-height: 30%;
       margin-bottom: 3%;
+    }
+    @media screen and (max-width: 768px){
+      .third{
+        grid-column: 1/14;
+      }
     }
     .article{
       margin-bottom: 20px;
     }
     .margin-20{
       margin-bottom: 20px;
+    }
+    .thrds{
+      margin-right: 10px;
     }
  `}</style>
  </div>

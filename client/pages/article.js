@@ -64,7 +64,9 @@ const Article = withRouter((props) => (<div className="main-content">
           let article = data.articles[0]
           let image_present = article.featuredImage.url
           return (<Grid className="news">
-            <Head title={article.title}/>
+            <Head title={article.title}>
+              <meta name="description" content={article.excerpt}  />
+            </Head>
             <Article_Header className="header" article={article}/>
 
             <article>

@@ -29,10 +29,10 @@ export const GET_HOME_PAGE = gql `
   }
 
 query HomePage{
-view(id: "5b7a80fe40025fc5daebd18f"){
+views(limit: 1, sort: "updatedAt:asc"){
   top_article{
     ...ArticleDetails
-    }
+  }
   news_right_first{
     ...ArticleDetails
   }
@@ -77,7 +77,9 @@ view(id: "5b7a80fe40025fc5daebd18f"){
 console.log(GET_HOME_PAGE)
 
 const Home = (props) => (<div className="main-content">
-  <Head title="Home"/>
+  <Head title="The Amherst Student">
+    <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
+  </Head>
 
   <Query query={GET_HOME_PAGE}>
     {
@@ -87,34 +89,39 @@ const Home = (props) => (<div className="main-content">
         if (error)
           return `Error!: ${error}`;
         console.log(data);
-        let main_view = data.view.top_article
+        let main_view = data.views[0].top_article
+        let view = data.views[0]
 
         return (<Container>
           <Grid>
 
-            <MediaCard slug={main_view.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
+            <MediaCard article={view.top_article} slug={main_view.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
 
             <FeatureNewsCard className="span-5"/>
 
           <div className="tripleContainer">
-              <OneThirdCard/>
-              <OneThirdCard/>
-              <OneThirdCard/>
+              <OneThirdCard article={view.news_right_first}/>
+              <OneThirdCard article={view.news_right_second}/>
+              <OneThirdCard article={view.news_right_third}/>
             </div>
             <div className="words2">
-              <MediaCard className="span-7"/>
+              <MediaCard article={view.top_article} slug={main_view.slug} category={'NEWS'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-7"/>
             </div>
-            <MediaCard3 className="span-4"/>
-            <MediaCard3 className="span-4"/>
-            <MediaCard3 className="span-4"/>
+            <MediaCard3 article={view.opinion_first} className="span-4"/>
+            <MediaCard3 article={view.opinion_second} className="span-4"/>
+            <MediaCard3 article={view.opinion_third} className="span-4"/>
           <div className="tripleContainer">
-              <OneThirdCard/>
-              <OneThirdCard/>
-              <OneThirdCard/>
+              <OneThirdCard article={view.arts_living_first_third}/>
+              <OneThirdCard article={view.arts_living_second_third}/>
+              <OneThirdCard article={view.arts_living_first_third}/>
             </div>
             <div className="words2">
-              <MediaCard className="span-7"/>
+              <MediaCard article={view.top_article} slug={main_view.slug} category={'ARTS + LIVING'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-7"/>
             </div>
+
+            <MediaCard3 article={view.opinion_first} className="span-4"/>
+            <MediaCard3 article={view.opinion_second} className="span-4"/>
+            <MediaCard3 article={view.opinion_third} className="span-4"/>
 
           </Grid>
 
@@ -139,6 +146,14 @@ const Home = (props) => (<div className="main-content">
         flex-direction: column;
         justify-content: space-between;
       }
+      @media screen and (max-width: 768px){
+        .tripleContainer{
+          grid-column: span 14;
+        }
+
+
+
+      }
 
       .words:last-child {
         grid-column-end: end;
@@ -152,21 +167,21 @@ const Home = (props) => (<div className="main-content">
         grid-column-start: 7;
         grid-column-end: 14;
       }
+      @media screen and (max-width: 768px){
+        .words2{
+          grid-column: span 14;
+        }
+      }
+      .span-14{
+        grid-column: 1 / 14;
+        display:flex;
+        justify-content: space-between;
+      }
+
        `
     }</style>
 
 </div>)
 
-// Home.getInitialProps = async function() {
-//   const res = await fetch('http://localhost:1337/article')
-//   const data = await res.json()
-//
-//   console.log(`Show data fetched. Count: ${data.length}`)
-//
-//   return {
-//     articles: data
-//   }
-//
-// }
 
 export default Home
