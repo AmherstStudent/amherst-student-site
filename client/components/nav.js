@@ -11,7 +11,7 @@ const links = [
   { href: '/category?name=opinion', label: 'OPINION'},
   { href: '/category?name=arts and living', label: 'ARTS + LIVING'},
   { href: '/category?name=sports', label: 'SPORTS'},
-  { href: '/news', label: 'PRINT ISSUES'}
+  { href: '/news', label: 'ISSUES'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link

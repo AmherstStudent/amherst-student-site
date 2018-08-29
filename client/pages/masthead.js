@@ -78,7 +78,9 @@ const Masthead = (props) => (
       .cardHeader{
         display: flex;
         flex-direction: column;
-        padding-top: 20px;
+        height: 100%;
+        width: auto;
+        margin-top: 40px;
       }
       p {
         margin-bottom: 20px;
