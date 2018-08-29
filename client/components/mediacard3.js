@@ -42,7 +42,7 @@ const MediaCard3 = (props) => (
       position:absolute;
       margin-top: 20px;
       padding: 5px;
-      margin-left: 4%;
+      margin-left: 20px;
 
     }
     .cardTitle{

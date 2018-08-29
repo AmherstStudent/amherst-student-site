@@ -2,10 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
-
+let LOCAL_URI = "http://localhost:1337/"
 const MediaCard = (props) => (
   <Card className={`${props.className}`}>
-  <div className="cardHeader">
+  <div className="cardHeader" style={{ backgroundImage: `url('${LOCAL_URI +props.article.featuredImage.url}')`}}>
     <span>{props.category}</span>
   </div>
   <Container>
@@ -30,7 +30,12 @@ const MediaCard = (props) => (
         background: bottom;
         background-size: cover;
         background-repeat: no-repeat;
-        background-image: url("https://amherststudent.amherst.edu/sites/default/files/field/image/Screen%20Shot%202018-04-24%20at%2010.02.25%20PM.png");
+      }
+      @media screen and (max-width: 768px){
+        .cardHeader{
+          min-height: 250px;
+        }
+
       }
       span {
         background: #5D3C85;
@@ -42,7 +47,7 @@ const MediaCard = (props) => (
         position: absolute;
         margin-top: 20px;
         padding: 5px;
-        margin-left: 4%;
+        margin-left: 30px;
       }
       .cardTitle {
         font-style: italic;
