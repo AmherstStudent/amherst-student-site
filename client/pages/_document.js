@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css"/>
+
 
           <style>{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
         </Head>
@@ -28,13 +30,16 @@ export default class MyDocument extends Document {
         </body>
 
 
+
         <style>
         {`
           html{
             width: 100vw;
           }
+          @import url("https://use.typekit.net/qth7vhw.css");
+
           p {
-          font-family: Adobe Garamond Pro;
+          font-family: "adobe-garamond-pro",serif;
           font-weight:300;
           line-height:1.5em;
           font-size: 18px;

@@ -55,7 +55,7 @@ const Masthead = (props) => (
       `
       .main-content{
         min-height: 100vh;
-        font-family: 'Adobe Garamond Pro';
+        font-family: "adobe-garamond-pro",serif;
         background: #F1F1F1;
         padding-top: 180px;
         padding-bottom: 20px;

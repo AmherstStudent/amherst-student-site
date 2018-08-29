@@ -10,7 +10,7 @@ const Category_Header = (props) => (
       <style jsx>{`
         h1{
           /* NEWS: */
-          font-family: Adobe Garamond;
+          font-family: "adobe-garamond-pro",serif;
           font-size: 64px;
           color: #FFFFFF;
           letter-spacing: 0.34px;
