@@ -29,7 +29,7 @@ const Category_Header = (props) => (
         .header{
           background-image: url('https://assets.forwardcdn.com/images/cropped/amherst-college-buildings-img-6512-1500990972.JPG');
           height: 500px;
-          background-size: 100%;
+          background-size: cover;
            background-position: center;
            position: relative;
 

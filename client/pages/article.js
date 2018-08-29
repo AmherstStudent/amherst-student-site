@@ -35,8 +35,8 @@ const query = gql `
         url
       }
     }
-    volumeIssue{
-      volume_issue_number
+    view{
+      words
     }
     content
     _id
