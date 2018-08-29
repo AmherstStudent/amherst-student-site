@@ -90,6 +90,14 @@ const Category = withRouter((props) => (
         grid-column-start: 10;
         grid-column-end: 14;
       }
+      @media only screen and (max-width: 768px) {
+        article{
+          grid-column: 1 / 14;
+        }
+        aside{
+          grid-column: 1 / 14;
+        }
+      }
       .cardContent{
         padding: 20px;
       }

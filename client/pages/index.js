@@ -25,6 +25,7 @@ export const GET_HOME_PAGE = gql `
     }
     author{
       username
+      reporterTitle
     }
   }
 
@@ -79,7 +80,8 @@ views(limit: 1, sort: "updatedAt:asc"){
 }`
 console.log(GET_HOME_PAGE)
 
-const Home = (props) => (<div className="main-content">
+const Home = (props) => (
+  <div className="main-content">
   <Head title="The Amherst Student">
     <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
   </Head>
@@ -119,7 +121,7 @@ const Home = (props) => (<div className="main-content">
               <OneThirdCard article={view.arts_living_first_third}/>
             </div>
             <div className="words2">
-              <MediaCard article={view.arts_living_big} slug={view.arts_living_big.slug} category={'ARTS + LIVING'} author={view.arts_living_big.title} excerpt={view.arts_living_big.title} title={view.arts_living_big.title} className="span-7"/>
+              <MediaCard article={view.arts_living_big} slug={view.arts_living_big.slug} category={'ARTS + LIVING'} author={view.arts_living_big.author.username} excerpt={view.arts_living_big.excerpt} title={view.arts_living_big.title} className="span-7"/>
             </div>
 
             <MediaCard3 article={view.sports_first} className="span-4"/>

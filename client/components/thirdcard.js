@@ -4,14 +4,14 @@ import Card from './card.js'
 import Container from './container.js'
 
 const OneThirdCard = (props) => (
-  
+
   <Card className={`third ${ props.className }`}>
 
       <Link href={`/article/${props.article.slug}`}>
         <div>
       <div className="cardContent">
 
-      <h4 className="cardTitle">{props.article.title} <span className="cardAuthor">by {props.article.author.username}</span></h4>
+      <h4 className="cardTitle">{props.article.title} <br /> <span className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle}</span></h4>
         <p className="cardText">{props.article.excerpt}</p>
       </div>
       <div className="cardImage">
@@ -33,9 +33,8 @@ const OneThirdCard = (props) => (
     .cardContent{
       margin: 0 0 0 10px;
       max-width: 90%;
-      margin-top:10px;
-      margin-left: 25px;
 
+      padding: 10px;
     }
     .cardAuthor{
       font-size:14px;

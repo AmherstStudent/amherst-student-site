@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 
+let LOCAL_URI = 'http://localhost:1337'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
-    <div className="cardHeader">
+    <div style={{ backgroundImage: `url('${LOCAL_URI +props.article.featuredImage.url}')`}}className="cardHeader">
 
-       <span>{props.name}</span>
+       <span>{props.article.category.name.toUpperCase()}</span>
 
     </div>
     <Container>
     <Link href={`/article/${props.article.slug}`}>
     <div className="cardContent">
       <h2 className="cardTitle">{props.article.title}</h2>
+
       <br />
-      <p className="cardAuthor">by {props.article.author.username}</p>
+      <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle}</p>
     </div>
     </Link>
     </Container>
@@ -29,7 +31,6 @@ const MediaCard3 = (props) => (
       background: center;
       background-size: cover;
       background-repeat: no-repeat;
-      background-image: url('{local}')
     }
     span {
       background: #5D3C85;

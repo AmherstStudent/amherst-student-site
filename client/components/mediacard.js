@@ -13,7 +13,7 @@ const MediaCard = (props) => (
       <div className="cardContent">
 
         <h2 className="cardTitle">{props.article.title}</h2>
-        <p className="cardAuthor">by {props.username}</p>
+        <p className="cardAuthor">by {props.author}</p>
         <p className="cardText">{props.excerpt}.</p>
 
       </div>
@@ -65,7 +65,9 @@ const MediaCard = (props) => (
       }
       .cardContent {
         padding-bottom: 1em;
-        margin-top: 20px;
+        padding-left: 2px;
+        padding-top: 10px;
+        margin-left: 0;
       }
       .cardText {
         padding-top: 5px;
