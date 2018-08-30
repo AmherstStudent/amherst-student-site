@@ -17,7 +17,7 @@ const AuthorCard = (props) => (
       {props.editor ? Object.keys(props.author).map((item, index) => (
 
           <div key={index}>
-            <img src={ 'http://localhost:1337'+ props.author[item].reporterPhoto.url}/>
+            <img src={ 'http://api.amherststudent.com/'+ props.author[item].reporterPhoto.url}/>
             <h5 className="authorName">{props.author[item].username}</h5>
             <p className="authorBio">
               {props.author[item].reporterBio}
