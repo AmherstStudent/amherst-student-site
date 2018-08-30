@@ -24,7 +24,7 @@ const MediaCard3 = (props) => (
       </a>
       </Link>
       <br />
-      <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.volumeIssue.volume_issue_number}</p>
+      <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} </p>
       <p style={ Boolean(props.article.featuredImage)  ? {display:'none'} : {} }> {props.article.excerpt} </p>
     </div>
 
