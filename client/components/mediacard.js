@@ -20,7 +20,7 @@ const MediaCard = (props) => (
         <Link href={`/article/${props.article.slug}`} passHref>
         <a><h2 className="cardTitle">{props.article.title}</h2></a>
         </Link>
-        <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.view.words}</p>
+        <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.volumeIssue.volume_issue_number}</p>
         <p className="cardText">{props.article.excerpt}.</p>
 
       </div>
@@ -92,10 +92,7 @@ const MediaCard = (props) => (
       .cardTitle:hover{
         color: grey;
       }
-      p{
-        padding:0;
 
-      }
      `}
    </style>
 </Card>

@@ -27,7 +27,7 @@ const Article_Header = (props) => (
       <hr/>
       <div className="article_details">
         <h5>
-          By {props.article.author.username}, {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.view.words}
+          By {props.article.author.username}, {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.volumeIssue.volume_issue_number}
         </h5>
 
       </div>

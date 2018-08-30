@@ -13,7 +13,7 @@ const OneThirdCard = (props) => (
       <div className="cardContent">
         <div className="holder"><span className="category">{props.article.category.name.toUpperCase()}</span></div>
 
-      <h4 className="cardTitle"><Link href={`/article/${props.article.slug}`} passHref><a>{props.article.title}</a></Link> <br /> <span className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.view.words}</span></h4>
+      <h4 className="cardTitle"><Link href={`/article/${props.article.slug}`} passHref><a>{props.article.title}</a></Link> <br /> <span className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.volumeIssue.volume_issue_number}</span></h4>
         <p className="cardText">{props.article.excerpt}</p>
       </div>
       <div className="cardImage">
