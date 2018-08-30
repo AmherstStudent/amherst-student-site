@@ -153,7 +153,7 @@ const Home = (props) => (
       }
       @media screen and (max-width: 768px){
         .tripleContainer{
-          grid-column: span 14;
+          grid-column: span 16;
         }
 
 
@@ -174,11 +174,11 @@ const Home = (props) => (
       }
       @media screen and (max-width: 768px){
         .words2{
-          grid-column: span 14;
+          grid-column: span 16;
         }
       }
       .span-14{
-        grid-column: 1 / 14;
+        grid-column: 1 / 16;
         display:flex;
         justify-content: space-between;
       }

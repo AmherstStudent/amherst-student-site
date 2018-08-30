@@ -80,7 +80,7 @@ const Article_Header = (props) => (
       margin-top: 10px;
     }
     .span-12 {
-      grid-column: span 14;
+      grid-column: span 18;
     }
     a {
       color: #5D3C85;

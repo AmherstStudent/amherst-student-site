@@ -42,11 +42,11 @@ const Card = (props) => (
       grid-column: span 9;
     }
     .span-12{
-      grid-column: span 12;
+      grid-column: span 16;
     }
     @media screen and (max-width: 768px){
       .card{
-        grid-column: span 14;
+        grid-column: span 16;
       }
     }
     .third {
