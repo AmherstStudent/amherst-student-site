@@ -7,7 +7,7 @@ const CommentsContainer = (props) => (
   <div className="comments">
     <Card classname ="article">
       <Container>
-        <ReactDisqusComments shortname="AmherstStudent" identifier={props.article._id} title={props.article.title} url={'https://localhost:3000/' + props.article.slug} category_id={props.article.category._id}/>
+        <ReactDisqusComments shortname="AmherstStudent" identifier={props.article._id} title={props.article.title} url={'http://amherststudent.com/' + props.article.slug} category_id={props.article.category._id}/>
       </Container>
     </Card>
     <style jsx>{`
