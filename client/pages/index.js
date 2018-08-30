@@ -27,6 +27,9 @@ export const GET_HOME_PAGE = gql `
       username
       reporterTitle
     }
+    view{
+      words
+    }
   }
 
 query HomePage{
