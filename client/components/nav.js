@@ -60,6 +60,7 @@ const Nav = () => (
         padding-top:20px;
         margin-bottom:0px;
         padding-bottom: 10px;
+        padding-left: 10px;
         max-width:400px;
         margin: 0 auto;
       }
@@ -67,12 +68,15 @@ const Nav = () => (
         width:100%;
         height: auto;
       }
-      @media (max-width: 620px){
+      @media (max-width: 500px){
+        .logo{
+          max-width: 300px;
+        }
         img{
-          width: 75%;
+          width: 100%;
         }
         ul{
-          width: 90%;
+          width: 50%;
         }
       }
 

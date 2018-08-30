@@ -10,14 +10,14 @@ import moment from 'moment'
 const List_Item = (props) => (
   <Card className="list_item margin-20">
     <Container>
-      <Link href={"/article/" + props.article.slug}>
+
     <div className="cardContent">
       <span>{props.article.category.name.toUpperCase()}</span>
-      <h4>{props.article.title}</h4>
+      <Link href={`/article/${props.article.slug}`} passHref><a><h4>{props.article.title}</h4></a></Link>
       <p className="author">by {props.article.author.username}, {props.article.author.reporterTitle} || {moment(props.article.updatedAt).format('MMMM D YYYY')}</p>
       <p>{props.article.excerpt}</p>
     </div>
-    </Link>
+
     </Container>
     <style jsx="jsx">
       {
@@ -38,7 +38,7 @@ const List_Item = (props) => (
           /* THIS WEEK’S HEADLINE: */
           background: #5D3C85;
           color: white;
-          font-family: MarkPro-Bold;
+          font-family: "europa",sans-serif;
           font-size: 14px;
           letter-spacing: 0.12px;
           line-height: 21px;
@@ -55,6 +55,12 @@ const List_Item = (props) => (
             color: #000000;
             letter-spacing: 0;
             line-height: 20px;
+        }
+        a{
+          text-decoration:none;
+        }
+        h4:hover{
+          color:grey;
         }
         `
       }
