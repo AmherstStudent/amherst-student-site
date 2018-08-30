@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 
-let LOCAL_URI = 'http://localhost:1337'
+let LOCAL_URI = 'http://api.amherststudent.com'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
     <div style={ props.article.featuredImage === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}} className="cardHeader">

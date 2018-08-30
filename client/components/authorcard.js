@@ -26,7 +26,7 @@ const AuthorCard = (props) => (
         ))
           :
           (<div>
-            <img src={ 'http://localhost:1337'+ props.author.reporterPhoto.url}/>
+            <img src={ 'http://api.amherststudent.com/'+ props.author.reporterPhoto.url}/>
             <h5 className="authorName">{props.author.username}</h5>
             <p className="authorBio">
               {props.author.reporterBio}

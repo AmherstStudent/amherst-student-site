@@ -70,6 +70,7 @@ const Article = withRouter((props) => (
             return true;
           }
           }
+
           return (<Grid className="news">
             <Head title={article.title}>
               <meta name="description" content={article.excerpt}  />

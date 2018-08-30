@@ -112,7 +112,7 @@ const Home = (props) => (
             <div className="words2">
               <MediaCard article={view.news_left_big} slug={view.news_left_big.slug} category={'NEWS'} author={view.news_left_big.author.username} excerpt={view.news_left_big.excerpt} title={view.news_left_big.title} className="span-7"/>
             </div>
-            <MediaCard3 article={view.opinion_first} title={view.opinion_first.title} author={view.opinion_first.author.username} className="span-4"/>
+            <MediaCard3 article={view.opinion_first} title={view.opinion_first.title} author={view.opinion_first.author.username} slug={view.opinion_first.slug} className="span-4"/>
             <MediaCard3 article={view.opinion_second} className="span-4"/>
             <MediaCard3 article={view.opinion_third} className="span-4"/>
           <div className="tripleContainer">

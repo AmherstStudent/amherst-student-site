@@ -6,7 +6,7 @@ import Container from './container.js'
 const Image_Card = (props) => (
   <Card className={`article ${props.className}`}>
     <figure>
-        <img src={'http://localhost:1337/' + props.article.featuredImage.url}/>
+        <img src={'http://api.amherststudent.com/' + props.article.featuredImage.url}/>
         <figcaption><em>{props.article.excerpt}</em></figcaption>
     </figure>
 
