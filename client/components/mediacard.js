@@ -68,6 +68,9 @@ const MediaCard = (props) => (
         letter-spacing: -0.16px;
         line-height: 22px;
       }
+      .cardText{
+        font-size:16px;
+      }
       .cardTitle {
         -webkit-margin-before: 0.20em;
         -webkit-margin-after: 0.20em;

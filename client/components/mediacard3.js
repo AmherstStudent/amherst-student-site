@@ -25,7 +25,7 @@ const MediaCard3 = (props) => (
       </Link>
       <br />
       <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} </p>
-      <p style={ Boolean(props.article.featuredImage)  ? {display:'none'} : {} }> {props.article.excerpt} </p>
+      <p className="feat" style={ Boolean(props.article.featuredImage)  ? {display:'none'} : {} }> {props.article.excerpt} </p>
     </div>
 
     </Container>
@@ -88,7 +88,9 @@ const MediaCard3 = (props) => (
     .cardTitle:hover{
       color: grey;
     }
-
+    .feat{
+      font-size: 16px;
+    }
 
  `}</style>
  </Card>
