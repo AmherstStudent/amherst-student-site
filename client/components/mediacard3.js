@@ -6,21 +6,28 @@ import Container from './container.js'
 let LOCAL_URI = 'http://api.amherststudent.com'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
+    <Link href={`/article/${props.article.slug}`} passHref>
+      <a>
     <div style={ Boolean(props.article.featuredImage)  ? {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`} : {minHeight:'60px'} } className="cardHeader">
 
        <span>{props.article.category.name.toUpperCase()}</span>
 
     </div>
+  </a>
+  </Link>
     <Container>
-    <Link href={`/article/${props.article.slug}`}>
-    <div className="cardContent">
-      <h2 className="cardTitle">{props.article.title}</h2>
 
+    <div className="cardContent">
+      <Link href={`/article/${props.article.slug}`} passHref>
+      <a>
+      <h2 className="cardTitle">{props.article.title}</h2>
+      </a>
+      </Link>
       <br />
-      <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle}</p>
+      <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.view.words}</p>
       <p style={ Boolean(props.article.featuredImage)  ? {display:'none'} : {} }> {props.article.excerpt} </p>
     </div>
-    </Link>
+
     </Container>
 
 
@@ -75,7 +82,12 @@ const MediaCard3 = (props) => (
     .cardText{
       padding-top:5px;
     }
-
+    a{
+      text-decoration: none;
+    }
+    .cardTitle:hover{
+      color: grey;
+    }
 
 
  `}</style>

@@ -38,7 +38,7 @@ const Category = withRouter((props) => (
 
 
             <article>
-              <List_Container type={props.router.query.name == "Arts%20+%20Living" ? "Arts" : props.router.query.name} />
+              <List_Container type={props.router.query.name} />
             </article>
             <aside >
               <Query query={query} variables={{ name: props.router.query.name.replace(/ .*/,'') }}>

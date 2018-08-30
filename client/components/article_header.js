@@ -27,7 +27,7 @@ const Article_Header = (props) => (
       <hr/>
       <div className="article_details">
         <h5>
-          By {props.article.author.username}, {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM Do YYYY').toUpperCase()} | {props.article.volumeIssue.volume_issue_number}
+          By {props.article.author.username}, {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.view.words}
         </h5>
 
       </div>
@@ -40,7 +40,6 @@ const Article_Header = (props) => (
       background: #5D3C85;
       color: white;
       font-family: "europa",sans-serif;
-
       font-size: 14px;
       letter-spacing: 0.12px;
       line-height: 21px;
@@ -59,6 +58,7 @@ const Article_Header = (props) => (
     }
     .header_text {
       margin-left: 20px;
+      padding: 5px;
     }
     h1 {
       margin-bottom: 5px;
@@ -70,11 +70,10 @@ const Article_Header = (props) => (
     }
     h5 {
       margin: 0 0 0 10px;
-
       font-family: "europa",sans-serif;
-;
+
       font-weight: 200;
-      font-size: 12px;
+      font-size: 14px;
     }
     .header_text {
       margin-top: 10px;

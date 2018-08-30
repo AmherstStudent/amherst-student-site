@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Card from './card'
 
 const Category_Header = (props) => (
-  <Card className="ting margin-20">
+  <Card className="margin-20">
     <div className="header">
       <div className="bottom_Line">
       <h1>{props.type.toUpperCase()} <br />  </h1>
@@ -29,8 +29,6 @@ const Category_Header = (props) => (
           width: 100%;
           bottom: 0;
           margin: 0;
-
-
           padding-right: 20px;
         }
         .header{
@@ -41,13 +39,8 @@ const Category_Header = (props) => (
            position: relative;
 
         }
-        .span-14{
-          height: 300px;
-        }
-        .ting{
-          grid-column: span 14;
-          height: 300px;
-        }
+
+
 
 
      `}</style>

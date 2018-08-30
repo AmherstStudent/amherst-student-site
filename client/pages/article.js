@@ -35,8 +35,8 @@ const query = gql `
         url
       }
     }
-    volumeIssue{
-      volume_issue_number
+    view{
+      words
     }
     content
     _id
@@ -115,7 +115,7 @@ const Article = withRouter((props) => (
         grid-column: span 16;
 
       }
-      @media only screen and (min-width: 1000px) {
+      @media only screen and (min-width: 1300px) {
         article {
           grid-column: 1 / 9;
         }

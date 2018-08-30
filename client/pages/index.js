@@ -97,39 +97,39 @@ const Home = (props) => (
         if (error)
           return `Error!: ${error}`;
         console.log(data);
-        let main_view = data.views[0].top_article
-        let view = data.views[0]
+        
+        let main_view = data.views[0]
 
         return (<Container>
           <Grid>
 
-            <MediaCard article={view.top_article} slug={view.top_article.slug} category={'FEATURED'} author={main_view.author.username} excerpt={main_view.excerpt} title={main_view.title} className="span-8"/>
+            <MediaCard article={main_view.top_article} className="span-8"/>
 
             <FeatureNewsCard className="span-5"/>
 
           <div className="tripleContainer">
-              <OneThirdCard article={view.news_right_first}/>
-              <OneThirdCard article={view.news_right_second}/>
-              <OneThirdCard article={view.news_right_third}/>
+              <OneThirdCard article={main_view.news_right_first}/>
+              <OneThirdCard article={main_view.news_right_second}/>
+              <OneThirdCard article={main_view.news_right_third}/>
             </div>
             <div className="words2">
-              <MediaCard article={view.news_left_big} slug={view.news_left_big.slug} category={'NEWS'} author={view.news_left_big.author.username} excerpt={view.news_left_big.excerpt} title={view.news_left_big.title} className="span-7"/>
+              <MediaCard article={main_view.news_left_big} className="span-7"/>
             </div>
-            <MediaCard3 article={view.opinion_first} title={view.opinion_first.title} author={view.opinion_first.author.username} slug={view.opinion_first.slug} className="span-4"/>
-            <MediaCard3 article={view.opinion_second} className="span-4"/>
-            <MediaCard3 article={view.opinion_third} className="span-4"/>
+            <MediaCard3 article={main_view.opinion_first} className="span-4"/>
+            <MediaCard3 article={main_view.opinion_second} className="span-4"/>
+            <MediaCard3 article={main_view.opinion_third} className="span-4"/>
           <div className="tripleContainer">
-              <OneThirdCard article={view.arts_living_first_third}/>
-              <OneThirdCard article={view.arts_living_second_third}/>
-              <OneThirdCard article={view.arts_living_first_third}/>
+              <OneThirdCard article={main_view.arts_living_first_third}/>
+              <OneThirdCard article={main_view.arts_living_second_third}/>
+              <OneThirdCard article={main_view.arts_living_first_third}/>
             </div>
             <div className="words2">
-              <MediaCard article={view.arts_living_big} slug={view.arts_living_big.slug} category={'ARTS + LIVING'} author={view.arts_living_big.author.username} excerpt={view.arts_living_big.excerpt} title={view.arts_living_big.title} className="span-7"/>
+              <MediaCard article={main_view.arts_living_big}  className="span-7"/>
             </div>
 
-            <MediaCard3 article={view.sports_first} className="span-4"/>
-            <MediaCard3 article={view.sports_second} className="span-4"/>
-            <MediaCard3 article={view.sports_third} className="span-4"/>
+            <MediaCard3 article={main_view.sports_first} className="span-4"/>
+            <MediaCard3 article={main_view.sports_second} className="span-4"/>
+            <MediaCard3 article={main_view.sports_third} className="span-4"/>
 
           </Grid>
 

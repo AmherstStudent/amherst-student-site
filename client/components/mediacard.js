@@ -5,21 +5,28 @@ import Container from './container.js'
 let LOCAL_URI = "http://api.amherststudent.com"
 const MediaCard = (props) => (
   <Card className={`${props.className}`}>
+  <Link href={`/article/${props.article.slug}`} passHref>
+  <a>
   <div className="cardHeader" style={ Boolean(props.article.featuredImage)  ? {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}  : {display:'none'} }>
-    <span>{props.category}</span>
+    <span>{props.article.category.name.toUpperCase()}</span>
   </div>
-  <Container>
-    <Link href={`/article/${props.article.slug}`}>
-      <div className="cardContent">
+  </a>
+  </Link>
 
-        <h2 className="cardTitle">{props.article.title}</h2>
-        <p className="cardAuthor">by {props.author}</p>
-        <p className="cardText">{props.excerpt}.</p>
+
+
+
+      <div className="cardContent">
+        <Link href={`/article/${props.article.slug}`} passHref>
+        <a><h2 className="cardTitle">{props.article.title}</h2></a>
+        </Link>
+        <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle} | {props.article.view.words}</p>
+        <p className="cardText">{props.article.excerpt}.</p>
 
       </div>
 
-    </Link>
-  </Container>
+
+
 
   <style jsx="jsx">
     {`
@@ -48,10 +55,11 @@ const MediaCard = (props) => (
         position: absolute;
         margin-top: 20px;
         padding: 5px;
-        margin-left: 30px;
+        margin-left: 20px;
       }
       .cardTitle {
         font-style: italic;
+        font-weight: 600;
       }
       .cardAuthor {
         font-style: italic;
@@ -73,10 +81,20 @@ const MediaCard = (props) => (
         padding-bottom: 1em;
         padding-left: 2px;
         padding-top: 10px;
-        margin-left: 0;
+        margin-left: 20px;
       }
       .cardText {
         padding-top: 5px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .cardTitle:hover{
+        color: grey;
+      }
+      p{
+        padding:0;
+
       }
      `}
    </style>
