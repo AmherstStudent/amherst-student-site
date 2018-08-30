@@ -118,7 +118,7 @@ const Article = withRouter((props) => (
         margin-bottom: 15%;
       }
       .span-4 {
-        grid-column: span 4;
+        grid-column: span 8;
       }
       @media only screen and (min-width: 1000px) {
         aside {
