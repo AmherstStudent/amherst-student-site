@@ -6,7 +6,7 @@ import Container from './container.js'
 let LOCAL_URI = 'http://localhost:1337'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
-    <div style={ props.article.featuredImage.url === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI +props.article.featuredImage.url}')`}} className="cardHeader">
+    <div style={ props.article.featuredImage === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}} className="cardHeader">
 
        <span>{props.article.category.name.toUpperCase()}</span>
 
@@ -86,6 +86,7 @@ MediaCard3.defaultProps = {
     category:{
       name:"Card"
     },
+    featuredImage: 'none',
     title: "Title",
     author: {
       username: "Call me"
