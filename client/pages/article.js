@@ -74,6 +74,12 @@ const Article = withRouter((props) => (
           return (<Grid className="news">
             <Head title={article.title}>
               <meta name="description" content={article.excerpt}  />
+                <meta property="og:locale" content="en_US" />
+                <meta property="og:type" content="article" />
+                <meta property="og:title" content={article.title} />
+                <meta property="og:description" content={article.excerpt} />
+                <meta property="og:url" content={`amherststudent.com/${article.slug}`} />
+                <meta property="og:site_name" content="The Amherst Student" />
             </Head>
             <Article_Header className="header" article={article}/>
 
@@ -106,7 +112,7 @@ const Article = withRouter((props) => (
       }
 
       article {
-        grid-column: 1 / 16;
+        grid-column: span 16;
 
       }
       @media only screen and (min-width: 1000px) {
