@@ -5,7 +5,7 @@ import Container from './container.js'
 let LOCAL_URI = "http://localhost:1337/"
 const MediaCard = (props) => (
   <Card className={`${props.className}`}>
-  <div className="cardHeader" style={{ backgroundImage: `url('${LOCAL_URI +props.article.featuredImage.url}')`}}>
+  <div className="cardHeader" style={ Boolean(props.article.featuredImage)  ? {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}  : {display:'none'} }>
     <span>{props.category}</span>
   </div>
   <Container>

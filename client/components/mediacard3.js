@@ -6,7 +6,7 @@ import Container from './container.js'
 let LOCAL_URI = 'http://api.amherststudent.com'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
-    <div style={ props.article.featuredImage.url === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}} className="cardHeader">
+    <div style={ Boolean(props.article.featuredImage)  ? {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`} : {minHeight:'60px'} } className="cardHeader">
 
        <span>{props.article.category.name.toUpperCase()}</span>
 
@@ -18,6 +18,7 @@ const MediaCard3 = (props) => (
 
       <br />
       <p className="cardAuthor">by {props.article.author.username}, {props.article.author.reporterTitle}</p>
+      <p style={ Boolean(props.article.featuredImage)  ? {display:'none'} : {} }> {props.article.excerpt} </p>
     </div>
     </Link>
     </Container>
