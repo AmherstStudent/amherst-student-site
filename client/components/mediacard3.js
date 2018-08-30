@@ -6,7 +6,7 @@ import Container from './container.js'
 let LOCAL_URI = 'http://api.amherststudent.com'
 const MediaCard3 = (props) => (
   <Card className={`thrds ${ props.className }`}>
-    <div style={ props.article.featuredImage === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}} className="cardHeader">
+    <div style={ props.article.featuredImage.url === null ? {display:none}  : {backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')`}} className="cardHeader">
 
        <span>{props.article.category.name.toUpperCase()}</span>
 
