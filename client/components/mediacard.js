@@ -35,7 +35,7 @@ const MediaCard = (props) => (
         width: 100%;
         overflow: hidden;
         background: bottom;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
       }
       @media screen and (max-width: 768px){
