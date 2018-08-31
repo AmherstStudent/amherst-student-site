@@ -33,7 +33,7 @@ export const GET_HOME_PAGE = gql `
   }
 
 query HomePage{
-views(limit: 1, sort: "updatedAt:asc"){
+views(limit: 1, sort: "createdAt:asc"){
   top_article{
     ...ArticleDetails
   }
@@ -97,7 +97,7 @@ const Home = (props) => (
         if (error)
           return `Error!: ${error}`;
         console.log(data);
-        
+
         let main_view = data.views[0]
 
         return (<Container>
