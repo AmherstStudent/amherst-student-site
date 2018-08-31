@@ -33,7 +33,7 @@ export const GET_HOME_PAGE = gql `
   }
 
 query HomePage{
-views(limit: 1, sort: "createdAt:asc"){
+views(limit: 1, sort: "createdAt:desc"){
   top_article{
     ...ArticleDetails
   }
