@@ -68,7 +68,7 @@ const Nav = () => (
         max-width:300px;
         margin: 0 auto;
         height: auto;
-
+        padding-right: 25px;
       }
       img {
         width:100%;
@@ -92,7 +92,7 @@ const Nav = () => (
         height:auto;
         margin-top:-2%;
         padding-right: 20px;
-        
+
       }
       ul {
         display: flex;
