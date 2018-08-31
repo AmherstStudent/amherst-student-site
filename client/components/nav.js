@@ -74,7 +74,7 @@ const Nav = () => (
         width:100%;
         height: auto;
       }
-      @media (max-width: 500px){
+      @media screen and (max-width: 500px){
         .logo{
           max-width: 350px;
         }
