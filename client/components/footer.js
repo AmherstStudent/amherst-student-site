@@ -7,10 +7,10 @@ const Footer = () => (
 
   <Container>
     <ul>
-      <li><a href="#">Advertisers</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Subscribe</a></li>
+      <li><Link href={`/masthead#ad`} passHref><a>Advertisers</a></Link></li>
+      <li><Link href={`/masthead`} passHref><a>About</a></Link></li>
+      <li><Link href={`/masthead`} passHref><a>Contact</a></Link></li>
+      <li><Link href={`/masthead`} passHref><a>Subscribe</a></Link></li>
     </ul>
   </Container>
 

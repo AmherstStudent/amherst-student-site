@@ -24,10 +24,10 @@ const FeatureNewsCard = (props) => (
         <p className="caption">By The Editoral Board</p>
         <hr />
       </div>
-      <div className="topArticle">
+      <div className="topArticle" id="last">
         <Link href={`/article/Football-Returns-Aims-for-NESCAC-Title-After-Near-Miss`} passHref><a><h4>Football Returns, Aims for NESCAC Title After Near Miss </h4></a></Link>
         <p className="caption">By Matthew Sparrow '21</p>
-        <hr />
+
       </div>
     </div>
     </Container>
@@ -65,7 +65,9 @@ const FeatureNewsCard = (props) => (
     .caption{
       font-size:16px;
     }
-
+    #last{
+      padding-bottom: 20px;
+    }
 
 
 
