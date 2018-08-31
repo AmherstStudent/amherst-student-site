@@ -74,12 +74,12 @@ const Nav = () => (
         width:100%;
         height: auto;
       }
-      @media screen and (max-width: 500px){
+      @media screen and (max-width: 800px){
         .logo{
           max-width: 350px;
         }
         img{
-          width: 100%;
+          width: contain;
         }
         ul{
           width: 50%;
@@ -90,8 +90,8 @@ const Nav = () => (
       .subline {
         width: 100%;
         height:auto;
-        margin-top:-2%;
-        padding-right: 20px;
+
+        padding-right: 200px;
 
       }
       ul {
