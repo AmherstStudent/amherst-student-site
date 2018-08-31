@@ -91,6 +91,8 @@ const Nav = () => (
         width: 100%;
         height:auto;
         margin-top:-2%;
+        padding-right: 20px;
+        
       }
       ul {
         display: flex;
