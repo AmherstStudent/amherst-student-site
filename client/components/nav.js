@@ -19,11 +19,15 @@ const links = [
 
 const Nav = () => (
   <nav>
+
   <div className="logo">
+    <a href="index">
     <img src="/static/logo.svg" alt="the Amherst Student" />
+    </a>
     <img src="/static/logo-subline.svg" alt="the student newspaper since 1868" className="subline"/>
 
   </div>
+
   <hr />
 
       <ul>
@@ -61,8 +65,10 @@ const Nav = () => (
         margin-bottom:0px;
         padding-bottom: 10px;
         padding-left: 10px;
-        max-width:400px;
+        max-width:300px;
         margin: 0 auto;
+        height: auto;
+
       }
       img {
         width:100%;
@@ -70,7 +76,7 @@ const Nav = () => (
       }
       @media (max-width: 500px){
         .logo{
-          max-width: 300px;
+          max-width: 350px;
         }
         img{
           width: 100%;
@@ -82,7 +88,7 @@ const Nav = () => (
 
 
       .subline {
-        width: 85%;
+        width: 100%;
         height:auto;
         margin-top:-2%;
       }
@@ -102,9 +108,7 @@ const Nav = () => (
         -webkit-margin-before: 0;
         -webkit-margin-after: 0;
       }
-      nav > ul {
 
-      }
 
       li {
         display: flex;
@@ -122,9 +126,7 @@ const Nav = () => (
         text-decoration: none;
         font-size: 13px;
       }
-      img{
-        padding: 5px;
-      }
+
 
     `}</style>
   </nav>
