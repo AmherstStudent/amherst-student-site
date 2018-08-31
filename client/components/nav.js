@@ -11,7 +11,7 @@ const links = [
   { href: '/category?name=Opinion', label: 'OPINION'},
   { href: '/category?name=Arts and Living', label: 'ARTS AND LIVING'},
   { href: '/category?name=Sports', label: 'SPORTS'},
-  { href: '/news', label: 'PRINT ISSUES'}
+  { href: 'https://issuu.com/amherststudent/docs/issue_1_44e01646c9385d', label: 'PRINT ISSUES'}
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
