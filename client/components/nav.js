@@ -122,6 +122,9 @@ const Nav = () => (
         text-decoration: none;
         font-size: 13px;
       }
+      img{
+        padding: 5px;
+      }
 
     `}</style>
   </nav>
