@@ -90,7 +90,7 @@ const Nav = () => (
       .subline {
         width: 100%;
         height:auto;
-
+        display: none;
         padding-right: 200px;
 
       }
