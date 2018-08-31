@@ -8,15 +8,25 @@ const FeatureNewsCard = (props) => (
 
     <Container>
     <div className="cardContent">
-      <h3 className="cardTitle">FAVORITE ARTICLES</h3>
+      <h3 className="cardTitle">TOP ARTICLES</h3>
       <div className="topArticle">
-        <h4>Aspiring Doctor Personifies Poise on the Pitch</h4>
-        <p className="caption">by Connor Haugh 21</p>
+        <Link href={`/article/Familiar-Story-Unfamiliar-Faces-Crazy-Rich-Asians-Triumphs`} passHref><a><h4>Familiar Story, Unfamiliar Faces: “Crazy Rich Asians” Triumph</h4></a></Link>
+        <p className="caption">by Seoyeon Kim '21</p>
         <hr />
       </div>
       <div className="topArticle">
-        <h4>Aspiring Doctor Personifies Poise on the Pitch</h4>
-        <p className="caption">by Connor Haugh 21</p>
+        <Link href={`/article/three-new-administrators-aim-to-leave-their-impact-on-amherst`} passHref><a><h4>Three New Administrators Aim to Leave Their Impact on Amherst</h4></a></Link>
+        <p className="caption">By Audrey Cheng '20 and Natalie De Rosa '21</p>
+        <hr />
+      </div>
+      <div className="topArticle">
+        <Link href={`/article/Advice-for-Class-of-2022`} passHref><a><h4>Advice for Class of 2022</h4></a></Link>
+        <p className="caption">By The Editoral Board</p>
+        <hr />
+      </div>
+      <div className="topArticle">
+        <Link href={`/article/Football-Returns-Aims-for-NESCAC-Title-After-Near-Miss`} passHref><a><h4>Football Returns, Aims for NESCAC Title After Near Miss </h4></a></Link>
+        <p className="caption">By Matthew Sparrow '21</p>
         <hr />
       </div>
     </div>
@@ -46,6 +56,16 @@ const FeatureNewsCard = (props) => (
 
 
     }
+    h4, a {
+      text-decoration: none;
+    }
+    h4:hover{
+      color:grey;
+    }
+    .caption{
+      font-size:16px;
+    }
+
 
 
 
