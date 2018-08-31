@@ -14,7 +14,7 @@ const List_Item = (props) => (
     <div className="cardContent">
       <span>{props.article.category.name.toUpperCase()}</span>
       <Link href={`/article/${props.article.slug}`} passHref><a><h4>{props.article.title}</h4></a></Link>
-      <p className="author">by {props.article.author.username}, {props.article.author.reporterTitle} || {moment(props.article.updatedAt).format('MMMM D YYYY')}</p>
+      <p className="author">by {props.article.author.username}, {props.article.author.reporterTitle} || {moment(props.article.createdAt).format('MMMM D YYYY')}</p>
       <p>{props.article.excerpt}</p>
     </div>
 

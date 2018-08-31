@@ -6,28 +6,27 @@ import { gql } from 'apollo-boost';
 import { Query } from 'react-apollo';
 
 const query = gql`
-fragment CategoryArticleDetails on Article {
-  title
-      updatedAt
-      author{
-        username
-        reporterTitle
-      }
-      excerpt
-      _id
-      category{
-        name
-      }
-      slug
-}
+
 
 query CategoryLookup($name : String!) {
   categories(where: { name_contains: $name }) {
-    Category{
-    ...CategoryArticleDetails
+    Category(sort: "createdAt:desc"){
+            title
+            createdAt
+            author{
+              username
+              reporterTitle
+            }
+            excerpt
+            _id
+            category{
+              name
+            }
+            slug
+      }
     }
   }
-}
+
 
 `
 
