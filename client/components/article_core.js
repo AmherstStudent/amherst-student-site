@@ -14,14 +14,13 @@ const Article_Core = props => (
   <Card className="article">
     <Container>
       <div>
-        <div className="article_core" dangerouslySetInnerHTML={createMarkup(props.article.content)} />
+        <div className="article_text" dangerouslySetInnerHTML={createMarkup(props.article.content)} />
       </div>
     </Container>
     <style jsx>
       {`
-        .article_core {
-          margin-top: 20px;
-          margin-bottom: 20px;
+        .article_text {
+          margin : 20px 0px 20px 0px;
         }
       `}
     </style>

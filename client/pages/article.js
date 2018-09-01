@@ -7,15 +7,15 @@ import Card from '../components/card.js'
 import AuthorCard from '../components/authorcard'
 import FeatureNewsCard from '../components/featurenewscard.js'
 import ImageCard from '../components/image_card'
-import { withRouter } from 'next/router'
+import {withRouter} from 'next/router'
 import Article_Core from '../components/article_core'
-import { gql } from 'apollo-boost'
-import { Query } from 'react-apollo'
+import {gql} from 'apollo-boost';
+import {Query} from 'react-apollo';
 import moment from 'moment'
 import CommentsContainer from '../components/comments'
 import Article_Header from '../components/article_header'
 
-const query = gql`
+const query = gql `
   fragment ArticlePageDetails on Article {
     title
     excerpt
@@ -31,114 +31,118 @@ const query = gql`
       username
       reporterTitle
       reporterBio
-      reporterPhoto {
+      reporterPhoto{
         url
       }
     }
-    view {
-      words
+    volumeIssue{
+      volume_issue_number
     }
     content
     _id
+
   }
 
-  query Article_Lookup($slug: String!) {
+  query Article_Lookup($slug: String!){
     articles(where: { slug: $slug }) {
       ...ArticlePageDetails
     }
   }
 `
 
-const Article = withRouter(props => (
+const Article = withRouter((props) => (
   <div className="main-content">
-    <Container>
-      <Query query={query} variables={{ slug: props.router.query.slug }}>
-        {({ loading, error, data }) => {
-          if (loading) return null
-          if (error) return `Error!: ${error}`
+
+  <Container>
+    <Query query={query} variables={{ slug: props.router.query.slug }}>
+      {
+        ({loading, error, data}) => {
+          if (loading)
+            return null;
+          if (error)
+            return `Error!: ${error}`;
           let article = data.articles[0]
-          function imageChecker() {
-            if (article.featuredImage === null) {
-              return false
-            } else {
-              return true
-            }
+          function imageChecker(){
+          if (article.featuredImage === null) {
+            return false;
+          }
+          else {
+            return true;
+          }
           }
 
-          return (
-            <Grid className="news">
-              <Head title={article.title}>
-                <meta name="description" content={article.excerpt} />
+          return (<Grid>
+            <Head title={article.title}>
+              <meta name="description" content={article.excerpt}  />
                 <meta property="og:locale" content="en_US" />
                 <meta property="og:type" content="article" />
                 <meta property="og:title" content={article.title} />
                 <meta property="og:description" content={article.excerpt} />
                 <meta property="og:url" content={`amherststudent.com/${article.slug}`} />
                 <meta property="og:site_name" content="The Amherst Student" />
-              </Head>
-              <Article_Header className="header" article={article} />
+            </Head>
+            <Article_Header className="header" article={article}/>
 
-              <article>
-                {imageChecker() ? <ImageCard article={article} /> : ' '}
+            <article>
+              {imageChecker() ? <ImageCard article={article}/> : ' '}
 
-                <Article_Core article={article} />
-                <CommentsContainer article={article} />
-              </article>
+              <Article_Core article={article}/>
+              <CommentsContainer article={article}/>
+            </article>
 
-              <aside className="span-4">
-                <AuthorCard type="author" author={article.author} />
-                <FeatureNewsCard className="article" />
-              </aside>
-            </Grid>
-          )
-        }}
-      </Query>
-    </Container>
-
-    <style jsx="jsx">
-      {`
-        .main-content {
-          padding-top: 300px;
-          min-height: 100vh;
-          font-family: 'adobe-garamond-pro', serif;
-          background: #f1f1f1;
-          padding-top: 180px;
-          padding-bottom: 20px;
+            <aside>
+              <AuthorCard type="author" author={article.author}/>
+              <FeatureNewsCard className="article"/>
+            </aside>
+          </Grid>)
         }
+      }
+    </Query>
+  </Container>
 
+  <style jsx="jsx">
+    {
+      ` .main-content {
+        padding-top: 300px;
+        min-height: 100vh;
+        font-family: "adobe-garamond-pro",serif;
+        background: #F1F1F1;
+        padding-top: 180px;
+        padding-bottom: 20px;
+        width: 100vw;
+      }
+
+
+      @media only screen and (min-width: 1300px) {
         article {
-          grid-column: span 16;
+          grid-column: 1 / 11;
         }
-        @media only screen and (min-width: 1300px) {
-          article {
-            grid-column: 1 / 9;
-          }
+        aside {
+          grid-column: 11/ 19;
         }
-        article > * {
-          margin-bottom: 15%;
+        .header{
+          grid-column: span 20;
         }
-        .span-4 {
-          grid-column: span 8;
+      }
+      article > * {
+        margin-bottom: 15%;
+      }
+      @media only screen and (max-width: 1300px) {
+        article {
+          grid-column: span 19;
         }
-        @media only screen and (min-width: 1000px) {
-          aside {
-            margin: 0 auto;
-          }
-          .header {
-            grid-column: span 16;
-          }
+        aside {
+          grid-column: span 19;
         }
+        .header{
+          grid-column: span 20;
+        }
+      }
 
-        .span-12 {
-          height: contain;
-        }
 
-        .header {
-          grid-column: span 16;
-        }
-      `}
-    </style>
-  </div>
-))
+
+       `
+    }</style>
+</div>))
 
 export default Article

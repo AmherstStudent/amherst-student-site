@@ -11,6 +11,7 @@ const Card = props => (
         display: flex;
         flex-direction: column;
         width: 100%;
+        min-width: 100%;
         /* Rectangle 5: */
         background: #ffffff;
         box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
@@ -38,11 +39,11 @@ const Card = props => (
         grid-column: span 9;
       }
       .span-12 {
-        grid-column: span 16;
+        grid-column: span 18;
       }
       @media screen and (max-width: 768px) {
         .card {
-          grid-column: span 16;
+          grid-column: span 19;
         }
       }
       .third {
@@ -63,6 +64,7 @@ const Card = props => (
       .thrds {
         margin-right: 10px;
       }
+
     `}</style>
   </div>
 )
