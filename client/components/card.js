@@ -2,73 +2,69 @@ import React from 'react'
 import Link from 'next/link'
 import Container from '../components/container'
 
-const Card = (props) => (
-  <div className={`card ${ props.className }`}>
+const Card = props => (
+  <div className={`card ${props.className}`}>
+    {props.children}
 
-    { props.children }
-
-
-
-
-  <style jsx>{`
-    .card{
-      display:flex;
-      flex-direction: column;
-      width:100%;
-      /* Rectangle 5: */
-      background: #FFFFFF;
-      box-shadow: 0 1px 0 0 rgba(0,0,0,0.50);
-      overflow:hidden;
-    }
-    .card:hover{
-      box-shadow: -5px -1px 19px -4px  rgba(133, 108, 176,0.50);
-    }
-    .span-3{
-      grid-column: span 3;
-    }
-    .span-4{
-      grid-column: span 4;
-    }
-    .span-5{
-      grid-column: span 5;
-    }
-    .span-8{
-      grid-column: span 8;
-    }
-    .span-6{
-      grid-column: span 6;
-    }
-    .span-9{
-      grid-column: span 9;
-    }
-    .span-12{
-      grid-column: span 16;
-    }
-    @media screen and (max-width: 768px){
-      .card{
+    <style jsx>{`
+      .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* Rectangle 5: */
+        background: #ffffff;
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+      .card:hover {
+        box-shadow: -5px -1px 19px -4px rgba(133, 108, 176, 0.5);
+      }
+      .span-3 {
+        grid-column: span 3;
+      }
+      .span-4 {
+        grid-column: span 4;
+      }
+      .span-5 {
+        grid-column: span 5;
+      }
+      .span-8 {
+        grid-column: span 8;
+      }
+      .span-6 {
+        grid-column: span 6;
+      }
+      .span-9 {
+        grid-column: span 9;
+      }
+      .span-12 {
         grid-column: span 16;
       }
-    }
-    .third {
-      min-height: 30%;
-      margin-bottom: 3%;
-    }
-    @media screen and (max-width: 768px){
-      .third{
-        grid-column: 1/14;
+      @media screen and (max-width: 768px) {
+        .card {
+          grid-column: span 16;
+        }
       }
-    }
-    .article{
-      margin-bottom: 20px;
-    }
-    .margin-20{
-      margin-bottom: 20px;
-    }
-    .thrds{
-      margin-right: 10px;
-    }
- `}</style>
- </div>
+      .third {
+        min-height: 30%;
+        margin-bottom: 3%;
+      }
+      @media screen and (max-width: 768px) {
+        .third {
+          grid-column: 1/14;
+        }
+      }
+      .article {
+        margin-bottom: 20px;
+      }
+      .margin-20 {
+        margin-bottom: 20px;
+      }
+      .thrds {
+        margin-right: 10px;
+      }
+    `}</style>
+  </div>
 )
 
 export default Card

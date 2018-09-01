@@ -4,17 +4,32 @@ import Container from './container'
 
 const Footer = () => (
   <footer>
+    <Container>
+      <ul>
+        <li>
+          <Link href={`/masthead#ad`} passHref>
+            <a>Advertisers</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/masthead`} passHref>
+            <a>About</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/masthead`} passHref>
+            <a>Contact</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/masthead`} passHref>
+            <a>Subscribe</a>
+          </Link>
+        </li>
+      </ul>
+    </Container>
 
-  <Container>
-    <ul>
-      <li><Link href={`/masthead#ad`} passHref><a>Advertisers</a></Link></li>
-      <li><Link href={`/masthead`} passHref><a>About</a></Link></li>
-      <li><Link href={`/masthead`} passHref><a>Contact</a></Link></li>
-      <li><Link href={`/masthead`} passHref><a>Subscribe</a></Link></li>
-    </ul>
-  </Container>
-
-  <style jsx>{`
+    <style jsx>{`
 
   footer {
     background: #333333;
@@ -49,7 +64,7 @@ const Footer = () => (
   }
 
  `}</style>
- </footer>
+  </footer>
 )
 
 export default Footer

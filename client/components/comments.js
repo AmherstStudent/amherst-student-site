@@ -1,18 +1,22 @@
-import React from 'react';
+import React from 'react'
 import Card from './card'
 import Container from './container'
 import ReactDisqusComments from 'react-disqus-comments'
 
-const CommentsContainer = (props) => (
+const CommentsContainer = props => (
   <div className="comments">
-    <Card classname ="article">
+    <Card classname="article">
       <Container>
-        <ReactDisqusComments shortname="AmherstStudent" identifier={props.article._id} title={props.article.title} url={'http://amherststudent.com/' + props.article.slug} category_id={props.article.category._id}/>
+        <ReactDisqusComments
+          shortname="AmherstStudent"
+          identifier={props.article._id}
+          title={props.article.title}
+          url={'http://amherststudent.com/' + props.article.slug}
+          category_id={props.article.category._id}
+        />
       </Container>
     </Card>
-    <style jsx>{`
-
-    `}</style>
+    <style jsx>{``}</style>
   </div>
 )
 

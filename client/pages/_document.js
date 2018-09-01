@@ -7,7 +7,6 @@ import Footer from '../components/footer'
 import Nav from '../components/nav'
 import ga from '../lib/ga'
 
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
@@ -18,26 +17,25 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css"/>
-          <script dangerouslySetInnerHTML={{__html: ga}} />
-          <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet"/>
+          <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css" />
+          <script dangerouslySetInnerHTML={{ __html: ga }} />
+          <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" />
 
-          <style>{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
+          <style
+          >{`body { margin: 0; font-size: 18px; auto; width: 100%; display:flex; flex-direction: column;} /* custom! */`}</style>
         </Head>
 
         <body className="home_page">
           <Nav />
           <Main />
           <NextScript />
-          <Footer className="bottom"/>
+          <Footer className="bottom" />
         </body>
 
-
-
         <style>
-        {`
+          {`
           html{
             width: 100vw;
           }
@@ -68,9 +66,7 @@ export default class MyDocument extends Document {
             grid-column: 2;
           }
         `}
-
         </style>
-
       </html>
     )
   }

@@ -2,16 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import Container from './container.js'
 
-
-
-
 const links = [
   { href: '/index', label: 'HOME' },
-  { href: '/category?name=News', label: 'NEWS'},
-  { href: '/category?name=Opinion', label: 'OPINION'},
-  { href: '/category?name=Arts and Living', label: 'ARTS AND LIVING'},
-  { href: '/category?name=Sports', label: 'SPORTS'},
-  { href: 'https://issuu.com/amherststudent/docs/issue_1_44e01646c9385d', label: 'PRINT ISSUES'}
+  { href: '/category?name=News', label: 'NEWS' },
+  { href: '/category?name=Opinion', label: 'OPINION' },
+  { href: '/category?name=Arts and Living', label: 'ARTS AND LIVING' },
+  { href: '/category?name=Sports', label: 'SPORTS' },
+  { href: 'https://issuu.com/amherststudent/docs/issue_1_44e01646c9385d', label: 'PRINT ISSUES' }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
@@ -19,87 +16,77 @@ const links = [
 
 const Nav = () => (
   <nav>
+    <div className="logo">
+      <a href="index">
+        <img src="/static/logo.svg" alt="the Amherst Student" />
+      </a>
+      <img src="/static/logo-subline.svg" alt="the student newspaper since 1868" className="subline" />
+    </div>
 
-  <div className="logo">
-    <a href="index">
-    <img src="/static/logo.svg" alt="the Amherst Student" />
-    </a>
-    <img src="/static/logo-subline.svg" alt="the student newspaper since 1868" className="subline"/>
+    <hr />
 
-  </div>
-
-  <hr />
-
-      <ul>
-
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href} prefetch>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-
-
-      </ul>
-
+    <ul>
+      {links.map(({ key, href, label }) => (
+        <li key={key}>
+          <Link href={href} prefetch>
+            <a>{label}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
 
     <style jsx>{`
       nav {
-        display:inline;
+        display: inline;
         width: 100%;
         top: 0;
         z-index: 200;
         background-color: white;
         text-align: center;
         position: fixed;
-        box-shadow: 0 1px 0 0 rgba(0,0,0,0.50);
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
       }
-
 
       hr {
-        color: rgba(255,255,255, 0.2);
+        color: rgba(255, 255, 255, 0.2);
       }
-      .logo{
-        padding-top:20px;
-        margin-bottom:0px;
+      .logo {
+        padding-top: 20px;
+        margin-bottom: 0px;
         padding-bottom: 10px;
         padding-left: 10px;
-        max-width:300px;
+        max-width: 300px;
         margin: 0 auto;
         height: auto;
         padding-right: 25px;
       }
       img {
-        width:100%;
+        width: 100%;
         height: auto;
       }
-      @media screen and (max-width: 800px){
-        .logo{
+      @media screen and (max-width: 800px) {
+        .logo {
           max-width: 350px;
         }
-        img{
+        img {
           width: contain;
         }
-        ul{
+        ul {
           width: 50%;
         }
       }
 
-
       .subline {
         width: 100%;
-        height:auto;
+        height: auto;
         display: none;
         padding-right: 200px;
-
       }
       ul {
         display: flex;
         justify-content: space-between;
-
       }
-      ul{
+      ul {
         padding-left: 0;
         width: 85%;
         margin: 0 auto;
@@ -111,14 +98,13 @@ const Nav = () => (
         -webkit-margin-after: 0;
       }
 
-
       li {
         display: flex;
         list-style-type: none;
-        color:black;
+        color: black;
       }
-      @media (max-width: 620px){
-        li{
+      @media (max-width: 620px) {
+        li {
           width: 85%;
         }
       }
@@ -128,8 +114,6 @@ const Nav = () => (
         text-decoration: none;
         font-size: 13px;
       }
-
-
     `}</style>
   </nav>
 )

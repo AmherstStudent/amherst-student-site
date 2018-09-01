@@ -7,12 +7,12 @@ class Main extends React.Component {
   render() {
     return (
       <div className="content">
-      <Container>
-      <Grid>
-        { this.props.children }
-      </Grid>
-      </Container>
-        <style jsx> {`
+        <Container>
+          <Grid>{this.props.children}</Grid>
+        </Container>
+        <style jsx>
+          {' '}
+          {`
         .content{
           min-height: 100vh;
           font-family: "adobe-garamond-pro",serif;
@@ -23,10 +23,8 @@ class Main extends React.Component {
         }
 
         `}
-
-      </style>
+        </style>
       </div>
-
     )
   }
 }
