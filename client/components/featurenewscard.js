@@ -35,7 +35,9 @@ const FeatureNewsCard = (props) => (
 
   <style jsx>{`
     h4{
-      font-family: AGaramondPro-SemiboldItalic;
+      font-family: "adobe-garamond-pro",serif;
+      font-weight:600;
+      font-style: italic;
       font-size: 26px;
       color: #000000;
       letter-spacing: 0.05px;
