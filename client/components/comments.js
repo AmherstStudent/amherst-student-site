@@ -5,7 +5,7 @@ import ReactDisqusComments from 'react-disqus-comments'
 
 const CommentsContainer = props => (
   <div className="comments">
-    <Card classname="article">
+    <Card>
       <Container>
         <ReactDisqusComments
           shortname="AmherstStudent"
@@ -16,7 +16,12 @@ const CommentsContainer = props => (
         />
       </Container>
     </Card>
-    <style jsx>{``}</style>
+    <style jsx>{`
+      .comments{
+        margin-bottom: 20px;
+      }
+
+            `}</style>
   </div>
 )
 

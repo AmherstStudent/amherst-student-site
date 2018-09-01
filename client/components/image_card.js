@@ -4,11 +4,11 @@ import Card from './card.js'
 import Container from './container.js'
 
 const Image_Card = props => (
-  <Card className={`article ${props.className}`}>
+  <Card className={`margin-20 ${props.className}`}>
     <figure>
       <img src={'http://api.amherststudent.com/' + props.article.featuredImage.url} />
       <figcaption>
-        <em>{props.article.excerpt}</em>
+        <p>{props.article.excerpt}</p>
       </figcaption>
     </figure>
 
@@ -32,11 +32,12 @@ const Image_Card = props => (
           color: white;
           background: rgba(0, 0, 0, 0.7);
         }
-        em {
-          margin-left: 3%;
+        p {
+          color: white;
           font-weight: 100;
           font-style: italic;
           font-size: 16px;
+          padding-right: 10px;
         }
         img {
           vertical-align: bottom;

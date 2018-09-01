@@ -55,9 +55,7 @@ const Card = props => (
           grid-column: 1/14;
         }
       }
-      .article {
-        margin-bottom: 20px;
-      }
+      
       .margin-20 {
         margin-bottom: 20px;
       }

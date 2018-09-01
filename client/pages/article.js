@@ -91,8 +91,8 @@ const Article = withRouter((props) => (
             </article>
 
             <aside>
-              <AuthorCard type="author" author={article.author}/>
-              <FeatureNewsCard className="article"/>
+              <AuthorCard className="margin-20" type="author" author={article.author}/>
+              <FeatureNewsCard className="margin-20"/>
             </aside>
           </Grid>)
         }
@@ -107,7 +107,7 @@ const Article = withRouter((props) => (
         min-height: 100vh;
         font-family: "adobe-garamond-pro",serif;
         background: #F1F1F1;
-        padding-top: 180px;
+        padding-top: 140px;
         padding-bottom: 20px;
         width: 100vw;
       }
@@ -120,7 +120,7 @@ const Article = withRouter((props) => (
         aside {
           grid-column: 11/ 19;
         }
-        
+
       }
       article > * {
         margin-bottom: 15%;

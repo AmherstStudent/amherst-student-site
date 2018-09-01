@@ -11,7 +11,7 @@ function createMarkup(content) {
 }
 
 const Article_Core = props => (
-  <Card className="article">
+  <Card className="margin-20">
     <Container>
       <div>
         <div className="article_text" dangerouslySetInnerHTML={createMarkup(props.article.content)} />
