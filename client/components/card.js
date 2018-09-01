@@ -43,7 +43,7 @@ const Card = props => (
       }
       @media screen and (max-width: 768px) {
         .card {
-          grid-column: span 19;
+          grid-column: span 18;
         }
       }
       .third {
@@ -52,10 +52,10 @@ const Card = props => (
       }
       @media screen and (max-width: 768px) {
         .third {
-          grid-column: 1/14;
+          grid-column: 1/18;
         }
       }
-      
+
       .margin-20 {
         margin-bottom: 20px;
       }

@@ -152,7 +152,7 @@ const Home = props => (
         }
         @media screen and (max-width: 768px) {
           .tripleContainer {
-            grid-column: span 16;
+            grid-column: span 18;
           }
         }
 
@@ -169,7 +169,7 @@ const Home = props => (
         }
         @media screen and (max-width: 768px) {
           .words2 {
-            grid-column: span 16;
+            grid-column: span 18;
           }
         }
         .span-14 {
