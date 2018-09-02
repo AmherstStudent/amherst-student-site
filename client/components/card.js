@@ -47,7 +47,7 @@ const Card = props => (
         }
       }
       .third {
-        height: 30%;
+        height: 32%;
 
       }
       .third:nthChild(3){
