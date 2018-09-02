@@ -3,30 +3,31 @@ import Link from 'next/link'
 import Container from './container.js'
 import Grid from './grid.js'
 
-class Main extends React.Component {
-  render() {
-    return (
+const Main = (props) => (
       <div className="content">
         <Container>
-          <Grid>{this.props.children}</Grid>
-        </Container>
+
+        {props.children}
+
+      </Container>
         <style jsx>
-          {' '}
+
           {`
         .content{
+          padding-top: 300px;
           min-height: 100vh;
           font-family: "adobe-garamond-pro",serif;
           background: #F1F1F1;
-          padding-top:50px;
+          padding-top: 140px;
           padding-bottom: 20px;
+          width: 100vw;
           }
-        }
+
 
         `}
         </style>
       </div>
     )
-  }
-}
+
 
 export default Main

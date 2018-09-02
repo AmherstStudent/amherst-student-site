@@ -88,6 +88,7 @@ const MediaCard = props => (
           padding-left: 2px;
           padding-top: 10px;
           margin-left: 20px;
+          margin-right:20px;
         }
         .cardText {
           padding-top: 5px;

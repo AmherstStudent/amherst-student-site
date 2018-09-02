@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from '../components/head'
-import Container from '../components/container'
 import Grid from '../components/grid.js'
 import Card from '../components/card.js'
 import AuthorCard from '../components/authorcard'
@@ -9,52 +8,21 @@ import FeatureNewsCard from '../components/featurenewscard.js'
 import ImageCard from '../components/image_card'
 import {withRouter} from 'next/router'
 import Article_Core from '../components/article_core'
+import Main from '../components/main'
 import {gql} from 'apollo-boost';
 import {Query} from 'react-apollo';
 import moment from 'moment'
 import CommentsContainer from '../components/comments'
 import Article_Header from '../components/article_header'
+import {ARTICLE_LOOKUP} from '../lib/queries.js'
 
-const query = gql `
-  fragment ArticlePageDetails on Article {
-    title
-    excerpt
-    slug
-    category {
-      name
-    }
-    updatedAt
-    featuredImage {
-      url
-    }
-    author {
-      username
-      reporterTitle
-      reporterBio
-      reporterPhoto{
-        url
-      }
-    }
-    volumeIssue{
-      volume_issue_number
-    }
-    content
-    _id
 
-  }
-
-  query Article_Lookup($slug: String!){
-    articles(where: { slug: $slug }) {
-      ...ArticlePageDetails
-    }
-  }
-`
 
 const Article = withRouter((props) => (
-  <div className="main-content">
+  <Main>
 
-  <Container>
-    <Query query={query} variables={{ slug: props.router.query.slug }}>
+
+    <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }}>
       {
         ({loading, error, data}) => {
           if (loading)
@@ -98,19 +66,11 @@ const Article = withRouter((props) => (
         }
       }
     </Query>
-  </Container>
+
 
   <style jsx="jsx">
     {
-      ` .main-content {
-        padding-top: 300px;
-        min-height: 100vh;
-        font-family: "adobe-garamond-pro",serif;
-        background: #F1F1F1;
-        padding-top: 140px;
-        padding-bottom: 20px;
-        width: 100vw;
-      }
+      `
 
 
       @media only screen and (min-width: 1300px) {
@@ -139,6 +99,6 @@ const Article = withRouter((props) => (
 
        `
     }</style>
-</div>))
+</Main>))
 
 export default Article

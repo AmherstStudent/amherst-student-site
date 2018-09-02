@@ -7,9 +7,9 @@ const OneThirdCard = props => (
   <Card className={`third ${props.className}`}>
     <div>
       <div className="cardContent">
-        <div className="holder">
+
           <span className="category">{props.article.category.name.toUpperCase()}</span>
-        </div>
+
 
         <h4 className="cardTitle">
           <Link href={`/article/${props.article.slug}`} passHref>
@@ -26,15 +26,10 @@ const OneThirdCard = props => (
     </div>
 
     <style jsx>{`
-      h4 {
-        font-weight: 600;
-        font-style: italic;
-        font-size: 26px;
-        line-height: 1.15em;
-        color: #000000;
-        letter-spacing: 0.05px;
-        margin-bottom: 0px;
-        margin-top: 10px;
+      .cardContent {
+        margin: 0 0 0 10px;
+        max-width: 90%;
+        padding: 10px;
       }
       .category {
         background: #5d3c85;
@@ -46,35 +41,36 @@ const OneThirdCard = props => (
         margin-top: 40px;
         padding: 5px;
       }
-      .holder {
-        margin-top: 5px;
+
+      .cardTitle {
+        font-weight: 600;
+        font-style: italic;
+        font-size: 26px;
+        line-height: 1.15em;
+        color: #000000;
+        letter-spacing: 0.05px;
+        margin-bottom: 0px;
+        margin-top: 10px;
+        padding-top: 5pxl
       }
-      .cardContent {
-        margin: 0 0 0 10px;
-        max-width: 90%;
-        padding: 10px;
+
+      a {
+        text-decoration: none;
+        color: black;
       }
+
+      a:hover {
+        color: grey;
+      }
+
       .cardAuthor {
         font-size: 14px;
         font-weight: 100;
         padding: 0;
         margin: 0;
       }
-      br {
-        height: 5px;
-      }
-      h3 {
-        font-family: 'europa', sans-serif;
-      }
-      .cardTitle {
-        margin-bottom: 0;
-      }
-      .third {
-        display: flex;
-        flex-direction: column;
-      }
+
       .cardText {
-        /* Aziz Khan was picked: */
         margin-top: 2px;
         font-size: 16px;
         color: #000000;
@@ -82,24 +78,19 @@ const OneThirdCard = props => (
         line-height: 1.25em;
         padding-bottom: 10px;
       }
+
+      br {
+        height: 5px;
+      }
+
       @media screen and (max-width: 768px) {
         .cardText {
           padding-bottom: 20px;
         }
       }
-      .cleaner > * {
-        padding: 20px;
-      }
-      a {
-        text-decoration: none;
-        color: black;
-      }
-      a:hover {
-        color: grey;
-      }
-      h4 {
-        padding-top: 5px;
-      }
+    
+
+
     `}</style>
   </Card>
 )
