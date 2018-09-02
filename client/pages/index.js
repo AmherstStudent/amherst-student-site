@@ -115,7 +115,7 @@ const Home = props => (
               </div>
               <MediaCard3 article={main_view.opinion_first} className="span-4" />
               <MediaCard3 article={main_view.opinion_second} className="span-4" />
-              <MediaCard3 article={main_view.opinion_third} className="span-4" />
+              <MediaCard3 article={main_view.opinion_third} className="span-5" />
               <div className="tripleContainer">
                 <OneThirdCard article={main_view.arts_living_first_third} />
                 <OneThirdCard article={main_view.arts_living_second_third} />
@@ -127,7 +127,7 @@ const Home = props => (
 
               <MediaCard3 article={main_view.sports_first} className="span-4" />
               <MediaCard3 article={main_view.sports_second} className="span-4" />
-              <MediaCard3 article={main_view.sports_third} className="span-4" />
+              <MediaCard3 article={main_view.sports_third} className="span-5" />
             </Grid>
           </Container>
         )
@@ -177,6 +177,7 @@ const Home = props => (
           display: flex;
           justify-content: space-between;
         }
+
       `}
     </style>
   </div>
