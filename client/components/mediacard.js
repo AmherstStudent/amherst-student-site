@@ -3,33 +3,33 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 let LOCAL_URI = 'http://api.amherststudent.com'
-const MediaCard = props => (
-  <Card className={`${props.className}`}>
-    <Link href={`/article/${props.article.slug}`} passHref>
+const MediaCard = ({ article, className }) => (
+  <Card className={`${className}`}>
+    <Link href={`/article/${article.slug}`} passHref>
       <a>
         <div
           className="cardHeader"
           style={
-            Boolean(props.article.featuredImage)
-              ? { backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')` }
+            Boolean(article.featuredImage)
+              ? { backgroundImage: `url('${LOCAL_URI + article.featuredImage.url}')` }
               : { display: 'none' }
           }
         >
-          <span>{props.article.category.name.toUpperCase()}</span>
+          <span>{article.category.name.toUpperCase()}</span>
         </div>
       </a>
     </Link>
 
     <div className="cardContent">
-      <Link href={`/article/${props.article.slug}`} passHref>
+      <Link href={`/article/${article.slug}`} passHref>
         <a>
-          <h2 className="cardTitle">{props.article.title}</h2>
+          <h2 className="cardTitle">{article.title}</h2>
         </a>
       </Link>
       <p className="cardAuthor">
-        by {props.article.author.username}, {props.article.author.reporterTitle}{' '}
+        by {article.author.username}, {article.author.reporterTitle}{' '}
       </p>
-      <p className="cardText">{props.article.excerpt}.</p>
+      <p className="cardText">{article.excerpt}.</p>
     </div>
 
     <style jsx="jsx">

@@ -3,24 +3,24 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 
-const OneThirdCard = props => (
-  <Card className={`third ${props.className}`}>
+const OneThirdCard = ({article, className}) => (
+  <Card className={`third ${className}`}>
     <div>
       <div className="cardContent">
 
-          <span className="category">{props.article.category.name.toUpperCase()}</span>
+          <span className="category">{article.category.name.toUpperCase()}</span>
 
 
         <h4 className="cardTitle">
-          <Link href={`/article/${props.article.slug}`} passHref>
-            <a>{props.article.title}</a>
+          <Link href={`/article/${article.slug}`} passHref>
+            <a>{article.title}</a>
           </Link>{' '}
           <br />{' '}
           <span className="cardAuthor">
-            by {props.article.author.username}, {props.article.author.reporterTitle}
+            by {article.author.username}, {article.author.reporterTitle}
           </span>
         </h4>
-        <p className="cardText">{props.article.excerpt}</p>
+        <p className="cardText">{article.excerpt}</p>
       </div>
       <div className="cardImage" />
     </div>
@@ -88,7 +88,7 @@ const OneThirdCard = props => (
           padding-bottom: 20px;
         }
       }
-    
+
 
 
     `}</style>

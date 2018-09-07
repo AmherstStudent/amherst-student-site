@@ -9,6 +9,7 @@ const Grid = props => (
       .grid {
         display: grid;
         max-width: 100%;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-gap: 20px;
         grid-auto-rows: auto;

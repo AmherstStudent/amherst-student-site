@@ -4,36 +4,36 @@ import Card from './card.js'
 import Container from './container.js'
 
 let LOCAL_URI = 'http://api.amherststudent.com'
-const MediaCard3 = props => (
-  <Card className={`thrds ${props.className}`}>
-    <Link href={`/article/${props.article.slug}`} passHref>
+const MediaCard3 = ({article, className})=> (
+  <Card className={`thrds ${className}`}>
+    <Link href={`/article/${article.slug}`} passHref>
       <a>
         <div
           style={
-            Boolean(props.article.featuredImage)
-              ? { backgroundImage: `url('${LOCAL_URI + props.article.featuredImage.url}')` }
+            Boolean(article.featuredImage)
+              ? { backgroundImage: `url('${LOCAL_URI + article.featuredImage.url}')` }
               : { minHeight: '60px' }
           }
           className="cardHeader"
         >
-          <span>{props.article.category.name.toUpperCase()}</span>
+          <span>{article.category.name.toUpperCase()}</span>
         </div>
       </a>
     </Link>
     <Container>
       <div className="cardContent">
-        <Link href={`/article/${props.article.slug}`} passHref>
+        <Link href={`/article/${article.slug}`} passHref>
           <a>
-            <h2 className="cardTitle">{props.article.title}</h2>
+            <h2 className="cardTitle">{article.title}</h2>
           </a>
         </Link>
         <br />
         <p className="cardAuthor">
-          by {props.article.author.username}, {props.article.author.reporterTitle}{' '}
+          by {article.author.username}, {article.author.reporterTitle}{' '}
         </p>
-        <p className="feat" style={Boolean(props.article.featuredImage) ? { display: 'none' } : {}}>
+        <p className="feat" style={Boolean(article.featuredImage) ? { display: 'none' } : {}}>
           {' '}
-          {props.article.excerpt}{' '}
+          {article.excerpt}{' '}
         </p>
       </div>
     </Container>
@@ -59,9 +59,6 @@ const MediaCard3 = props => (
         margin-top: 20px;
         padding: 5px;
         margin-left: 20px;
-      }
-      .cardTitle {
-        font-style: italic;
       }
 
       .cardAuthor {

@@ -21,14 +21,13 @@ import {GET_HOME_PAGE} from '../lib/queries.js'
 const Home = props => (
   <Main>
     <Head title="The Amherst Student">
-      <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
+      <meta property="og:description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
     </Head>
 
     <Query query={GET_HOME_PAGE}>
       {({ loading, error, data }) => {
         if (loading) return null
         if (error) return `Error!: ${error}`
-        
 
         let main_view = data.views[0]
 
@@ -43,7 +42,7 @@ const Home = props => (
                 <OneThirdCard article={main_view.news_right_second} />
                 <OneThirdCard article={main_view.news_right_third} />
               </div>
-              <div className="words2">
+              <div className="big_card">
                 <MediaCard article={main_view.news_left_big} className="span-7" />
               </div>
               <MediaCard3 article={main_view.opinion_first} className="span-4" />
@@ -54,7 +53,7 @@ const Home = props => (
                 <OneThirdCard article={main_view.arts_living_second_third} />
                 <OneThirdCard article={main_view.arts_living_first_third} />
               </div>
-              <div className="words2">
+              <div className="big_card">
                 <MediaCard article={main_view.arts_living_big} className="span-7" />
               </div>
 
@@ -89,12 +88,12 @@ const Home = props => (
           margin-bottom: 200px !important;
         }
 
-        .words2 {
+        .big_card {
           grid-column-start: 7;
           grid-column-end: 14;
         }
         @media screen and (max-width: 768px) {
-          .words2 {
+          .big_card {
             grid-column: span 18;
           }
         }

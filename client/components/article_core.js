@@ -6,7 +6,7 @@ import showdown from 'showdown'
 function createMarkup(content) {
   var formatted_content = content.replace(/(?:\r\n|\r|\n)/g, '<br >')
   var converter = new showdown.Converter()
-  var html = converter.makeHtml(formatted_content)
+  var html = converter.makeHtml(content).replace(/(?:\r\n|\r|\n)/g, '<br >')
   return { __html: html }
 }
 

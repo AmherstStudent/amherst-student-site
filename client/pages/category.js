@@ -5,8 +5,8 @@ import { withRouter } from 'next/router'
 import Head from '../components/head'
 import Container from '../components/container'
 import Grid from '../components/grid'
-import List_Container from '../components/list_container'
-import Category_Header from '../components/category_header'
+import Category_List_Container from '../components/category_list_container'
+import List_Header from '../components/category_header'
 import Author_Card from '../components/authorcard'
 import Main from '../components/main'
 
@@ -20,10 +20,10 @@ const Category = withRouter(props => (
   <Main>
     <Head title={props.router.query.name} />
 
-      <Category_Header className="header" type={props.router.query.name.toUpperCase()} name="Word" />
+      <List_Header className="header" type={props.router.query.name.toUpperCase()} name="Word" />
       <Grid>
         <article>
-          <List_Container type={props.router.query.name} />
+          <Category_List_Container type={props.router.query.name} />
         </article>
         <aside>
           <Query query={GET_EDITOR_LIST} variables={{ name: props.router.query.name.replace(/ .*/, '') }}>
@@ -31,7 +31,6 @@ const Category = withRouter(props => (
               if (loading) return null
               if (error) return `Error!: ${error}`
               const editors = data.categories[0].editors
-              console.log(props.editors)
               return <Author_Card editor={true} author={editors} />
             }}
           </Query>
