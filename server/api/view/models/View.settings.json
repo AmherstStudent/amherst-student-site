@@ -13,7 +13,7 @@
       "model": "article",
       "dominant": true
     },
-    "words": {
+    "name": {
       "type": "string"
     },
     "news_right_first": {
@@ -58,6 +58,10 @@
     "sports_third": {
       "model": "article",
       "via": "view"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "issue"
     }
   }
 }

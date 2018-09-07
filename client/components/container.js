@@ -8,7 +8,6 @@ const Container = props => (
     <style jsx>{`
       .container {
         width: 90%;
-        max-width: 1400px;
         height: auto;
         margin: 0 auto;
         position: relative;

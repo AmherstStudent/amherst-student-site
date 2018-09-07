@@ -57,6 +57,10 @@
     "view": {
       "model": "view",
       "via": "sports_third"
+    },
+    "issue": {
+      "model": "view",
+      "via": "articles"
     }
   }
 }

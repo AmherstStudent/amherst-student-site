@@ -22,6 +22,7 @@ const Masthead = props => (
     <Container className="contain">
       <Grid>
         <div className="wrapper">
+          <a name="masthead">
           <Card>
             <div className="cardHeader">
               <img src="/static/logo.svg" alt="the Amherst Student" />
@@ -54,8 +55,11 @@ const Masthead = props => (
               </p>
             </div>
           </Card>
+        </a>
+        <a name="ad">
           <br />
-          <Card id="ad">
+
+          <Card>
             <h5>ADVERTISERS</h5>
             <div className="cardContent">
               <p>
@@ -89,7 +93,9 @@ const Masthead = props => (
               </ul>
             </div>
           </Card>
+        </a>
           <br />
+          <a name="subscribers">
           <Card>
             <h5>SUBSCRIBERS</h5>
             <div className="cardContent">
@@ -101,7 +107,9 @@ const Masthead = props => (
               </p>
             </div>
           </Card>
+        </a>
           <br />
+          <a name="letter_policy">
           <Card>
             <h5>LETTER POLICY</h5>
             <div className="cardContent">
@@ -116,6 +124,7 @@ const Masthead = props => (
               </p>
             </div>
           </Card>
+        </a>
         </div>
       </Grid>
     </Container>
@@ -134,7 +143,8 @@ const Masthead = props => (
         }
         .wrapper {
           padding: 20px;
-          grid-column: span 14;
+          grid-column: 2/ 12;
+          margin: auto;
         }
         .wrapper > * {
           width: 100%;
@@ -165,6 +175,9 @@ const Masthead = props => (
           margin: 0 auto;
           margin-top: 10px;
           text-align: center;
+        }
+        a {
+          margin-top: 200px;
         }
       `}
     </style>

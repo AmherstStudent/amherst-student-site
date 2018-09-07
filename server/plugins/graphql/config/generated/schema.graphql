@@ -13,6 +13,7 @@ type Article {
   slug: String!
   excerpt: String
   view: View
+  issue: View
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
 }
 
@@ -119,7 +120,7 @@ type View {
   createdAt: DateTime!
   updatedAt: DateTime!
   top_article: Article
-  words: String
+  name: String
   news_right_first: Article
   news_right_second: Article
   news_right_third: Article
@@ -134,6 +135,7 @@ type View {
   sports_first: Article
   sports_second: Article
   sports_third: Article
+  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }
 
 """Volume-Issue Number"""

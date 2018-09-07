@@ -17,12 +17,12 @@ const Footer = () => (
           </Link>
         </li>
         <li>
-          <Link href={`/masthead`} passHref>
+          <Link href={`/masthead#contact`} passHref>
             <a>Contact</a>
           </Link>
         </li>
         <li>
-          <Link href={`/masthead`} passHref>
+          <Link href={`/masthead#subscribe`} passHref>
             <a>Subscribe</a>
           </Link>
         </li>

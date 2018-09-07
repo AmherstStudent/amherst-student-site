@@ -17,7 +17,7 @@ const OneThirdCard = ({article, className}) => (
           </Link>{' '}
           <br />{' '}
           <span className="cardAuthor">
-            by {article.author.username}, {article.author.reporterTitle}
+            by {article.author.username}, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
           </span>
         </h4>
         <p className="cardText">{article.excerpt}</p>

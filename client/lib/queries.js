@@ -15,8 +15,9 @@ fragment ArticleDetails on Article {
     username
     reporterTitle
   }
-  view {
-    words
+  
+  issue{
+    name
   }
 }
 
@@ -111,6 +112,10 @@ export const ARTICLE_LOOKUP = gql `
     }
     content
     _id
+
+    issue{
+      name
+    }
 
   }
 

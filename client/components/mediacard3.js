@@ -29,7 +29,7 @@ const MediaCard3 = ({article, className})=> (
         </Link>
         <br />
         <p className="cardAuthor">
-          by {article.author.username}, {article.author.reporterTitle}{' '}
+          by {article.author.username}, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
         </p>
         <p className="feat" style={Boolean(article.featuredImage) ? { display: 'none' } : {}}>
           {' '}

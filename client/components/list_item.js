@@ -18,7 +18,7 @@ const List_Item = ({article}) => (
         </Link>
         <p className="author">
           by {article.author.username}, {article.author.reporterTitle} ||{' '}
-          {moment(article.createdAt).format('MMMM D YYYY')}
+          {moment(article.createdAt).format('MMMM D YYYY')} || {article.issue.name}
         </p>
         <p>{article.excerpt}</p>
       </div>
