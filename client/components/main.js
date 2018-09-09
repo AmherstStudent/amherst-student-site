@@ -14,12 +14,12 @@ const Main = (props) => (
 
           {`
         .content{
-          padding-top: 300px;
+
           min-height: 100vh;
           font-family: "adobe-garamond-pro",serif;
           background: #F1F1F1;
-          padding-top: 140px;
-          padding-bottom: 20px;
+          padding-top: 110px;
+          padding-bottom: 40px;
           width: 100vw;
           }
 

@@ -7,10 +7,15 @@ const Container = props => (
 
     <style jsx>{`
       .container {
-        width: 90%;
+        width: 85%;
         height: auto;
         margin: 0 auto;
         position: relative;
+      }
+      @media screen and (max-width: 768px) {
+        .container{
+          width: 90%;
+        }
       }
     `}</style>
   </div>

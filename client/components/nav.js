@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import Container from './container.js'
+import { Icon } from 'react-icons-kit'
+import {navicon} from 'react-icons-kit/fa/navicon'
 
 const links = [
-  { href: '/index', label: 'HOME' },
   { href: '/category?name=News', label: 'NEWS' },
   { href: '/category?name=Opinion', label: 'OPINION' },
   { href: '/category?name=Arts and Living', label: 'ARTS AND LIVING' },
@@ -13,106 +14,133 @@ const links = [
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
-
-const Nav = () => (
+function handleClick() {
+    console.log('The link was clicked.');
+}
+const Nav = (props) =>(
   <nav>
-    <div className="logo">
-      <a href="index">
-        <img src="/static/logo.svg" alt="the Amherst Student" />
-      </a>
-      <img src="/static/logo-subline.svg" alt="the student newspaper since 1868" className="subline" />
-    </div>
+      <Container className="wrapper">
 
-    <hr />
-
-    <ul>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <Link href={href} prefetch>
-            <a>{label}</a>
-          </Link>
+        <ul>
+          <li className="logo">
+            <a href="/">
+            <img src="/static/logo.svg" alt="the Amherst Student" />
+            </a>
+          </li>
+        <div className="links">
+        {links.map(({ key, href, label }) => (
+          <li key={key}>
+            <Link href={href} prefetch>
+              <a>{label}</a>
+            </Link>
+          </li>
+        ))}
+        </div>
+        <li className="navIcon">
+          <Icon size={32} icon={navicon}/>
         </li>
-      ))}
-    </ul>
+
+      </ul>
+      <ul className="mobile">
+        <hr />
+        {links.map(({ key, href, label }) => (
+          <li key={key}>
+            <Link href={href} prefetch>
+              <a>{label}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+    </Container>
+
+
+
+
 
     <style jsx>{`
       nav {
-        display: inline;
-        width: 100%;
-        top: 0;
-        z-index: 200;
-        background-color: white;
-        text-align: center;
         position: fixed;
+        display: flex;
+        width: 100vw;
+        z-index: 2;
+        background-color: white;
         box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
       }
-
-      hr {
-        color: rgba(255, 255, 255, 0.2);
-      }
-      .logo {
-        padding-top: 20px;
-        margin-bottom: 0px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-        max-width: 300px;
-        margin: 0 auto;
-        height: auto;
-        padding-right: 25px;
-      }
-      img {
-        width: 100%;
-        height: auto;
-      }
-      @media screen and (max-width: 800px) {
-        .logo {
-          max-width: 350px;
-        }
-        img {
-          width: contain;
-        }
-        ul {
-          width: 50%;
-        }
-      }
-
-      .subline {
-        width: 100%;
-        height: auto;
-        display: none;
-        padding-right: 200px;
-      }
-      ul {
+      nav .wrapper {
+        align-items: center;
         display: flex;
         justify-content: space-between;
       }
       ul {
-        padding-left: 0;
-        width: 85%;
-        margin: 0 auto;
+        display:flex;
+        width: 100%;
+        padding: 0;
         list-style-type: none;
-        padding: 15px 0;
+        padding: 10px 0 10px 0px;
       }
-      hr {
-        -webkit-margin-before: 0;
-        -webkit-margin-after: 0;
+      a {
+        text-decoration: none;
+        transition: all .5s ease;
       }
-
       li {
         display: flex;
-        list-style-type: none;
-        color: black;
+        font-family: "europa";
+        font-size: 14px;
+        width: auto;
+        margin: auto 0;
       }
-      @media (max-width: 620px) {
-        li {
-          width: 85%;
-        }
-      }
-
-      a {
-        color: #5d3c85;
+      li, a {
         text-decoration: none;
-        font-size: 13px;
+        color:#5d3c85;
+      }
+      img{
+        height: 100%;
+      }
+      .logo{
+        height: 20px;
+      }
+      .links {
+        display:flex;
+        justify-content: space-between;
+        width: 60%;
+        margin-left: auto;
+
+      }
+      .navIcon{
+        display:none;
+      }
+      .mobile{
+        display:none;
+      }
+      @media screen and (max-width:800px) {
+        .links{
+          display:none;
+        }
+        .logo{
+          height: 20px;
+          justify-content: flex-start;
+          flex: 1 1 auto;
+        }
+        .navIcon{
+          display:flex;
+          justify-content: flex-end;
+        }
+        .mobile{
+          display:none;
+          flex-direction: column;
+          width: 100%;
+          padding-top: 0;
+        }
+        .mobile li {
+          align-items: center;
+          justify-content: center;
+          padding-bottom: 10px;
+          padding-top: 10px;
+        }
+        hr{
+          width:100%;
+        }
       }
     `}</style>
   </nav>
