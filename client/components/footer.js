@@ -44,7 +44,9 @@ const Footer = () => (
     justify-content: space-between;
 
   }
-
+  ul:first-child{
+    padding: 0;
+  }
   li {
 
     font-family: AGaramondPro-Italic;
