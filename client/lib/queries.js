@@ -15,7 +15,7 @@ fragment ArticleDetails on Article {
     username
     reporterTitle
   }
-  
+
   issue{
     name
   }
@@ -122,6 +122,30 @@ export const ARTICLE_LOOKUP = gql `
   query Article_Lookup($slug: String!){
     articles(where: { slug: $slug }) {
       ...ArticlePageDetails
+    }
+  }
+`
+
+export const CATEGORY_LOOKUP = gql`
+  query CategoryLookup($name: String!) {
+    categories(where: { name_contains: $name }) {
+      Category(sort: "createdAt:desc") {
+        title
+        createdAt
+        author {
+          username
+          reporterTitle
+        }
+        excerpt
+        _id
+        category {
+          name
+        }
+        slug
+        issue{
+          name
+        }
+      }
     }
   }
 `
