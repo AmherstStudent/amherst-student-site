@@ -3,9 +3,7 @@ export default `
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  if (admin || localhost) { // disable GA:
-  window['ga-disable-UA-XXXXX-Y'] = true; // enter your tracking ID
-  }
+
   ga('create', 'UA-123997509-1', 'auto');
   ga('send', 'pageview');
 `
