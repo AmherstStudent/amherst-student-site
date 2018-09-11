@@ -110,9 +110,7 @@ export const ARTICLE_LOOKUP = gql `
       }
     }
 
-
     _id
-
     issue{
       name
     }

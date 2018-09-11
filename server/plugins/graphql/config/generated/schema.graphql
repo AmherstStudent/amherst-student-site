@@ -4,15 +4,12 @@ type Article {
   createdAt: DateTime!
   updatedAt: DateTime!
   title: String!
-  Featured: Boolean
   featuredImage: UploadFile
   content: String!
   category: Category
   author: UsersPermissionsUser
-  volumeIssue: Volumeissue
   slug: String!
   excerpt: String
-  view: View
   issue: View
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
 }
@@ -36,7 +33,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = Article | Category | Tags | View | Volumeissue | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
+union Morph = Article | Category | Tags | View | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser
 
 type Query {
   article(id: ID!): Article
@@ -47,8 +44,6 @@ type Query {
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
   view(id: ID!): View
   views(sort: String, limit: Int, start: Int, where: JSON): [View]
-  volumeissue(id: ID!): Volumeissue
-  volumeissues(sort: String, limit: Int, start: Int, where: JSON): [Volumeissue]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   role(id: ID!): UsersPermissionsRole
 
@@ -134,13 +129,5 @@ type View {
   arts_living_big: Article
   sports_first: Article
   sports_second: Article
-  sports_third: Article
-  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
-}
-
-"""Volume-Issue Number"""
-type Volumeissue {
-  _id: ID!
-  volume_issue_number: String
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }

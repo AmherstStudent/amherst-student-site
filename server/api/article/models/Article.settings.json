@@ -15,9 +15,6 @@
       "required": true,
       "unique": true
     },
-    "Featured": {
-      "type": "boolean"
-    },
     "featuredImage": {
       "model": "file",
       "via": "related",
@@ -36,10 +33,6 @@
       "via": "articles",
       "plugin": "users-permissions"
     },
-    "volumeIssue": {
-      "model": "volumeissue",
-      "via": "articles"
-    },
     "slug": {
       "unique": true,
       "type": "string",
@@ -53,10 +46,6 @@
     "tags": {
       "collection": "tags",
       "via": "articles"
-    },
-    "view": {
-      "model": "view",
-      "via": "sports_third"
     },
     "issue": {
       "model": "view",

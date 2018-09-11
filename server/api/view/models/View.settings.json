@@ -55,10 +55,6 @@
     "sports_second": {
       "model": "article"
     },
-    "sports_third": {
-      "model": "article",
-      "via": "view"
-    },
     "articles": {
       "collection": "article",
       "via": "issue"
