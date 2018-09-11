@@ -65,7 +65,7 @@ query HomePage {
     sports_second {
       ...ArticleDetails
     }
-    sports_third {
+    sport_third {
       ...ArticleDetails
     }
   }
