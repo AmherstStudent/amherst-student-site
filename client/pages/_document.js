@@ -21,12 +21,9 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css" />
           <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" />
-
-          <style>{`body { margin: 0;  width: 100%; display:flex; flex-direction: column; text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
- } - /* custom! */`}</style>
         </Head>
 
-        <body className="home_page">
+        <body>
           <Nav />
           <Main />
           <NextScript />
@@ -34,6 +31,9 @@ export default class MyDocument extends Document {
         </body>
         <style>
           {`
+            body
+            { margin: 0;  width: 100%; display:flex; flex-direction: column; text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
+  }
           @import url("https://use.typekit.net/qth7vhw.css");
 
           p {

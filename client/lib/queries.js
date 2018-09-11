@@ -92,8 +92,10 @@ export const ARTICLE_LOOKUP = gql `
     title
     excerpt
     slug
+    content
     category {
       name
+      _id
     }
     updatedAt
     featuredImage {
@@ -107,8 +109,8 @@ export const ARTICLE_LOOKUP = gql `
         url
       }
     }
-  
-    content
+
+
     _id
 
     issue{
