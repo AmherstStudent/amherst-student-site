@@ -107,9 +107,7 @@ export const ARTICLE_LOOKUP = gql `
         url
       }
     }
-    volumeIssue{
-      volume_issue_number
-    }
+  
     content
     _id
 
