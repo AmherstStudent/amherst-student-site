@@ -50,6 +50,13 @@
     "issue": {
       "model": "view",
       "via": "articles"
+    },
+    "topfavorite": {
+      "collection": "view",
+      "via": "toparticles"
+    },
+    "imagecaption": {
+      "type": "string"
     }
   }
 }

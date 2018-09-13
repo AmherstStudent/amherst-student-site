@@ -11,7 +11,9 @@ type Article {
   slug: String!
   excerpt: String
   issue: View
+  imagecaption: String
   tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
+  topfavorite(sort: String, limit: Int, start: Int, where: JSON): [View]
 }
 
 type Category {
@@ -130,5 +132,7 @@ type View {
   sports_first: Article
   sports_second: Article
   sports_third: Article
+  date: DateTime
   articles(sort: String, limit: Int, start: Int, where: JSON): [Article]
+  toparticles(sort: String, limit: Int, start: Int, where: JSON): [Article]
 }

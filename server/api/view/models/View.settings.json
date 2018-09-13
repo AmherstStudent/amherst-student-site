@@ -61,6 +61,14 @@
     "articles": {
       "collection": "article",
       "via": "issue"
+    },
+    "date": {
+      "type": "date"
+    },
+    "toparticles": {
+      "collection": "article",
+      "dominant": true,
+      "via": "topfavorite"
     }
   }
 }
