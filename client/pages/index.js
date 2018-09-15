@@ -15,78 +15,7 @@ import OneThirdCard from '../components/thirdcard.js'
 //Graphql requests
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
-export const HOME_PAGE = gql `
-  fragment ArticleDetails on Article {
-    _id
-    title
-    excerpt
-    slug
-    category {
-      name
-    }
-    featuredImage {
-      url
-    }
-    author {
-      username
-      reporterTitle
-    }
-    issue{
-      name
-    }
-  }
-
-  query HomePage {
-    views(limit: 1) {
-      top_article {
-        ...ArticleDetails
-      }
-      news_right_first {
-        ...ArticleDetails
-      }
-      news_right_second {
-        ...ArticleDetails
-      }
-      news_right_third {
-        ...ArticleDetails
-      }
-      news_left_big {
-        ...ArticleDetails
-      }
-      opinion_first {
-        ...ArticleDetails
-      }
-      opinion_second {
-        ...ArticleDetails
-      }
-      opinion_third {
-        ...ArticleDetails
-      }
-      arts_living_first_third {
-        ...ArticleDetails
-      }
-      arts_living_second_third {
-        ...ArticleDetails
-      }
-      arts_living_third_third {
-        ...ArticleDetails
-      }
-      arts_living_big {
-        ...ArticleDetails
-      }
-      sports_first {
-        ...ArticleDetails
-      }
-      sports_second {
-        ...ArticleDetails
-      }
-      sports_third {
-        ...ArticleDetails
-      }
-    }
-  }
-`
-
+import {HOME_PAGE} from '../lib/queries'
 
 
 const Home = props => (

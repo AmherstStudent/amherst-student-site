@@ -65,7 +65,7 @@ export const HOME_PAGE = gql `
       sports_second {
         ...ArticleDetails
       }
-      sport_third {
+      sports_third {
         ...ArticleDetails
       }
     }
