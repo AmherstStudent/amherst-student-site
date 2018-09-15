@@ -42,7 +42,7 @@ const Article = withRouter((props) => (
           }
           function nullImage(){
             if (imageChecker() == true) {
-              var imageLink = ['api.amherststudent.edu' + article.featuredImage.url]
+              var imageLink = [article.featuredImage.url]
               return imageLink
             }
             return []

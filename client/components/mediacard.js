@@ -11,7 +11,7 @@ const MediaCard = ({ article, className }) => (
           className="cardHeader"
           style={
             Boolean(article.featuredImage)
-              ? { backgroundImage: `url('${LOCAL_URI + article.featuredImage.url}')` }
+              ? { backgroundImage: `url('${article.featuredImage.url}')` }
               : { display: 'none' }
           }
         >

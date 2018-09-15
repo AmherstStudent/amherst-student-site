@@ -39,7 +39,7 @@
     },
     "provider": {
       "type": "string",
-      "configurable": false,
+      "configurable": true,
       "required": true
     },
     "related": {

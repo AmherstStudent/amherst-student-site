@@ -25,7 +25,8 @@
     "koa2-ratelimit": "^0.6.3",
     "lodash": "^4.17.10",
     "strapi": "3.0.0-alpha.13.0.1",
-    "strapi-hook-mongoose": "^3.0.0-alpha.13.0.1"
+    "strapi-hook-mongoose": "^3.0.0-alpha.13.0.1",
+    "strapi-upload-cloudinary": "^3.0.0-alpha.13.0.1"
   },
   "author": {
     "name": "dmomplaisir",

@@ -19,6 +19,7 @@ export const HOME_PAGE = gql `
     issue{
       name
     }
+
   }
 
   query HomePage {
@@ -91,6 +92,7 @@ export const ARTICLE_LOOKUP = gql `
     title
     excerpt
     slug
+    imagecaption
     content
     category {
       name

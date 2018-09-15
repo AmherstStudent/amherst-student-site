@@ -11,7 +11,7 @@ const MediaCard3 = ({article, className})=> (
         <div
           style={
             Boolean(article.featuredImage)
-              ? { backgroundImage: `url('${LOCAL_URI + article.featuredImage.url}')` }
+              ? { backgroundImage: `url('${article.featuredImage.url}')` }
               : { minHeight: '60px' }
           }
           className="cardHeader"

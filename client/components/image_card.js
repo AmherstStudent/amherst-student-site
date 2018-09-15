@@ -6,9 +6,9 @@ import Container from './container.js'
 const Image_Card = props => (
   <Card className={`margin-20 ${props.className}`}>
     <figure>
-      <img src={'https://api.amherststudent.com/' + props.article.featuredImage.url} />
+      <img src={props.article.featuredImage.url} />
       <figcaption>
-        <p>{props.article.excerpt}</p>
+        <p>{props.article.imagecaption}</p>
       </figcaption>
     </figure>
 
