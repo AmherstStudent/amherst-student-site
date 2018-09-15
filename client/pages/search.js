@@ -24,11 +24,11 @@ export default class Search extends React.Component {
     this.setState({
      query: this.search.value
     })
-
+    
   }
 
   getInfo = () => {
-    let search_link = "https://api.amherststudent.com/article?_q="
+    let search_link = "http://api.amherststudent.com/article?_q="
     console.log(search_link)
     console.log(this.state.query)
     fetch(`${search_link}${this.state.query}`)

@@ -11,7 +11,7 @@ const CommentsContainer = props => (
           shortname="AmherstStudent"
           identifier={props.article._id}
           title={props.article.title}
-          url={'http://amherststudent.com/' + props.article.slug}
+          url={'https://amherststudent.com/' + props.article.slug}
           category_id={props.article.category._id}
         />
       </Container>

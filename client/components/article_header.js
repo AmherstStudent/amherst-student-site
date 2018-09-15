@@ -16,10 +16,10 @@ const Article_Header = (props) => (
         <h1>{props.article.title}
         <span> </span>
           <a href=""><Icon size={32} icon={ic_stars}/></a>
-          <a href={`https://www.facebook.com/sharer/sharer.php?u=http://amherststudent.com/article/${props.article.slug}`}>
+          <a href={`https://www.facebook.com/sharer/sharer.php?u=https://amherststudent.com/article/${props.article.slug}`}>
             <Icon size={32} icon={socialFacebookCircular}/>
           </a>
-          <a href={`https://twitter.com/intent/tweet?url=http://amherststudent.com/article/${props.article.slug}&text=${props.article.excerpt}`}>
+          <a href={`https://twitter.com/intent/tweet?url=https://amherststudent.com/article/${props.article.slug}&text=${props.article.excerpt}`}>
             <Icon size={32} icon={socialTwitterCircular}/>
           </a>
         </h1>

@@ -14,7 +14,7 @@ export default {
     // Multiple Open Graph images is only available in version `7.0.0-canary.0`+ of next (see note top of README.md)
     images: [
       {
-        url: 'http://www.amherststudent.com/static/logo.svg',
+        url: 'https://www.amherststudent.com/static/logo.svg',
         width: 467,
         height: 40,
         alt: 'the Amherst Student Logo',

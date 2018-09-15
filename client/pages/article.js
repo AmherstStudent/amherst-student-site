@@ -72,7 +72,7 @@ const Article = withRouter((props) => (
               datePublished={article.updatedAt}
               authorName={article.author.username}
               publisherName="The Amherst Student"
-              publisherLogo="http://amherststudent.com/static/logo.svg"
+              publisherLogo="https://amherststudent.com/static/logo.svg"
               description={article.excerpt}
             />
 

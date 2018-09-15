@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
-let LOCAL_URI = 'http://api.amherststudent.com'
+let LOCAL_URI = 'https://api.amherststudent.com'
 const MediaCard = ({ article, className }) => (
   <Card className={`${className}`}>
     <Link href={`/article/${article.slug}`} passHref>
