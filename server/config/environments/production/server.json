@@ -1,6 +1,6 @@
 {
   "host": "api.amherststudent.com",
-  "port": "${process.env.PORT || 1337}",
+  "port": 80,
   "autoReload": {
     "enabled": false
   },
