@@ -24,7 +24,7 @@ export default class Search extends React.Component {
     this.setState({
      query: this.search.value
     })
-    this.getInfo();
+    
   }
 
   getInfo = () => {
@@ -45,8 +45,6 @@ export default class Search extends React.Component {
       })
       console.log(this.state.results)
 
-
-
   }
 
   render(){
@@ -58,14 +56,13 @@ export default class Search extends React.Component {
 
         <Container className="contain">
 
-          <Card>
+
             <input type="text"  name="uname"
                   ref={input => this.search = input}
-                  placeholder="Search for your article" />
-                <h1>{this.state.query}</h1>
+                  placeholder="Search for your article" onChange={this.addText}/>
 
-              <button onClick={this.addText}>Word</button>
-          </Card>
+                <button onClick={this.getInfo}>Search</button>
+
           <Search_List_Container results={this.state.results} />
         </Container>
 
@@ -79,8 +76,15 @@ export default class Search extends React.Component {
               padding-bottom: 20px;
             }
             .contain {
-              margin-top: 120px;
+              margin-top: 60px;
             }
+            input {
+              width: 100%;
+              height: 80px;
+              font-size: 30px;
+              font-family: 'europa';
+            }
+
             .wrapper {
               padding: 20px;
               grid-column: 2/ 12;
@@ -120,9 +124,15 @@ export default class Search extends React.Component {
               margin-top: 200px;
             }
             button{
-              width:20px;
-              height: 20px;
-              color:  blue;
+              border: 2px solid #5d3c85;
+              padding: 10px;
+              color: #5d3c85;
+              width: 95px;
+              font-family: 'europa', sans-serif;
+              margin: 0 auto;
+              margin-top: 10px;
+              background: white;
+              text-align: center;
             }
           `}
         </style>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Container from './container.js'
 import { Icon } from 'react-icons-kit'
 import {navicon} from 'react-icons-kit/fa/navicon'
+import {search} from 'react-icons-kit/fa/search'
 
 const links = [
   { href: '/category?name=News', label: 'NEWS' },
@@ -35,7 +36,15 @@ const Nav = (props) =>(
             </Link>
           </li>
         ))}
+        <li>
+          <Link href='/search' prefetch>
+          <a>
+          <Icon size={16} icon={search}/>
+          </a>
+          </Link>
+        </li>
         </div>
+
         <li className="navIcon">
           <Icon size={32} icon={navicon}/>
         </li>
