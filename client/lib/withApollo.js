@@ -6,7 +6,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 export default withApollo(({ headers }) => (
   new ApolloClient({
-    uri: 'http://api.amherststudent.com/graphql',
+    uri: 'https://api.amherststudent.com/graphql',
     cache: new InMemoryCache()
  })
 ))
