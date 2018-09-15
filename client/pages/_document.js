@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+          <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css" />
           <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" />

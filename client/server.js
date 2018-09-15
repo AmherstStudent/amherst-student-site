@@ -20,6 +20,17 @@ app.prepare()
       return app.render(req, res, '/article', { slug: req.params.slug })
     })
 
+    const sitemapOptions = {
+      root: __dirname + '/static/',
+      headers: {
+        'Content-Type': 'text/xml;charset=UTF-8',
+      }
+    }
+
+    server.get('/sitemap.xml', (req, res) => (
+      res.status(200).sendFile('sitemap.xml', sitemapOptions)
+    ))
+
     server.get('*', (req, res) => {
       return handle(req, res)
     })

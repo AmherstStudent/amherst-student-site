@@ -1,4 +1,5 @@
 import React from 'react'
+import NextSeo from 'next-seo'
 
 //Format
 import Head from '../components/head'
@@ -90,9 +91,11 @@ export const HOME_PAGE = gql `
 
 const Home = props => (
   <Main>
-    <Head title="The Amherst Student">
-      <meta property="og:description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
-    </Head>
+    <NextSeo
+      config={{
+        title: 'Home | The Amherst Student'
+      }}
+    />
 
     <Query query={HOME_PAGE}>
       {({ loading, error, data }) => {

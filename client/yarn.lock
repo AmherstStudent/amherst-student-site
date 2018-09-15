@@ -3034,6 +3034,10 @@ neo-async@^2.5.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
 
+next-seo@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-1.2.0.tgz#304cfee5589c9d09c86d378bcf3109950c2d0337"
+
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"

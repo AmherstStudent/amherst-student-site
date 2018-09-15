@@ -15,7 +15,8 @@ import moment from 'moment'
 import CommentsContainer from '../components/comments'
 import Article_Header from '../components/article_header'
 import {ARTICLE_LOOKUP} from '../lib/queries.js'
-
+import NextSeo from 'next-seo'
+import { ArticleJsonLd } from 'next-seo';
 
 
 const Article = withRouter((props) => (
@@ -30,25 +31,51 @@ const Article = withRouter((props) => (
           if (error)
             return `Error!: ${error}`;
           let article = data.articles[0]
+
           function imageChecker(){
-          if (article.featuredImage === null) {
-            return false;
+            if (article.featuredImage === null) {
+              return false;
+            }
+            else {
+              return true;
+            }
           }
-          else {
-            return true;
+          function nullImage(){
+            if (imageChecker() == true) {
+              var imageLink = ['api.amherststudent.edu' + article.featuredImage.url]
+              return imageLink
+            }
+            return []
           }
+          function urlReturn(){
+            return 'amherststudent.com/' + article.slug
           }
 
           return (<Grid>
-            <Head title={article.title}>
-              <meta name="description" content={article.excerpt}  />
-                <meta property="og:locale" content="en_US" />
-                <meta property="og:type" content="article" />
-                <meta property="og:title" content={article.title} />
-                <meta property="og:description" content={article.excerpt} />
-                <meta property="og:url" content={`amherststudent.com/${article.slug}`} />
-                <meta property="og:site_name" content="The Amherst Student" />
-            </Head>
+
+            <NextSeo
+              config={{
+                title: article.title,
+                description: article.excerpt,
+                openGraph: {
+                  url: urlReturn(),
+                  title: article.title,
+                  description: article.excerpt
+                }
+              }}
+            />
+
+            <ArticleJsonLd
+              url={`amherststudent.com/${article.slug}`}
+              title={`${article.title}`}
+              images={nullImage()}
+              datePublished={article.updatedAt}
+              authorName={article.author.username}
+              publisherName="The Amherst Student"
+              publisherLogo="http://amherststudent.com/static/logo.svg"
+              description={article.excerpt}
+            />
+
             <Article_Header className="header" article={article}/>
 
             <article>
