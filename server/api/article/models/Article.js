@@ -8,6 +8,12 @@ module.exports = {
   // Before saving a value.
   // Fired before an `insert` or `update` query.
   // beforeSave: async (model) => {},
+  beforeSave: async(model) => {
+    const slug_change = model.slug.toLowerCase().replace(/-+/g, '').replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+    console.log('Ash')
+    model.slug = slug_change;
+
+  }
 
   // After saving a value.
   // Fired after an `insert` or `update` query.
