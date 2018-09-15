@@ -28,6 +28,8 @@ const OneThirdCard = ({article, className}) => (
     <style jsx>{`
       .cardContent {
         margin: 0 0 0 10px;
+        margin-bottom: 2px;
+        margin-top: 2%;
         max-width: 90%;
         padding: 10px;
       }
