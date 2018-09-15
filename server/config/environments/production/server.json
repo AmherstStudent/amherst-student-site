@@ -1,6 +1,6 @@
 {
-  "host": "api.amherststudent.com",
-  "port": 80,
+  "host": "amherststudent.com",
+  "port": 1337,
   "autoReload": {
     "enabled": false
   },
