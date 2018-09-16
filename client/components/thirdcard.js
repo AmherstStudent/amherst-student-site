@@ -17,7 +17,7 @@ const OneThirdCard = ({article, className}) => (
           </Link>{' '}
           <br />{' '}
           <span className="cardAuthor">
-            by {article.author.username}, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
+            by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a className="username">{article.author.username}</a></Link>, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
           </span>
         </h4>
         <p className="cardText">{article.excerpt}</p>
@@ -49,16 +49,20 @@ const OneThirdCard = ({article, className}) => (
         font-style: italic;
         font-size: 26px;
         line-height: 1.15em;
-        color: #000000;
         letter-spacing: 0.05px;
         margin-bottom: 0px;
         margin-top: 10px;
-        padding-top: 5pxl
+        padding-top: 5px;
+      
       }
 
       a {
         text-decoration: none;
         color: black;
+      }
+
+      .username{
+        color: rgb(85, 26, 139);
       }
 
       a:hover {

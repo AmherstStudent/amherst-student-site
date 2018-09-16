@@ -27,7 +27,7 @@ const MediaCard = ({ article, className }) => (
         </a>
       </Link>
       <p className="cardAuthor">
-        by {article.author.username}, {article.author.reporterTitle} | {' '}{article.issue.name.toUpperCase()}
+        by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username},</a></Link> {article.author.reporterTitle} | {' '}{article.issue.name.toUpperCase()}
       </p>
       <p className="cardText">{article.excerpt}.</p>
     </div>
@@ -95,6 +95,10 @@ const MediaCard = ({ article, className }) => (
         }
         a {
           text-decoration: none;
+          color: rgb(85, 26, 139);
+        }
+        a:hover{
+          color:grey;
         }
         .cardTitle:hover {
           color: grey;

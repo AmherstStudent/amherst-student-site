@@ -20,6 +20,10 @@ app.prepare()
       return app.render(req, res, '/article', { slug: req.params.slug })
     })
 
+    server.get('/author/:id', (req, res) => {
+      return app.render(req, res, '/author', { id: req.params.id })
+    })
+
     const sitemapOptions = {
       root: __dirname + '/static/',
       headers: {

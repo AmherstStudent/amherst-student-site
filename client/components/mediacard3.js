@@ -29,7 +29,7 @@ const MediaCard3 = ({article, className})=> (
         </Link>
         <br />
         <p className="cardAuthor">
-          by {article.author.username}, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
+          by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username}</a></Link>, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
         </p>
         <p className="feat" style={Boolean(article.featuredImage) ? { display: 'none' } : {}}>
           {' '}
@@ -71,27 +71,37 @@ const MediaCard3 = ({article, className})=> (
       .cardTitle {
         -webkit-margin-before: 0.2em;
         -webkit-margin-after: 0.2em;
+        color: black !important;
       }
       .cardAuthor {
         -webkit-margin-before: 0em;
         -webkit-margin-after: 0em;
         margin-top: -0.5em;
+
       }
       .cardContent {
         padding-bottom: 1em;
         margin-top: 20px;
+        color: black;
       }
       .cardText {
         padding-top: 5px;
       }
       a {
         text-decoration: none;
+        color: rgb(85, 26, 139);
+      }
+      a:hover{
+        color:grey;
       }
       .cardTitle:hover {
         color: grey;
       }
       .feat {
         font-size: 16px;
+      }
+      h2{
+        color: black;
       }
     `}</style>
   </Card>

@@ -17,7 +17,7 @@ const List_Item = ({article}) => (
           </a>
         </Link>
         <p className="author">
-          by {article.author.username}, {article.author.reporterTitle} ||{' '}
+          by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username}</a></Link>, {article.author.reporterTitle} ||{' '}
           {moment(article.createdAt).format('MMMM D YYYY')} || {article.issue.name}
         </p>
         <p>{article.excerpt}</p>
@@ -60,6 +60,7 @@ const List_Item = ({article}) => (
         }
         a {
           text-decoration: none;
+          color: rgb(85, 26, 139);
         }
         h4:hover {
           color: grey;

@@ -15,6 +15,7 @@ export const HOME_PAGE = gql `
     author {
       username
       reporterTitle
+      _id
     }
     issue{
       name
@@ -82,6 +83,7 @@ export const GET_EDITOR_LIST = gql`
         reporterPhoto {
           url
         }
+        _id
       }
     }
   }
@@ -109,6 +111,7 @@ export const ARTICLE_LOOKUP = gql `
       reporterPhoto{
         url
       }
+      _id
     }
 
     _id
@@ -134,6 +137,7 @@ export const CATEGORY_LOOKUP = gql`
         author {
           username
           reporterTitle
+          _id
         }
         excerpt
         _id
@@ -147,4 +151,28 @@ export const CATEGORY_LOOKUP = gql`
       }
     }
   }
+`
+export const AUTHOR_LOOKUP = gql`
+query AuthorLookup ($name: ID!) {
+  user(id: $name){
+  	articles {
+      title
+      createdAt
+      author {
+        username
+        reporterTitle
+        _id
+      }
+      excerpt
+      _id
+      category {
+        name
+      }
+      slug
+      issue{
+        name
+      }
+    }
+  }
+}
 `
