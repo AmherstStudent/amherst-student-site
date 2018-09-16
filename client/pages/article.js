@@ -107,6 +107,9 @@ const Article = withRouter((props) => (
         aside {
           grid-column: 11/ 19;
         }
+        .header{
+          grid-column: span all;
+        }
 
       }
       article > * {
@@ -118,6 +121,10 @@ const Article = withRouter((props) => (
         }
         aside {
           grid-column: span 19;
+        }
+
+        .header{
+          grid-column: span all;
         }
 
       }
