@@ -12,7 +12,7 @@ app.prepare()
     const server = express()
 
 
-    server.get('/category/:name'), (req, res) => {
+    server.get('/category/:name', (req, res) => {
       return app.render(req, res, '/category', { name: req.params.name })
     })
 
