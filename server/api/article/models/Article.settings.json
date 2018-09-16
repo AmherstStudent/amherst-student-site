@@ -40,7 +40,7 @@
     },
     "excerpt": {
       "default": "Display an excerpt!",
-      "maxLength": 180,
+      "maxLength": 300,
       "type": "text"
     },
     "tags": {
