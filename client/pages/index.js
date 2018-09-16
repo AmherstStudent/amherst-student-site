@@ -79,7 +79,7 @@ const Home = props => (
         }
         @media screen and (max-width: 768px) {
           .tripleContainer {
-            grid-column: span 18;
+            grid-column: span 19;
           }
         }
 
