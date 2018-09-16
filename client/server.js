@@ -14,7 +14,7 @@ app.prepare()
 
     server.get('/category/:name'), (req, res) => {
       return app.render(req, res, '/category', { name: req.params.name })
-    }
+    })
 
     server.get('/article/:slug', (req, res) => {
       return app.render(req, res, '/article', { slug: req.params.slug })
