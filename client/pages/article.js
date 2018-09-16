@@ -30,7 +30,7 @@ const Article = withRouter((props) => (
             return null;
           if (error)
             return `Error!: ${error}`;
-          let article = data.articles[0]
+
 
           function imageChecker(){
             if (article.featuredImage === null) {
@@ -50,7 +50,7 @@ const Article = withRouter((props) => (
           function urlReturn(){
             return 'amherststudent.com/' + article.slug
           }
-
+          let article = data.articles[0]
           return (<Grid>
 
             <NextSeo
