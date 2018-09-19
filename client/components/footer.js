@@ -49,7 +49,7 @@ const Footer = () => (
   }
   li {
 
-    font-family: AGaramondPro-Italic;
+    font-family: 'europa';
     font-size: 14px;
     display:inline-block;
     color: #FFFFFF;

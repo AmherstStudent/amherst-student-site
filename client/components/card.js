@@ -48,11 +48,9 @@ const Card = props => (
       }
       .third {
         height: 32%;
+        margin-bottom: 20px;
+      }
 
-      }
-      .third:nthChild(3){
-        margin-bottom:0;
-      }
       @media screen and (max-width: 768px) {
         .third {
           grid-column: 1/18;
@@ -65,6 +63,7 @@ const Card = props => (
       }
       .thrds {
         margin-right: 10px;
+        margin-bottom: 10px;
       }
 
     `}</style>
