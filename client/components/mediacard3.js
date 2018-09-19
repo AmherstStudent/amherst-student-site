@@ -12,7 +12,7 @@ const MediaCard3 = ({article, className})=> (
           style={
             Boolean(article.featuredImage)
               ? { backgroundImage: `url('${article.featuredImage.url}')` }
-              : { minHeight: '60px' }
+              : { minHeight: '70px' }
           }
           className="cardHeader"
         >
@@ -20,7 +20,7 @@ const MediaCard3 = ({article, className})=> (
         </div>
       </a>
     </Link>
-    <Container>
+
       <div className="cardContent">
         <Link href={`/article/${article.slug}`} passHref>
           <a>
@@ -36,11 +36,11 @@ const MediaCard3 = ({article, className})=> (
           {article.excerpt}{' '}
         </p>
       </div>
-    </Container>
+
 
     <style jsx>{`
       .cardHeader {
-        min-height: 200px;
+        min-height: 250px;
         width: 100%;
         overflow: hidden;
         background: center;
@@ -69,9 +69,10 @@ const MediaCard3 = ({article, className})=> (
         line-height: 22px;
       }
       .cardTitle {
-        -webkit-margin-before: 0.2em;
-        -webkit-margin-after: 0.2em;
+        -webkit-margin-before: 0.0em;
+        -webkit-margin-after: 0.0em;
         color: black !important;
+        font-weight: 600;
       }
       .cardAuthor {
         -webkit-margin-before: 0em;
@@ -83,6 +84,9 @@ const MediaCard3 = ({article, className})=> (
         padding-bottom: 1em;
         margin-top: 20px;
         color: black;
+        padding: 20px;
+        padding-top: 5px;
+         
       }
       .cardText {
         padding-top: 5px;
