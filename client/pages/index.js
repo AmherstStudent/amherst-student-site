@@ -96,7 +96,7 @@ const Home = props => (
         }
         @media screen and (max-width: 768px) {
           .big_card {
-            grid-column: span 18;
+            grid-column: span 19;
           }
         }
         .span-14 {

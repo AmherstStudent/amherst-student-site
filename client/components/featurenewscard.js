@@ -9,39 +9,39 @@ const FeatureNewsCard = props => (
       <div className="cardContent">
         <h3 className="cardTitle">TOP ARTICLES</h3>
         <div className="topArticle">
-          <Link href={`/article/Familiar-Story-Unfamiliar-Faces-Crazy-Rich-Asians-Triumphs`} passHref>
+          <Link href={`/article/low-voter-turnout-spurs-new-registration-initiatives`} passHref>
             <a>
-              <h4>Familiar Story, Unfamiliar Faces: “Crazy Rich Asians” Triumph</h4>
+              <h4>Low Voter Turnout Spurs New Registration Details</h4>
             </a>
           </Link>
-          <p className="caption">by Seoyeon Kim '21</p>
+          <p className="caption">by Shawna Chen '20</p>
           <hr />
         </div>
         <div className="topArticle">
-          <Link href={`/article/three-new-administrators-aim-to-leave-their-impact-on-amherst`} passHref>
+          <Link href={`/article/eighth-grade-honestly-explores-modern-middle-schoo-llife`} passHref>
             <a>
-              <h4>Three New Administrators Aim to Leave Their Impact on Amherst</h4>
+              <h4>"Eight Grade" Honestly Explores Modern Middle School Life</h4>
             </a>
           </Link>
-          <p className="caption">By Audrey Cheng '20 and Natalie De Rosa '21</p>
+          <p className="caption">By Hildi Gabel '21</p>
           <hr />
         </div>
         <div className="topArticle">
-          <Link href={`/article/Advice-for-Class-of-2022`} passHref>
+          <Link href={`/article/know-thyself-confessions-of-abroad`} passHref>
             <a>
-              <h4>Advice for Class of 2022</h4>
+              <h4>Know Thyself: Confessions of #abroad</h4>
             </a>
           </Link>
-          <p className="caption">By The Editoral Board</p>
+          <p className="caption">By Diane Lee '19</p>
           <hr />
         </div>
         <div className="topArticle" id="last">
-          <Link href={`/article/Football-Returns-Aims-for-NESCAC-Title-After-Near-Miss`} passHref>
+          <Link href={`/article/the-mazzola-minute-watford`} passHref>
             <a>
-              <h4>Football Returns, Aims for NESCAC Title After Near Miss </h4>
+              <h4>The Mazzola Minute</h4>
             </a>
           </Link>
-          <p className="caption">By Matthew Sparrow '21</p>
+          <p className="caption">By Jamie Mazzola '21</p>
         </div>
       </div>
     </Container>
