@@ -35,7 +35,7 @@ const Image_Card = props => (
         p {
           color: white;
           font-weight: 100;
-          font-style: italic;
+          
           font-size: 16px;
           padding-right: 10px;
         }
