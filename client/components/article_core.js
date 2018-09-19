@@ -14,7 +14,10 @@ const Article_Core = props => (
   <Card className="margin-20">
     <Container>
       <div>
-        <div className="article_text" dangerouslySetInnerHTML={createMarkup(props.article.content)} />
+        <div className="article_text"  dangerouslySetInnerHTML={createMarkup(props.article.content)} />
+          <style dangerouslySetInnerHTML={{__html: `
+        img { width: 100%; height: auto; }
+      `}} />
       </div>
     </Container>
     <style jsx>
@@ -22,6 +25,11 @@ const Article_Core = props => (
         .article_text {
           margin : 20px 0px 20px 0px;
         }
+        img{
+          width: 100%;
+          height:auto;
+        }
+
       `}
     </style>
   </Card>

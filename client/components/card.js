@@ -43,7 +43,7 @@ const Card = props => (
       }
       @media screen and (max-width: 768px) {
         .card {
-          grid-column: span 19;
+          grid-column: span 18;
         }
       }
       .third {
