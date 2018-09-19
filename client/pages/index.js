@@ -53,7 +53,7 @@ const Home = props => (
               <div className="tripleContainer">
                 <OneThirdCard article={main_view.arts_living_first_third} />
                 <OneThirdCard article={main_view.arts_living_second_third} />
-                <OneThirdCard article={main_view.arts_living_first_third} />
+                <OneThirdCard article={main_view.arts_living_third_third} />
               </div>
               <div className="big_card">
                 <MediaCard article={main_view.arts_living_big} className="span-7" />
