@@ -26,7 +26,7 @@ const Article_Header = (props) => (
       </div>
       <hr/>
       <h5 className="article_details">
-      By <Link href={{ pathname: '/author', query: { id: props.article.author._id } }}><a>{' ' + props.article.author.username},</a></Link>  {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.issue.words}
+      By <Link href={{ pathname: '/author', query: { id: props.article.author._id } }}><a>{' ' + props.article.author.username},</a></Link>  {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.issue.name}
       </h5>
   <style jsx>{`
 
