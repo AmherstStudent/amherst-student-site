@@ -64,6 +64,7 @@ const Card = props => (
       .thrds {
         margin-right: 10px;
         margin-bottom: 10px;
+        min-height: 300px;
       }
 
     `}</style>

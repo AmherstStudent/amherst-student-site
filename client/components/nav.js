@@ -105,6 +105,7 @@ const Nav = (props) =>(
       }
       img{
         height: 100%;
+        width: auto;
       }
       .logo{
         height: 20px;

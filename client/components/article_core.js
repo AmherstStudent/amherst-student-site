@@ -16,7 +16,7 @@ const Article_Core = props => (
       <div>
         <div className="article_text"  dangerouslySetInnerHTML={createMarkup(props.article.content)} />
           <style dangerouslySetInnerHTML={{__html: `
-        img { width: 100%; height: auto; }
+        img  { width: 100%; height: auto; }
       `}} />
       </div>
     </Container>
