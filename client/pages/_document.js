@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
         <style>
           {`
             body
-            { margin: 0;  width: 100%; display:flex; flex-direction: column; text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
+            {  box-sizing: border-box; margin: 0;  width: 100%; display:flex; flex-direction: column; text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
   }
           @import url("https://use.typekit.net/qth7vhw.css");
 

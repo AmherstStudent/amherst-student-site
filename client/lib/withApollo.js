@@ -8,5 +8,6 @@ export default withApollo(({ headers }) => (
   new ApolloClient({
     uri: 'https://api.amherststudent.com/graphql',
     cache: new InMemoryCache()
- })
+ },
+{getDatafromTree: 'ssr'})
 ))

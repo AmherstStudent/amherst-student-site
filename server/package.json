@@ -26,6 +26,7 @@
     "lodash": "^4.17.10",
     "strapi": "3.0.0-alpha.13.0.1",
     "strapi-hook-mongoose": "^3.0.0-alpha.13.0.1",
+    "strapi-upload-aws-s3": "^3.0.0-alpha.14.3",
     "strapi-upload-cloudinary": "^3.0.0-alpha.13.0.1"
   },
   "author": {

@@ -4,21 +4,16 @@ import Container from './container'
 
 const Footer = () => (
   <footer>
+    <div className="top">
+    <img src="/static/white-logo.svg" alt="the Amherst Student" />
+    <p>The College Newspaper of Amherst College since 1868 </p>
+    </div>
     <Container>
+
       <ul>
-        <li>
-          <Link href={`/masthead#ad`} passHref>
-            <a>Advertisers</a>
-          </Link>
-        </li>
         <li>
           <Link href={`/masthead#about`} passHref>
             <a>About</a>
-          </Link>
-        </li>
-        <li>
-          <Link href={`/masthead#contact`} passHref>
-            <a>Contact</a>
           </Link>
         </li>
         <li>
@@ -26,6 +21,17 @@ const Footer = () => (
             <a>Subscribe</a>
           </Link>
         </li>
+        <li>
+          <Link href={`/masthead#ad`} passHref>
+            <a>Advertisers</a>
+          </Link>
+        </li>
+        <li>
+          <Link href={`/masthead#contact`} passHref>
+            <a>Contact</a>
+          </Link>
+        </li>
+
       </ul>
     </Container>
 
@@ -35,6 +41,7 @@ const Footer = () => (
     background: #333333;
     box-shadow: 0 2px 3px 1px rgba(0,0,0,0.50);
     width: 100%;
+    height: 125px;
     bottom: 0;
   }
 
@@ -50,7 +57,7 @@ const Footer = () => (
   li {
 
     font-family: 'europa';
-    font-size: 14px;
+    font-size: 12px;
     display:inline-block;
     color: #FFFFFF;
     letter-spacing: 1.2px;
@@ -65,6 +72,26 @@ const Footer = () => (
 
   }
 
+  img{
+    height: 30px;
+    width: auto;
+    align: center;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-shadow: 0;
+  }
+  p{
+    color: white;
+
+    margin: 0 auto;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: center;
+    width: auto;
+  }
  `}</style>
   </footer>
 )
