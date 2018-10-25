@@ -29,7 +29,7 @@ const MediaCard = ({ article, className }) => (
       <p className="cardAuthor">
         by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username},</a></Link> {article.author.reporterTitle} | {' '}{article.issue.name.toUpperCase()}
       </p>
-      <p className="cardText">{article.excerpt}.</p>
+      <p className="cardText">{article.excerpt}</p>
     </div>
 
     <style jsx="jsx">
