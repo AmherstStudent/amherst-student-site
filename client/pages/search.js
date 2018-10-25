@@ -17,6 +17,8 @@ export default class Search extends React.Component {
         results: []
       }
       this.addText = this.addText.bind(this)
+      this.handleKeyPress = this.handleKeyPress.bind(this)
+
 
   }
 
@@ -24,7 +26,6 @@ export default class Search extends React.Component {
     this.setState({
      query: this.search.value
     })
-
   }
 
   getInfo = () => {
@@ -47,6 +48,12 @@ export default class Search extends React.Component {
 
   }
 
+  handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.getInfo()
+    }
+  }
+
   render(){
     return (
       <div className="main-content">
@@ -59,7 +66,9 @@ export default class Search extends React.Component {
 
             <input type="text"  name="uname"
                   ref={input => this.search = input}
-                  placeholder="Search for your article" onChange={this.addText}/>
+                  placeholder="Search for your article"
+                  onChange={this.addText}
+                  onKeyPress={this.handleKeyPress}/>
 
                 <button onClick={this.getInfo}>Search</button>
 
