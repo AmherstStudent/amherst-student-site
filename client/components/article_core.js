@@ -22,9 +22,13 @@ const Article_Core = props => (
     </Container>
     <style jsx>
       {`
-        .article_text {
-          margin : 20px 0px 20px 0px;
+        .article_text  {
+          margin : 25px 10px 25px 10px;
         }
+        .article_text > p {
+         font-size: 110px;
+        }
+
         img{
           width: 100%;
           height:auto;

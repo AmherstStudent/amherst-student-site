@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from '../components/container'
 
-const AuthorCard = props => (
+
+const AuthorCard = props =>
+(
   <Card className={`article ${props.className}`}>
     <Container>
       <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
@@ -13,14 +15,14 @@ const AuthorCard = props => (
         {props.editor ? (
           Object.keys(props.author).map((item, index) => (
             <div key={index}>
-              <img src={'https://api.amherststudent.com/' + props.author[item].reporterPhoto.url} />
+              <img src={props.author[item].reporterPhoto.url} />
               <h5 className="authorName">{props.author[item].username}</h5>
               <p className="authorBio">{props.author[item].reporterBio}</p>
             </div>
           ))
         ) : (
           <div>
-            <img src={'https://api.amherststudent.com/' + props.author.reporterPhoto.url} />
+            <img src={props.author.reporterPhoto.url} />
             <h5 className="authorName">{props.author.username}</h5>
             <p className="authorBio">{props.author.reporterBio}</p>
           </div>

@@ -1,29 +1,37 @@
 import React from 'react'
 import Link from 'next/link'
-import Head from '../components/head'
 import Grid from '../components/grid.js'
-import Card from '../components/card.js'
-import AuthorCard from '../components/authorcard'
-import FeatureNewsCard from '../components/featurenewscard.js'
-import ImageCard from '../components/image_card'
 import {withRouter} from 'next/router'
-import Article_Core from '../components/article_core'
-import Main from '../components/main'
-import {gql} from 'apollo-boost';
-import {Query} from 'react-apollo';
-import moment from 'moment'
-import CommentsContainer from '../components/comments'
-import Article_Header from '../components/article_header'
+
+// GraphQL loading
 import {ARTICLE_LOOKUP} from '../lib/queries.js'
+import {gql} from 'apollo-boost'
+import {Query} from 'react-apollo'
+
+// NextSeo
 import NextSeo from 'next-seo'
-import { ArticleJsonLd } from 'next-seo';
+import { ArticleJsonLd } from 'next-seo'
+
+
+// elements
+import Main from '../components/main'
+import Article_Header from '../components/article_header'
+import Article_Core from '../components/article_core'
+import ImageCard from '../components/image_card'
+import FeatureNewsCard from '../components/featurenewscard.js'
+import AuthorCard from '../components/authorcard'
+import CommentsContainer from '../components/comments'
+
+
+
+
 
 
 const Article = withRouter((props) => (
   <Main>
 
 
-    <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }}>
+    <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
       {
         ({loading, error, data}) => {
           if (loading)
@@ -102,13 +110,13 @@ const Article = withRouter((props) => (
 
       @media only screen and (min-width: 1300px) {
         article {
-          grid-column: 1 / 11;
+          grid-column: 1 / 10;
         }
         aside {
-          grid-column: 11/ 19;
+          grid-column: 10 / 13;
         }
         .header{
-          grid-column: span all;
+          grid-column: 1 /12;
         }
 
       }
@@ -117,14 +125,14 @@ const Article = withRouter((props) => (
       }
       @media only screen and (max-width: 1300px) {
         article {
-          grid-column: span 19;
+          grid-column: span 12;
         }
         aside {
-          grid-column: span 19;
+          grid-column: span 12;
         }
 
         .header{
-          grid-column: span all;
+          grid-column: 1/12;
         }
 
       }

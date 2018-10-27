@@ -13,7 +13,7 @@ const Article_Header = (props) => (
       <span className="category">{props.article.category.name.toUpperCase()}</span>
 
       <div className="header_content">
-        <h1>{props.article.title}
+        <h1>{props.article.title}</h1>
         <span> </span>
           <a href=""><Icon size={32} icon={ic_stars}/></a>
           <a href={`https://www.facebook.com/sharer/sharer.php?u=https://amherststudent.com/article/${props.article.slug}`}>
@@ -22,11 +22,10 @@ const Article_Header = (props) => (
           <a href={`https://twitter.com/intent/tweet?url=https://amherststudent.com/article/${props.article.slug}&text=${props.article.excerpt}`}>
             <Icon size={32} icon={socialTwitterCircular}/>
           </a>
-        </h1>
       </div>
       <hr/>
       <h5 className="article_details">
-      By <Link href={{ pathname: '/author', query: { id: props.article.author._id } }}><a>{' ' + props.article.author.username},</a></Link>  {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMMM D YYYY').toUpperCase()} | {props.article.issue.name}
+      By <Link href={{ pathname: '/author', query: { id: props.article.author._id } }}><a>{' ' + props.article.author.username},</a></Link>  {props.article.author.reporterTitle} | {moment(props.article.updatedAt).format('MMM. D, YYYY')} | {props.article.issue.name}
       </h5>
   <style jsx>{`
 
@@ -34,6 +33,7 @@ const Article_Header = (props) => (
       margin-left: 20px;
       padding: 5px;
       margin-top: 10px;
+      margin-right: 20px;
     }
 
     .category {
@@ -48,6 +48,12 @@ const Article_Header = (props) => (
       padding: 5px;
       margin-left: 25px;
       margin-bottom: 40px;
+    }
+    @media screen and (max-width: 1000px) {
+      h1{
+        font-size: 44px;
+
+      }
     }
 
     h1 {

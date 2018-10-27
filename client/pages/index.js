@@ -13,101 +13,76 @@ import MediaCard3 from '../components/mediacard3.js'
 import OneThirdCard from '../components/thirdcard.js'
 
 //Graphql requests
-import { Query } from 'react-apollo'
-import { gql } from 'apollo-boost'
+import {Query} from 'react-apollo'
+import {gql} from 'apollo-boost'
 import {HOME_PAGE} from '../lib/queries'
-
 
 const Home = props => (
   <Main>
-    <NextSeo
-      config={{
-        title: 'Home | The Amherst Student'
-      }}
-    />
+  <NextSeo config={{
+      title: 'The Amherst Student'
+    }}/>
 
-    <Query query={HOME_PAGE}>
-      {({ loading, error, data }) => {
-        if (loading) return null
-        if (error) return `Error!: Help me${error}`
+  <Query query={HOME_PAGE} errorPolicy="all">
+    {
+      ({loading, error, data}) => {
+        if (loading)
+          return null
+        if (error)
+          return `Error!: Help me${error}`
 
-        let main_view = data.views[0]
+        let view = data.views[0]
 
-        return (
-            <Grid>
-              <MediaCard article={main_view.top_article} className="span-8" />
+        return (<Grid>
+          <MediaCard article={view.top_article} className="span-8"/>
 
-              <FeatureNewsCard className="span-5" />
+          <FeatureNewsCard className="span-4"/>
 
-              <div className="tripleContainer">
-                <OneThirdCard article={main_view.news_right_first} />
-                <OneThirdCard article={main_view.news_right_second} />
-                <OneThirdCard article={main_view.news_right_third} />
-              </div>
-              <div className="big_card">
-                <MediaCard article={main_view.news_left_big} className="span-7" />
-              </div>
-              <MediaCard3 article={main_view.opinion_first} className="span-4" />
-              <MediaCard3 article={main_view.opinion_second} className="span-4" />
-              <MediaCard3 article={main_view.opinion_third} className="span-5" />
-              <div className="tripleContainer">
-                <OneThirdCard article={main_view.arts_living_first_third} />
-                <OneThirdCard article={main_view.arts_living_second_third} />
-                <OneThirdCard article={main_view.arts_living_third_third} />
-              </div>
-              <div className="big_card">
-                <MediaCard article={main_view.arts_living_big} className="span-7" />
-              </div>
+          <div className="tripleContainer">
+            <OneThirdCard article={view.news_right_first}/>
+            <OneThirdCard article={view.news_right_second}/>
+            <OneThirdCard article={view.news_right_third}/>
+          </div>
 
-              <MediaCard3 article={main_view.sports_first} className="span-4" />
-              <MediaCard3 article={main_view.sports_second} className="span-4" />
-              <MediaCard3 article={main_view.sports_third} className="span-5" />
-            </Grid>
-        )
-      }}
-    </Query>
+          <MediaCard article={view.news_left_big} className="span-6"/>
 
-    <style jsx="jsx">
-      {`
+          <MediaCard3 article={view.opinion_first} className="span-4"/>
+          <MediaCard3 article={view.opinion_second} className="span-4"/>
+          <MediaCard3 article={view.opinion_third} className="span-4"/>
 
+          <div className="tripleContainer">
+            <OneThirdCard article={view.arts_living_first_third}/>
+            <OneThirdCard article={view.arts_living_second_third}/>
+            <OneThirdCard article={view.arts_living_third_third}/>
+          </div>
+
+          <MediaCard article={view.arts_living_big} className="span-6"/>
+
+          <MediaCard3 article={view.sports_first} className="span-4"/>
+          <MediaCard3 article={view.sports_second} className="span-4"/>
+          <MediaCard3 article={view.sports_third} className="span-4"/>
+        </Grid>)
+      }
+    }
+  </Query>
+
+  <style jsx="jsx">
+    {
+      ` .tripleContainer {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @media screen and (max-width: 1300px) {
         .tripleContainer {
-          grid-column-start: 1;
-          grid-column-end: 7;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+          grid-column: 1 / 13;
         }
-        @media screen and (max-width: 768px) {
-          .tripleContainer {
-            grid-column: span 19;
-          }
-        }
-
-        .words:last-child {
-          grid-column-end: end;
-        }
-        .third {
-          margin-bottom: 200px !important;
-        }
-
-        .big_card {
-          grid-column-start: 7;
-          grid-column-end: 14;
-        }
-        @media screen and (max-width: 768px) {
-          .big_card {
-            grid-column: span 19;
-          }
-        }
-        .span-14 {
-          grid-column: 1 / 16;
-          display: flex;
-          justify-content: space-between;
-        }
-
-      `}
-    </style>
-  </Main>
+      }
+       `
+    }</style>
+</Main>
 )
 
 export default Home

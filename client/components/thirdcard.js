@@ -8,8 +8,11 @@ const OneThirdCard = ({article, className}) => (
     <div>
       <div className="cardContent">
 
+        <Link href={`/category/${article.category.name}`} passHref>
+        <a>
           <span className="category">{article.category.name.toUpperCase()}</span>
-
+        </a>
+        </Link>
 
         <h4 className="cardTitle">
           <Link href={`/article/${article.slug}`} passHref>
@@ -53,7 +56,7 @@ const OneThirdCard = ({article, className}) => (
         margin-bottom: 0px;
         margin-top: 10px;
         padding-top: 5px;
-      
+
       }
 
       a {

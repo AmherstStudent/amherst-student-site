@@ -4,18 +4,20 @@ import Card from './card.js'
 import Container from './container.js'
 let LOCAL_URI = 'https://api.amherststudent.com'
 const MediaCard = ({ article, className }) => (
-  <Card className={`${className}`}>
+  <Card className={`media_card ${className}`}>
+    <Link href={`/category/${article.category.name}`} passHref>
+    <a>
+      <span>{article.category.name.toUpperCase()}</span>
+    </a>
+    </Link>
     <Link href={`/article/${article.slug}`} passHref>
       <a>
-        <div
-          className="cardHeader"
-          style={
-            Boolean(article.featuredImage)
-              ? { backgroundImage: `url('${article.featuredImage.url}')` }
-              : { display: 'none' }
-          }
-        >
-          <span>{article.category.name.toUpperCase()}</span>
+
+
+        <div className="cardHeader">
+          <img className="link"src={article.featuredImage.url}/>
+
+
         </div>
       </a>
     </Link>
@@ -34,31 +36,43 @@ const MediaCard = ({ article, className }) => (
 
     <style jsx="jsx">
       {`
+
         .cardHeader {
-          min-height: 450px;
+          height: 550px;
           width: 100%;
-          overflow: hidden;
-          background: bottom;
-          background-size: cover;
-          background-repeat: no-repeat;
+          top: 0;
+          display: flex;
+          position: relative;
         }
-        @media screen and (max-width: 768px) {
-          .cardHeader {
-            min-height: 250px;
+        @media only screen and (max-width: 840px) {
+          .cardHeader{
+            max-height: 300px;
           }
         }
+        .link{
+          object-fit:cover;
+          width: 100%;
+          margin-top:-40px;
+          flex: 1;
+          z-index:1;
+          position:relative;
+
+        }
+
         span {
           background: #5d3c85;
           color: white;
           font-family: 'europa', sans-serif;
-
           font-size: 14px;
           letter-spacing: 0.12px;
           line-height: 21px;
-          position: absolute;
-          margin-top: 20px;
+          position: relative;
           padding: 5px;
           margin-left: 20px;
+          top: 20px;
+          z-index: 200;
+          display: inline-block;
+          height: 21px;
         }
         .cardTitle {
           font-style: italic;
@@ -73,10 +87,13 @@ const MediaCard = ({ article, className }) => (
         }
         .cardText {
           font-size: 16px;
+          padding: 0;
+          margin: 10px auto;
         }
         .cardTitle {
           -webkit-margin-before: 0.2em;
           -webkit-margin-after: 0.2em;
+          margin: 8px auto;
         }
         .cardAuthor {
           -webkit-margin-before: 0em;
@@ -84,18 +101,18 @@ const MediaCard = ({ article, className }) => (
           margin-top: -0.5em;
         }
         .cardContent {
-          padding-bottom: 1em;
-          padding-left: 2px;
-          padding-top: 10px;
-          margin-left: 20px;
-          margin-right:20px;
+          padding: 20px;
+
+
         }
+
         .cardText {
           padding-top: 5px;
         }
         a {
           text-decoration: none;
           color: rgb(85, 26, 139);
+
         }
         a:hover{
           color:grey;

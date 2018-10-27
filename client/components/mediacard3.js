@@ -6,17 +6,21 @@ import Container from './container.js'
 let LOCAL_URI = 'https://api.amherststudent.com'
 const MediaCard3 = ({article, className})=> (
   <Card className={`thrds ${className}`}>
+    <Link href={`/category/${article.category.name}`} passHref>
+    <a>
+      <span>{article.category.name.toUpperCase()}</span>
+    </a>
+    </Link>
     <Link href={`/article/${article.slug}`} passHref>
       <a>
         <div
           style={
             Boolean(article.featuredImage)
               ? { backgroundImage: `url('${article.featuredImage.url}')` }
-              : { minHeight: '70px' }
+              : { minHeight: '30px' }
           }
           className="cardHeader"
         >
-          <span>{article.category.name.toUpperCase()}</span>
         </div>
       </a>
     </Link>
@@ -51,7 +55,6 @@ const MediaCard3 = ({article, className})=> (
         background: #5d3c85;
         color: white;
         font-family: 'europa', sans-serif;
-
         font-size: 14px;
         letter-spacing: 0.12px;
         line-height: 21px;
@@ -86,7 +89,7 @@ const MediaCard3 = ({article, className})=> (
         color: black;
         padding: 20px;
         padding-top: 5px;
-         
+
       }
       .cardText {
         padding-top: 5px;
@@ -106,6 +109,11 @@ const MediaCard3 = ({article, className})=> (
       }
       h2{
         color: black;
+      }
+      @media screen and (max-width: 1300px) {
+        .cardHeader{
+          min-height:250px;
+        }
       }
     `}</style>
   </Card>

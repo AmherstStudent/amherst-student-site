@@ -124,6 +124,8 @@ const Nav = (props) =>(
         display:none;
       }
       @media screen and (max-width:800px) {
+        
+
         .links{
           display:none;
         }

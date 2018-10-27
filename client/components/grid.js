@@ -9,14 +9,11 @@ const Grid = props => (
       .grid {
         display: grid;
         max-width: 100%;
-        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        -ms-grid-columns: repeat(12, 1fr);;
+        grid-template-columns: repeat(12, 1fr);;
         grid-gap: 20px;
-        grid-auto-rows: auto;
       }
-      .news {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-      }
+
     `}</style>
   </div>
 )
