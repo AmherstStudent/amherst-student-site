@@ -68,6 +68,7 @@ const Nav = (props) =>(
         z-index: 2;
         background-color: white;
         box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
+        z-index: 200000;
       }
       nav .wrapper {
         align-items: center;
@@ -123,10 +124,12 @@ const Nav = (props) =>(
           display:none;
         }
         .logo{
-          height: 20px;
+          height: 10%;
           justify-content: flex-start;
           flex: 1 1 auto;
         }
+
+
         .navIcon{
           display:flex;
           justify-content: flex-end;
