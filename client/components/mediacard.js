@@ -44,7 +44,7 @@ const MediaCard = ({ article, className }) => (
           display: flex;
           position: relative;
         }
-        @media only screen and (max-width: 840px) {
+        @media only screen and (max-width: 800px) {
           .cardHeader{
             max-height: 300px;
           }
