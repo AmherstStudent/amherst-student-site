@@ -4,24 +4,26 @@ import Container from './container.js'
 import { Icon } from 'react-icons-kit'
 import {navicon} from 'react-icons-kit/fa/navicon'
 import {search} from 'react-icons-kit/fa/search'
+import MobileNav from './mobile_nav.js'
 
 const links = [
-  { href: '/category?name=News', label: 'NEWS' },
-  { href: '/category?name=Opinion', label: 'OPINION' },
-  { href: '/category?name=Arts and Living', label: 'ARTS AND LIVING' },
-  { href: '/category?name=Sports', label: 'SPORTS' },
+  { href: '/category/news', label: 'NEWS' },
+  { href: '/category/opinion', label: 'OPINION' },
+  { href: '/category/arts and living', label: 'ARTS AND LIVING' },
+  { href: '/category/sports', label: 'SPORTS' },
   { href: 'https://issuu.com/amherststudent/docs/issue_1_44e01646c9385d', label: 'PRINT ISSUES' }
 ].map(link => {
   link.key = `nav-link-${link.href}-${link.label}`
   return link
 })
+
 function handleClick() {
     console.log('The link was clicked.');
 }
+
 const Nav = (props) =>(
   <nav>
       <Container className="wrapper">
-
         <ul>
           <li className="logo">
             <a href="/">
@@ -48,18 +50,9 @@ const Nav = (props) =>(
         <li className="navIcon">
           <Icon size={32} icon={navicon}/>
         </li>
+        {!this.props.isHidden && <MobileNav/>}
+      </ul>
 
-      </ul>
-      <ul className="mobile">
-        <hr />
-        {links.map(({ key, href, label }) => (
-          <li key={key}>
-            <Link href={href} prefetch>
-              <a>{label}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
 
     </Container>
 
@@ -124,7 +117,7 @@ const Nav = (props) =>(
         display:none;
       }
       @media screen and (max-width:800px) {
-        
+
 
         .links{
           display:none;
@@ -138,21 +131,7 @@ const Nav = (props) =>(
           display:flex;
           justify-content: flex-end;
         }
-        .mobile{
-          display:none;
-          flex-direction: column;
-          width: 100%;
-          padding-top: 0;
-        }
-        .mobile li {
-          align-items: center;
-          justify-content: center;
-          padding-bottom: 10px;
-          padding-top: 10px;
-        }
-        hr{
-          width:100%;
-        }
+
       }
     `}</style>
   </nav>

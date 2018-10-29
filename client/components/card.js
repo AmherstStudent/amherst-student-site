@@ -60,7 +60,7 @@ const Card = props => (
       }
 
 
-      @media screen and (max-width: 1300px) {
+      @media screen and (max-width: 960px) {
         .card {
           grid-column: 1 / 13;
         }

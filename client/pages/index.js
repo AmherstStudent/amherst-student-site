@@ -75,7 +75,7 @@ const Home = props => (
         flex-direction: column;
         justify-content: space-between;
       }
-      @media screen and (max-width: 1300px) {
+      @media screen and (max-width: 960px) {
         .tripleContainer {
           grid-column: 1 / 13;
         }
