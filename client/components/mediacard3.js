@@ -110,7 +110,7 @@ const MediaCard3 = ({article, className})=> (
       h2{
         color: black;
       }
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 768px) {
         .cardHeader{
           min-height:250px;
         }

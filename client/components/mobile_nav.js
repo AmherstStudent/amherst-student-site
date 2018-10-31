@@ -36,4 +36,4 @@ const MobileNav = (props) =>(
   </Fragment>
 )
 
-export const MobileNav
+export default MobileNav
