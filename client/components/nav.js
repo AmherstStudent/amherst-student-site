@@ -50,7 +50,6 @@ const Nav = (props) =>(
         <li className="navIcon">
           <Icon size={32} icon={navicon}/>
         </li>
-        {!this.props.isHidden && <MobileNav/>}
       </ul>
 
 
