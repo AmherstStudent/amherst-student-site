@@ -4,7 +4,6 @@
 // ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document'
 import Footer from '../components/footer'
-import Nav from '../components/nav'
 import ga from '../lib/ga'
 
 export default class MyDocument extends Document {
@@ -26,7 +25,6 @@ export default class MyDocument extends Document {
         </Head>
 
         <body>
-          <Nav />
           <Main />
           <NextScript />
           <Footer />

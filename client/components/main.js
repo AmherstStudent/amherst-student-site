@@ -2,9 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import Container from './container.js'
 import Grid from './grid.js'
+import Nav from './nav.js'
 
 const Main = (props) => (
       <div className="content">
+      <Nav />
         <Container>
 
         {props.children}
@@ -13,12 +15,12 @@ const Main = (props) => (
         <style jsx>
 
           {`
+
         .content{
 
           min-height: 100vh;
           font-family: "adobe-garamond-pro",serif;
           background: #F1F1F1;
-          padding-top: 110px;
           padding-bottom: 40px;
           width: 100vw;
           }

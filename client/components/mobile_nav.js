@@ -2,18 +2,19 @@ import React from 'react'
 import Link from 'next/link'
 import Container from './container.js'
 
+const links = [
+  { href: '/category/news', label: 'NEWS' },
+  { href: '/category/opinion', label: 'OPINION' },
+  { href: '/category/arts and living', label: 'ARTS AND LIVING' },
+  { href: '/category/sports', label: 'SPORTS' },
+  { href: 'https://issuu.com/amherststudent/docs/issue_1_44e01646c9385d', label: 'PRINT ISSUES' }
+].map(link => {
+  link.key = `nav-link-${link.href}-${link.label}`
+  return link
+})
 const MobileNav = (props) =>(
-  <Fragment>
-  <ul className="mobile">
-    <hr />
-    {links.map(({ key, href, label }) => (
-      <li key={key}>
-        <Link href={href} prefetch>
-          <a>{label}</a>
-        </Link>
-      </li>
-    ))}
-  </ul>
+  <>
+
   <style jsx>
   {`
     .mobile{
@@ -31,9 +32,16 @@ const MobileNav = (props) =>(
     hr{
       width:100%;
     }
+    li {
+      display: flex;
+      font-family: "europa";
+      font-size: 14px;
+      width: auto;
+      margin: auto 0;
+    }
 
   `} </style>
-  </Fragment>
+  </>
 )
 
 export default MobileNav

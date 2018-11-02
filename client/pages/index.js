@@ -3,6 +3,8 @@ import NextSeo from 'next-seo'
 
 //Format
 import Head from '../components/head'
+import Nav from '../components/nav'
+
 import Grid from '../components/grid.js'
 import Main from '../components/main.js'
 
@@ -18,6 +20,7 @@ import {gql} from 'apollo-boost'
 import {HOME_PAGE} from '../lib/queries'
 
 const Home = props => (
+
   <Main>
   <NextSeo config={{
       title: 'The Amherst Student'
