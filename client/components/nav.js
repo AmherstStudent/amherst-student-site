@@ -189,6 +189,8 @@ handleClick = () => {
            width: 100vw;
            padding-top: 0;
            background: white;
+           margin-left: -15px;
+
 
          }
          .mobile li {
