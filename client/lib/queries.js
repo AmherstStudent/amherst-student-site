@@ -176,3 +176,19 @@ query AuthorLookup ($name: ID!) {
   }
 }
 `
+
+export const FAVARTICLE = gql`
+  query{
+  views(limit: 1,sort: "createdAt:desc" ) {
+    toparticles{
+      title
+      author{
+        username
+      }
+      slug
+    }
+  }
+  }
+
+
+`
