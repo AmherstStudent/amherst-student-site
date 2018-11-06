@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const Container = props => (
-  <div className="container">
+  <div className={`container ${props.className}`}>
     {props.children}
 
     <style jsx>{`
@@ -16,6 +16,9 @@ const Container = props => (
         .container{
           width: 92.5%;
         }
+      }
+      .bottom-up {
+         margin-top: 300px;
       }
     `}</style>
   </div>
