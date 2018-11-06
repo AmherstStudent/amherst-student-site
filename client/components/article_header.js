@@ -56,6 +56,13 @@ const Article_Header = (props) => (
       }
     }
 
+    @media screen and (max-width: 768px) {
+      h1{
+        font-size: 30px;
+
+      }
+    }
+
     h1 {
       margin-bottom: 2px;
       padding-top: 20px;
