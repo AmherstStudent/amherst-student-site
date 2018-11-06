@@ -93,7 +93,7 @@ handleClick = () => {
           position: fixed;
           display: flex;
           width: 100vw;
-          height: 7vh;
+          height: 8.5vh;
           z-index: 2;
           background-color: white;
           box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
@@ -186,7 +186,7 @@ handleClick = () => {
          .mobile{
            display: flex;
            flex-direction: column;
-           width: 100%;
+           width: 100vw;
            padding-top: 0;
            background: white;
 

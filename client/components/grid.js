@@ -12,7 +12,13 @@ const Grid = props => (
         -ms-grid-columns: repeat(12, 1fr);;
         grid-template-columns: repeat(12, 1fr);;
         grid-gap: 20px;
-        padding-top: 65px;
+        padding-top: 10vh;
+      }
+
+      @media screen and (max-width:800px) {
+        .grid{
+          padding-top: 8.5vh;
+        }
       }
 
     `}</style>
