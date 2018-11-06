@@ -56,7 +56,7 @@ export default class Search extends React.Component {
 
   render(){
     return (
-      <Nav/>
+      
       <div className="main-content">
         <Head title="The Amherst Student">
           <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
