@@ -93,7 +93,7 @@ handleClick = () => {
           position: fixed;
           display: flex;
           width: 100vw;
-          height: 8.5vh;
+          min-height: 5%;
           z-index: 2;
           background-color: white;
           box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
@@ -103,10 +103,9 @@ handleClick = () => {
           flex-direction: row;
         }
         nav .wrapper {
-          align-items: center;
           display: flex;
           justify-content: space-between;
-
+          width: 100vw;
         }
         ul {
           display:flex;
@@ -163,7 +162,7 @@ handleClick = () => {
         @media screen and (max-width:800px) {
 
           nav{
-            height: 6vh;
+            height: 7.5vh;
             align-items: stretch;
           }
 
