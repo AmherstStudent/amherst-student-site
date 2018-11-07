@@ -110,7 +110,7 @@ handleClick = () => {
         }
         ul {
           display:flex;
-          width: 100%;
+          width: 95vw;
           padding: 0;
           list-style-type: none;
           justify-content: space-between;
