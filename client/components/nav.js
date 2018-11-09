@@ -143,6 +143,7 @@ handleClick = () => {
         img{
           height: 100%;
           width: auto;
+
         }
         .logo{
           height: 20px;
@@ -152,6 +153,7 @@ handleClick = () => {
 
         .navIcon{
           display:none;
+
         }
         .mobile{
           display:none;
@@ -178,15 +180,19 @@ handleClick = () => {
           }
           .logo{
             justify-content: flex-start;
-              width: 95%;
+            max-width: 320px;
+            width: 380px;
           }
           img{
             align: left;
+            width: 100%;
+            height: auto;
           }
 
           .navIcon{
             display:flex;
             justify-content: flex-end;
+            padding: 10px;
           }
 
          .mobile{
@@ -197,7 +203,7 @@ handleClick = () => {
            padding-inline-start: 0px;
          }
          .mobile.hr{
-           width: 100vw
+           width: 100vw;
            height: 1vh;
            color: black;
          }
