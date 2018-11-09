@@ -4,10 +4,7 @@ import Container from './container'
 
 const Footer = () => (
   <footer>
-    <div className="top">
-    <img src="/static/white-logo.svg" alt="the Amherst Student" />
-    <p>The College Newspaper of Amherst College since 1868 </p>
-    </div>
+
     <Container>
 
       <ul>
@@ -41,7 +38,7 @@ const Footer = () => (
     background: #333333;
     box-shadow: 0 2px 3px 1px rgba(0,0,0,0.50);
     width: 100%;
-    height: 125px;
+    
     bottom: 0;
   }
 
