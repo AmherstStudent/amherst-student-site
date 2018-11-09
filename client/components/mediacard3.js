@@ -4,12 +4,12 @@ import Card from './card.js'
 import Container from './container.js'
 
 let LOCAL_URI = 'https://api.amherststudent.com'
-const MediaCard3 = ({article, className})=> (
+const MediaCard3 = ({ article, className }) => (
   <Card className={`thrds ${className}`}>
     <Link href={`/category/${article.category.name}`} passHref>
-    <a>
-      <span>{article.category.name.toUpperCase()}</span>
-    </a>
+      <a>
+        <span>{article.category.name.toUpperCase()}</span>
+      </a>
     </Link>
     <Link href={`/article/${article.slug}`} passHref>
       <a>
@@ -20,27 +20,29 @@ const MediaCard3 = ({article, className})=> (
               : { minHeight: '30px' }
           }
           className="cardHeader"
-        >
-        </div>
+        />
       </a>
     </Link>
 
-      <div className="cardContent">
-        <Link href={`/article/${article.slug}`} passHref>
-          <a>
-            <h2 className="cardTitle">{article.title}</h2>
-          </a>
+    <div className="cardContent">
+      <Link href={`/article/${article.slug}`} passHref>
+        <a>
+          <h2 className="cardTitle">{article.title}</h2>
+        </a>
+      </Link>
+      <br />
+      <p className="cardAuthor">
+        by{' '}
+        <Link href={{ pathname: '/author', query: { id: article.author._id } }}>
+          <a>{article.author.username}</a>
         </Link>
-        <br />
-        <p className="cardAuthor">
-          by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username}</a></Link>, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
-        </p>
-        <p className="feat" style={Boolean(article.featuredImage) ? { display: 'none' } : {}}>
-          {' '}
-          {article.excerpt}{' '}
-        </p>
-      </div>
-
+        , {article.author.reporterTitle} | {article.issue.name.toUpperCase()}
+      </p>
+      <p className="feat" style={Boolean(article.featuredImage) ? { display: 'none' } : {}}>
+        {' '}
+        {article.excerpt}{' '}
+      </p>
+    </div>
 
     <style jsx>{`
       .cardHeader {
@@ -72,8 +74,8 @@ const MediaCard3 = ({article, className})=> (
         line-height: 22px;
       }
       .cardTitle {
-        -webkit-margin-before: 0.0em;
-        -webkit-margin-after: 0.0em;
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
         color: black !important;
         font-weight: 600;
       }
@@ -81,7 +83,6 @@ const MediaCard3 = ({article, className})=> (
         -webkit-margin-before: 0em;
         -webkit-margin-after: 0em;
         margin-top: -0.5em;
-
       }
       .cardContent {
         padding-bottom: 1em;
@@ -89,7 +90,6 @@ const MediaCard3 = ({article, className})=> (
         color: black;
         padding: 20px;
         padding-top: 5px;
-
       }
       .cardText {
         padding-top: 5px;
@@ -98,8 +98,8 @@ const MediaCard3 = ({article, className})=> (
         text-decoration: none;
         color: rgb(85, 26, 139);
       }
-      a:hover{
-        color:grey;
+      a:hover {
+        color: grey;
       }
       .cardTitle:hover {
         color: grey;
@@ -107,12 +107,12 @@ const MediaCard3 = ({article, className})=> (
       .feat {
         font-size: 16px;
       }
-      h2{
+      h2 {
         color: black;
       }
       @media screen and (max-width: 768px) {
-        .cardHeader{
-          min-height:250px;
+        .cardHeader {
+          min-height: 250px;
         }
       }
     `}</style>
@@ -122,14 +122,14 @@ MediaCard3.defaultProps = {
   article: {
     slug: 'word',
     category: {
-      name: 'Card'
+      name: 'Card',
     },
     featuredImage: 'none',
     title: 'Title',
     author: {
-      username: 'Call me'
-    }
-  }
+      username: 'Call me',
+    },
+  },
 }
 
 export default MediaCard3

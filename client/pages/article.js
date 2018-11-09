@@ -1,17 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import Grid from '../components/grid.js'
-import {withRouter} from 'next/router'
+import { withRouter } from 'next/router'
 
 // GraphQL loading
-import {ARTICLE_LOOKUP} from '../lib/queries.js'
-import {gql} from 'apollo-boost'
-import {Query} from 'react-apollo'
+import { ARTICLE_LOOKUP } from '../lib/queries.js'
+import { gql } from 'apollo-boost'
+import { Query } from 'react-apollo'
 
 // NextSeo
 import NextSeo from 'next-seo'
 import { ArticleJsonLd } from 'next-seo'
-
 
 // elements
 import Main from '../components/main'
@@ -22,45 +21,33 @@ import FeatureNewsCard from '../components/featurenewscard.js'
 import AuthorCard from '../components/authorcard'
 import CommentsContainer from '../components/comments'
 
-
-
-
-
-
-const Article = withRouter((props) => (
+const Article = withRouter(props => (
   <Main>
-
-
     <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
-      {
-        ({loading, error, data}) => {
-          if (loading)
-            return null;
-          if (error)
-            return `Error!: ${error}`;
+      {({ loading, error, data }) => {
+        if (loading) return null
+        if (error) return `Error!: ${error}`
 
-
-          function imageChecker(){
-            if (article.featuredImage === null) {
-              return false;
-            }
-            else {
-              return true;
-            }
+        function imageChecker() {
+          if (article.featuredImage === null) {
+            return false
+          } else {
+            return true
           }
-          function nullImage(){
-            if (imageChecker() == true) {
-              var imageLink = [article.featuredImage.url]
-              return imageLink
-            }
-            return []
+        }
+        function nullImage() {
+          if (imageChecker() == true) {
+            var imageLink = [article.featuredImage.url]
+            return imageLink
           }
-          function urlReturn(){
-            return 'amherststudent.com/' + article.slug
-          }
-          let article = data.articles[0]
-          return (<Grid>
-
+          return []
+        }
+        function urlReturn() {
+          return 'amherststudent.com/' + article.slug
+        }
+        let article = data.articles[0]
+        return (
+          <Grid>
             <NextSeo
               config={{
                 title: article.title,
@@ -68,8 +55,8 @@ const Article = withRouter((props) => (
                 openGraph: {
                   url: urlReturn(),
                   title: article.title,
-                  description: article.excerpt
-                }
+                  description: article.excerpt,
+                },
               }}
             />
 
@@ -84,63 +71,55 @@ const Article = withRouter((props) => (
               description={article.excerpt}
             />
 
-            <Article_Header className="header" article={article}/>
+            <Article_Header className="header" article={article} />
 
             <article>
-              {imageChecker() ? <ImageCard article={article}/> : ' '}
+              {imageChecker() ? <ImageCard article={article} /> : ' '}
 
-              <Article_Core article={article}/>
-              <CommentsContainer article={article}/>
+              <Article_Core article={article} />
+              <CommentsContainer article={article} />
             </article>
 
             <aside>
-              <AuthorCard className="margin-20" type="author" author={article.author}/>
-              <FeatureNewsCard className="margin-20"/>
+              <AuthorCard className="margin-20" type="author" author={article.author} />
+              <FeatureNewsCard className="margin-20" />
             </aside>
-          </Grid>)
-        }
-      }
+          </Grid>
+        )
+      }}
     </Query>
 
-
-  <style jsx="jsx">
-    {
-      `
-
-
-      @media only screen and (min-width: 1300px) {
-        article {
-          grid-column: 1 / 10;
+    <style jsx="jsx">
+      {`
+        @media only screen and (min-width: 1300px) {
+          article {
+            grid-column: 1 / 10;
+          }
+          aside {
+            grid-column: 10 / 13;
+          }
+          .header {
+            grid-column: 1 /12;
+          }
         }
-        aside {
-          grid-column: 10 / 13;
+        article > * {
+          margin-bottom: 15%;
         }
-        .header{
-          grid-column: 1 /12;
+        @media only screen and (max-width: 1300px) {
+          article {
+            grid-column: span 12;
+          }
+          aside {
+            grid-column: span 12;
+          }
+
+          .header {
+            grid-column: 1/12;
+          }
         }
-
-      }
-      article > * {
-        margin-bottom: 15%;
-      }
-      @media only screen and (max-width: 1300px) {
-        article {
-          grid-column: span 12;
-        }
-        aside {
-          grid-column: span 12;
-        }
-
-        .header{
-          grid-column: 1/12;
-        }
-
-      }
-
-
-
-       `
-    }</style>
-</Main>))
+      `}
+    </style>
+  </Main>
+))
 
 export default Article

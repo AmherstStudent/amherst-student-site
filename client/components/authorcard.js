@@ -3,9 +3,7 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from '../components/container'
 
-
-const AuthorCard = props =>
-(
+const AuthorCard = props => (
   <Card className={`article ${props.className}`}>
     <Container>
       <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
@@ -84,11 +82,11 @@ const AuthorCard = props =>
 AuthorCard.defaultProps = {
   author: {
     reporterPhoto: {
-      url: 'word'
+      url: 'word',
     },
     username: 'word',
-    reporterBio: 'word'
-  }
+    reporterBio: 'word',
+  },
 }
 
 export default AuthorCard

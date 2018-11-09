@@ -3,15 +3,14 @@ import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
 
-const OneThirdCard = ({article, className}) => (
+const OneThirdCard = ({ article, className }) => (
   <Card className={`third ${className}`}>
     <div>
       <div className="cardContent">
-
         <Link href={`/category/${article.category.name}`} passHref>
-        <a>
-          <span className="category">{article.category.name.toUpperCase()}</span>
-        </a>
+          <a>
+            <span className="category">{article.category.name.toUpperCase()}</span>
+          </a>
         </Link>
 
         <h4 className="cardTitle">
@@ -20,7 +19,11 @@ const OneThirdCard = ({article, className}) => (
           </Link>{' '}
           <br />{' '}
           <span className="cardAuthor">
-            by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a className="username">{article.author.username}</a></Link>, {article.author.reporterTitle} |{' '}{article.issue.name.toUpperCase()}
+            by{' '}
+            <Link href={{ pathname: '/author', query: { id: article.author._id } }}>
+              <a className="username">{article.author.username}</a>
+            </Link>
+            , {article.author.reporterTitle} | {article.issue.name.toUpperCase()}
           </span>
         </h4>
         <p className="cardText">{article.excerpt}</p>
@@ -56,7 +59,6 @@ const OneThirdCard = ({article, className}) => (
         margin-bottom: 0px;
         margin-top: 10px;
         padding-top: 5px;
-
       }
 
       a {
@@ -64,7 +66,7 @@ const OneThirdCard = ({article, className}) => (
         color: black;
       }
 
-      .username{
+      .username {
         color: rgb(85, 26, 139);
       }
 
@@ -97,9 +99,6 @@ const OneThirdCard = ({article, className}) => (
           padding-bottom: 20px;
         }
       }
-
-
-
     `}</style>
   </Card>
 )
@@ -107,15 +106,15 @@ const OneThirdCard = ({article, className}) => (
 OneThirdCard.defaultProps = {
   article: {
     category: {
-      name: 'Card'
+      name: 'Card',
     },
     title: 'Title',
     author: {
-      username: 'Call me'
+      username: 'Call me',
     },
     slug: 'defaddult',
-    excerpt: 'Word'
-  }
+    excerpt: 'Word',
+  },
 }
 
 export default OneThirdCard

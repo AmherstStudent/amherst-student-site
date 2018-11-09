@@ -13,12 +13,12 @@ const Container = props => (
         position: relative;
       }
       @media screen and (max-width: 800px) {
-        .container{
+        .container {
           width: 92.5%;
         }
       }
       .bottom-up {
-         margin-top: 100px;
+        margin-top: 100px;
       }
     `}</style>
   </div>

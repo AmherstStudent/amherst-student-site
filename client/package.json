@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "format": "prettier --write \"pages/*.{ts,css,less,js}\" \"components/*.{ts,css,less,js}\" "
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
@@ -37,13 +38,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run format"
     }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }

@@ -4,9 +4,7 @@ import Container from './container'
 
 const Footer = () => (
   <footer>
-
     <Container>
-
       <ul>
         <li>
           <Link href={`/masthead#about`} passHref>
@@ -28,7 +26,6 @@ const Footer = () => (
             <a>Contact</a>
           </Link>
         </li>
-
       </ul>
     </Container>
 

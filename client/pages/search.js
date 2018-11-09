@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 
 import Head from '../components/head'
@@ -12,40 +10,37 @@ import Search_List_Container from '../components/search_list_container'
 export default class Search extends React.Component {
   constructor(props) {
     super(props)
-      this.state = {
-        query: '',
-        results: []
-      }
-      this.addText = this.addText.bind(this)
-      this.handleKeyPress = this.handleKeyPress.bind(this)
-
-
+    this.state = {
+      query: '',
+      results: [],
+    }
+    this.addText = this.addText.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   addText = () => {
     this.setState({
-     query: this.search.value
+      query: this.search.value,
     })
   }
 
   getInfo = () => {
-    let search_link = "https://api.amherststudent.com/article?_q="
+    let search_link = 'https://api.amherststudent.com/article?_q='
     console.log(search_link)
     console.log(this.state.query)
     fetch(`${search_link}${this.state.query}`)
-      .then(response =>{
+      .then(response => {
         if (response.status >= 400) {
-          throw new Error("Bad response from server");
+          throw new Error('Bad response from server')
         }
         return response.json()
       })
-      .then((articles) => {
+      .then(articles => {
         this.setState({
-          results: articles
+          results: articles,
         })
       })
-      console.log(this.state.results)
-
+    console.log(this.state.results)
   }
 
   handleKeyPress(event) {
@@ -54,24 +49,27 @@ export default class Search extends React.Component {
     }
   }
 
-  render(){
+  render() {
     return (
-      
       <div className="main-content">
         <Head title="The Amherst Student">
-          <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College." />
+          <meta
+            name="description"
+            content="The Amherst Student, the student-supported newspaper of Amherst College."
+          />
         </Head>
 
         <Container className="contain">
+          <input
+            type="text"
+            name="uname"
+            ref={input => (this.search = input)}
+            placeholder="Search for your article"
+            onChange={this.addText}
+            onKeyPress={this.handleKeyPress}
+          />
 
-
-            <input type="text"  name="uname"
-                  ref={input => this.search = input}
-                  placeholder="Search for your article"
-                  onChange={this.addText}
-                  onKeyPress={this.handleKeyPress}/>
-
-                <button onClick={this.getInfo}>Search</button>
+          <button onClick={this.getInfo}>Search</button>
 
           <Search_List_Container results={this.state.results} />
         </Container>
@@ -133,7 +131,7 @@ export default class Search extends React.Component {
             a {
               margin-top: 200px;
             }
-            button{
+            button {
               border: 2px solid #5d3c85;
               padding: 10px;
               color: #5d3c85;

@@ -3,7 +3,7 @@ import Card from './card'
 import Container from './container'
 import ReactDisqusComments from 'react-disqus-comments'
 
-const CommentsContainer = (props) => (
+const CommentsContainer = props => (
   <div className="comments">
     <Card>
       <Container>
@@ -17,11 +17,10 @@ const CommentsContainer = (props) => (
       </Container>
     </Card>
     <style jsx>{`
-      .comments{
+      .comments {
         margin-bottom: 20px;
       }
-
-            `}</style>
+    `}</style>
   </div>
 )
 

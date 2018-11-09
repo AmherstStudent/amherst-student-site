@@ -2,29 +2,26 @@ import React from 'react'
 import Link from 'next/link'
 import Card from './card.js'
 import Container from './container.js'
-import {Query} from 'react-apollo'
-import {gql} from 'apollo-boost'
-import {FAVARTICLE} from '../lib/queries'
+import { Query } from 'react-apollo'
+import { gql } from 'apollo-boost'
+import { FAVARTICLE } from '../lib/queries'
 
 const FeatureNewsCard = props => (
   <Card className={`${props.className}`}>
     <Container>
       <div className="cardContent">
         <h3 className="cardTitle">TOP ARTICLES</h3>
-      <Query query={FAVARTICLE} errorPolicy="all">
-        {
-          ({loading, error, data}) => {
-            if (loading)
-              return null
-            if (error)
-              return `Error!: Help me${error}`
+        <Query query={FAVARTICLE} errorPolicy="all">
+          {({ loading, error, data }) => {
+            if (loading) return null
+            if (error) return `Error!: Help me${error}`
 
             let view = data.views[0]
             let top_articles = view.toparticles
             console.log(top_articles)
 
-            return (
-              top_articles.map(article => <div className="topArticle">
+            return top_articles.map(article => (
+              <div className="topArticle">
                 <Link href={`/article/${article.slug}`} passHref>
                   <a>
                     <h4>{article.title}</h4>
@@ -32,16 +29,11 @@ const FeatureNewsCard = props => (
                 </Link>
                 <p className="caption">by {article.author.username}</p>
                 <hr />
-              </div>)
-
-            )
-          }
-        }
-
-
+              </div>
+            ))
+          }}
         </Query>
       </div>
-
     </Container>
 
     <style jsx>{`
@@ -57,7 +49,7 @@ const FeatureNewsCard = props => (
       .cardContent {
         margin: 0 auto;
         text-align: center;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         flex-direction: column;
       }
@@ -66,7 +58,6 @@ const FeatureNewsCard = props => (
       }
       .topArticle {
         margin-top: 20px;
-
       }
       h3 {
         font-family: 'europa', sans-serif;

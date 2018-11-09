@@ -6,18 +6,14 @@ let LOCAL_URI = 'https://api.amherststudent.com'
 const MediaCard = ({ article, className }) => (
   <Card className={`media_card ${className}`}>
     <Link href={`/category/${article.category.name}`} passHref>
-    <a>
-      <span>{article.category.name.toUpperCase()}</span>
-    </a>
+      <a>
+        <span>{article.category.name.toUpperCase()}</span>
+      </a>
     </Link>
     <Link href={`/article/${article.slug}`} passHref>
       <a>
-
-
         <div className="cardHeader">
-          <img className="link"src={article.featuredImage.url}/>
-
-
+          <img className="link" src={article.featuredImage.url} />
         </div>
       </a>
     </Link>
@@ -29,14 +25,17 @@ const MediaCard = ({ article, className }) => (
         </a>
       </Link>
       <p className="cardAuthor">
-        by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username},</a></Link> {article.author.reporterTitle} | {' '}{article.issue.name.toUpperCase()}
+        by{' '}
+        <Link href={{ pathname: '/author', query: { id: article.author._id } }}>
+          <a>{article.author.username},</a>
+        </Link>{' '}
+        {article.author.reporterTitle} | {article.issue.name.toUpperCase()}
       </p>
       <p className="cardText">{article.excerpt}</p>
     </div>
 
     <style jsx="jsx">
       {`
-
         .cardHeader {
           height: 550px;
           width: 100%;
@@ -45,18 +44,17 @@ const MediaCard = ({ article, className }) => (
           position: relative;
         }
         @media only screen and (max-width: 800px) {
-          .cardHeader{
+          .cardHeader {
             max-height: 300px;
           }
         }
-        .link{
-          object-fit:cover;
+        .link {
+          object-fit: cover;
           width: 100%;
-          margin-top:-40px;
+          margin-top: -40px;
           flex: 1;
-          z-index:1;
-          position:relative;
-
+          z-index: 1;
+          position: relative;
         }
 
         span {
@@ -102,8 +100,6 @@ const MediaCard = ({ article, className }) => (
         }
         .cardContent {
           padding: 20px;
-
-
         }
 
         .cardText {
@@ -112,10 +108,9 @@ const MediaCard = ({ article, className }) => (
         a {
           text-decoration: none;
           color: rgb(85, 26, 139);
-
         }
-        a:hover{
-          color:grey;
+        a:hover {
+          color: grey;
         }
         .cardTitle:hover {
           color: grey;

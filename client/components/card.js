@@ -51,14 +51,13 @@ const Card = props => (
         min-height: 250px;
       }
 
-      .third:last-child{
-        margin-bottom:0px;
+      .third:last-child {
+        margin-bottom: 0px;
       }
 
-      .margin-20{
+      .margin-20 {
         margin-bottom: 20px;
       }
-
 
       @media screen and (max-width: 768px) {
         .card {
@@ -71,7 +70,7 @@ const Card = props => (
       .thrds {
         margin-right: 10px;
       }
-      .black{
+      .black {
         background-color: hsl(0, 0%, 10%);
       }
     `}</style>

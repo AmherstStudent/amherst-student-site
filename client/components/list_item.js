@@ -6,7 +6,7 @@ import Grid from '../components/grid'
 import Card from '../components/card'
 import moment from 'moment'
 
-const List_Item = ({article}) => (
+const List_Item = ({ article }) => (
   <Card className="list_item margin-20">
     <Container>
       <div className="cardContent">
@@ -17,8 +17,12 @@ const List_Item = ({article}) => (
           </a>
         </Link>
         <p className="author">
-          by <Link href={{ pathname: '/author', query: { id: article.author._id } }}><a>{article.author.username}</a></Link>, {article.author.reporterTitle} ||{' '}
-          {moment(article.createdAt).format('MMMM D YYYY')} || {article.issue.name}
+          by{' '}
+          <Link href={{ pathname: '/author', query: { id: article.author._id } }}>
+            <a>{article.author.username}</a>
+          </Link>
+          , {article.author.reporterTitle} || {moment(article.createdAt).format('MMMM D YYYY')} ||{' '}
+          {article.issue.name}
         </p>
         <p>{article.excerpt}</p>
       </div>

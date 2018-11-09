@@ -15,39 +15,31 @@ import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import { AUTHOR_LOOKUP } from '../lib/queries'
 
-
-
-
-
 const Author = withRouter(props => (
   <Main>
-      <Grid>
-        <Query query={AUTHOR_LOOKUP} variables={{ name: props.router.query.id }}>
-          {({ loading, error, data }) => {
-            if (loading) return null
-            if (error) return `Error!: ${error}`
-            const author_articles = data.user.articles
-            return (
-              <>
-              <Head title={author_articles[0].author.username}></Head>
+    <Grid>
+      <Query query={AUTHOR_LOOKUP} variables={{ name: props.router.query.id }}>
+        {({ loading, error, data }) => {
+          if (loading) return null
+          if (error) return `Error!: ${error}`
+          const author_articles = data.user.articles
+          return (
+            <>
+              <Head title={author_articles[0].author.username} />
               <h1>{author_articles[0].author.username}</h1>
-              </>
-            )
-
-          }}
-        </Query>
-        <article>
-          <Author_List_Container author={props.router.query.id} />
-        </article>
-        <aside>
-
-        </aside>
-      </Grid>
+            </>
+          )
+        }}
+      </Query>
+      <article>
+        <Author_List_Container author={props.router.query.id} />
+      </article>
+      <aside />
+    </Grid>
 
     <style jsx="jsx">
       {`
-
-        h1{
+        h1 {
           margin: 0 auto;
           grid-column: span 14;
           font-family: 'europa';
@@ -81,7 +73,5 @@ const Author = withRouter(props => (
     </style>
   </Main>
 ))
-
-
 
 export default Author

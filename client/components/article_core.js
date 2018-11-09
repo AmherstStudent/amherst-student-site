@@ -1,13 +1,13 @@
-import React from "react";
-import Card from "./card";
-import Container from "./container";
-import showdown from "showdown";
+import React from 'react'
+import Card from './card'
+import Container from './container'
+import showdown from 'showdown'
 
 function createMarkup(content) {
-  var formatted_content = content.replace(/(?:\r\n|\r|\n)/g, "<br >");
-  var converter = new showdown.Converter();
-  var html = converter.makeHtml(content).replace(/(?:\r\n|\r|\n)/g, "<br >");
-  return { __html: html };
+  var formatted_content = content.replace(/(?:\r\n|\r|\n)/g, '<br >')
+  var converter = new showdown.Converter()
+  var html = converter.makeHtml(content).replace(/(?:\r\n|\r|\n)/g, '<br >')
+  return { __html: html }
 }
 
 const Article_Core = props => (
@@ -22,7 +22,7 @@ const Article_Core = props => (
           dangerouslySetInnerHTML={{
             __html: `
         img  { width: 100%; height: auto; }
-      `
+      `,
           }}
         />
       </div>
@@ -43,6 +43,6 @@ const Article_Core = props => (
       `}
     </style>
   </Card>
-);
+)
 
-export default Article_Core;
+export default Article_Core

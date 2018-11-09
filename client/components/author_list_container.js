@@ -14,7 +14,6 @@ const Author_List_Container = props => (
         if (error) return `Error!: ${error}`
         const author_articles = data.user.articles
         return author_articles.map(article => <List_Item key={article._id} article={article} />)
-
       }}
     </Query>
   </div>

@@ -21,7 +21,6 @@ export default class MyDocument extends Document {
           <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css" />
           <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" />
           <script dangerouslySetInnerHTML={{ __html: ga }} />
-
         </Head>
 
         <body>
@@ -65,7 +64,6 @@ export default class MyDocument extends Document {
           }
         `}
         </style>
-
       </html>
     )
   }

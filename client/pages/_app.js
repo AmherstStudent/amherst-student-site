@@ -3,7 +3,7 @@ import { ApolloProvider } from 'react-apollo'
 import withApollo from '../lib/withApollo'
 import NextSeo from 'next-seo'
 
-import SEO from '../lib/nextseo.js';
+import SEO from '../lib/nextseo.js'
 
 class MyApp extends App {
   render() {
