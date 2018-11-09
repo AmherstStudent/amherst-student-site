@@ -18,7 +18,7 @@ const Container = props => (
         }
       }
       .bottom-up {
-         margin-top: 300px;
+         margin-top: 100px;
       }
     `}</style>
   </div>

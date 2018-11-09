@@ -14,7 +14,7 @@ const Category_Header = props => (
     <style jsx>{`
       h1 {
         /* NEWS: */
-        font-family: 'adobe-garamond-pro', serif;
+        font-family: 'europa', serif;
         font-size: 2.5em;
         color: #ffffff;
         letter-spacing: 0.34px;
@@ -35,7 +35,7 @@ const Category_Header = props => (
       }
       .header {
         background-image: url('https://assets.forwardcdn.com/images/cropped/amherst-college-buildings-img-6512-1500990972.JPG');
-        height: 500px;
+        height: 400px;
         background-size: cover;
         background-position: center;
         position: relative;
