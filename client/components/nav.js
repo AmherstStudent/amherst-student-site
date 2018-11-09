@@ -4,7 +4,6 @@ import Container from './container.js'
 import { Icon } from 'react-icons-kit'
 import {navicon} from 'react-icons-kit/fa/navicon'
 import {search} from 'react-icons-kit/fa/search'
-import MobileNav from './mobile_nav.js'
 
 const links = [
   { href: '/category/news', label: 'NEWS' },

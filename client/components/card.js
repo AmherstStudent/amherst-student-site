@@ -71,7 +71,9 @@ const Card = props => (
       .thrds {
         margin-right: 10px;
       }
-
+      .black{
+        background-color: hsl(0, 0%, 10%);
+      }
     `}</style>
   </div>
 )
