@@ -55,13 +55,13 @@ const Masthead = props => (
               <div className="row">
               <div>
               <div className="round">
-                <img src="./static/DSC04357.jpg" />
+                <img src="/static/DSC04357.jpg" />
               </div>
               <h6>Isabel Tessier</h6>
               </div>
               <div>
               <div className="round">
-                <img src="./static/DSC04412.jpg" />
+                <img src="/static/DSC04412.jpg" />
               </div>
               <h6>Nathaniel Quigley</h6>
               </div>
