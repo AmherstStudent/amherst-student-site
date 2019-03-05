@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
 import Card from './card.js'
-import Container from '../components/container'
 
 const AuthorCard = props => (
-  <Card className={`article ${props.className}`}>
-    <Container>
+  <div className="authorCard">
+  <>
       <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
       <hr />
 
@@ -26,57 +25,54 @@ const AuthorCard = props => (
           </div>
         )}
       </div>
-    </Container>
+    </>
 
     <style jsx>{`
+
     img{
       border-radius: 50%;
-
+      object-fit: cover;
     }
 
-    .cardContent > * {
-      margin: auto;
-      text-align: center;
-    }
     img{
       display: block;
-      margin: 10px auto;
-      align: center;
-      height: 100px;
-      width: 100px;
-      mar
-    }
-    h3{
-      margin: 0;
-      margin-top: 20px;
-      padding: 0;
-      text-align: center;
-      font-family: "europa",sans-serif;
+      margin: auto;
+      height: 125px;
+      width: 125px;
 
     }
+    h3{
+      font-family: Karla-Bold;
+      font-size: 24px;
+      color: #000000;
+      letter-spacing: 0.03px;
+      font-style: normal;
+    }
     .cardContent{
+      margin: 0 auto;
+      text-align: center;
       margin-bottom:20px;
     }
     h5{
       padding: 10px;
       font-size: 22px;
-      font-family: "europa",sans-serif;
 
       margin: 0;
     }
     p{
-      font-size: 16px;
+      font-size: 14px;
     }
     .article{
-      max-width: 40%;
     }
+
     hr{
       margin: 10px 0 10px 0;
-
+      border-color: black;
+      border-width: 4.5px;
     }
 
  `}</style>
-  </Card>
+  </div>
 )
 
 AuthorCard.defaultProps = {

@@ -8,7 +8,7 @@ import moment from 'moment'
 
 const List_Item = ({ article }) => (
   <Card className="list_item margin-20">
-    <Container>
+    <>
       <div className="cardContent">
         <span>{article.category.name.toUpperCase()}</span>
         <Link href={`/article/${article.slug}`} passHref>
@@ -26,7 +26,7 @@ const List_Item = ({ article }) => (
         </p>
         <p>{article.excerpt}</p>
       </div>
-    </Container>
+    </>
     <style jsx="jsx">
       {`
         .cardContent {
@@ -45,7 +45,7 @@ const List_Item = ({ article }) => (
           /* THIS WEEK’S HEADLINE: */
           background: #5d3c85;
           color: white;
-          font-family: 'europa', sans-serif;
+          font-family: 'Karla', sans-serif;
           font-size: 14px;
           letter-spacing: 0.12px;
           line-height: 21px;

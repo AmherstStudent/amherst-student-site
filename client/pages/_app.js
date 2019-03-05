@@ -1,16 +1,17 @@
 import App, { Container } from 'next/app'
 import { ApolloProvider } from 'react-apollo'
-import withApollo from '../lib/withApollo'
+import withApolloClient from '../lib/withApollo'
 import NextSeo from 'next-seo'
 
 import SEO from '../lib/nextseo.js'
 
+
 class MyApp extends App {
   render() {
-    const { Component, pageProps, apollo } = this.props
+    const { Component, pageProps, apolloClient } = this.props
     return (
       <Container>
-        <ApolloProvider client={apollo}>
+        <ApolloProvider client={apolloClient}>
           <NextSeo config={SEO} />
           <Component {...pageProps} />
         </ApolloProvider>
@@ -19,4 +20,4 @@ class MyApp extends App {
   }
 }
 
-export default withApollo(MyApp)
+export default withApolloClient(MyApp)

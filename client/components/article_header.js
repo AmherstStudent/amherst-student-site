@@ -9,7 +9,7 @@ import { Icon } from 'react-icons-kit'
 import moment from 'moment'
 
 const Article_Header = props => (
-  <Card className={`span-12 ${props.className}`}>
+  <div className={` header ${props.className}`}>
     <span className="category">{props.article.category.name.toUpperCase()}</span>
 
     <div className="header_content">
@@ -43,6 +43,7 @@ const Article_Header = props => (
       {moment(props.article.updatedAt).format('MMM. D, YYYY')} | {props.article.issue.name}
     </h5>
     <style jsx>{`
+
       .header_content {
         margin-left: 20px;
         padding: 5px;
@@ -101,7 +102,7 @@ const Article_Header = props => (
         font-size: 14px;
       }
     `}</style>
-  </Card>
+  </div>
 )
 
 export default Article_Header

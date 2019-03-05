@@ -4,7 +4,7 @@ import Container from './container'
 
 const Footer = () => (
   <footer>
-    <Container>
+    <>
       <ul>
         <li>
           <Link href={`/masthead#about`} passHref>
@@ -27,30 +27,33 @@ const Footer = () => (
           </Link>
         </li>
       </ul>
-    </Container>
+    </>
 
     <style jsx>{`
 
   footer {
-    background: #333333;
+    background: black;
     box-shadow: 0 2px 3px 1px rgba(0,0,0,0.50);
     width: 100%;
-    
+    height: 10vh;
     bottom: 0;
+    margin-top: 4vh;
+    display:flex;
   }
 
   ul{
     display: flex;
     flex-direction row;
     justify-content: space-between;
-
+    width: 100%;
+  align-items: center;
   }
   ul:first-child{
     padding: 0;
   }
   li {
 
-    font-family: 'europa';
+    font-family: Karla-Bold;
     font-size: 12px;
     display:inline-block;
     color: #FFFFFF;
@@ -63,6 +66,7 @@ const Footer = () => (
     text-decoration: none;
     color: #FFFFFF;
     font-size: 13px;
+    font-family: Karla-Bold;
 
   }
 
@@ -77,10 +81,10 @@ const Footer = () => (
   }
   p{
     color: white;
+    font-family: Karla-Bold;
 
     margin: 0 auto;
     font-size: 12px;
-    font-style: italic;
     font-weight: 300;
     margin-bottom: 20px;
     text-align: center;

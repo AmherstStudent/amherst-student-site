@@ -51,15 +51,14 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div className="main-content">
+      <Container>
+
         <Head title="The Amherst Student">
-          <meta
-            name="description"
-            content="The Amherst Student, the student-supported newspaper of Amherst College."
-          />
+          <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College."/>
         </Head>
 
-        <Container className="contain">
+        <div className="main-content">
+        <div className="album">
           <input
             type="text"
             name="uname"
@@ -70,27 +69,28 @@ export default class Search extends React.Component {
           />
 
           <button onClick={this.getInfo}>Search</button>
-
+          </div>
           <Search_List_Container results={this.state.results} />
-        </Container>
+        </div>
 
         <style jsx="jsx">
           {`
             .main-content {
               min-height: 100vh;
-              font-family: 'adobe-garamond-pro', serif;
               background: #f1f1f1;
-              padding-top: 180px;
-              padding-bottom: 20px;
+              padding-top: 20px;
+              grid-column: span 6;
             }
-            .contain {
-              margin-top: 60px;
+            .album{
+              background: green;
+              height: 10vh;
+
             }
             input {
               width: 100%;
-              height: 80px;
-              font-size: 30px;
-              font-family: 'europa';
+              height: 10vh;
+              font-size: 3vh;
+              font-family: 'Karla';
             }
 
             .wrapper {
@@ -105,13 +105,7 @@ export default class Search extends React.Component {
             .cardContent {
               padding: 5%;
             }
-            .cardHeader {
-              display: flex;
-              flex-direction: column;
-              height: 100%;
-              width: auto;
-              margin-top: 40px;
-            }
+
             p {
               margin-bottom: 20px;
             }
@@ -136,7 +130,7 @@ export default class Search extends React.Component {
               padding: 10px;
               color: #5d3c85;
               width: 95px;
-              font-family: 'europa', sans-serif;
+              font-family: 'Karla', sans-serif;
               margin: 0 auto;
               margin-top: 10px;
               background: white;
@@ -144,7 +138,7 @@ export default class Search extends React.Component {
             }
           `}
         </style>
-      </div>
+      </Container>
     )
   }
 }

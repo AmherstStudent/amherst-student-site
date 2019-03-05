@@ -18,8 +18,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="stylesheet" href="https://use.typekit.net/qth7vhw.css" />
-          <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
           <script dangerouslySetInnerHTML={{ __html: ga }} />
         </Head>
 
@@ -30,38 +29,54 @@ export default class MyDocument extends Document {
         </body>
         <style>
           {`
-            body
-            {  box-sizing: border-box; margin: 0;  width: 100%; display:flex; flex-direction: column; text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);
-  }
-          @import url("https://use.typekit.net/qth7vhw.css");
+            @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i');
+            @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
-          p {
-            font-family: "adobe-garamond-pro",serif;
-            font-weight:300;
-            line-height:1.5em;
-            font-size: 18px;
-            -webkit-margin-before: 0em;
-            -webkit-margin-after: 0em;
-            color: #333;
-          }
 
-          h1 {
-            font-weight: semibold;
-            font-style: italic;
-            font-size: 44px;
-            color: #333;
-          }
+            :root{
+              --main-bg-color: #F1F1F1;
+              --dark-purple: #3F1F69;
+              --light-purple: #5D3C85;
+              --green: #5BA151;
+              --off-black: #333;
+              --home-para-font: 12px;
+              --gen-padding: 15px;
 
-          h2{
-            font-size: 28px;
-            color: #333;
-            font-style: italic;
-            font-weight: 700;
+            }
 
-          }
-          .span2{
-            grid-column: 2;
-          }
+            * {
+              font-family: Merriweather, monospace, serif;
+              margin-block-start: 0em;
+              margin-block-end: 0em;
+              box-sizing: border-box;
+              -webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+            }
+
+            h1{
+              font-weight: bold;
+              font-style:italic;
+              font-size: 28px;
+              letter-spacing: 0.03px;
+              line-height: 39px;
+            }
+            h2{
+              font-family: Merriweather-BoldItalic;
+              font-style: italic;
+              font-size: 24px;
+              color: #000000;
+              letter-spacing: 0.02px;
+            }
+            h3{
+              font-weight: bold;
+              font-style: italic;
+              font-size: 18px;
+              color: #000000;
+              letter-spacing: 0.02px;
+            }
+
+
+
         `}
         </style>
       </html>

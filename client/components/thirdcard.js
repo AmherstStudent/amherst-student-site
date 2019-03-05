@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Card from './card.js'
-import Container from './container.js'
 
 const OneThirdCard = ({ article, className }) => (
   <Card className={`third ${className}`}>

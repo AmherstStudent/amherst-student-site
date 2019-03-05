@@ -1,24 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
+import Main from './main.js'
+import NavBar from './NavBar'
 
-const Container = props => (
-  <div className={`container ${props.className}`}>
-    {props.children}
+
+const Container = ({children}) => (
+  <div className="container">
+  <NavBar/>
+
+  <Main>
+    {children}
+  </Main>
 
     <style jsx>{`
-      .container {
-        width: 89%;
-        height: auto;
-        margin: 0 auto;
-        position: relative;
-      }
-      @media screen and (max-width: 800px) {
-        .container {
-          width: 92.5%;
-        }
-      }
-      .bottom-up {
-        margin-top: 100px;
+      .container{
+        width: 100vw;
+        background: var(--main-bg-color);
+        min-height: 100%;
       }
     `}</style>
   </div>

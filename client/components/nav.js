@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import Container from './container.js'
 import { Icon } from 'react-icons-kit'
 import { navicon } from 'react-icons-kit/fa/navicon'
 import { search } from 'react-icons-kit/fa/search'
@@ -32,7 +31,7 @@ class Nav extends React.Component {
   render() {
     return (
       <nav>
-        <Container>
+
           <ul className="start">
             <li className="logo">
               <a href="/">
@@ -58,54 +57,30 @@ class Nav extends React.Component {
               <Icon size={24} icon={navicon} />
             </li>
           </ul>
-          {this.state.isOpen ? (
-            <ul className="mobile">
-              <hr />
-              {links.map(({ key, href, label }) => (
-                <li key={key}>
-                  <Link href={href} prefetch>
-                    <a>{label}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-        </Container>
+
+
 
         <style jsx>{`
           nav {
-            position: sticky;
+            position: absolute;
             display: flex;
             width: 100%;
             height: 10%;
             z-index: 2;
             background-color: white;
-            box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
-            z-index: 2;
+            background: #FFFFFF;
+            box-shadow: 0 0 0 0 rgba(0,0,0,0.50);
             margin: auto;
             align-items: center;
             flex-direction: row;
-            margin-bottom: 20px;
+            margin-bottom: 80px;
+
           }
+
           nav.wrapper {
             flex-direction: column;
           }
-          .start {
-            display: flex;
-            list-style-type: none;
-            justify-content: space-between;
-            width: 100%;
-            padding: 0;
-            height: 10vh;
-            margin-block-start: 0em;
-            margin-block-end: 0em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            padding-inline-start: 0px;
-            z-index: 2;
-          }
+
           .mobile {
             display: flex;
             margin-block-start: 0em;
@@ -145,57 +120,9 @@ class Nav extends React.Component {
           .mobile {
             display: none;
           }
-          @media screen and (max-width: 800px) {
-            nav {
-              justify-content: center;
-              flex-direction: column;
-              position: static;
-            }
 
-            ul {
-              flex-direction: row;
-              justify-content: center;
-            }
-            .start {
-              padding: 0px 0 0px 0px;
-            }
-            .desktop {
-              display: none;
-            }
-            .logo {
-              justify-content: flex-start;
-              max-width: 320px;
-              width: 380px;
-            }
-            img {
-              align: left;
-              width: 100%;
-              height: auto;
-            }
 
-            .navIcon {
-              display: flex;
-              justify-content: flex-end;
-              padding: 10px;
-            }
 
-            .mobile {
-              display: flex;
-              flex-direction: column;
-              background: white;
-              padding-inline-start: 0px;
-            }
-            .mobile.hr {
-              width: 100vw;
-              height: 1vh;
-              color: black;
-            }
-            .mobile li {
-              justify-content: center;
-              padding-bottom: 10px;
-              padding-top: 10px;
-            }
-          }
         `}</style>
       </nav>
     )

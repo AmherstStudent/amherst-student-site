@@ -20,9 +20,12 @@ import ImageCard from '../components/image_card'
 import FeatureNewsCard from '../components/featurenewscard.js'
 import AuthorCard from '../components/authorcard'
 import CommentsContainer from '../components/comments'
-
+import Container from '../components/container'
+import NewsContainer from '../components/NewsContainer'
 const Article = withRouter(props => (
-  <Main>
+  <NewsContainer>
+
+
     <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
       {({ loading, error, data }) => {
         if (loading) return null
@@ -47,7 +50,7 @@ const Article = withRouter(props => (
         }
         let article = data.articles[0]
         return (
-          <Grid>
+          <>
             <NextSeo
               config={{
                 title: article.title,
@@ -71,7 +74,6 @@ const Article = withRouter(props => (
               description={article.excerpt}
             />
 
-            <Article_Header className="header" article={article} />
 
             <article>
               {imageChecker() ? <ImageCard article={article} /> : ' '}
@@ -81,45 +83,58 @@ const Article = withRouter(props => (
             </article>
 
             <aside>
-              <AuthorCard className="margin-20" type="author" author={article.author} />
+              <AuthorCard className="margin-20 span-2" type="author" author={article.author} />
               <FeatureNewsCard className="margin-20" />
             </aside>
-          </Grid>
+          </>
         )
       }}
     </Query>
+    <style jsx global>
+    {`
+      .main-container{
+        background: white !important;
+      }
+      .container{
+        background: white !important;
+      }
+    `
 
+    }
+    </style>
     <style jsx="jsx">
       {`
         @media only screen and (min-width: 1300px) {
+          .header{
+            width: 100vw;
+          }
           article {
-            grid-column: 1 / 10;
+            grid-column: 1 / 5;
           }
           aside {
-            grid-column: 10 / 13;
+            margin-top:10px;
+            margin-right: 20px;
+            margin-left: 20px;
+            grid-column: 5/7;
           }
-          .header {
-            grid-column: 1 /12;
-          }
+
         }
         article > * {
           margin-bottom: 15%;
         }
         @media only screen and (max-width: 1300px) {
           article {
-            grid-column: span 12;
+            grid-column: span 6;
           }
           aside {
-            grid-column: span 12;
+            grid-column: span 6;
           }
 
-          .header {
-            grid-column: 1/12;
-          }
+
         }
       `}
     </style>
-  </Main>
+  </NewsContainer>
 ))
 
 export default Article

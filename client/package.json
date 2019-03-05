@@ -24,6 +24,7 @@
     "next-with-apollo": "^3.1.2",
     "react": "^16.4.2",
     "react-apollo": "^2.1.11",
+    "react-burger-menu": "^2.6.5",
     "react-disqus-comments": "^1.2.0",
     "react-dom": "^16.4.2",
     "react-icons-kit": "^1.1.7",

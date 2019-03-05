@@ -8,9 +8,10 @@ import { FAVARTICLE } from '../lib/queries'
 
 const FeatureNewsCard = props => (
   <Card className={`${props.className}`}>
-    <Container>
+    <>
       <div className="cardContent">
         <h3 className="cardTitle">TOP ARTICLES</h3>
+        <hr className="undline"/>
         <Query query={FAVARTICLE} errorPolicy="all">
           {({ loading, error, data }) => {
             if (loading) return null
@@ -24,7 +25,7 @@ const FeatureNewsCard = props => (
               <div className="topArticle">
                 <Link href={`/article/${article.slug}`} passHref>
                   <a>
-                    <h4>{article.title}</h4>
+                    <h5>{article.title}</h5>
                   </a>
                 </Link>
                 <p className="caption">by {article.author.username}</p>
@@ -34,33 +35,37 @@ const FeatureNewsCard = props => (
           }}
         </Query>
       </div>
-    </Container>
+    </>
 
     <style jsx>{`
-      h4 {
-        font-family: 'adobe-garamond-pro', serif;
-        font-weight: 600;
-        font-style: italic;
-        font-size: 26px;
+      h5 {
+        font-family: Merriweather-BoldItalic;
+        font-size: 16px;
         color: #000000;
-        letter-spacing: 0.05px;
-        text-align: center;
+        letter-spacing: 0.03px;
+        margin-bottom: 5px;
       }
       .cardContent {
         margin: 0 auto;
-        text-align: center;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
       }
-      h4 {
-        margin: 0;
+      .undline{
+
+          margin: 10px 0 10px 0;
+          border-color: black;
+          border-width: 4.5px;
+      
       }
+
       .topArticle {
-        margin-top: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
       }
       h3 {
-        font-family: 'europa', sans-serif;
+        font-family: Karla;
+        font-style: normal;
       }
       h4,
       a {
@@ -69,11 +74,23 @@ const FeatureNewsCard = props => (
       h4:hover {
         color: grey;
       }
-      .caption {
-        font-size: 16px;
+      hr{
+        margin-top: 10px;
       }
+      .caption {
+        font-family: Merriweather-LightItalic;
+        font-size: 14px;
+        color: #000000;
+        letter-spacing: 0.03px;      }
       #last {
         padding-bottom: 20px;
+      }
+      h3{
+        font-family: Karla-Bold;
+        font-size: 24px;
+        color: #000000;
+        letter-spacing: 0.03px;
+        font-style: normal;
       }
     `}</style>
   </Card>
