@@ -1,28 +1,31 @@
 import React from 'react'
 import Link from 'next/link'
 import Category from './Category'
-const TextOnlyCard = ({article}) => (
-
+const TextOnlyCard = ({ article }) => (
   <div className="textOnlyCard">
-      <div className="name">
-      <Category category="news"/>
-      </div>
-      <div className="textOnlyContent">
-        <Link href={`/article/${article.slug}`} passHref>
+    <div className="name">
+      <Category category="news" />
+    </div>
+    <div className="textOnlyContent">
+      <Link href={`/article/${article.slug}`} passHref>
         <h2>{article.title}</h2>
-        </Link>
-        <p className="byline">by <span className="author">{article.author.username}</span> || {article.author.reporterTitle} | {article.issue.name.toUpperCase()}</p>
-        <p>{article.excerpt}</p>
-      </div>
-      <style jsx>{`
-        .textOnlyCard{
+      </Link>
+      <p className="byline">
+        by <span className="author">{article.author.username}</span> ||{' '}
+        {article.author.reporterTitle} | {article.issue.name.toUpperCase()}
+      </p>
+      <p>{article.excerpt}</p>
+    </div>
+    <style jsx>
+      {`
+        .textOnlyCard {
           background: white;
-          height: calc(1/3*100% - (1 - 1/3)*16px);
+          height: calc(1 / 3 * 100% - (1 - 1 / 3) * 16px);
           display: flex;
           flex-direction: column;
         }
 
-        .textOnlyContent{
+        .textOnlyContent {
           padding: var(--gen-padding);
           margin-top: 50px;
         }
@@ -31,10 +34,10 @@ const TextOnlyCard = ({article}) => (
           font-family: Merriweather;
           font-style: italic;
           font-size: 11px;
-          color: #7F7F7F;
+          color: #7f7f7f;
           letter-spacing: 0.03px;
         }
-        .author{
+        .author {
           color: var(--light-purple);
         }
         p {
@@ -44,10 +47,9 @@ const TextOnlyCard = ({article}) => (
           letter-spacing: 0.03px;
           line-height: 25px;
         }
-
-        `}
-      </style>
-    </div>
+      `}
+    </style>
+  </div>
 )
 
 export default TextOnlyCard

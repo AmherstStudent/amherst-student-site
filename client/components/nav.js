@@ -31,34 +31,31 @@ class Nav extends React.Component {
   render() {
     return (
       <nav>
-
-          <ul className="start">
-            <li className="logo">
-              <a href="/">
-                <img src="/static/logo.svg" alt="the Amherst Student" />
-              </a>
-            </li>
-            {links.map(({ key, href, label }) => (
-              <li key={key} className="desktop">
-                <Link href={href} prefetch>
-                  <a>{label}</a>
-                </Link>
-              </li>
-            ))}
-            <li className="desktop">
-              <Link href="/search" prefetch>
-                <a>
-                  <Icon size={16} icon={search} />
-                </a>
+        <ul className="start">
+          <li className="logo">
+            <a href="/">
+              <img src="/static/logo.svg" alt="the Amherst Student" />
+            </a>
+          </li>
+          {links.map(({ key, href, label }) => (
+            <li key={key} className="desktop">
+              <Link href={href} prefetch>
+                <a>{label}</a>
               </Link>
             </li>
+          ))}
+          <li className="desktop">
+            <Link href="/search" prefetch>
+              <a>
+                <Icon size={16} icon={search} />
+              </a>
+            </Link>
+          </li>
 
-            <li className="navIcon" onClick={this.handleClick}>
-              <Icon size={24} icon={navicon} />
-            </li>
-          </ul>
-
-
+          <li className="navIcon" onClick={this.handleClick}>
+            <Icon size={24} icon={navicon} />
+          </li>
+        </ul>
 
         <style jsx>{`
           nav {
@@ -68,13 +65,12 @@ class Nav extends React.Component {
             height: 10%;
             z-index: 2;
             background-color: white;
-            background: #FFFFFF;
-            box-shadow: 0 0 0 0 rgba(0,0,0,0.50);
+            background: #ffffff;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
             margin: auto;
             align-items: center;
             flex-direction: row;
             margin-bottom: 80px;
-
           }
 
           nav.wrapper {
@@ -120,9 +116,6 @@ class Nav extends React.Component {
           .mobile {
             display: none;
           }
-
-
-
         `}</style>
       </nav>
     )

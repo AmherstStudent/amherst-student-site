@@ -23,18 +23,15 @@ import { HOME_PAGE } from '../lib/queries'
 
 const Home = props => (
   <Container>
-
-
     <Query query={HOME_PAGE} errorPolicy="all">
       {({ loading, error, data }) => {
-        if (error) return <ErrorMessage message='Error loading article.' />
+        if (error) return <ErrorMessage message="Error loading article." />
         if (loading) return <div>Loading</div>
 
         let view = data.views[0]
 
         return (
-            <>
-
+          <>
             <FeatureCard article={view.news_left_big} />
             <div className="family">
               <TextOnlyCard article={view.news_right_first} />
@@ -42,13 +39,9 @@ const Home = props => (
               <TextOnlyCard article={view.news_right_third} />
             </div>
 
-
-
-
             <MiniTextCard article={view.opinion_first} />
-            <MiniTextCard article={view.opinion_second}/>
-            <MiniTextCard article={view.opinion_third}/>
-
+            <MiniTextCard article={view.opinion_second} />
+            <MiniTextCard article={view.opinion_third} />
 
             <FeatureCard article={view.arts_living_big} className="span-6" />
             <div className="family">
@@ -60,15 +53,15 @@ const Home = props => (
             <MiniCard article={view.sports_first} className="span-4" />
             <MiniCard article={view.sports_second} className="span-4" />
             <MiniCard article={view.sports_third} className="span-4" />
-            </>
+          </>
         )
       }}
     </Query>
 
     <style jsx="jsx">
       {`
-        :global(body, html){
-          background:var(--main-bg-color);
+        :global(body, html) {
+          background: var(--main-bg-color);
         }
         .tripleContainer {
           grid-column-start: 1;

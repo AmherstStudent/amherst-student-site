@@ -17,7 +17,7 @@ const Image_Card = props => (
           height: 100%;
           max-height: 85vh;
           padding: 0px;
-          position:relative;
+          position: relative;
         }
         figure img {
           margin: auto;
@@ -47,7 +47,6 @@ const Image_Card = props => (
         img {
           vertical-align: bottom;
         }
-
       `}
     </style>
   </Card>

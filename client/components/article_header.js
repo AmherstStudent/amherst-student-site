@@ -43,7 +43,6 @@ const Article_Header = props => (
       {moment(props.article.updatedAt).format('MMM. D, YYYY')} | {props.article.issue.name}
     </h5>
     <style jsx>{`
-
       .header_content {
         margin-left: 20px;
         padding: 5px;

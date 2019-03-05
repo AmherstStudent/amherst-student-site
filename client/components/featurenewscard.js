@@ -11,7 +11,7 @@ const FeatureNewsCard = props => (
     <>
       <div className="cardContent">
         <h3 className="cardTitle">TOP ARTICLES</h3>
-        <hr className="undline"/>
+        <hr className="undline" />
         <Query query={FAVARTICLE} errorPolicy="all">
           {({ loading, error, data }) => {
             if (loading) return null
@@ -51,12 +51,10 @@ const FeatureNewsCard = props => (
         justify-content: space-between;
         flex-direction: column;
       }
-      .undline{
-
-          margin: 10px 0 10px 0;
-          border-color: black;
-          border-width: 4.5px;
-      
+      .undline {
+        margin: 10px 0 10px 0;
+        border-color: black;
+        border-width: 4.5px;
       }
 
       .topArticle {
@@ -74,18 +72,19 @@ const FeatureNewsCard = props => (
       h4:hover {
         color: grey;
       }
-      hr{
+      hr {
         margin-top: 10px;
       }
       .caption {
         font-family: Merriweather-LightItalic;
         font-size: 14px;
         color: #000000;
-        letter-spacing: 0.03px;      }
+        letter-spacing: 0.03px;
+      }
       #last {
         padding-bottom: 20px;
       }
-      h3{
+      h3 {
         font-family: Karla-Bold;
         font-size: 24px;
         color: #000000;

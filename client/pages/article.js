@@ -24,8 +24,6 @@ import Container from '../components/container'
 import NewsContainer from '../components/NewsContainer'
 const Article = withRouter(props => (
   <NewsContainer>
-
-
     <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
       {({ loading, error, data }) => {
         if (loading) return null
@@ -74,7 +72,6 @@ const Article = withRouter(props => (
               description={article.excerpt}
             />
 
-
             <article>
               {imageChecker() ? <ImageCard article={article} /> : ' '}
 
@@ -91,33 +88,30 @@ const Article = withRouter(props => (
       }}
     </Query>
     <style jsx global>
-    {`
-      .main-container{
-        background: white !important;
-      }
-      .container{
-        background: white !important;
-      }
-    `
-
-    }
+      {`
+        .main-container {
+          background: white !important;
+        }
+        .container {
+          background: white !important;
+        }
+      `}
     </style>
     <style jsx="jsx">
       {`
         @media only screen and (min-width: 1300px) {
-          .header{
+          .header {
             width: 100vw;
           }
           article {
             grid-column: 1 / 5;
           }
           aside {
-            margin-top:10px;
+            margin-top: 10px;
             margin-right: 20px;
             margin-left: 20px;
             grid-column: 5/7;
           }
-
         }
         article > * {
           margin-bottom: 15%;
@@ -129,8 +123,6 @@ const Article = withRouter(props => (
           aside {
             grid-column: span 6;
           }
-
-
         }
       `}
     </style>

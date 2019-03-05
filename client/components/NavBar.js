@@ -4,42 +4,41 @@ import { Icon } from 'react-icons-kit'
 import { navicon } from 'react-icons-kit/fa/navicon'
 import { search } from 'react-icons-kit/fa/search'
 
-
-
-
 const NavBar = () => (
   <nav>
-  <div className="rightNav">
-    <div className="navicon">
-      <Icon size={24} icon={navicon} />
+    <div className="rightNav">
+      <div className="navicon">
+        <Icon size={24} icon={navicon} />
+      </div>
+      <Link href="/">
+        <a>
+          <img src="/static/logo.svg" alt="the Amherst Student" />
+        </a>
+      </Link>
     </div>
-    <Link href="/">
-    <a>
-    <img src="/static/logo.svg" alt="the Amherst Student" />
-    </a>
-    </Link>
-  </div>
-  <div className="leftNav">
-    <a>CURRENT ISSUE</a>
-    <Link href="/search">
-    <a><Icon size={16} icon={search} /></a>
-    </Link>
-  </div>
+    <div className="leftNav">
+      <a>CURRENT ISSUE</a>
+      <Link href="/search">
+        <a>
+          <Icon size={16} icon={search} />
+        </a>
+      </Link>
+    </div>
 
     <style jsx>{`
-      nav{
+      nav {
         background: white;
         position: sticky;
         top: 0;
         width: 100vw;
-        background: #FFFFFF;
-        box-shadow: 0 0 0.1px 0 rgba(0,0,0,0.50);
+        background: #ffffff;
+        box-shadow: 0 0 0.1px 0 rgba(0, 0, 0, 0.5);
         height: 54px;
         display: flex;
         justify-content: space-between;
         z-index: 200;
       }
-      .navicon{
+      .navicon {
         height: 100%;
         background-color: var(--dark-purple);
         min-width: 54px;
@@ -48,13 +47,13 @@ const NavBar = () => (
         align-items: center;
         color: white;
       }
-      .rightNav{
-        display:flex;
+      .rightNav {
+        display: flex;
         height: 100%;
         align-items: center;
-        width:contain;
+        width: contain;
       }
-      img{
+      img {
         height: 20px;
         margin: 20px;
       }
@@ -63,12 +62,11 @@ const NavBar = () => (
         font-weight: 700;
         font-size: 13px; // come back and check with other a's
       }
-      .leftNav{
+      .leftNav {
         width: 30%;
-        display:flex;
+        display: flex;
         justify-content: flex-end;
         align-items: center;
-
       }
       .leftNav > * {
         margin-right: 1.5vw;

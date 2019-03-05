@@ -18,7 +18,10 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+          />
           <script dangerouslySetInnerHTML={{ __html: ga }} />
         </Head>
 
@@ -45,12 +48,12 @@ export default class MyDocument extends Document {
             }
 
             * {
-              font-family: Merriweather, monospace, serif;
+              font-family: 'Merriweather', monospace, serif;
               margin-block-start: 0em;
               margin-block-end: 0em;
               box-sizing: border-box;
               -webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+              -moz-osx-font-smoothing: grayscale;
             }
 
             h1{
@@ -61,7 +64,8 @@ export default class MyDocument extends Document {
               line-height: 39px;
             }
             h2{
-              font-family: Merriweather-BoldItalic;
+              font-family: 'Merriweather', monospace, serif;
+              font-weight: 900;
               font-style: italic;
               font-size: 24px;
               color: #000000;

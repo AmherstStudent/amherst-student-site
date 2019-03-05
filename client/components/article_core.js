@@ -11,21 +11,16 @@ function createMarkup(content) {
 
 const Article_Core = props => (
   <>
-
-      <div>
-        <div
-          className="article_text"
-          dangerouslySetInnerHTML={createMarkup(props.article.content)}
-        />
-
-      </div>
+    <div>
+      <div className="article_text" dangerouslySetInnerHTML={createMarkup(props.article.content)} />
+    </div>
 
     <style jsx>
       {`
         .article_text {
           margin: 25px 10px 25px 10px;
         }
-        .article_text p{
+        .article_text p {
           font-family: Merriweather-Regular;
           font-size: 16px;
           color: #000000;
@@ -33,12 +28,10 @@ const Article_Core = props => (
           line-height: 36px;
         }
 
-
         .article_text > img {
           width: 100%;
           height: auto;
         }
-
       `}
     </style>
   </>

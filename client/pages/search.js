@@ -52,23 +52,25 @@ export default class Search extends React.Component {
   render() {
     return (
       <Container>
-
         <Head title="The Amherst Student">
-          <meta name="description" content="The Amherst Student, the student-supported newspaper of Amherst College."/>
+          <meta
+            name="description"
+            content="The Amherst Student, the student-supported newspaper of Amherst College."
+          />
         </Head>
 
         <div className="main-content">
-        <div className="album">
-          <input
-            type="text"
-            name="uname"
-            ref={input => (this.search = input)}
-            placeholder="Search for your article"
-            onChange={this.addText}
-            onKeyPress={this.handleKeyPress}
-          />
+          <div className="album">
+            <input
+              type="text"
+              name="uname"
+              ref={input => (this.search = input)}
+              placeholder="Search for your article"
+              onChange={this.addText}
+              onKeyPress={this.handleKeyPress}
+            />
 
-          <button onClick={this.getInfo}>Search</button>
+            <button onClick={this.getInfo}>Search</button>
           </div>
           <Search_List_Container results={this.state.results} />
         </div>
@@ -81,10 +83,9 @@ export default class Search extends React.Component {
               padding-top: 20px;
               grid-column: span 6;
             }
-            .album{
+            .album {
               background: green;
               height: 10vh;
-
             }
             input {
               width: 100%;
