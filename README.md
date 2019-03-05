@@ -1,8 +1,12 @@
-# amherst-student-site
+[![forthebadge](https://amherststudent.com/static/logo.svg)](https://forthebadge.com)
+
 Amherst Student's main website front-end and backend.
+live version @ amherststudent.com
 
 [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+
+
 
 
 ## Tech used
