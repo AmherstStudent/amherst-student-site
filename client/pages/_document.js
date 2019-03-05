@@ -39,16 +39,14 @@ export default class MyDocument extends Document {
           {`
             @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
-
-            :root{
-              --main-bg-color: #F1F1F1;
-              --dark-purple: #3F1F69;
-              --light-purple: #5D3C85;
-              --green: #5BA151;
+            :root {
+              --main-bg-color: #f1f1f1;
+              --dark-purple: #3f1f69;
+              --light-purple: #5d3c85;
+              --green: #5ba151;
               --off-black: #333;
               --home-para-font: 12px;
               --gen-padding: 15px;
-
             }
 
             * {
@@ -60,14 +58,14 @@ export default class MyDocument extends Document {
               -moz-osx-font-smoothing: grayscale;
             }
 
-            h1{
+            h1 {
               font-weight: bold;
-              font-style:italic;
+              font-style: italic;
               font-size: 28px;
               letter-spacing: 0.03px;
               line-height: 39px;
             }
-            h2{
+            h2 {
               font-family: 'Merriweather', monospace, serif;
               font-weight: 900;
               font-style: italic;
@@ -75,17 +73,14 @@ export default class MyDocument extends Document {
               color: #000000;
               letter-spacing: 0.02px;
             }
-            h3{
+            h3 {
               font-weight: bold;
               font-style: italic;
               font-size: 18px;
               color: #000000;
               letter-spacing: 0.02px;
             }
-
-
-
-        `}
+          `}
         </style>
       </html>
     )
