@@ -25,7 +25,7 @@ const TextOnlyCard = ({ article }) => (
           flex-direction: column;
         }
         @media screen and (max-width: 768px) {
-          .textOnlyCard{
+          .textOnlyCard {
             grid-column: span 6;
           }
         }

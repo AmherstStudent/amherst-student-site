@@ -31,7 +31,7 @@ const FeatureCard = ({ article }) => (
           height: 100%;
         }
         @media screen and (max-width: 768px) {
-          .featureCard{
+          .featureCard {
             grid-column: span 6;
           }
         }

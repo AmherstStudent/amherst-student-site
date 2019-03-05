@@ -32,7 +32,7 @@ const MiniTextCard = ({ article }) => (
           justify-content: space-between;
         }
         @media screen and (max-width: 768px) {
-          .miniTextCard{
+          .miniTextCard {
             grid-column: span 6;
           }
         }

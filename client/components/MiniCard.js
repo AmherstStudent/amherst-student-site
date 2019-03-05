@@ -29,7 +29,7 @@ const MiniCard = ({ article }) => (
           flex-direction: column;
         }
         @media screen and (max-width: 768px) {
-          .miniCard{
+          .miniCard {
             grid-column: span 6;
           }
         }
