@@ -18,6 +18,8 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900i" rel="stylesheet">
+
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
@@ -32,7 +34,6 @@ export default class MyDocument extends Document {
         </body>
         <style>
           {`
-            @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900i');
             @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 
