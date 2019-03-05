@@ -43,7 +43,7 @@ const Home = props => (
             <MiniTextCard article={view.opinion_second} />
             <MiniTextCard article={view.opinion_third} />
 
-            <FeatureCard article={view.arts_living_big} className="span-6" />
+            <FeatureCard article={view.arts_living_big} />
             <div className="family">
               <TextOnlyCard article={view.arts_living_first_third} />
               <TextOnlyCard article={view.arts_living_second_third} />

@@ -3,12 +3,14 @@ import Link from 'next/link'
 import { Icon } from 'react-icons-kit'
 import { navicon } from 'react-icons-kit/fa/navicon'
 import { search } from 'react-icons-kit/fa/search'
-
+import Sidebar from './Sidebar.js'
 const NavBar = () => (
   <nav>
     <div className="rightNav">
       <div className="navicon">
+  
         <Icon size={24} icon={navicon} />
+
       </div>
       <Link href="/">
         <a>

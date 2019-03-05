@@ -23,31 +23,32 @@ import CommentsContainer from '../components/comments'
 import Container from '../components/container'
 import NewsContainer from '../components/NewsContainer'
 const Article = withRouter(props => (
-  <NewsContainer>
-    <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
-      {({ loading, error, data }) => {
-        if (loading) return null
-        if (error) return `Error!: ${error}`
+  <Query query={ARTICLE_LOOKUP} variables={{ slug: props.router.query.slug }} errorPolicy="all">
+    {({ loading, error, data }) => {
+      if (loading) return null
+      if (error) return `Error!: ${error}`
 
-        function imageChecker() {
-          if (article.featuredImage === null) {
-            return false
-          } else {
-            return true
-          }
+      function imageChecker() {
+        if (article.featuredImage === null) {
+          return false
+        } else {
+          return true
         }
-        function nullImage() {
-          if (imageChecker() == true) {
-            var imageLink = [article.featuredImage.url]
-            return imageLink
-          }
-          return []
+      }
+      function nullImage() {
+        if (imageChecker() == true) {
+          var imageLink = [article.featuredImage.url]
+          return imageLink
         }
-        function urlReturn() {
-          return 'amherststudent.com/' + article.slug
-        }
-        let article = data.articles[0]
-        return (
+        return []
+      }
+      function urlReturn() {
+        return 'amherststudent.com/' + article.slug
+      }
+      let article = data.articles[0]
+      return (
+        <NewsContainer article={article}>
+
           <>
             <NextSeo
               config={{
@@ -84,9 +85,7 @@ const Article = withRouter(props => (
               <FeatureNewsCard className="margin-20" />
             </aside>
           </>
-        )
-      }}
-    </Query>
+
     <style jsx global>
       {`
         .main-container {
@@ -127,6 +126,10 @@ const Article = withRouter(props => (
       `}
     </style>
   </NewsContainer>
+
+)
+}}
+</Query>
 ))
 
 export default Article
