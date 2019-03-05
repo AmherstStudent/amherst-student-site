@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
         </body>
         <style>
           {`
-            @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i');
+            @import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900i');
             @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
 
