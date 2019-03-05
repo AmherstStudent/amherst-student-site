@@ -31,6 +31,11 @@ const MiniTextCard = ({ article }) => (
           flex-direction: column;
           justify-content: space-between;
         }
+        @media screen and (max-width: 768px) {
+          .miniTextCard{
+            grid-column: span 6;
+          }
+        }
 
         .miniTextCardContent {
           padding: var(--gen-padding);

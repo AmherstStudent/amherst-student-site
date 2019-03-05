@@ -30,6 +30,11 @@ const FeatureCard = ({ article }) => (
           flex-direction: column;
           height: 100%;
         }
+        @media screen and (max-width: 768px) {
+          .featureCard{
+            grid-column: span 6;
+          }
+        }
         .featureCardImage {
           height: 78%;
           width: 100%;

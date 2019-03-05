@@ -28,6 +28,11 @@ const MiniCard = ({ article }) => (
           display: flex;
           flex-direction: column;
         }
+        @media screen and (max-width: 768px) {
+          .miniCard{
+            grid-column: span 6;
+          }
+        }
         .miniCardImage {
           height: 70%;
           width: 100%;
