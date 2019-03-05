@@ -48,7 +48,6 @@ const Article = withRouter(props => (
       let article = data.articles[0]
       return (
         <NewsContainer article={article}>
-
           <>
             <NextSeo
               config={{
@@ -86,50 +85,49 @@ const Article = withRouter(props => (
             </aside>
           </>
 
-    <style jsx global>
-      {`
-        .main-container {
-          background: white !important;
-        }
-        .container {
-          background: white !important;
-        }
-      `}
-    </style>
-    <style jsx="jsx">
-      {`
-        @media only screen and (min-width: 1300px) {
-          .header {
-            width: 100vw;
-          }
-          article {
-            grid-column: 1 / 5;
-          }
-          aside {
-            margin-top: 10px;
-            margin-right: 20px;
-            margin-left: 20px;
-            grid-column: 5/7;
-          }
-        }
-        article > * {
-          margin-bottom: 15%;
-        }
-        @media only screen and (max-width: 1300px) {
-          article {
-            grid-column: span 6;
-          }
-          aside {
-            grid-column: span 6;
-          }
-        }
-      `}
-    </style>
-  </NewsContainer>
-
-)
-}}
-</Query>
+          <style jsx global>
+            {`
+              .main-container {
+                background: white !important;
+              }
+              .container {
+                background: white !important;
+              }
+            `}
+          </style>
+          <style jsx="jsx">
+            {`
+              @media only screen and (min-width: 1300px) {
+                .header {
+                  width: 100vw;
+                }
+                article {
+                  grid-column: 1 / 5;
+                }
+                aside {
+                  margin-top: 10px;
+                  margin-right: 20px;
+                  margin-left: 20px;
+                  grid-column: 5/7;
+                }
+              }
+              article > * {
+                margin-bottom: 15%;
+              }
+              @media only screen and (max-width: 1300px) {
+                article {
+                  grid-column: span 6;
+                }
+                aside {
+                  grid-column: span 6;
+                }
+              }
+            `}
+          </style>
+        </NewsContainer>
+      )
+    }}
+  </Query>
 ))
 
 export default Article

@@ -5,14 +5,16 @@ import NavBar from './NavBar'
 import Article_Header from './article_header.js'
 import Category from './Category.js'
 
-const NewsContainer = ({ article ,children }) => (
+const NewsContainer = ({ article, children }) => (
   <div className="newscontainer">
     <NavBar />
     <div className="header">
       <div className="headertext">
         <span>{article.category.name.toUpperCase()}</span>
         <h2>{article.title}</h2>
-        <p>By {article.author.username} || Issue {article.issue.name}</p>
+        <p>
+          By {article.author.username} || Issue {article.issue.name}
+        </p>
       </div>
     </div>
     <Main>{children}</Main>

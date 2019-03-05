@@ -8,9 +8,7 @@ const NavBar = () => (
   <nav>
     <div className="rightNav">
       <div className="navicon">
-  
         <Icon size={24} icon={navicon} />
-
       </div>
       <Link href="/">
         <a>
