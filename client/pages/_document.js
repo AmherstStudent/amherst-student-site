@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
           <NextScript />
           <Footer />
         </body>
-        <style>
+        <style jsx global>
           {`
             @import url('https://fonts.googleapis.com/css?family=Karla:400,700');
 
