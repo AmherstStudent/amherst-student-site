@@ -3,13 +3,12 @@ import Link from 'next/link'
 import Card from './card'
 
 const Category_Header = props => (
-
-    <div className="header">
-      <div className="bottom_Line">
-        <h1>
-          {props.type.toUpperCase()} <br />{' '}
-        </h1>
-      </div>
+  <div className="header">
+    <div className="bottom_Line">
+      <h1>
+        {props.type.toUpperCase()} <br />{' '}
+      </h1>
+    </div>
     <style jsx>{`
       h1 {
         /* NEWS: */
@@ -41,7 +40,6 @@ const Category_Header = props => (
         background-size: cover;
         background-position: center;
         position: relative;
-
       }
     `}</style>
   </div>
