@@ -15,7 +15,7 @@ import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
 
 const Masthead = props => (
-  <Main>
+  <Container>
     <Head title="The Amherst Student">
       <meta
         name="description"
@@ -24,8 +24,7 @@ const Masthead = props => (
     </Head>
 
     <a name="masthead">
-      <Card className="span-12" id="masthead">
-        <Container>
+      <div id="masthead">
           <div className="cardHeader">
             <img src="/static/logo.svg" alt="the Amherst Student" />
             <img
@@ -59,13 +58,11 @@ const Masthead = props => (
               413-206-9319.
             </p>
           </div>
-        </Container>
-      </Card>
+      </div>
     </a>
     <br />
 
-    <Card className="span-12" id="masty">
-      <Container>
+    <div className="span-12" id="masty">
         <div className="cardHeader">
           <h5>Masthead</h5>
         </div>
@@ -112,6 +109,7 @@ const Masthead = props => (
             <p>Zehra Madhavan</p>
           </div>
           <br />
+
           <h5 className="noborder">Staff</h5>
 
           <hr className="short" />
@@ -133,14 +131,12 @@ const Masthead = props => (
             <p>Dylan Momplaisir</p>
           </div>
         </div>
-      </Container>
-    </Card>
+    </div>
 
     <br />
 
     <a name="ad">
-      <Card className="span-12" id="ad">
-        <Container>
+      <div id="ad">
           <div className="cardHeader">
             <h5>Advertisers</h5>
           </div>
@@ -175,14 +171,12 @@ const Masthead = props => (
               <li>Dec. 5</li>
             </ul>
           </div>
-        </Container>
-      </Card>
+      </div>
     </a>
     <br />
 
     <a name="subscribers">
-      <Card>
-        <Container>
+      <div>
           <div className="cardHeader">
             <h5>Subscribers</h5>
           </div>
@@ -194,13 +188,11 @@ const Masthead = props => (
               Box 5000, or email us at astudent@amherst.edu to inquire about subscriptions.
             </p>
           </div>
-        </Container>
-      </Card>
+      </div>
     </a>
     <br />
     <a name="letter_policy">
-      <Card className="span-12" id="letter_policy">
-        <Container>
+      <div>
           <div className="cardHeader">
             <h5>Letter Policy</h5>
           </div>
@@ -217,8 +209,7 @@ const Masthead = props => (
               group defamation.
             </p>
           </div>
-        </Container>
-      </Card>
+      </div>
     </a>
 
     <style jsx="jsx">
@@ -254,7 +245,7 @@ const Masthead = props => (
           padding: 20px;
           color: #5d3c85;
           width: 130px;
-          font-family: 'europa', sans-serif;
+          font-family: 'Karla', sans-serif;
           font-size: 20px;
 
           text-align: center;
@@ -308,7 +299,7 @@ const Masthead = props => (
         }
       `}
     </style>
-  </Main>
+  </Container>
 )
 
 export default Masthead

@@ -8,7 +8,7 @@ const TextOnlyCard = ({ article }) => (
     </div>
     <div className="textOnlyContent">
       <Link href={`/article/${article.slug}`} passHref>
-        <h2>dfdfd{article.title}</h2>
+        <h2>{article.title}</h2>
       </Link>
       <p className="byline">
         by <span className="author">{article.author.username}</span> ||{' '}
