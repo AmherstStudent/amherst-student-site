@@ -16,14 +16,15 @@ import { Query } from 'react-apollo'
 import { GET_EDITOR_LIST } from '../lib/queries.js'
 
 const Category = withRouter(props => (
-  <Main>
+  <Container>
     <Head title={props.router.query.name} />
 
-    <List_Header className="header" type={props.router.query.name.toUpperCase()} name="Word" />
-    <Grid>
+    <List_Header className="header" type={props.router.query.name.toUpperCase()}/>
+
       <article>
         <Category_List_Container type={props.router.query.name} />
       </article>
+
       <aside>
         <Query
           query={GET_EDITOR_LIST}
@@ -37,24 +38,24 @@ const Category = withRouter(props => (
           }}
         </Query>
       </aside>
-    </Grid>
+
 
     <style jsx="jsx">
       {`
         .header {
           height: 200px;
-          grid-column: span 14;
-          width: 100vw;
+          grid-column-start: 2;
+          grid-column-end: 7;
         }
 
         article {
           grid-column-start: 1;
-          grid-column-end: 10;
+          grid-column-end: 5;
         }
 
         aside {
-          grid-column-start: 10;
-          grid-column-end: 14;
+          grid-column-start: 5;
+          grid-column-end: 7;
         }
 
         @media only screen and (max-width: 768px) {
@@ -67,7 +68,7 @@ const Category = withRouter(props => (
         }
       `}
     </style>
-  </Main>
+  </Container>
 ))
 
 export default Category

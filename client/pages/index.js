@@ -16,6 +16,7 @@ import Container from '../components/container.js'
 import TextOnlyCard from '../components/TextOnlyCard.js'
 import MiniCard from '../components/MiniCard.js'
 import MiniTextCard from '../components/MiniTextCard.js'
+import ErrorMessage from '../components/ErrorMessage.js'
 //Graphql requests
 import { Query } from 'react-apollo'
 import { gql } from 'apollo-boost'
@@ -23,7 +24,7 @@ import { HOME_PAGE } from '../lib/queries'
 
 const Home = props => (
   <Container>
-    <Query query={HOME_PAGE} errorPolicy="all">
+    <Query query={HOME_PAGE}>
       {({ loading, error, data }) => {
         if (error) return <ErrorMessage message="Error loading article." />
         if (loading) return <div>Loading</div>
