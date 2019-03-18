@@ -31,7 +31,7 @@ const Masthead = props => (
           alt="the student-supported newspaper since 1868"
           className="subline"
         />
-        <hr/>
+        <hr />
       </div>
       <div className="cardContent">
         <p>
@@ -116,8 +116,6 @@ const Masthead = props => (
           <p>Emmy Sohn</p>
           <p>Mark Nathin</p>
         </div>
-
-
       </div>
     </div>
 
@@ -137,10 +135,7 @@ const Masthead = props => (
           copy; there are 80 column inches per page. For advertising rates and other information,
           please contact The Student at astudent@amherst.edu.
         </p>
-        <p>
-          The Student publishes on Wednesdays during the school year.
-        </p>
-
+        <p>The Student publishes on Wednesdays during the school year.</p>
       </div>
     </div>
 
@@ -194,9 +189,8 @@ const Masthead = props => (
           margin-inline-end: 0;
           border-color: var(--dark-purple);
           margin-bottom: 10px;
-
         }
-        .short{
+        .short {
         }
       `}
     </style>

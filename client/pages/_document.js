@@ -59,6 +59,7 @@ export default class MyDocument extends Document {
             }
 
             h1 {
+              font-family: 'Merriweather', monospace, serif;
               font-weight: bold;
               font-style: italic;
               font-size: 28px;
@@ -74,6 +75,7 @@ export default class MyDocument extends Document {
               letter-spacing: 0.02px;
             }
             h3 {
+              font-family: 'Merriweather', monospace, serif;
               font-weight: bold;
               font-style: italic;
               font-size: 18px;

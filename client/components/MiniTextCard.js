@@ -14,7 +14,7 @@ const MiniTextCard = ({ article }) => (
         </h2>
       </Link>
       <p className="byline">
-        by <span className="author">{article.author.username}</span>|| Issue 144-11
+        by <span className="author">{article.author.username}</span> || Issue {article.issue.name}
       </p>
 
       <hr />

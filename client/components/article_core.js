@@ -21,7 +21,8 @@ const Article_Core = props => (
           margin: 25px 10px 25px 10px;
         }
         .article_text p {
-          font-family: Merriweather-Regular;
+          font-family: 'Merriweather';
+          font-weight: normal;
           font-size: 16px;
           color: #000000;
           letter-spacing: 0.03px;
