@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link
-            href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,900i"
+            href="https://fonts.googleapis.com/css?family=Merriweather:300i,400,400i,700,900i"
             rel="stylesheet"
           />
 

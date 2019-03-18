@@ -1,4 +1,3 @@
-import { slide as Menu } from 'react-burger-menu'
 
 class Sidebar extends React.Component {
   showSettings(event) {
@@ -7,7 +6,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <Menu>
+      <>
         <a id="home" className="menu-item" href="/">
           Home
         </a>
@@ -20,7 +19,13 @@ class Sidebar extends React.Component {
         <a onClick={this.showSettings} className="menu-item--small" href="">
           Settings
         </a>
-      </Menu>
+        <style jsx>
+        {`
+
+          `}
+
+        </style>
+      </>
     )
   }
 }

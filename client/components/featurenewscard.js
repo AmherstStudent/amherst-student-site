@@ -39,7 +39,9 @@ const FeatureNewsCard = props => (
 
     <style jsx>{`
       h5 {
-        font-family: Merriweather-BoldItalic;
+        font-family: 'Merriweather';
+        font-style: italic;
+        font-style: bold;
         font-size: 16px;
         color: #000000;
         letter-spacing: 0.03px;
@@ -76,7 +78,9 @@ const FeatureNewsCard = props => (
         margin-top: 10px;
       }
       .caption {
-        font-family: Merriweather-LightItalic;
+        font-family: 'Merriweather';
+        font-weight: 300;
+        font-style:italic;
         font-size: 14px;
         color: #000000;
         letter-spacing: 0.03px;
@@ -85,7 +89,8 @@ const FeatureNewsCard = props => (
         padding-bottom: 20px;
       }
       h3 {
-        font-family: Karla-Bold;
+        font-family: 'Karla';
+        font-style: bold;
         font-size: 24px;
         color: #000000;
         letter-spacing: 0.03px;

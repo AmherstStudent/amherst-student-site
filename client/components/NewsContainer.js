@@ -26,7 +26,8 @@ const NewsContainer = ({ article, children }) => (
         min-height: 100%;
       }
       span {
-        font-family: Karla-Bold;
+        font-family: 'Karla';
+        font-weight: bold;
         font-size: 18px;
         color: #ffffff;
         letter-spacing: 0.03px;
@@ -34,7 +35,6 @@ const NewsContainer = ({ article, children }) => (
       }
       .header {
         height: 25vh;
-
         background: var(--dark-purple);
         margin-bottom: ; // think about adding a line up
       }
@@ -46,8 +46,9 @@ const NewsContainer = ({ article, children }) => (
       .headertext h2 {
         width: 90vw;
         padding-top: 10px;
-        color: white;
-        font-family: Merriweather-BlackItalic;
+        font-family: 'Merriweather';
+        font-style: italic;
+        font-weight: 900;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-size: 36px;
@@ -58,6 +59,12 @@ const NewsContainer = ({ article, children }) => (
         padding-top: 10px;
         font-size: 12px;
         font-style: italic;
+      }
+      @media screen and (max-width: 768px) {
+        .headertext h2{
+          font-size: 26px;
+          line-height: 32px;
+        }
       }
     `}</style>
   </div>

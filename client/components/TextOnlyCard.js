@@ -23,13 +23,11 @@ const TextOnlyCard = ({ article }) => (
           height: calc(1 / 3 * 100% - (1 - 1 / 3) * 16px);
           display: flex;
           flex-direction: column;
-
         }
         @media screen and (max-width: 768px) {
           .textOnlyCard {
             width: 87vw;
             height: calc(1 / 3 * 100% - (1 - 1 / 3) * 15px);
-
           }
         }
 

@@ -40,7 +40,7 @@ const AuthorCard = props => (
         width: 125px;
       }
       h3 {
-        font-family: Karla;
+        font-family: 'Europa';
         font-size: 24px;
         color: #000000;
         letter-spacing: 0.03px;
