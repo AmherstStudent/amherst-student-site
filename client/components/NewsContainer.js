@@ -61,7 +61,7 @@ const NewsContainer = ({ article, children }) => (
         font-style: italic;
       }
       @media screen and (max-width: 768px) {
-        .headertext h2{
+        .headertext h2 {
           font-size: 26px;
           line-height: 32px;
         }

@@ -80,7 +80,7 @@ const FeatureNewsCard = props => (
       .caption {
         font-family: 'Merriweather';
         font-weight: 300;
-        font-style:italic;
+        font-style: italic;
         font-size: 14px;
         color: #000000;
         letter-spacing: 0.03px;

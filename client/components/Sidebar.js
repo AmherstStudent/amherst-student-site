@@ -1,4 +1,3 @@
-
 class Sidebar extends React.Component {
   showSettings(event) {
     event.preventDefault()
@@ -19,12 +18,7 @@ class Sidebar extends React.Component {
         <a onClick={this.showSettings} className="menu-item--small" href="">
           Settings
         </a>
-        <style jsx>
-        {`
-
-          `}
-
-        </style>
+        <style jsx>{``}</style>
       </>
     )
   }
