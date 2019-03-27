@@ -27,13 +27,12 @@ const TextOnlyCard = ({ article }) => (
         @media screen and (max-width: 768px) {
           .textOnlyCard {
             width: 87vw;
-            height: calc(1 / 3 * 100% - (1 - 1 / 3) * 15px);
           }
         }
 
         .textOnlyContent {
           padding: var(--gen-padding);
-          margin-top: 50px;
+          margin-top: 40px;
         }
 
         .byline {
@@ -53,6 +52,17 @@ const TextOnlyCard = ({ article }) => (
           letter-spacing: 0.03px;
           line-height: 25px;
         }
+        @media only screen and (max-width: 800px){
+          p{
+            line-height: 18px; !important
+          }
+
+            h2{
+              font-size: 18px; !important
+            }
+
+        }
+
       `}
     </style>
   </div>

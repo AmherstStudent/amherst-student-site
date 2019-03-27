@@ -79,8 +79,9 @@ const Home = props => (
           height: calc(100% + 5px);
         }
         @media screen and (max-width: 768px) {
-          .tripleContainer {
-            grid-column: 1 / 13;
+          .family {
+            height: calc(100% +40px);
+            margin-bottom: 10vh;
           }
         }
       `}

@@ -11,7 +11,9 @@ const Category = props => (
         .category {
           color: white;
           text-decoration: none;
-          font-family: Karla-Bold;
+          font-family: 'Karla';
+          font-weight: 700;
+
           font-size: 13px;
           color: #ffffff;
           letter-spacing: 0.03px;
@@ -21,7 +23,8 @@ const Category = props => (
           margin: var(--gen-padding);
         }
         a {
-          font-family: Karla-Bold;
+          font-family: 'Karla';
+          font-weight: 700;
 
           color: white;
           cursor: pointer;

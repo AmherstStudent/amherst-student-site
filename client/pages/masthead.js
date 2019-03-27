@@ -88,8 +88,8 @@ const Masthead = props => (
         </div>
         <h5 className="noborder">Managing Arts and Living</h5>
         <div className="row">
-          <p>Olivia Geiger</p>
-          <p>Seyeon Kim</p>
+          <p>Olivia Gieger</p>
+          <p>Seoyeon Kim</p>
         </div>
         <h5 className="noborder">Managing Sports</h5>
         <div className="row">
