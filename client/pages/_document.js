@@ -74,7 +74,7 @@ export default class MyDocument extends Document {
               color: #000000;
               letter-spacing: 0.02px;
             }
-            
+
             h3 {
               font-family: 'Merriweather', monospace, serif;
               font-weight: bold;

@@ -10,15 +10,15 @@ if (!process.browser) {
 
 const defaultOptions = {
   watchQuery: {
-    fetchPolicy: 'cache-first',
+    fetchPolicy: 'network-only',
     errorPolicy: 'all',
   },
   query: {
-    fetchPolicy: 'cache-first',
+    fetchPolicy: 'network-only',
     errorPolicy: 'all',
   },
   mutate: {
-    fetchPolicy: 'cache-first',
+    fetchPolicy: 'network-only',
     errorPolicy: 'all'
   }
 }
