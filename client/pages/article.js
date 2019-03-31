@@ -59,9 +59,9 @@ const Article = withRouter(props => (
                   description: article.excerpt,
                   images: [
                     {
-                      url: nullImage()
-                    }
-                  ]
+                      url: nullImage(),
+                    },
+                  ],
                 },
               }}
             />
