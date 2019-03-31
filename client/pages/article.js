@@ -43,7 +43,7 @@ const Article = withRouter(props => (
         return []
       }
       function urlReturn() {
-        return 'amherststudent.com/' + article.slug
+        return 'amherststudent.com/article' + article.slug
       }
       let article = data.articles[0]
       return (
@@ -57,12 +57,17 @@ const Article = withRouter(props => (
                   url: urlReturn(),
                   title: article.title,
                   description: article.excerpt,
+                  images: [
+                    {
+                      url: nullImage()
+                    }
+                  ]
                 },
               }}
             />
 
             <ArticleJsonLd
-              url={`amherststudent.com/${article.slug}`}
+              url={`amherststudent.com/article/${article.slug}`}
               title={`${article.title}`}
               images={nullImage()}
               datePublished={article.updatedAt}

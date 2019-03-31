@@ -1,16 +1,16 @@
 const Sidebar = () => (
   <div className="bottom">
     <div className="nav-links">
-      <a id="home" className="menu-item" href="/">
+      <a id="home" className="menu-item" href="amherststudent.com/category/news">
         News
       </a>
-      <a id="about" className="menu-item" href="/arts">
+      <a id="about" className="menu-item" href="amherststudent.com/category/arts">
         Arts and Living
       </a>
-      <a id="contact" className="menu-item" href="/contact">
+      <a id="contact" className="menu-item" href="amherststudent.com/category/opinion">
         Opinion
       </a>
-      <a className="menu-item" href="">
+      <a className="menu-item" href="amherststudent.com/category/sports">
         Sports
       </a>
     </div>
