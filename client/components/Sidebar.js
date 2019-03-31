@@ -4,13 +4,13 @@ const Sidebar = () => (
       <a id="home" className="menu-item" href="amherststudent.com/category/news">
         News
       </a>
-      <a id="about" className="menu-item" href="amherststudent.com/category/arts">
+      <a id="about" className="menu-item" href="/category/arts">
         Arts and Living
       </a>
-      <a id="contact" className="menu-item" href="amherststudent.com/category/opinion">
+      <a id="contact" className="menu-item" href="/category/opinion">
         Opinion
       </a>
-      <a className="menu-item" href="amherststudent.com/category/sports">
+      <a className="menu-item" href="/category/sports">
         Sports
       </a>
     </div>
