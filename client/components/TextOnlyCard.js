@@ -4,7 +4,7 @@ import Category from './Category'
 const TextOnlyCard = ({ article }) => (
   <div className="textOnlyCard">
     <div className="name">
-      <Category category="news" />
+    <Category category={article.category.name} />
     </div>
     <div className="textOnlyContent">
       <Link href={`/article/${article.slug}`} passHref>
