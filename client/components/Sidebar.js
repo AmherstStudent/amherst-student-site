@@ -1,7 +1,7 @@
 const Sidebar = () => (
   <div className="bottom">
     <div className="nav-links">
-      <a id="home" className="menu-item" href="amherststudent.com/category/news">
+      <a id="home" className="menu-item" href="/category/news">
         News
       </a>
       <a id="contact" className="menu-item" href="/category/opinion">
