@@ -92,7 +92,7 @@ const Article = withRouter(props => (
 
           <style jsx="jsx">
             {`
-              @media only screen and (min-width: 1300px) {
+              @media only screen and (min-width: 1240px) {
                 .header {
                   width: 100vw;
                 }
@@ -111,7 +111,7 @@ const Article = withRouter(props => (
                 margin-bottom: 15%;
               }
 
-              @media only screen and (max-width: 1300px) {
+              @media only screen and (max-width: 1240px) {
                 article {
                   grid-column: span 6;
                 }

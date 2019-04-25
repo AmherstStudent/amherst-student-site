@@ -34,7 +34,7 @@ const NewsContainer = ({ article, children }) => (
         padding-bottom: 20px;
       }
       .header {
-        height: 25vh;
+        min-height:32vh;
         background: var(--dark-purple);
         margin-bottom: ; // think about adding a line up
       }
