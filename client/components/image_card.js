@@ -15,9 +15,11 @@ const Image_Card = props => (
       {`
         img {
           height: 100%;
-          max-height: 85vh;
+          max-height: 90vh;
           padding: 0px;
           position: relative;
+          max-width: 100%;
+          vertical-align: middle;
         }
         figure img {
           margin: auto;
@@ -27,6 +29,7 @@ const Image_Card = props => (
           position: relative;
           display: flex;
           background: black;
+          object-fit: contain;
         }
         figcaption {
           position: absolute;
@@ -44,9 +47,7 @@ const Image_Card = props => (
           font-size: 14px;
           padding-right: 10px;
         }
-        img {
-          vertical-align: bottom;
-        }
+
       `}
     </style>
   </Card>

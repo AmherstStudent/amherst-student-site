@@ -31,7 +31,9 @@ const Article_Core = props => (
 
         .article_text > img {
           width: 100%;
-          height: auto;
+        }
+        img {
+            max-width: 100%;
         }
       `}
     </style>

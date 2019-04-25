@@ -90,22 +90,14 @@ const Article = withRouter(props => (
             </aside>
           </>
 
-          <style jsx global>
-            {`
-              .main-container {
-                background: white !important;
-              }
-              .container {
-                background: white !important;
-              }
-            `}
-          </style>
+
           <style jsx="jsx">
             {`
               @media only screen and (min-width: 1300px) {
                 .header {
                   width: 100vw;
                 }
+                
                 article {
                   grid-column: 1 / 5;
                 }
@@ -119,10 +111,12 @@ const Article = withRouter(props => (
               article > * {
                 margin-bottom: 15%;
               }
+
               @media only screen and (max-width: 1300px) {
                 article {
                   grid-column: span 6;
                 }
+
                 aside {
                   grid-column: span 6;
                 }
