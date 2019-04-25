@@ -33,7 +33,7 @@ const Article_Core = props => (
           width: 100%;
         }
         img {
-            max-width: 100%;
+          max-width: 100%;
         }
       `}
     </style>

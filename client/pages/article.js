@@ -90,14 +90,13 @@ const Article = withRouter(props => (
             </aside>
           </>
 
-
           <style jsx="jsx">
             {`
               @media only screen and (min-width: 1300px) {
                 .header {
                   width: 100vw;
                 }
-                
+
                 article {
                   grid-column: 1 / 5;
                 }

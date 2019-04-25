@@ -47,7 +47,6 @@ const Image_Card = props => (
           font-size: 14px;
           padding-right: 10px;
         }
-
       `}
     </style>
   </Card>

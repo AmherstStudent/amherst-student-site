@@ -53,7 +53,7 @@ const Footer = () => (
   }
   li {
 
-    font-family: Karla-Bold;
+    font-family: 'Karla', sans-serif;
     font-size: 12px;
     display:inline-block;
     color: #FFFFFF;
@@ -66,7 +66,7 @@ const Footer = () => (
     text-decoration: none;
     color: #FFFFFF;
     font-size: 13px;
-    font-family: Karla-Bold;
+    font-family: 'Karla', sans-serif;
 
   }
 
