@@ -3,15 +3,11 @@ import { withRouter } from 'next/router'
 
 // Internal Components
 import Head from '../components/head'
-import Container from '../components/container'
-import Grid from '../components/grid'
+import Grid from '../components/Layout/grid'
 import Author_List_Container from '../components/author_list_container'
-import List_Header from '../components/category_header'
-import Author_Card from '../components/authorcard'
 import Main from '../components/main'
 
 // Query import
-import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import { AUTHOR_LOOKUP } from '../lib/queries'
 

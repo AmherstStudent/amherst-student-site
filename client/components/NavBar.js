@@ -48,7 +48,7 @@ class NavBar extends React.Component {
 
         <style jsx>{`
           nav {
-            width: 100vw;
+            width: 100%;
           }
           .nav {
             background: white;

@@ -1,36 +1,31 @@
 import React from 'react'
 import NextSeo from 'next-seo'
-
-//Format
-import Head from '../components/head'
-
-import Main from '../components/main.js'
-
-//Presenttional Cards
-import FeatureNewsCard from '../components/featurenewscard.js'
-import MediaCard from '../components/mediacard.js'
-import MediaCard3 from '../components/mediacard3.js'
-import OneThirdCard from '../components/thirdcard.js'
-import FeatureCard from '../components/FeatureCard.js'
+// SEO check
+// FrontPAge
 import Container from '../components/container.js'
-import TextOnlyCard from '../components/TextOnlyCard.js'
-import MiniCard from '../components/MiniCard.js'
-import MiniTextCard from '../components/MiniTextCard.js'
-import ErrorMessage from '../components/ErrorMessage.js'
+
+//Presentational Cards
+import FeatureCard from '../components/HomePage/FeatureCard.js'
+import TextOnlyCard from '../components/HomePage/TextOnlyCard.js'
+import MiniCard from '../components/HomePage/MiniCard.js'
+import MiniTextCard from '../components/HomePage/MiniTextCard.js'
+import ErrorMessage from '../components/Basics/ErrorMessage'
 //Graphql requests
 import { Query } from 'react-apollo'
-import { gql } from 'apollo-boost'
 import { HOME_PAGE } from '../lib/queries'
 
 const Home = props => (
   <Container>
     <Query query={HOME_PAGE}>
       {({ loading, error, data }) => {
-        if (error) return <ErrorMessage message="Error loading article." />
-        if (loading) return <div>Loading</div>
+        if (error)
+          return (
+            <ErrorMessage className="span-6" message="Error loading page, contact us on Twitter, FB or Instagram for support." />
+          )
+        if (loading) return <div>Loading</div> //TODO: Add a proper loading state
 
         let view = data.views[0]
-
+        // Add to front page error components
         return (
           <>
             <FeatureCard article={view.news_left_big} />
@@ -83,6 +78,9 @@ const Home = props => (
             height: calc(100% +40px);
             margin-bottom: 10vh;
           }
+        }
+        .span-6{
+          grid-column: span 6;
         }
       `}
     </style>

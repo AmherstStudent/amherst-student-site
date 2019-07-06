@@ -4,21 +4,17 @@ import { withRouter } from 'next/router'
 // Internal Components
 import Head from '../components/head'
 import Container from '../components/container'
-import Grid from '../components/grid'
-import Category_List_Container from '../components/category_list_container'
-import List_Header from '../components/category_header'
-import Author_Card from '../components/authorcard'
-import Main from '../components/main'
+import Category_List_Container from '../components/Category/category_list_container'
+import List_Header from '../components/Category/category_header'
+import Author_Card from '../components/Article/authorcard'
 
 // Query import
-import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import { GET_EDITOR_LIST } from '../lib/queries.js'
-
+//Put a pin in it, check it out later
 const Category = withRouter(props => (
   <Container>
     <Head title={props.router.query.name} />
-
     <List_Header className="header" type={props.router.query.name.toUpperCase()} />
 
     <article>

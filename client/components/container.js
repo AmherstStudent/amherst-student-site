@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Main from './main.js'
 import NavBar from './NavBar'
 
@@ -11,7 +10,6 @@ const Container = ({ children }) => (
 
     <style jsx>{`
       .container {
-        width: 100vw;
         background: var(--main-bg-color);
         min-height: 100%;
       }

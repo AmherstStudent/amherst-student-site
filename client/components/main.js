@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const Main = ({ children }) => (
-  <main className="main-container">
+  <div className="main-container">
     {children}
 
     <style jsx>{`
@@ -18,7 +18,7 @@ const Main = ({ children }) => (
         grid-row-gap: 16px;
       }
     `}</style>
-  </main>
+  </div>
 )
 
 export default Main

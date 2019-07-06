@@ -4,7 +4,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "format": "prettier --write \"pages/*.{ts,css,less,js}\" \"components/*.{ts,css,less,js}\" "
+    "format": "prettier --write \"pages/*.{ts,css,less,js}\" \"components/*.{ts,css,less,js}\" \"components/**/*.{ts,css,less,js}\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.2",
@@ -13,11 +13,11 @@
     "@material-ui/core": "^3.4.0",
     "@material-ui/icons": "^3.0.1",
     "apollo-boost": "^0.1.14",
+    "cacheable-response": "^1.6.12",
     "express": "^4.16.3",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.9.2",
     "isomorphic-fetch": "^2.2.1",
-    "lru-cache": "^4.1.3",
     "moment": "^2.22.2",
     "next": "^7.0.2",
     "next-seo": "^1.2.0",
@@ -29,7 +29,7 @@
     "react-dom": "^16.4.2",
     "react-icons-kit": "^1.1.7",
     "react-showdown": "^1.6.0",
-    "showdown": "^1.8.6"
+    "showdown": "^1.9.0"
   },
   "devDependencies": {
     "husky": "^1.1.3",

@@ -2,9 +2,7 @@ import React from 'react'
 
 import Head from '../components/head'
 import Container from '../components/container.js'
-import Card from '../components/card.js'
 import fetch from 'isomorphic-fetch'
-import List_Item from '../components/list_item'
 import Search_List_Container from '../components/search_list_container'
 
 export default class Search extends React.Component {
@@ -26,8 +24,8 @@ export default class Search extends React.Component {
 
   getInfo = () => {
     let search_link = 'https://api.amherststudent.com/article?_q='
-    console.log(search_link)
-    console.log(this.state.query)
+    // console.log(search_link)
+    // console.log(this.state.query)
     fetch(`${search_link}${this.state.query}`)
       .then(response => {
         if (response.status >= 400) {

@@ -1,41 +1,36 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './card.js'
-import Container from './container.js'
+import Card from './Basics/card'
 import { Query } from 'react-apollo'
-import { gql } from 'apollo-boost'
 import { FAVARTICLE } from '../lib/queries'
 
 const FeatureNewsCard = props => (
   <Card className={`${props.className}`}>
-    <>
-      <div className="cardContent">
-        <h3 className="cardTitle">TOP ARTICLES</h3>
-        <hr className="undline" />
-        <Query query={FAVARTICLE} errorPolicy="all">
-          {({ loading, error, data }) => {
-            if (loading) return null
-            if (error) return `Error!: Help me${error}`
+    <div className="cardContent">
+      <h3 className="cardTitle">TOP ARTICLES</h3>
+      <hr className="undline" />
+      <Query query={FAVARTICLE} errorPolicy="all">
+        {({ loading, error, data }) => {
+          if (loading) return null
+          if (error) return `Error!: Help me${error}`
 
-            let view = data.views[0]
-            let top_articles = view.toparticles
-            console.log(top_articles)
+          let view = data.views[0]
+          let top_articles = view.toparticles
 
-            return top_articles.map(article => (
-              <div className="topArticle">
-                <Link href={`/article/${article.slug}`} passHref>
-                  <a>
-                    <h5>{article.title}</h5>
-                  </a>
-                </Link>
-                <p className="caption">by {article.author.username}</p>
-                <hr />
-              </div>
-            ))
-          }}
-        </Query>
-      </div>
-    </>
+          return top_articles.map(article => (
+            <div className="topArticle">
+              <Link href={`/article/${article.slug}`} passHref>
+                <a>
+                  <h5>{article.title}</h5>
+                </a>
+              </Link>
+              <p className="caption">by {article.author.username}</p>
+              <hr />
+            </div>
+          ))
+        }}
+      </Query>
+    </div>
 
     <style jsx>{`
       h5 {
