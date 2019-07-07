@@ -179,7 +179,7 @@ const Masthead = props => (
           border-color: var(--dark-purple);
           margin-bottom: 25px;
         }
-        h5{
+        h5 {
           font-family: 'Karla';
           margin-top: 10px;
         }

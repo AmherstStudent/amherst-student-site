@@ -20,7 +20,10 @@ const Home = props => (
       {({ loading, error, data }) => {
         if (error)
           return (
-            <ErrorMessage className="span-6" message="Error loading page, contact us on Twitter, FB or Instagram for support." />
+            <ErrorMessage
+              className="span-6"
+              message="Error loading page, contact us on Twitter, FB or Instagram for support."
+            />
           )
         if (loading) return <div>Loading</div> //TODO: Add a proper loading state
 
@@ -79,7 +82,7 @@ const Home = props => (
             margin-bottom: 10vh;
           }
         }
-        .span-6{
+        .span-6 {
           grid-column: span 6;
         }
       `}

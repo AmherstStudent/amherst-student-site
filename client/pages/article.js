@@ -3,8 +3,7 @@ import { withRouter } from 'next/router'
 
 // GraphQL loading
 import { ARTICLE_LOOKUP } from '../lib/queries.js'
-import { Query } from 'react-apollo' 
-
+import { Query } from 'react-apollo'
 
 // elements
 import Article_Core from '../components/Article/article_core'
@@ -15,7 +14,7 @@ import CommentsContainer from '../components/Article/comments'
 import NewsContainer from '../components/Article/NewsContainer'
 import Article_Header from '../components/Article/Article_Header'
 import NavBar from '../components/NavBar'
-import ArticleSEO from '../components/Article/ArticleSEO.js';
+import ArticleSEO from '../components/Article/ArticleSEO.js'
 //think about
 const Article = withRouter(props => (
   <>
@@ -36,7 +35,7 @@ const Article = withRouter(props => (
         let article = data.articles[0]
         return (
           <>
-          <ArticleSEO article={article}/>
+            <ArticleSEO article={article} />
             <Article_Header
               category={article.category.name}
               title={article.title}
