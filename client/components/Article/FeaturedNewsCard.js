@@ -1,15 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './Basics/card'
 import { Query } from 'react-apollo'
-import { FAVARTICLE } from '../lib/queries'
+import { GetFeaturedArticles } from '../../lib/queries';
 
-const FeatureNewsCard = props => (
-  <Card className={`${props.className}`}>
-    <div className="cardContent">
+const FeaturedNewsCard = () => (
+    <section>
       <h3 className="cardTitle">TOP ARTICLES</h3>
       <hr className="undline" />
-      <Query query={FAVARTICLE} errorPolicy="all">
+      <ul>
+      <Query query={GetFeaturedArticles}>
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: Help me${error}`
@@ -18,70 +17,34 @@ const FeatureNewsCard = props => (
           let top_articles = view.toparticles
 
           return top_articles.map(article => (
-            <div className="topArticle">
+            <li className="topArticle" key={id}>
               <Link href={`/article/${article.slug}`} passHref>
                 <a>
                   <h5>{article.title}</h5>
                 </a>
               </Link>
-              <p className="caption">by {article.author.username}</p>
+              <span>by {article.author.username}</span>
               <hr />
-            </div>
+            </li>
           ))
         }}
       </Query>
-    </div>
+      </ul>
 
     <style jsx>{`
-      h5 {
-        font-family: 'Merriweather';
-        font-style: italic;
-        font-style: bold;
-        font-size: 16px;
-        color: #000000;
-        letter-spacing: 0.03px;
-        margin-bottom: 5px;
-      }
-      .cardContent {
+      section {
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
       }
-      .undline {
-        margin: 10px 0 10px 0;
-        border-color: black;
-        border-width: 4.5px;
-      }
-
-      .topArticle {
-        margin-top: 10px;
-        margin-bottom: 10px;
-      }
-      h3 {
-        font-family: Karla;
-        font-style: normal;
-      }
-      h4,
-      a {
-        text-decoration: none;
-      }
-      h4:hover {
-        color: grey;
-      }
-      hr {
-        margin-top: 10px;
-      }
-      .caption {
+      h5 {
         font-family: 'Merriweather';
-        font-weight: 300;
         font-style: italic;
-        font-size: 14px;
+        font-size: 16px;
         color: #000000;
         letter-spacing: 0.03px;
-      }
-      #last {
-        padding-bottom: 20px;
+        margin-bottom: 5px;
       }
       h3 {
         font-family: 'Karla';
@@ -91,8 +54,41 @@ const FeatureNewsCard = props => (
         letter-spacing: 0.03px;
         font-style: normal;
       }
+      ul {
+        padding-inline-start: 0px;
+      }
+      
+      .undline {
+        margin: 10px 0;
+        border-color: black;
+        border-width: 4.5px;
+      }
+
+      li {
+        margin: 15px 0;
+        list-style-type: none;
+      }
+     
+      a {
+        text-decoration: none;
+      }
+      h4:hover {
+        color: grey;
+      }
+      hr {
+        margin-top: 10px;
+      }
+      span {
+        font-family: 'Merriweather';
+        font-weight: 300;
+        font-style: italic;
+        font-size: 14px;
+        color: #000000;
+        letter-spacing: 0.03px;
+      }
+      
     `}</style>
-  </Card>
+  </section>
 )
 
-export default FeatureNewsCard
+export default FeaturedNewsCard

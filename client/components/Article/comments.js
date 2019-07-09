@@ -1,20 +1,15 @@
 import React from 'react'
-import Card from '../Basics/card'
 import ReactDisqusComments from 'react-disqus-comments'
 
-const CommentsContainer = props => (
+const CommentsContainer = ({identifier, title, slug, category_id}) => (
   <section className="comments">
-    <Card>
-      <>
         <ReactDisqusComments
           shortname="AmherstStudent"
-          identifier={props.article._id}
-          title={props.article.title}
-          url={'https://amherststudent.com/article/' + props.article.slug}
-          category_id={props.article.category.id}
+          identifier={identifier}
+          title={title}
+          url={'https://amherststudent.com/article/' + slug}
+          category_id={category_id}
         />
-      </>
-    </Card>
     <style jsx>{`
       .comments {
         margin-bottom: 20px;

@@ -9,16 +9,15 @@ const MiniTextCard = ({ article }) => (
     </div>
     <div className="miniTextCardContent">
       <Link href={`/article/${article.slug}`} passHref>
+      <a>
         <h2>
-          <a>{article.title}</a>
+          {article.title}
         </h2>
+        </a>
       </Link>
       <p className="byline">
         by <span className="author">{article.author.username}</span> || Issue {article.issue.name}
       </p>
-
-      <hr />
-      <p className="excerpt">{article.excerpt}</p>
     </div>
     <style jsx>
       {`
@@ -77,6 +76,9 @@ const MiniTextCard = ({ article }) => (
         .excerpt {
           margin-top: 20px;
           width: 80%;
+        }
+        a {
+          text-decoration: none;
         }
       `}
     </style>

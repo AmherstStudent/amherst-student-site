@@ -1,12 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
 
 const Main = ({ children }) => (
-  <div className="main-container">
+  <div className="container">
     {children}
-
     <style jsx>{`
-      .main-container {
+      .container {
         width: 87vw;
         margin: 0 auto;
         margin-top: 16px;

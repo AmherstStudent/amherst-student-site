@@ -2,19 +2,19 @@ import React from 'react'
 import { withRouter } from 'next/router'
 
 // Internal Components
-import Head from '../components/head'
-import Grid from '../components/Layout/grid'
+import Head from '../components/Layout/Head'
+import Grid from '../components/Layout/Grid'
 import Author_List_Container from '../components/author_list_container'
-import Main from '../components/main'
-
+import Container from '../components/container'
+import NavBar from '../components/Layout/NavBar'
 // Query import
 import { Query } from 'react-apollo'
-import { AUTHOR_LOOKUP } from '../lib/queries'
+import { GetAuthor } from '../lib/queries'
 
 const Author = withRouter(props => (
-  <Main>
-    <Grid>
-      <Query query={AUTHOR_LOOKUP} variables={{ name: props.router.query.id }}>
+  <>
+  <Container>
+      <Query query={GetAuthor} variables={{ name: props.router.query.id }}>
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: ${error}`
@@ -30,15 +30,13 @@ const Author = withRouter(props => (
       <article>
         <Author_List_Container author={props.router.query.id} />
       </article>
-      <aside />
-    </Grid>
-
+    </Container>
     <style jsx="jsx">
       {`
         h1 {
           margin: 0 auto;
-          grid-column: span 14;
-          font-family: 'europa';
+          grid-column: span 7;
+          font-family: 'Karla';
           font-style: normal;
         }
         .header {
@@ -49,25 +47,13 @@ const Author = withRouter(props => (
 
         article {
           grid-column-start: 1;
-          grid-column-end: 14;
+          grid-column-end: 7;
         }
 
-        aside {
-          grid-column-start: 10;
-          grid-column-end: 14;
-        }
-
-        @media only screen and (max-width: 768px) {
-          article {
-            grid-column: 1 / 14;
-          }
-          aside {
-            grid-column: 1 / 14;
-          }
-        }
+       
       `}
     </style>
-  </Main>
+  </>
 ))
 
 export default Author

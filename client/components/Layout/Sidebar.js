@@ -18,10 +18,10 @@ const Sidebar = () => (
     <style jsx>
       {`
         .bottom {
-          height: 40%;
+          height: 100%;
           background-color: var(--dark-purple);
           position: absolute;
-          width: 100vw;
+          width: 100%;
           z-index: 20;
           display: flex;
           justify-content: center;

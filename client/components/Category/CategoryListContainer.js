@@ -1,11 +1,11 @@
 import React from 'react'
-import List_Item from '../Basics/list_item'
+import List_Item from '../Basics/ListItem'
 import { Query } from 'react-apollo'
-import { CATEGORY_LOOKUP } from '../../lib/queries'
+import { GetCategoryArticles } from '../../lib/queries'
 
-const Category_List_Container = props => (
+const CategoryListContainer = props => (
   <div className="list_container">
-    <Query query={CATEGORY_LOOKUP} variables={{ name: props.type.replace(/ .*/, '') }}>
+    <Query query={GetCategoryArticles} variables={{ name: props.type.replace(/ .*/, '') }}>
       {({ loading, error, data }) => {
         if (loading) return null
         if (error) return `Error!: ${error}`
@@ -15,4 +15,4 @@ const Category_List_Container = props => (
     </Query>
   </div>
 )
-export default Category_List_Container
+export default CategoryListContainer

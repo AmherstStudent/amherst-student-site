@@ -2,15 +2,15 @@ import React from 'react'
 import { withRouter } from 'next/router'
 
 // Internal Components
-import Head from '../components/head'
+import Head from '../components/Layout/Head'
 import Container from '../components/container'
-import Category_List_Container from '../components/Category/category_list_container'
-import List_Header from '../components/Category/category_header'
-import Author_Card from '../components/Article/authorcard'
+import CategoryListContainer from '../components/Category/CategoryListContainer'
+import List_Header from '../components/Category/CategoryHeader'
+import AuthorCard from '../components/Article/AuthorCard'
 
 // Query import
 import { Query } from 'react-apollo'
-import { GET_EDITOR_LIST } from '../lib/queries.js'
+import { GetEditors } from '../lib/queries.js'
 //Put a pin in it, check it out later
 const Category = withRouter(props => (
   <Container>
@@ -18,30 +18,26 @@ const Category = withRouter(props => (
     <List_Header className="header" type={props.router.query.name.toUpperCase()} />
 
     <article>
-      <Category_List_Container type={props.router.query.name} />
+      <CategoryListContainer type={props.router.query.name} />
     </article>
 
     <aside>
       <Query
-        query={GET_EDITOR_LIST}
+        query={GetEditors}
         variables={{ name: props.router.query.name.replace(/ .*/, '') }}
       >
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: ${error}`
           const editors = data.categories[0].editors
-          return <Author_Card editor={true} author={editors} />
+          return <AuthorCard editor author={editors} />
         }}
       </Query>
     </aside>
 
     <style jsx="jsx">
       {`
-        .header {
-          height: 200px;
-          grid-column-start: 2;
-          grid-column-end: 7;
-        }
+       
 
         article {
           grid-column-start: 1;

@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './card'
+import Card from './Card'
 import moment from 'moment'
 import Category from './Category'
 //TODO: change name to Section but that's a lot of SEO
-const List_Item = ({ article }) => (
+const ListItem = ({ article }) => (
   <Card className="list_item margin-20">
     <Category category={article.category.name} />
     <>
@@ -72,4 +72,4 @@ const List_Item = ({ article }) => (
     </style>
   </Card>
 )
-export default List_Item
+export default ListItem

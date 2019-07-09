@@ -8,20 +8,7 @@ if (!process.browser) {
   global.fetch = fetch
 }
 
-const defaultOptions = {
-  watchQuery: {
-    fetchPolicy: 'cache-and-network',
-    errorPolicy: 'all',
-  },
-  query: {
-    fetchPolicy: 'cache-and-network',
-    errorPolicy: 'all',
-  },
-  mutate: {
-    fetchPolicy: 'catch-and-network',
-    errorPolicy: 'all'
-  }
-}
+
 
 function create (initialState) {
   // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient
@@ -33,7 +20,6 @@ function create (initialState) {
       credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache().restore(initialState || {}),
-    defaultOptions
   })
 }
 

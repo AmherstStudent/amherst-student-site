@@ -2,9 +2,9 @@ import React from 'react'
 import NextSeo from 'next-seo'
 // SEO check
 // FrontPAge
-import Container from '../components/container.js'
 
 //Presentational Cards
+import Container from '../components/container.js'
 import FeatureCard from '../components/HomePage/FeatureCard.js'
 import TextOnlyCard from '../components/HomePage/TextOnlyCard.js'
 import MiniCard from '../components/HomePage/MiniCard.js'
@@ -12,11 +12,14 @@ import MiniTextCard from '../components/HomePage/MiniTextCard.js'
 import ErrorMessage from '../components/Basics/ErrorMessage'
 //Graphql requests
 import { Query } from 'react-apollo'
-import { HOME_PAGE } from '../lib/queries'
+import { GetHomePage } from '../lib/queries'
+import NavBar from '../components/Layout/NavBar';
 
-const Home = props => (
-  <Container>
-    <Query query={HOME_PAGE}>
+const Home = () => (
+  <>
+  <NavBar />
+  <main>
+    <Query query={GetHomePage}>
       {({ loading, error, data }) => {
         if (error)
           return (
@@ -56,19 +59,25 @@ const Home = props => (
         )
       }}
     </Query>
-
+    </main>
     <style jsx="jsx">
       {`
         :global(body, html) {
           background: var(--main-bg-color);
         }
-        .tripleContainer {
-          grid-column-start: 1;
-          grid-column-end: 7;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+        main {
+            width: 87vw;
+            margin: 0 auto;
+            margin-top: 16px;
+            display: grid;
+            grid-template-columns: repeat(6, 0.1666667fr);
+            grid-template-rows: auto;
+            grid-gap: 10px;
+            grid-column-gap: 10px;
+            grid-row-gap: 16px;
+          
         }
+       
         .family {
           grid-column: span 3;
           display: flex;
@@ -87,7 +96,7 @@ const Home = props => (
         }
       `}
     </style>
-  </Container>
+  </>
 )
 
 export default Home

@@ -1,4 +1,5 @@
 import React from 'react'
+// TODO: Add link to author and issue
 
 const ArticleHeader = ({ category, title, author, issue }) => (
   <header>
@@ -13,14 +14,13 @@ const ArticleHeader = ({ category, title, author, issue }) => (
       header {
         background: var(--dark-purple);
         display: flex;
-        flex: row;
         align-items: center;
         justify-content: center;
+        color: white;
       }
       .headertext {
         width: 87vw;
-        color: white;
-        padding: 40px 0 55px 0;
+        padding: 40px 0 60px 0;
       }
       span {
         font-family: 'Karla';
@@ -31,14 +31,13 @@ const ArticleHeader = ({ category, title, author, issue }) => (
         padding-bottom: 20px;
       }
       h1 {
-        font-family: 'Merriweather';
+        font-family: 'Merriweather', serif;
         font-style: italic;
         font-weight: 900;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
         font-size: 36px;
         color: #ffffff;
         line-height: 48px;
+        margin-bottom: 0px;
       }
       p {
         padding-top: 10px;

@@ -1,18 +1,8 @@
 import React from 'react'
 import NextSeo from 'next-seo'
 import { ArticleJsonLd } from 'next-seo'
-
-function nullImage(article) {
-  if (article.featuredImage.url == true) {
-    var imageLink = [article.featuredImage.url]
-    return imageLink
-  }
-  return []
-}
-
-function urlLink(article) {
-  return 'amherststudent.com/article/' + article.slug
-}
+import {nullImage} from '../../lib/util'
+import {urlLink} from '../../lib/util'
 
 const ArticleSEO = ({ article }) => (
   <>
@@ -20,13 +10,15 @@ const ArticleSEO = ({ article }) => (
       config={{
         title: article.title,
         description: article.excerpt,
+        locale: 'en_IE',
+        site_name: 'Amherst Student',
         openGraph: {
-          url: urlLink(article),
+          url: urlLink(article.slug),
           title: article.title,
           description: article.excerpt,
           images: [
             {
-              url: nullImage(article),
+              url: article.featuredImage.url,
             },
           ],
         },
@@ -34,13 +26,14 @@ const ArticleSEO = ({ article }) => (
     />
 
     <ArticleJsonLd
-      url={`amherststudent.com/article/${article.slug}`}
+      url={`https://amherststudent.com/article/${article.slug}`}
       title={article.title}
-      images={nullImage(article)}
-      datePublished={article.updatedAt}
+      images={[article.featuredImage ? article.featuredImage.url : "https://amherststudent.com/static/logo.jpg" ]}
+      datePublished={article.createdAt}
+      dateModified={article.updatedAt}
       authorName={article.author.username}
       publisherName="The Amherst Student"
-      publisherLogo="https://amherststudent.com/static/logo.svg"
+      publisherLogo="https://amherststudent.com/static/logo.jpg"
       description={article.excerpt}
     />
   </>

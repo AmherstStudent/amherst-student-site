@@ -6,7 +6,7 @@ import { ic_stars } from 'react-icons-kit/md/ic_stars'
 import { Icon } from 'react-icons-kit'
 import moment from 'moment'
 // depreceated code, we save for
-const Article_Header = props => (
+const ArticleHeader = props => (
   <div className={` header ${props.className}`}>
     <span className="category">{props.article.category.name.toUpperCase()}</span>
 
@@ -102,4 +102,4 @@ const Article_Header = props => (
   </div>
 )
 
-export default Article_Header
+export default ArticleHeader

@@ -1,13 +1,12 @@
 import React from 'react'
 import { createMarkup } from '../../lib/util'
 
-const Article_Core = props => (
-  <article>
+const ArticleCore = ({article_content}) => (
+  <>
     <section
       className="article_text"
-      dangerouslySetInnerHTML={createMarkup(props.article.content)}
+      dangerouslySetInnerHTML={createMarkup(article_content)}
     />
-
     <style jsx>
       {`
         .article_text {
@@ -20,7 +19,7 @@ const Article_Core = props => (
         }
       `}
     </style>
-  </article>
+  </>
 )
 
-export default Article_Core
+export default ArticleCore

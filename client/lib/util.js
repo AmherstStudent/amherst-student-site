@@ -7,6 +7,17 @@ export const createMarkup = (content) => {
   return { __html: html };
 }
 
+export const nullImage = (articleObject) => {
+  if (articleObject.featuredImage === true) {
+    let imageLink = new Array(articleObject.featuredImage.url)
+    return imageLink
+  }
+  return []
+}
+
+export const urlLink = (slug) => {
+  return 'amherststudent.com/article/' + slug
+}
 
 
 

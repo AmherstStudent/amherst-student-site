@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AuthorCard = props => (
-  <section className="authorCard">
+  <section>
     <>
       <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
       <hr />
@@ -9,14 +9,14 @@ const AuthorCard = props => (
         {props.editor ? (
           Object.keys(props.author).map((item, index) => (
             <div className="editor" key={index}>
-              <img src={props.author[item].reporterPhoto.url} />
+              <img alt-text="" src={props.author[item].reporterPhoto.url} />
               <h5 className="authorName">{props.author[item].username}</h5>
               <p className="authorBio">{props.author[item].reporterBio}</p>
             </div>
           ))
         ) : (
           <div>
-            <img src={props.author.reporterPhoto.url} />
+            <img alt-text="" src={props.author.reporterPhoto.url} />
             <h5 className="authorName">{props.author.username}</h5>
             <p className="authorBio">{props.author.reporterBio}</p>
           </div>
@@ -25,15 +25,8 @@ const AuthorCard = props => (
     </>
 
     <style jsx>{`
-      img {
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        margin: auto;
-        height: 125px;
-        width: 125px;
-      }
-      h3 {
+      
+      .cardTitle {
         font-family: 'Karla', sans-serif;
         font-size: 24px;
         color: #000000;
@@ -44,6 +37,14 @@ const AuthorCard = props => (
         margin: 0 auto;
         text-align: center;
         margin-bottom: 20px;
+      }
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        margin: auto;
+        height: 125px;
+        width: 125px;
       }
       .editor {
         margin-bottom: 20px;

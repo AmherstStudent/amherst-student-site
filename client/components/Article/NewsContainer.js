@@ -1,12 +1,11 @@
 import React from 'react'
-// Search engine optimizer stuff
 
-const NewsContainer = ({ article, children }) => (
+const NewsContainer = ({children} ) => (
   <div className="newscontainer">
-    <div className="grid">{children}</div>
+    {children}
 
     <style jsx>{`
-      .grid {
+      .newscontainer {
         width: 87vw;
         margin: 0 auto;
         margin-top: 16px;

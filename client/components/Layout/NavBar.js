@@ -26,7 +26,7 @@ class NavBar extends React.Component {
       <nav>
         <div className="nav">
           <div className="rightNav">
-            <div className="navicon" onClick={this.toggleBox}>
+            <div className="navicon" alt-text="Menu" onClick={this.toggleBox}>
               <Icon size={24} icon={navicon} role="button" />
             </div>
             <Link href="/">
