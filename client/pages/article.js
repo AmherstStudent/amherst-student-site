@@ -6,15 +6,15 @@ import { ARTICLE_LOOKUP } from '../lib/queries.js'
 import { Query } from 'react-apollo'
 
 // elements
-import Article_Core from '../components/Article/article_core'
+import Article_Core from '../components/Article/ArticleCore'
 import ImageCard from '../components/Article/image_card'
-import FeatureNewsCard from '../components/featurenewscard.js'
+import FeatureNewsCard from '../components/featurenewscard'
 import AuthorCard from '../components/Article/authorcard'
 import CommentsContainer from '../components/Article/comments'
 import NewsContainer from '../components/Article/NewsContainer'
-import Article_Header from '../components/Article/Article_Header'
+import ArticleHeader from '../components/Article/ArticleHeader'
 import NavBar from '../components/NavBar'
-import ArticleSEO from '../components/Article/ArticleSEO.js'
+import ArticleSEO from '../components/Article/ArticleSEO'
 //think about
 const Article = withRouter(props => (
   <>
@@ -36,7 +36,7 @@ const Article = withRouter(props => (
         return (
           <>
             <ArticleSEO article={article} />
-            <Article_Header
+            <ArticleHeader
               category={article.category.name}
               title={article.title}
               author={article.author.username}
