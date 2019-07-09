@@ -37,7 +37,6 @@ const MiniCard = ({ article }) => (
           }
         }
         .miniCardImage {
-          height: 70%;
           width: 100%;
         }
         .miniCardImage img {
