@@ -1,12 +1,9 @@
 import React from 'react'
 import { createMarkup } from '../../lib/util'
 
-const ArticleCore = ({article_content}) => (
+const ArticleCore = ({ article_content }) => (
   <>
-    <section
-      className="article_text"
-      dangerouslySetInnerHTML={createMarkup(article_content)}
-    />
+    <section className="article_text" dangerouslySetInnerHTML={createMarkup(article_content)} />
     <style jsx>
       {`
         .article_text {

@@ -9,10 +9,8 @@ const MiniTextCard = ({ article }) => (
     </div>
     <div className="miniTextCardContent">
       <Link href={`/article/${article.slug}`} passHref>
-      <a>
-        <h2>
-          {article.title}
-        </h2>
+        <a>
+          <h2>{article.title}</h2>
         </a>
       </Link>
       <p className="byline">

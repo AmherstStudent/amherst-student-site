@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NewsContainer = ({children} ) => (
+const NewsContainer = ({ children }) => (
   <div className="newscontainer">
     {children}
 

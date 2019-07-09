@@ -25,7 +25,6 @@ const AuthorCard = props => (
     </>
 
     <style jsx>{`
-      
       .cardTitle {
         font-family: 'Karla', sans-serif;
         font-size: 24px;

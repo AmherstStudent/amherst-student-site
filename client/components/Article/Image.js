@@ -1,12 +1,10 @@
 import React from 'react'
 import Card from '../Basics/Card'
 
-const Image = ({caption, image}) => (
-    <figure>
-      <img src={image} />
-      <figcaption>
-        {caption}
-      </figcaption>
+const Image = ({ caption, image }) => (
+  <figure>
+    <img src={image} />
+    <figcaption>{caption}</figcaption>
 
     <style jsx="jsx">{`
       figure {
@@ -23,7 +21,7 @@ const Image = ({caption, image}) => (
         position: relative;
         max-width: 100%;
       }
-        
+
       figcaption {
         position: absolute;
         width: 100%;
@@ -37,10 +35,8 @@ const Image = ({caption, image}) => (
         font-size: 14px;
         color: white;
       }
-
-    
-      `}</style>
-    </figure>
+    `}</style>
+  </figure>
 )
 
 export default Image

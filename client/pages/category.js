@@ -22,10 +22,7 @@ const Category = withRouter(props => (
     </article>
 
     <aside>
-      <Query
-        query={GetEditors}
-        variables={{ name: props.router.query.name.replace(/ .*/, '') }}
-      >
+      <Query query={GetEditors} variables={{ name: props.router.query.name.replace(/ .*/, '') }}>
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: ${error}`
@@ -37,8 +34,6 @@ const Category = withRouter(props => (
 
     <style jsx="jsx">
       {`
-       
-
         article {
           grid-column-start: 1;
           grid-column-end: 5;

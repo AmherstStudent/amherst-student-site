@@ -1,8 +1,8 @@
 import React from 'react'
 import NextSeo from 'next-seo'
 import { ArticleJsonLd } from 'next-seo'
-import {nullImage} from '../../lib/util'
-import {urlLink} from '../../lib/util'
+import { nullImage } from '../../lib/util'
+import { urlLink } from '../../lib/util'
 
 const ArticleSEO = ({ article }) => (
   <>
@@ -28,7 +28,11 @@ const ArticleSEO = ({ article }) => (
     <ArticleJsonLd
       url={`https://amherststudent.com/article/${article.slug}`}
       title={article.title}
-      images={[article.featuredImage ? article.featuredImage.url : "https://amherststudent.com/static/logo.jpg" ]}
+      images={[
+        article.featuredImage
+          ? article.featuredImage.url
+          : 'https://amherststudent.com/static/logo.jpg',
+      ]}
       datePublished={article.createdAt}
       dateModified={article.updatedAt}
       authorName={article.author.username}

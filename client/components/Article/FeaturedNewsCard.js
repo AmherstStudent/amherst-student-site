@@ -1,13 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 import { Query } from 'react-apollo'
-import { GetFeaturedArticles } from '../../lib/queries';
+import { GetFeaturedArticles } from '../../lib/queries'
 
 const FeaturedNewsCard = () => (
-    <section>
-      <h3 className="cardTitle">TOP ARTICLES</h3>
-      <hr className="undline" />
-      <ul>
+  <section>
+    <h3 className="cardTitle">TOP ARTICLES</h3>
+    <hr className="undline" />
+    <ul>
       <Query query={GetFeaturedArticles}>
         {({ loading, error, data }) => {
           if (loading) return null
@@ -29,7 +29,7 @@ const FeaturedNewsCard = () => (
           ))
         }}
       </Query>
-      </ul>
+    </ul>
 
     <style jsx>{`
       section {
@@ -57,7 +57,7 @@ const FeaturedNewsCard = () => (
       ul {
         padding-inline-start: 0px;
       }
-      
+
       .undline {
         margin: 10px 0;
         border-color: black;
@@ -68,7 +68,7 @@ const FeaturedNewsCard = () => (
         margin: 15px 0;
         list-style-type: none;
       }
-     
+
       a {
         text-decoration: none;
       }
@@ -86,7 +86,6 @@ const FeaturedNewsCard = () => (
         color: #000000;
         letter-spacing: 0.03px;
       }
-      
     `}</style>
   </section>
 )

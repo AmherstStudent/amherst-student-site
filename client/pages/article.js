@@ -25,14 +25,14 @@ const Article = withRouter(props => (
         if (loading) return null
         if (error) return `Error!: ${error}`
 
-        let imageChecker = (img) => {
-          return (img != null)
+        let imageChecker = img => {
+          return img != null
         }
 
         let article = data.articles[0]
 
         return (
-          <>  
+          <>
             <ArticleHeader
               category={article.category.name}
               title={article.title}
@@ -40,24 +40,29 @@ const Article = withRouter(props => (
               issue={article.issue.name}
             />
             <ArticleSEO article={article} />
-            
-            <NewsContainer>
-                <article>
-                  {imageChecker(article.featuredImage) ? <Image image={article.featuredImage.url} caption={article.imagecaption} /> : ' '}
-                  <ArticleCore article_content={article.content} />
-                  <CommentsContainer 
-                    identifier={article._id}
-                    title={article.title}
-                    slug={article.slug}
-                    category_id={article.category._id} />
-                </article>
 
-                <aside>
-                  <AuthorCard type="author" author={article.author} />
-                  <FeaturedNewsCard />
-                </aside>
+            <NewsContainer>
+              <article>
+                {imageChecker(article.featuredImage) ? (
+                  <Image image={article.featuredImage.url} caption={article.imagecaption} />
+                ) : (
+                  ' '
+                )}
+                <ArticleCore article_content={article.content} />
+                <CommentsContainer
+                  identifier={article._id}
+                  title={article.title}
+                  slug={article.slug}
+                  category_id={article.category._id}
+                />
+              </article>
+
+              <aside>
+                <AuthorCard type="author" author={article.author} />
+                <FeaturedNewsCard />
+              </aside>
             </NewsContainer>
-          
+
             <style jsx="jsx">
               {`
                 article {
@@ -70,7 +75,7 @@ const Article = withRouter(props => (
                   margin-left: 20px;
                   grid-column: 5/7;
                 }
-                
+
                 article > * {
                   margin-bottom: 15%;
                 }

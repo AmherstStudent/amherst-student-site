@@ -13,52 +13,52 @@ import ErrorMessage from '../components/Basics/ErrorMessage'
 //Graphql requests
 import { Query } from 'react-apollo'
 import { GetHomePage } from '../lib/queries'
-import NavBar from '../components/Layout/NavBar';
+import NavBar from '../components/Layout/NavBar'
 
 const Home = () => (
   <>
-  <NavBar />
-  <main>
-    <Query query={GetHomePage}>
-      {({ loading, error, data }) => {
-        if (error)
+    <NavBar />
+    <main>
+      <Query query={GetHomePage}>
+        {({ loading, error, data }) => {
+          if (error)
+            return (
+              <ErrorMessage
+                className="span-6"
+                message="Error loading page, contact us on Twitter, FB or Instagram for support."
+              />
+            )
+          if (loading) return <div>Loading</div> //TODO: Add a proper loading state
+
+          let view = data.views[0]
+          // Add to front page error components
           return (
-            <ErrorMessage
-              className="span-6"
-              message="Error loading page, contact us on Twitter, FB or Instagram for support."
-            />
+            <>
+              <FeatureCard article={view.news_left_big} />
+              <div className="family">
+                <TextOnlyCard article={view.news_right_first} />
+                <TextOnlyCard article={view.news_right_second} />
+                <TextOnlyCard article={view.news_right_third} />
+              </div>
+
+              <MiniTextCard article={view.opinion_first} />
+              <MiniTextCard article={view.opinion_second} />
+              <MiniTextCard article={view.opinion_third} />
+
+              <FeatureCard article={view.arts_living_big} />
+              <div className="family">
+                <TextOnlyCard article={view.arts_living_first_third} />
+                <TextOnlyCard article={view.arts_living_second_third} />
+                <TextOnlyCard article={view.arts_living_third_third} />
+              </div>
+
+              <MiniCard article={view.sports_first} className="span-4" />
+              <MiniCard article={view.sports_second} className="span-4" />
+              <MiniCard article={view.sports_third} className="span-4" />
+            </>
           )
-        if (loading) return <div>Loading</div> //TODO: Add a proper loading state
-
-        let view = data.views[0]
-        // Add to front page error components
-        return (
-          <>
-            <FeatureCard article={view.news_left_big} />
-            <div className="family">
-              <TextOnlyCard article={view.news_right_first} />
-              <TextOnlyCard article={view.news_right_second} />
-              <TextOnlyCard article={view.news_right_third} />
-            </div>
-
-            <MiniTextCard article={view.opinion_first} />
-            <MiniTextCard article={view.opinion_second} />
-            <MiniTextCard article={view.opinion_third} />
-
-            <FeatureCard article={view.arts_living_big} />
-            <div className="family">
-              <TextOnlyCard article={view.arts_living_first_third} />
-              <TextOnlyCard article={view.arts_living_second_third} />
-              <TextOnlyCard article={view.arts_living_third_third} />
-            </div>
-
-            <MiniCard article={view.sports_first} className="span-4" />
-            <MiniCard article={view.sports_second} className="span-4" />
-            <MiniCard article={view.sports_third} className="span-4" />
-          </>
-        )
-      }}
-    </Query>
+        }}
+      </Query>
     </main>
     <style jsx="jsx">
       {`
@@ -66,18 +66,17 @@ const Home = () => (
           background: var(--main-bg-color);
         }
         main {
-            width: 87vw;
-            margin: 0 auto;
-            margin-top: 16px;
-            display: grid;
-            grid-template-columns: repeat(6, 0.1666667fr);
-            grid-template-rows: auto;
-            grid-gap: 10px;
-            grid-column-gap: 10px;
-            grid-row-gap: 16px;
-          
+          width: 87vw;
+          margin: 0 auto;
+          margin-top: 16px;
+          display: grid;
+          grid-template-columns: repeat(6, 0.1666667fr);
+          grid-template-rows: auto;
+          grid-gap: 10px;
+          grid-column-gap: 10px;
+          grid-row-gap: 16px;
         }
-       
+
         .family {
           grid-column: span 3;
           display: flex;

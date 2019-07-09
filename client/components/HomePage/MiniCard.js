@@ -10,10 +10,8 @@ const MiniCard = ({ article }) => (
     </div>
     <div className="miniCardContent">
       <Link href={`/article/${article.slug}`} passHref>
-      <a>
-        <h2>
-          {article.title}
-        </h2>
+        <a>
+          <h2>{article.title}</h2>
         </a>
       </Link>
       <p className="byline">
@@ -71,7 +69,7 @@ const MiniCard = ({ article }) => (
         h2 {
           line-height: 36px;
         }
-        a { 
+        a {
           text-decoration: none;
         }
       `}

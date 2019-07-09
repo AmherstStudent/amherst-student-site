@@ -13,7 +13,7 @@ import { GetAuthor } from '../lib/queries'
 
 const Author = withRouter(props => (
   <>
-  <Container>
+    <Container>
       <Query query={GetAuthor} variables={{ name: props.router.query.id }}>
         {({ loading, error, data }) => {
           if (loading) return null
@@ -49,8 +49,6 @@ const Author = withRouter(props => (
           grid-column-start: 1;
           grid-column-end: 7;
         }
-
-       
       `}
     </style>
   </>
