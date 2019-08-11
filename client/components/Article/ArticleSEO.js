@@ -1,7 +1,6 @@
 import React from 'react'
 import NextSeo from 'next-seo'
 import { ArticleJsonLd } from 'next-seo'
-import { nullImage } from '../../lib/util'
 import { urlLink } from '../../lib/util'
 
 const ArticleSEO = ({ article }) => (
