@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './Card'
+import Card from './card'
 import moment from 'moment'
 import Category from './Category'
 //TODO: change name to Section but that's a lot of SEO
