@@ -1,18 +1,6 @@
-import react from 'react'
-
 import React from 'react'
-
 import Head from '../components/head'
-import FeatureNewsCard from '../components/featurenewscard.js'
 import Container from '../components/container.js'
-import Card from '../components/card.js'
-import Main from '../components/main.js'
-import Grid from '../components/grid.js'
-import MediaCard from '../components/mediacard.js'
-import MediaCard3 from '../components/mediacard3.js'
-import OneThirdCard from '../components/thirdcard.js'
-import { Query } from 'react-apollo'
-import { gql } from 'apollo-boost'
 
 const Masthead = props => (
   <Container>
@@ -175,6 +163,7 @@ const Masthead = props => (
       {`
         p {
           line-height: 36px;
+          font-size: 14px;
         }
         .card {
           grid-column: span 6;
@@ -188,9 +177,11 @@ const Masthead = props => (
           margin-inline-start: 0;
           margin-inline-end: 0;
           border-color: var(--dark-purple);
-          margin-bottom: 10px;
+          margin-bottom: 25px;
         }
-        .short {
+        h5 {
+          font-family: 'Karla';
+          margin-top: 10px;
         }
       `}
     </style>

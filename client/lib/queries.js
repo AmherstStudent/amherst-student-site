@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost'
 
-export const HOME_PAGE = gql `
+export const GetHomePage = gql `
   fragment ArticleDetails on Article {
     _id
     title
@@ -74,7 +74,7 @@ export const HOME_PAGE = gql `
   }
 `
 
-export const GET_EDITOR_LIST = gql`
+export const GetEditors = gql`
   query EditorsList($name: String!) {
     categories(where: { name_contains: $name }) {
       editors {
@@ -89,7 +89,7 @@ export const GET_EDITOR_LIST = gql`
   }
 `
 
-export const ARTICLE_LOOKUP = gql `
+export const GetArticle = gql `
   fragment ArticlePageDetails on Article {
     title
     excerpt
@@ -101,6 +101,7 @@ export const ARTICLE_LOOKUP = gql `
       _id
     }
     updatedAt
+    createdAt
     featuredImage {
       url
     }
@@ -128,7 +129,7 @@ export const ARTICLE_LOOKUP = gql `
   }
 `
 
-export const CATEGORY_LOOKUP = gql`
+export const GetCategoryArticles = gql`
   query CategoryLookup($name: String!) {
     categories(where: { name_contains: $name }) {
       Category(sort: "createdAt:desc") {
@@ -152,7 +153,7 @@ export const CATEGORY_LOOKUP = gql`
     }
   }
 `
-export const AUTHOR_LOOKUP = gql`
+export const GetAuthor = gql`
 query AuthorLookup ($name: ID!) {
   user(id: $name){
   	articles {
@@ -177,7 +178,7 @@ query AuthorLookup ($name: ID!) {
 }
 `
 
-export const FAVARTICLE = gql`
+export const GetFeaturedArticles = gql`
   query{
   views(limit: 1,sort: "createdAt:desc" ) {
     toparticles{
@@ -186,6 +187,7 @@ export const FAVARTICLE = gql`
         username
       }
       slug
+      id
     }
   }
   }

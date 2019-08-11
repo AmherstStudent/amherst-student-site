@@ -3,7 +3,7 @@
 
 // ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document'
-import Footer from '../components/footer'
+import Footer from '../components/Layout/footer'
 import ga from '../lib/ga'
 
 export default class MyDocument extends Document {
@@ -22,7 +22,6 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css?family=Merriweather:300i,400,400i,700,900i"
             rel="stylesheet"
           />
-
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
