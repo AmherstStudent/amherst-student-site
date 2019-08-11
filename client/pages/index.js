@@ -1,10 +1,8 @@
 import React from 'react'
-import NextSeo from 'next-seo'
 // SEO check
 // FrontPAge
 
 //Presentational Cards
-import Container from '../components/container.js'
 import FeatureCard from '../components/HomePage/FeatureCard.js'
 import TextOnlyCard from '../components/HomePage/TextOnlyCard.js'
 import MiniCard from '../components/HomePage/MiniCard.js'
