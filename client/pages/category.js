@@ -3,7 +3,7 @@ import { withRouter } from 'next/router'
 
 // Internal Components
 import Head from '../components/Layout/Head'
-import Container from '../components/container'
+import Container from '../components/Container'
 import CategoryListContainer from '../components/Category/CategoryListContainer'
 import List_Header from '../components/Category/CategoryHeader'
 import AuthorCard from '../components/Article/AuthorCard'

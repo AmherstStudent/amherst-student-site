@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Head from '../components/Layout/Head'
-import Container from '../components/container.js'
+import Container from '../components/Container'
 import fetch from 'isomorphic-fetch'
-import Search_List_Container from '../components/search_list_container'
+import Search_List_Container from '../components/SearchListContainer'
 
 export default class Search extends React.Component {
   constructor(props) {

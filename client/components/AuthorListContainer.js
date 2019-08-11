@@ -3,7 +3,7 @@ import ListItem from './Basics/ListItem'
 import { Query } from 'react-apollo'
 import { GetAuthor } from '../lib/queries'
 
-const Author_List_Container = props => (
+const AuthorListContainer = props => (
   <div className="list_container">
     <Query query={GetAuthor} variables={{ name: props.author }}>
       {({ loading, error, data }) => {
@@ -15,4 +15,4 @@ const Author_List_Container = props => (
     </Query>
   </div>
 )
-export default Author_List_Container
+export default AuthorListContainer

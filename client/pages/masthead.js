@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from '../components/Layout/Head'
-import Container from '../components/container'
+import Container from '../components/Container'
 
 const Masthead = () => (
   <Container>

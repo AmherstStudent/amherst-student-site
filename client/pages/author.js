@@ -3,8 +3,8 @@ import { withRouter } from 'next/router'
 
 // Internal Components
 import Head from '../components/Layout/Head'
-import Author_List_Container from '../components/author_list_container'
-import Container from '../components/container'
+import AuthorListContainer from '../components/AuthorListContainer'
+import Container from '../components/Container'
 // Query import
 import { Query } from 'react-apollo'
 import { GetAuthor } from '../lib/queries'
@@ -26,7 +26,7 @@ const Author = withRouter(props => (
         }}
       </Query>
       <article>
-        <Author_List_Container author={props.router.query.id} />
+        <AuthorListContainer author={props.router.query.id} />
       </article>
     </Container>
     <style jsx="jsx">
