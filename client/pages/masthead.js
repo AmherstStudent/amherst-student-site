@@ -1,8 +1,8 @@
 import React from 'react'
-import Head from '../components/head'
-import Container from '../components/container.js'
+import Head from '../components/Layout/Head'
+import Container from '../components/container'
 
-const Masthead = props => (
+const Masthead = () => (
   <Container>
     <Head title="The Amherst Student">
       <meta
