@@ -31,6 +31,7 @@ const MiniCard = ({ article }) => (
         @media screen and (max-width: 768px) {
           .miniCard {
             grid-column: span 6;
+            height: auto;
           }
           h2 {
             font-size: 21px;

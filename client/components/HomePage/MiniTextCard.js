@@ -23,7 +23,7 @@ const MiniTextCard = ({ article }) => (
           background: white;
           grid-column: span 2;
           background: white;
-          height: 420px;
+          height: 350px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
