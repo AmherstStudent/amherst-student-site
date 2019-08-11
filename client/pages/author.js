@@ -3,10 +3,8 @@ import { withRouter } from 'next/router'
 
 // Internal Components
 import Head from '../components/Layout/Head'
-import Grid from '../components/Layout/Grid'
 import Author_List_Container from '../components/author_list_container'
 import Container from '../components/container'
-import NavBar from '../components/Layout/NavBar'
 // Query import
 import { Query } from 'react-apollo'
 import { GetAuthor } from '../lib/queries'
