@@ -114,7 +114,6 @@ export const GetArticle = gql `
       }
       _id
     }
-
     _id
     issue{
       name
@@ -187,7 +186,7 @@ export const GetFeaturedArticles = gql`
         username
       }
       slug
-      id
+      _id
     }
   }
   }
