@@ -16,6 +16,9 @@ const MiniTextCard = ({ article }) => (
       <p className="byline">
         by <span className="author">{article.author.username}</span> || Issue {article.issue.name}
       </p>
+      <p>
+        {article.excerpt}
+      </p>
     </div>
     <style jsx>
       {`
