@@ -1,5 +1,5 @@
 import React from 'react'
-import {DiscussionEmbed} from 'disqus-react'
+import { DiscussionEmbed } from 'disqus-react'
 
 const CommentsContainer = ({ identifier, title, slug, category_id }) => (
   <section className="comments">
@@ -8,12 +8,10 @@ const CommentsContainer = ({ identifier, title, slug, category_id }) => (
       config={{
         url: 'https://amherststudent.com/article/' + slug,
         title: title,
-        identifier: identifier
-      }} />
-    
+        identifier: identifier,
+      }}
+    />
 
-
-    
     <style jsx>{`
       .comments {
         margin-bottom: 20px;
