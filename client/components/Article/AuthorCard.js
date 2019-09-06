@@ -9,14 +9,20 @@ const AuthorCard = props => (
         {props.editor ? (
           Object.keys(props.author).map((item, index) => (
             <div className="editor" key={index}>
-              <img alt-text="" src={props.author[item].reporterPhoto ? props.author[item].reporterPhoto.url : "" } />
+              <img
+                alt-text=""
+                src={props.author[item].reporterPhoto ? props.author[item].reporterPhoto.url : ''}
+              />
               <h5 className="authorName">{props.author[item].username}</h5>
               <p className="authorBio">{props.author[item].reporterBio}</p>
             </div>
           ))
         ) : (
           <div>
-            <img alt-text={props.author.username} src={props.author.reporterPhoto ? props.author.reporterPhoto.url : "" } />
+            <img
+              alt-text={props.author.username}
+              src={props.author.reporterPhoto ? props.author.reporterPhoto.url : ''}
+            />
             <h5 className="authorName">{props.author.username}</h5>
             <p className="authorBio">{props.author.reporterBio}</p>
           </div>

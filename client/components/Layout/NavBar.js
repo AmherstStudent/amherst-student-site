@@ -38,7 +38,7 @@ class NavBar extends React.Component {
           <div className="leftNav">
             <a className="currentIssue">CURRENT ISSUE</a>
             <Link href="/search">
-              <a aria-label="Search" >
+              <a aria-label="Search">
                 <Icon size={16} icon={search} />
               </a>
             </Link>
