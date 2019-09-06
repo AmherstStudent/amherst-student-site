@@ -8,7 +8,7 @@ import Container from '../components/Container'
 // Query import
 import { Query } from 'react-apollo'
 import { GetAuthor } from '../lib/queries'
-
+// make the expresss link be "name = Ryan Yu '22" to ryan-yu-22
 const Author = withRouter(props => (
   <>
     <Container>

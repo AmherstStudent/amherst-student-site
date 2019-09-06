@@ -184,6 +184,7 @@ export const GetFeaturedArticles = gql`
         title
         author{
           username
+          _id
         }
         slug
         _id

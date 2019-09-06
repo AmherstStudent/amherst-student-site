@@ -13,9 +13,7 @@ const FeaturedNewsCard = () => (
           if (loading) return null
           if (error) return `Error!: Help me${error}`
 
-          let view = data.views[0]
-          let top_articles = view.toparticles
-
+          let top_articles = data.views[0].toparticles
           return top_articles.map(article => (
             <li className="topArticle" key={article.id}>
               <Link href={`/article/${article.slug}`} passHref>
