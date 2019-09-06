@@ -1,27 +1,39 @@
+const cacheableResponse = require('cacheable-response')
 const express = require('express')
 const next = require('next')
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
+
 const handle = app.getRequestHandler()
 
+const ssrCache = cacheableResponse({
+  ttl: 1000 * 60 * 60, // 1hour
+  get: async ({ req, res, pagePath, queryParams }) => ({
+    data: await app.renderToHTML(req, res, pagePath, queryParams)
+  }),
+  send: ({ data, res }) => res.send(data)
+})
 
 app.prepare()
   .then(() => {
     const server = express()
 
-
-    server.get('/category/:name', (req, res) => {
-      return app.render(req, res, '/category', { name: req.params.name })
-    })
-
     server.get('/article/:slug', (req, res) => {
-      return app.render(req, res, '/article', { slug: req.params.slug })
+      const queryParams = {slug: req.params.slug}
+      const pagePath = '/article'
+      return ssrCache({req, res, pagePath, queryParams})
     })
 
     server.get('/author/:id', (req, res) => {
-      return app.render(req, res, '/author', { id: req.params.id })
+      const queryParams = {id: req.params.id}
+      const pagePath = '/author'
+      return ssrCache({req, res, pagePath, queryParams})
+    })
+
+    server.get('/category/:name', (req, res) => {
+      return app.render(req, res, '/category', { name: req.params.name })
     })
 
     const sitemapOptions = {

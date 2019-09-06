@@ -2,8 +2,8 @@
 	"name": "student-frontend",
 	"license": "(MIT OR Apache-2.0)",
 	"repository": {
-		"type" : "git",
-		"url" : "https://github.com/AmherstStudent/amherst-student-site.git",
+		"type": "git",
+		"url": "https://github.com/AmherstStudent/amherst-student-site.git",
 		"directory": "client"
 	},
 	"scripts": {
@@ -20,6 +20,7 @@
 		"graphql-tag": "^2.9.2",
 		"isomorphic-fetch": "^2.2.1",
 		"isomorphic-unfetch": "^3.0.0",
+		"lru-cache": "^5.1.1",
 		"moment": "^2.22.2",
 		"next": "^9.0.5",
 		"next-progressbar": "^1.0.0",
