@@ -9,10 +9,10 @@ export const createMarkup = (content) => {
 
 export const nullImage = (articleObject) => {
   if (articleObject.featuredImage === true) {
-    let imageLink = new Array(articleObject.featuredImage.url)
+    let imageLink = articleObject.featuredImage.url
     return imageLink
   }
-  return []
+  return " "
 }
 
 export const urlLink = (slug) => {

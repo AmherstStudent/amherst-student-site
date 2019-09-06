@@ -12,17 +12,28 @@ const ArticleSEO = ({ article }) => (
         locale: 'en_IE',
         site_name: 'Amherst Student',
         openGraph: {
-          url: urlLink(article.slug),
           title: article.title,
-          description: article.excerpt,
-          images: [
-            {
-              url: article.featuredImage.url,
-            },
+        description: article.excerpt,
+        url: urlLink(article.slug),
+        type: 'article',
+        article: {
+          publishedTime: article.createdAt,
+          modifiedTime: article.updatedAt,
+          section: article.category.name,
+          authors: [
+            article.author.username,
           ],
+        },
+        images: [
+          {
+            url: article.featuredImage ? article.featuredImage.url : "",
+          },
+        ],
         },
       }}
     />
+
+
 
     <ArticleJsonLd
       url={`https://amherststudent.com/article/${article.slug}`}

@@ -6,7 +6,7 @@ const NewsContainer = ({ children }) => (
 
     <style jsx>{`
       .newscontainer {
-        width: 87vw;
+        width: 85vw;
         margin: 0 auto;
         margin-top: 16px;
         display: grid;

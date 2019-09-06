@@ -179,15 +179,15 @@ query AuthorLookup ($name: ID!) {
 
 export const GetFeaturedArticles = gql`
   query{
-  views(limit: 1,sort: "createdAt:desc" ) {
-    toparticles{
-      title
-      author{
-        username
+    views(limit: 1,sort: "createdAt:desc" ) {
+      toparticles{
+        title
+        author{
+          username
+        }
+        slug
+        _id
       }
-      slug
-      _id
-    }
   }
   }
 

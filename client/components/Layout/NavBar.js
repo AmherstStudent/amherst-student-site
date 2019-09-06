@@ -27,10 +27,10 @@ class NavBar extends React.Component {
         <div className="nav">
           <div className="rightNav">
             <div className="navicon" alt-text="Menu" onClick={this.toggleBox}>
-              <Icon size={24} icon={navicon} role="button" />
+              <Icon size={24} icon={navicon} role="button" aria-label="Menu button" />
             </div>
             <Link href="/">
-              <a>
+              <a aria-label="Amherst Student logo">
                 <img src="/static/logo.svg" alt="the Amherst Student" />
               </a>
             </Link>
@@ -38,7 +38,7 @@ class NavBar extends React.Component {
           <div className="leftNav">
             <a className="currentIssue">CURRENT ISSUE</a>
             <Link href="/search">
-              <a>
+              <a aria-label="Search" >
                 <Icon size={16} icon={search} />
               </a>
             </Link>
