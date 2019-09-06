@@ -1,15 +1,19 @@
 import React from 'react'
-import ReactDisqusComments from 'react-disqus-comments'
+import {DiscussionEmbed} from 'disqus-react'
 
 const CommentsContainer = ({ identifier, title, slug, category_id }) => (
   <section className="comments">
-    <ReactDisqusComments
+    <DiscussionEmbed
       shortname="AmherstStudent"
-      identifier={identifier}
-      title={title}
-      url={'https://amherststudent.com/article/' + slug}
-      category_id={category_id}
-    />
+      config={{
+        url: 'https://amherststudent.com/article/' + slug,
+        title: title,
+        identifier: identifier
+      }} />
+    
+
+
+    
     <style jsx>{`
       .comments {
         margin-bottom: 20px;

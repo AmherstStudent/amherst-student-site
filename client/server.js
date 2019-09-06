@@ -20,11 +20,19 @@ app.prepare()
   .then(() => {
     const server = express()
 
-    server.get('/article/:slug', (req, res) => {
-      const queryParams = {slug: req.params.slug}
-      const pagePath = '/article'
-      return ssrCache({req, res, pagePath, queryParams})
-    })
+    if (dev) {
+      server.get('/article/:slug', (req, res) => {
+        return app.render(req, res, '/article', { slug: req.params.slug })
+      })
+    }
+    else {
+      server.get('/article/:slug', (req, res) => {
+        const queryParams = {slug: req.params.slug}
+        const pagePath = '/article'
+        return ssrCache({req, res, pagePath, queryParams})
+      })
+    }
+    
 
     server.get('/author/:id', (req, res) => {
       const queryParams = {id: req.params.id}

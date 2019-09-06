@@ -15,6 +15,7 @@
 	"dependencies": {
 		"apollo-boost": "^0.1.14",
 		"cacheable-response": "^1.6.12",
+		"disqus-react": "^1.0.6",
 		"express": "^4.16.3",
 		"graphql": "^14.0.2",
 		"graphql-tag": "^2.9.2",
