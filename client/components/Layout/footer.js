@@ -3,6 +3,7 @@ import Link from 'next/link'
 // TODO: Add social icons
 const Footer = () => (
   <footer>
+
     <ul>
       <li>
         <Link href={`/masthead#about`} passHref>
@@ -25,7 +26,6 @@ const Footer = () => (
         </Link>
       </li>
     </ul>
-
     <style jsx>{`
       footer {
         background: #252525;
