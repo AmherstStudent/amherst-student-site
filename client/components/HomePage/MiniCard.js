@@ -28,7 +28,7 @@ const MiniCard = ({ article }) => (
           display: flex;
           flex-direction: column;
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 868px) {
           .miniCard {
             grid-column: span 6;
             height: auto;
@@ -39,6 +39,7 @@ const MiniCard = ({ article }) => (
         }
         .miniCardImage {
           width: 100%;
+          max-height: 60%;
         }
         .miniCardImage img {
           object-fit: cover;

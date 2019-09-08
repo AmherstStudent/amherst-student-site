@@ -8,10 +8,10 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, apolloClient } = this.props
     return (
-        <ApolloProvider client={apolloClient}>
-          <NextSeo config={SEO} />
-          <Component {...pageProps} />
-        </ApolloProvider>
+      <ApolloProvider client={apolloClient}>
+        <NextSeo config={SEO} />
+        <Component {...pageProps} />
+      </ApolloProvider>
     )
   }
 }
