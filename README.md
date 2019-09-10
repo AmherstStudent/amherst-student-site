@@ -11,7 +11,7 @@ live version @ amherststudent.com
 * [Technologies Used](#)
 * [Services Used](#)
 * [Getting Started](#)
-* [Future Plans](#
+* [Future Plans](#)
 * [How to Contribute](#)
 * [License](#)
 
