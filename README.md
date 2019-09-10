@@ -67,9 +67,9 @@ To be updated.
 
 ## Future Plans
 
-[] Migrating our back-end from Strapi to an headless Wordpress instance
-[] Migrate to utilizing Docker
-[] Deploy onto Google Cloud
+- [] Migrating our back-end from Strapi to an headless Wordpress instance
+- [] Migrate to utilizing Docker
+- [] Deploy onto Google Cloud
 
 ## License
 © 2018 the Amherst Student
