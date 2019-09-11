@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Category from '../Basics/Category'
 //TODO place null guards
+// add itemprop
 const FeatureCard = ({ article }) => (
   <div className="featureCard">
     <div className="featureCardImage">

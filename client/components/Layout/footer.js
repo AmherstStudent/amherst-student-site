@@ -3,7 +3,6 @@ import Link from 'next/link'
 // TODO: Add social icons
 const Footer = () => (
   <footer>
-
     <ul>
       <li>
         <Link href={`/masthead#about`} passHref>
