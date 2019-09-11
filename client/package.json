@@ -26,6 +26,7 @@
 		"next": "^9.0.5",
 		"next-progressbar": "^1.0.0",
 		"next-seo": "^1.2.0",
+		"next-with-apollo": "^4.3.0",
 		"react": "^16.8.6",
 		"react-apollo": "^2.1.11",
 		"react-disqus-comments": "^1.2.0",

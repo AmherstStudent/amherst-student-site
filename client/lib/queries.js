@@ -8,9 +8,11 @@ export const GetHomePage = gql `
     slug
     category {
       name
+      _id
     }
     featuredImage {
       url
+      _id
     }
     author {
       username
@@ -19,12 +21,14 @@ export const GetHomePage = gql `
     }
     issue{
       name
+      _id
     }
 
   }
 
   query HomePage {
     views(limit: 1,sort: "createdAt:desc" ) {
+      _id
       top_article {
         ...ArticleDetails
       }
