@@ -3,15 +3,18 @@ import fetch from 'isomorphic-unfetch'
 
 let apolloClient = null
 
+if (!process.browser) {
+  global.fetch = fetch;
+}
+
 function create(initialState) {
-  const isBrowser = typeof window !== 'undefined'
+  // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient
   return new ApolloClient({
     connectToDevTools: process.browser,
-    ssrMode: !process.browser, 
+    ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
     link: new HttpLink({
       uri: 'https://api.amherststudent.com/graphql', // Server URL (must be absolute)
-      credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
-      fetch: !isBrowser && fetch
+      credentials: 'same-origin' // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache().restore(initialState || {}),
   })
