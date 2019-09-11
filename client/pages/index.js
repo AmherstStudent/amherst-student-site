@@ -20,9 +20,7 @@ const Home = () => (
       <Query query={GetHomePage} errorPolicy="all">
         {({ loading, error, data }) => {
           if (error)
-          
             return (
-        
               <ErrorMessage
                 className="span-6"
                 message="Error loading page, contact us on Twitter, FB or Instagram for support."

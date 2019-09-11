@@ -1,6 +1,6 @@
 import App from 'next/app'
-import { ApolloProvider } from 'react-apollo';
-import withApollo from '../lib/withApollo';
+import { ApolloProvider } from 'react-apollo'
+import withApollo from '../lib/withApollo'
 import NextSeo from 'next-seo'
 import SEO from '../lib/nextseo.js'
 
