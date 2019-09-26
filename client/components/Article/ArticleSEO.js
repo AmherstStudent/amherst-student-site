@@ -11,7 +11,6 @@ const ArticleSEO = ({ article }) => (
       locale="en_US"
       site_name="The Amherst Student"
       openGraph={{
-        site_name: 'The Amherst Student',
         title: article.title,
         description: article.excerpt,
         url: urlLink(article.slug),
