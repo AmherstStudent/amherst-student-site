@@ -15,5 +15,5 @@ export const nullImage = articleObject => {
 }
 
 export const urlLink = slug => {
-  return 'amherststudent.com/article/' + (slug)
+  return 'amherststudent.com/article/' + slug
 }
