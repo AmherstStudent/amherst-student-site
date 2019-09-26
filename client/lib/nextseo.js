@@ -5,7 +5,6 @@ export default {
   defaultImageWidth: 1200,
   defaultImageHeight: 1200,
   openGraph: {
-    type: 'website',
     locale: 'en_US',
     title: 'The Amherst Student',
     description:
