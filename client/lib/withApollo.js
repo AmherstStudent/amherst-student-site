@@ -1,6 +1,5 @@
 import withApollo from 'next-with-apollo'
 import ApolloClient, { InMemoryCache } from 'apollo-boost'
-import { getDataFromTree } from 'react-apollo'
 
 export default withApollo(
   ({ ctx, headers, initialState }) =>
