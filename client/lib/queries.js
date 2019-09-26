@@ -1,6 +1,6 @@
 import { gql } from 'apollo-boost'
 
-export const GetHomePage = gql `
+export const GetHomePage = gql`
   fragment ArticleDetails on Article {
     _id
     title
@@ -19,15 +19,14 @@ export const GetHomePage = gql `
       reporterTitle
       _id
     }
-    issue{
+    issue {
       name
       _id
     }
-
   }
 
   query HomePage {
-    views(limit: 1,sort: "createdAt:desc" ) {
+    views(limit: 1, sort: "createdAt:desc") {
       _id
       top_article {
         ...ArticleDetails
@@ -93,7 +92,7 @@ export const GetEditors = gql`
   }
 `
 
-export const GetArticle = gql `
+export const GetArticle = gql`
   fragment ArticlePageDetails on Article {
     title
     excerpt
@@ -113,19 +112,18 @@ export const GetArticle = gql `
       username
       reporterTitle
       reporterBio
-      reporterPhoto{
+      reporterPhoto {
         url
       }
       _id
     }
     _id
-    issue{
+    issue {
       name
     }
-
   }
 
-  query Article_Lookup($slug: String!){
+  query Article_Lookup($slug: String!) {
     articles(where: { slug: $slug }) {
       ...ArticlePageDetails
     }
@@ -149,7 +147,7 @@ export const GetCategoryArticles = gql`
           name
         }
         slug
-        issue{
+        issue {
           name
         }
       }
@@ -157,44 +155,42 @@ export const GetCategoryArticles = gql`
   }
 `
 export const GetAuthor = gql`
-query AuthorLookup ($name: ID!) {
-  user(id: $name){
-  	articles {
-      title
-      createdAt
-      author {
-        username
-        reporterTitle
+  query AuthorLookup($name: ID!) {
+    user(id: $name) {
+      articles {
+        title
+        createdAt
+        author {
+          username
+          reporterTitle
+          _id
+        }
+        excerpt
         _id
-      }
-      excerpt
-      _id
-      category {
-        name
-      }
-      slug
-      issue{
-        name
+        category {
+          name
+        }
+        slug
+        issue {
+          name
+        }
       }
     }
   }
-}
 `
 
 export const GetFeaturedArticles = gql`
-  query{
-    views(limit: 1,sort: "createdAt:desc" ) {
-      toparticles{
+  query {
+    views(limit: 1, sort: "createdAt:desc") {
+      toparticles {
         title
-        author{
+        author {
           username
           _id
         }
         slug
         _id
       }
+    }
   }
-  }
-
-
 `
