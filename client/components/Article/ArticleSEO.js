@@ -1,5 +1,5 @@
 import React from 'react'
-import NextSeo from 'next-seo'
+import { NextSeo } from 'next-seo'
 import { ArticleJsonLd } from 'next-seo'
 import { urlLink } from '../../lib/util'
 

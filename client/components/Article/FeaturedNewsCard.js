@@ -15,7 +15,7 @@ const FeaturedNewsCard = () => (
 
           let top_articles = data.views[0].toparticles
           return top_articles.map(article => (
-            <li className="topArticle" key={article.id}>
+            <li className="topArticle" key={article.slug}>
               <Link href={`/article/${article.slug}`} passHref>
                 <a>
                   <h5>{article.title}</h5>
