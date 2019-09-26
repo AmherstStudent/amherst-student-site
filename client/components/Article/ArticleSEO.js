@@ -6,11 +6,11 @@ import { urlLink } from '../../lib/util'
 const ArticleSEO = ({ article }) => (
   <>
     <NextSeo
-      title = {article.title}
-      description = {article.excerpt}
+      title={article.title}
+      description={article.excerpt}
       locale="en_US"
       site_name="The Amherst Student"
-      openGraph = {{
+      openGraph={{
         site_name: 'The Amherst Student',
         title: article.title,
         description: article.excerpt,
@@ -32,7 +32,6 @@ const ArticleSEO = ({ article }) => (
         site: '@amherststudent',
         cardType: 'summary_large_image',
       }}
-
     />
 
     <ArticleJsonLd
