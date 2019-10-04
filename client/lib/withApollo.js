@@ -6,5 +6,5 @@ export default withApollo(
     new ApolloClient({
       uri: 'https://api.amherststudent.com/graphql',
       cache: new InMemoryCache().restore(initialState || {}),
-    })
+    }),
 )

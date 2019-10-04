@@ -6,11 +6,11 @@ import Category from '../Basics/Category'
 const FeatureCard = ({ article }) => (
   <div className="featureCard">
     <div className="featureCardImage">
-      <Category category={article.category.name} />
+      <Category prefetch={false} category={article.category.name} />
       <img src={article.featuredImage.url} />
     </div>
     <div className="featureCardDescription">
-      <Link href={`/article/${article.slug}`} passHref>
+      <Link prefetch={false} href={`/article/${article.slug}`} passHref>
         <a>
           <h2>{article.title}</h2>
         </a>
