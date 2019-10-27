@@ -13,6 +13,10 @@ const ArticleCore = ({ article_content }) => (
           font-size: 16px;
           letter-spacing: 0.03px;
           line-height: 36px;
+          width: 100%;
+        }
+        :global(img) {
+          max-width: 100%;
         }
       `}
     </style>

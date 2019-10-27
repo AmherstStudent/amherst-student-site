@@ -16,9 +16,9 @@ const Image = ({ caption, image }) => (
 
       img {
         max-height: 90vh;
-        object-fit: contain;
+        object-fit: cover;
         position: relative;
-        max-width: 100%;
+        width: 100%;
       }
 
       figcaption {
