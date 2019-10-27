@@ -16,7 +16,7 @@ const Image = ({ caption, image }) => (
 
       img {
         max-height: 90vh;
-        object-fit: cover;
+        object-fit: contain;
         position: relative;
         width: 100%;
       }
