@@ -20,9 +20,9 @@ app.prepare().then(() => {
   const server = express()
 
   // // if (dev) {
-  // server.get('/article/:slug', (req, res) => {
-  //   return app.render(req, res, '/article', { slug: req.params.slug })
-  // })
+  server.get('/article/:slug', (req, res) => {
+    return app.render(req, res, '/article', { slug: req.params.slug })
+  })
   // // }
   // // else {
   // //   server.get('/article/:slug', (req, res) => {
