@@ -20,7 +20,7 @@ const ListItem = ({ article }) => (
             <a>{article.author.username}</a>
           </Link>
           , {article.author.reporterTitle} ||{' '}
-          <time>{moment(article.createdAt).format('MMMM D YYYY')}</time> || {article.issue.name}
+          <time>{moment(article.createdAt).format('MMMM D YYYY')}</time> 
         </p>
         <p>{article.excerpt}</p>
       </div>
