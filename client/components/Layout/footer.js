@@ -5,27 +5,28 @@ const Footer = () => (
   <footer>
     <ul>
       <li>
-        <Link href={`/masthead#about`} passHref>
+        <Link href="/masthead#about" passHref>
           <a>About</a>
         </Link>
       </li>
       <li>
-        <Link href={`/masthead#subscribe`} passHref>
+        <Link href="/masthead#subscribe" passHref>
           <a>Subscribe</a>
         </Link>
       </li>
       <li>
-        <Link href={`/masthead#ad`} passHref>
+        <Link href="/masthead#ad" passHref>
           <a>Advertisers</a>
         </Link>
       </li>
       <li>
-        <Link href={`/masthead#contact`} passHref>
+        <Link href="/masthead#contact" passHref>
           <a>Contact</a>
         </Link>
       </li>
     </ul>
-    <style jsx>{`
+    <style jsx>
+      {`
       footer {
         background: #252525;
         height: 10vh;
@@ -58,7 +59,8 @@ const Footer = () => (
         letter-spacing: 1.2px;
       }
 
- `}</style>
+ `}
+    </style>
   </footer>
 )
 

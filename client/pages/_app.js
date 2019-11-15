@@ -1,7 +1,7 @@
 import App from 'next/app'
 import { ApolloProvider } from 'react-apollo'
-import withApollo from '../lib/withApollo'
 import { DefaultSeo } from 'next-seo'
+import withApollo from '../lib/withApollo'
 import SEO from '../lib/nextseo.js'
 
 class MyApp extends App {

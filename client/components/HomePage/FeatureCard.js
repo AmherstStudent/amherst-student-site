@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Category from '../Basics/Category'
-//TODO place null guards
+// TODO place null guards
 // add itemprop
 const FeatureCard = ({ article }) => (
   <div className="featureCard">
@@ -17,7 +17,7 @@ const FeatureCard = ({ article }) => (
       </Link>
       <p className="byline">
         by <span className="author">{article.author.username}</span> ||{' '}
-        {article.author.reporterTitle} | {article.issue.name.toUpperCase()}
+        {article.author.reporterTitle} |{article.issue.name.toUpperCase()}
       </p>
       <p>{article.excerpt}</p>
     </div>

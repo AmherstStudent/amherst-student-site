@@ -15,7 +15,7 @@ import NewsContainer from '../components/Article/NewsContainer'
 import ArticleHeader from '../components/Article/ArticleHeader'
 import NavBar from '../components/Layout/NavBar'
 import ArticleSEO from '../components/Article/ArticleSEO'
-//think about
+// think about
 const Article = withRouter(props => (
   <>
     <NavBar />
@@ -25,11 +25,11 @@ const Article = withRouter(props => (
         if (loading) return null
         if (error) return `Error!: ${error}`
 
-        let imageChecker = img => {
+        const imageChecker = img => {
           return img != null
         }
 
-        let article = data.articles[0]
+        const article = data.articles[0]
 
         return (
           <>
@@ -50,10 +50,10 @@ const Article = withRouter(props => (
                 )}
                 <ArticleCore article_content={article.content} />
                 <CommentsContainer
-                  identifier={article._id}
+                  identifier={article.id}
                   title={article.title}
                   slug={article.slug}
-                  category_id={article.category._id}
+                  category_id={article.category.id}
                 />
               </article>
 

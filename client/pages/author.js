@@ -2,11 +2,11 @@ import React from 'react'
 import { withRouter } from 'next/router'
 
 // Internal Components
+import { Query } from 'react-apollo'
 import Head from '../components/Layout/Head'
 import AuthorListContainer from '../components/AuthorListContainer'
 import Container from '../components/Container'
 // Query import
-import { Query } from 'react-apollo'
 import { GetAuthor } from '../lib/queries'
 // make the expresss link be "name = Ryan Yu '22" to ryan-yu-22
 const Author = withRouter(props => (
@@ -16,11 +16,11 @@ const Author = withRouter(props => (
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: ${error}`
-          const author_articles = data.user.articles
+          const { articles } = data.user
           return (
             <>
-              <Head title={author_articles[0].author.username} />
-              <h1>{author_articles[0].author.username}</h1>
+              <Head title={articles[0].author.username} />
+              <h1>{articles[0].author.username}</h1>
             </>
           )
         }}

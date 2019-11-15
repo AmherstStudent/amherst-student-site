@@ -34,7 +34,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:AmherstStudent/amherst-student-site.git',
       path : '/amherst-student-site',
-      'post-deploy' : 'cd client && next build;   && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'cd client && next build;  && pm2 reload ecosystem.config.js --env production'
     }
   }
 };

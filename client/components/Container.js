@@ -8,12 +8,14 @@ const Container = ({ children }) => (
 
     <Main>{children}</Main>
 
-    <style jsx>{`
-      .container {
-        background: var(--main-bg-color);
-        min-height: 100%;
-      }
-    `}</style>
+    <style jsx>
+      {`
+        .container {
+          background: var(--main-bg-color);
+          min-height: 100%;
+        }
+      `}
+    </style>
   </div>
 )
 

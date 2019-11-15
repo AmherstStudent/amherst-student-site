@@ -1,6 +1,6 @@
 import React from 'react'
-import ListItem from './Basics/ListItem'
 import { Query } from 'react-apollo'
+import ListItem from './Basics/ListItem'
 import { GetAuthor } from '../lib/queries'
 
 const AuthorListContainer = props => (
@@ -10,7 +10,7 @@ const AuthorListContainer = props => (
         if (loading) return null
         if (error) return `Error!: ${error}`
         const author_articles = data.user.articles
-        return author_articles.map(article => <ListItem key={article._id} article={article} />)
+        return author_articles.map(article => <ListItem key={article.id} article={article} />)
       }}
     </Query>
   </div>

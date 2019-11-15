@@ -3,11 +3,14 @@ import React from 'react'
 const AuthorCard = props => (
   <section>
     <>
-      <h3 className="cardTitle">MEET THE {props.editor ? 'EDITORS' : 'AUTHOR'}</h3>
+      <h3 className="cardTitle">
+        MEET THE
+        {props.editor ? 'EDITORS' : 'AUTHOR'}
+      </h3>
       <hr />
       <div className="cardContent">
         {props.editor ? (
-          Object.keys(props.author).map((item, index) => (
+          Object.keys(props.author).map(item => (
             <div className="editor" key={index}>
               <img
                 alt-text=""
@@ -30,51 +33,53 @@ const AuthorCard = props => (
       </div>
     </>
 
-    <style jsx>{`
-      .cardTitle {
-        font-family: 'Karla', sans-serif;
-        font-size: 24px;
-        color: #000000;
-        letter-spacing: 0.03px;
-        font-style: normal;
-      }
-      .cardContent {
-        margin: 0 auto;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      img {
-        border-radius: 50%;
-        object-fit: cover;
-        display: block;
-        margin: auto;
-        height: 125px;
-        width: 125px;
-      }
-      .editor {
-        margin-bottom: 20px;
-      }
-      h5 {
-        font-family: 'Karla', sans-serif;
-        padding: 10px;
-        font-size: 22px;
-        margin: 0;
-      }
-      p {
-        font-size: 14px;
-        font-family: 'Merriweather';
-        font-weight: normal;
-        font-size: 14px;
-        color: #000000;
-        line-height: 24px;
-      }
+    <style jsx>
+      {`
+        .cardTitle {
+          font-family: 'Karla', sans-serif;
+          font-size: 24px;
+          color: #000000;
+          letter-spacing: 0.03px;
+          font-style: normal;
+        }
+        .cardContent {
+          margin: 0 auto;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        img {
+          border-radius: 50%;
+          object-fit: cover;
+          display: block;
+          margin: auto;
+          height: 125px;
+          width: 125px;
+        }
+        .editor {
+          margin-bottom: 20px;
+        }
+        h5 {
+          font-family: 'Karla', sans-serif;
+          padding: 10px;
+          font-size: 22px;
+          margin: 0;
+        }
+        p {
+          font-size: 14px;
+          font-family: 'Merriweather';
+          font-weight: normal;
+          font-size: 14px;
+          color: #000000;
+          line-height: 24px;
+        }
 
-      hr {
-        margin: 10px 0 10px 0;
-        border-color: black;
-        border-width: 4.5px;
-      }
-    `}</style>
+        hr {
+          margin: 10px 0 10px 0;
+          border-color: black;
+          border-width: 4.5px;
+        }
+      `}
+    </style>
   </section>
 )
 

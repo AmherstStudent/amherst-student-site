@@ -2,20 +2,20 @@ import React from 'react'
 import { withRouter } from 'next/router'
 
 // Internal Components
+import { Query } from 'react-apollo'
 import Head from '../components/Layout/Head'
 import Container from '../components/Container'
 import CategoryListContainer from '../components/Category/CategoryListContainer'
-import List_Header from '../components/Category/CategoryHeader'
+import CategoryHeader from '../components/Category/CategoryHeader'
 import AuthorCard from '../components/Article/AuthorCard'
 
 // Query import
-import { Query } from 'react-apollo'
 import { GetEditors } from '../lib/queries.js'
-//Put a pin in it, check it out later
+// Put a pin in it, check it out later
 const Category = withRouter(props => (
   <Container>
     <Head title={props.router.query.name} />
-    <List_Header className="header" type={props.router.query.name.toUpperCase()} />
+    <CategoryHeader className="header" type={props.router.query.name.toUpperCase()} />
 
     <article>
       <CategoryListContainer type={props.router.query.name} />
@@ -26,7 +26,7 @@ const Category = withRouter(props => (
         {({ loading, error, data }) => {
           if (loading) return null
           if (error) return `Error!: ${error}`
-          const editors = data.categories[0].editors
+          const { editors } = data.categories[0]
           return <AuthorCard editor author={editors} />
         }}
       </Query>

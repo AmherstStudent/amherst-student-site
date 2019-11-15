@@ -1,9 +1,9 @@
 import React from 'react'
 
+import fetch from 'isomorphic-fetch'
 import Head from '../components/Layout/Head'
 import Container from '../components/Container'
-import fetch from 'isomorphic-fetch'
-import Search_List_Container from '../components/SearchListContainer'
+import SearchListContainer from '../components/SearchListContainer'
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -23,10 +23,10 @@ export default class Search extends React.Component {
   }
 
   getInfo = () => {
-    let search_link = 'https://api.amherststudent.com/article?_q='
+    const searchLink = 'https://api.amherststudent.com/article?_q='
     // console.log(search_link)
     // console.log(this.state.query)
-    fetch(`${search_link}${this.state.query}`)
+    fetch(`${searchLink}${this.state.query}`)
       .then(response => {
         if (response.status >= 400) {
           throw new Error('Bad response from server')
@@ -38,7 +38,6 @@ export default class Search extends React.Component {
           results: articles,
         })
       })
-    console.log(this.state.results)
   }
 
   handleKeyPress(event) {
@@ -70,7 +69,7 @@ export default class Search extends React.Component {
 
             <button onClick={this.getInfo}>Search</button>
           </div>
-          <Search_List_Container results={this.state.results} />
+          <SearchListContainer results={this.state.results} />
         </div>
 
         <style jsx="jsx">

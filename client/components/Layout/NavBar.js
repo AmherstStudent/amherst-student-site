@@ -19,6 +19,7 @@ class NavBar extends React.Component {
   toggleBox() {
     this.setState(oldState => ({ isOpened: !oldState.isOpened }))
   }
+
   render() {
     const { isOpened } = this.state
 
@@ -46,68 +47,70 @@ class NavBar extends React.Component {
         </div>
         {isOpened && <Sidebar />}
 
-        <style jsx>{`
-          nav {
-            width: 100%;
-          }
-          .nav {
-            background: white;
-            position: sticky;
-            top: 0;
-            background: #ffffff;
-            box-shadow: 0 0 0.1px 0 rgba(0, 0, 0, 0.5);
-            height: 54px;
-            display: flex;
-            justify-content: space-between;
-            z-index: 200;
-          }
-          .navicon {
-            height: 100%;
-            background-color: var(--dark-purple);
-            min-width: 54px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-          }
-          .rightNav {
-            display: flex;
-            height: 100%;
-            align-items: center;
-            width: contain;
-          }
-          img {
-            height: 20px;
-            margin: 20px;
-          }
-          a {
-            font-family: 'Karla', sans-serif;
-            font-weight: 700;
-            font-size: 13px; // come back and check with other a's
-          }
-          .leftNav {
-            width: 30%;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-          }
-          .leftNav > * {
-            margin-right: 1.5vw;
-            color: var(--dark-purple);
-          }
-
-          .collapsible {
-            display: none;
-          }
-          @media screen and (max-width: 768px) {
-            .currentIssue {
-              display: none;
+        <style jsx>
+          {`
+            nav {
+              width: 100%;
+            }
+            .nav {
+              background: white;
+              position: sticky;
+              top: 0;
+              background: #ffffff;
+              box-shadow: 0 0 0.1px 0 rgba(0, 0, 0, 0.5);
+              height: 54px;
+              display: flex;
+              justify-content: space-between;
+              z-index: 200;
+            }
+            .navicon {
+              height: 100%;
+              background-color: var(--dark-purple);
+              min-width: 54px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+            }
+            .rightNav {
+              display: flex;
+              height: 100%;
+              align-items: center;
+              width: contain;
+            }
+            img {
+              height: 20px;
+              margin: 20px;
+            }
+            a {
+              font-family: 'Karla', sans-serif;
+              font-weight: 700;
+              font-size: 13px; // come back and check with other a's
             }
             .leftNav {
-              margin-right: 20px;
+              width: 30%;
+              display: flex;
+              justify-content: flex-end;
+              align-items: center;
             }
-          }
-        `}</style>
+            .leftNav > * {
+              margin-right: 1.5vw;
+              color: var(--dark-purple);
+            }
+
+            .collapsible {
+              display: none;
+            }
+            @media screen and (max-width: 768px) {
+              .currentIssue {
+                display: none;
+              }
+              .leftNav {
+                margin-right: 20px;
+              }
+            }
+          `}
+        </style>
       </nav>
     )
   }

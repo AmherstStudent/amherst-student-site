@@ -1,8 +1,8 @@
 import React from 'react'
-import List_Item from './Basics/ListItem'
+import ListItem from './Basics/ListItem'
 
-const Search_List_Container = props => {
-  return props.results.map(article => <List_Item key={article._id} article={article} />)
+const SearchListContainer = props => {
+  return props.results.map(article => <ListItem key={article.id} article={article} />)
 }
 
-export default Search_List_Container
+export default SearchListContainer

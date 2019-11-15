@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
-import Card from './card'
 import moment from 'moment'
+import Card from './card'
 import Category from './Category'
-//TODO: change name to Section but that's a lot of SEO
+// TODO: change name to Section but that's a lot of SEO
 const ListItem = ({ article }) => (
   <Card className="list_item margin-20">
     <Category category={article.category.name} />
@@ -16,11 +16,11 @@ const ListItem = ({ article }) => (
         </Link>
         <p className="author">
           by{' '}
-          <Link href={{ pathname: '/author', query: { id: article.author._id } }}>
+          <Link href={{ pathname: '/author', query: { id: article.author.id } }}>
             <a>{article.author.username}</a>
           </Link>
           , {article.author.reporterTitle} ||{' '}
-          <time>{moment(article.createdAt).format('MMMM D YYYY')}</time> 
+          <time>{moment(article.createdAt).format('MMMM D YYYY')}</time>
         </p>
         <p>{article.excerpt}</p>
       </div>

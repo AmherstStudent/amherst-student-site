@@ -1,12 +1,12 @@
 import React from 'react'
 import { createMarkup } from '../../lib/util'
 
-const ArticleCore = ({ article_content }) => (
+const ArticleCore = ({ content }) => (
   <>
-    <section className="article_text" dangerouslySetInnerHTML={createMarkup(article_content)} />
+    <section className="articleText" dangerouslySetInnerHTML={createMarkup(content)} />
     <style jsx>
       {`
-        .article_text {
+        .articleText {
           grid-column: span 6;
           font-family: 'Merriweather', serif;
           font-weight: normal;

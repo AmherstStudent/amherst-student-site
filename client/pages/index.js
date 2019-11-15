@@ -2,14 +2,14 @@ import React from 'react'
 // SEO check
 // FrontPAge
 
-//Presentational Cards
+// Presentational Cards
+import { Query } from 'react-apollo'
 import FeatureCard from '../components/HomePage/FeatureCard.js'
 import TextOnlyCard from '../components/HomePage/TextOnlyCard.js'
 import MiniCard from '../components/HomePage/MiniCard.js'
 import MiniTextCard from '../components/HomePage/MiniTextCard.js'
 import ErrorMessage from '../components/Basics/ErrorMessage'
-//Graphql requests
-import { Query } from 'react-apollo'
+// Graphql requests
 import { GetHomePage } from '../lib/queries'
 import NavBar from '../components/Layout/NavBar'
 
@@ -26,9 +26,8 @@ const Home = () => (
                 message="Error loading page, contact us on Twitter, FB or Instagram for support."
               />
             )
-          if (loading) return <div>Loading</div> //TODO: Add a proper loading state
-          console.log(data)
-          let view = data.views[0]
+          if (loading) return <div>Loading</div> // TODO: Add a proper loading state
+          const view = data.views[0]
           // Add to front page error components
           return (
             <>

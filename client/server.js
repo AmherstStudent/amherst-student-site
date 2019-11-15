@@ -42,7 +42,7 @@ app.prepare().then(() => {
   })
 
   const sitemapOptions = {
-    root: __dirname + '/static/',
+    root: `${__dirname}/static/`,
     headers: {
       'Content-Type': 'text/xml;charset=UTF-8',
     },
@@ -56,6 +56,6 @@ app.prepare().then(() => {
 
   server.listen(port, err => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    // console.log(`> Ready on http://localhost:${port}`)
   })
 })
