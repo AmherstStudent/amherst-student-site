@@ -11,7 +11,7 @@ const AuthorCard = props => (
       <div className="cardContent">
         {props.editor ? (
           Object.keys(props.author).map(item => (
-            <div className="editor" key={index}>
+            <div className="editor" key={props.author[item].username}>
               <img
                 alt-text=""
                 src={props.author[item].reporterPhoto ? props.author[item].reporterPhoto.url : ''}

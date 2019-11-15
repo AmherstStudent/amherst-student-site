@@ -1,8 +1,8 @@
 const showdown = require('showdown')
 
 export const createMarkup = content => {
-  const converter = new showdown.Converter()
-  const html = converter.makeHtml(content).replace(/(?:\r\n|\r|\n)/g, '<br >')
+  const converter = new showdown.Converter();
+  const html = converter.makeHtml(content).replace(/(?:\r\n|\r|\n)/g, '<br >');
   return { __html: html }
 }
 

@@ -30,7 +30,6 @@ const Article = withRouter(props => (
         }
 
         const article = data.articles[0]
-
         return (
           <>
             <ArticleHeader
@@ -48,7 +47,7 @@ const Article = withRouter(props => (
                 ) : (
                   ' '
                 )}
-                <ArticleCore article_content={article.content} />
+                <ArticleCore content={article.content} />
                 <CommentsContainer
                   identifier={article.id}
                   title={article.title}
