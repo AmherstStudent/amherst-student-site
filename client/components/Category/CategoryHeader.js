@@ -4,7 +4,8 @@ const CategoryHeader = props => (
   <header>
     <div className="bottom_Line">
       <h1>
-        {props.type.toUpperCase()} <br />{' '}
+        {props.type.toUpperCase()} <br />
+{' '}
       </h1>
     </div>
     <style jsx>

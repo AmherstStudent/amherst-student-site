@@ -15,7 +15,8 @@ const TextOnlyCard = ({ article }) => (
       </Link>
       <p className="byline">
         by <span className="author">{article.author.username}</span> ||{' '}
-        {article.author.reporterTitle} |{article.issue.name.toUpperCase()}
+        {article.author.reporterTitle} |
+{article.issue.name.toUpperCase()}
       </p>
       <p>{article.excerpt}</p>
     </div>
