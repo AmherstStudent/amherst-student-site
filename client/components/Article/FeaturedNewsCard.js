@@ -21,9 +21,7 @@ const FeaturedNewsCard = () => (
                   <h5>{article.title}</h5>
                 </a>
               </Link>
-              <span>
-                {'by ' + article.author.username}
-              </span>
+              <span>{`by ${article.author.username}`}</span>
               <hr />
             </li>
           ))

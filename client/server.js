@@ -24,7 +24,7 @@ app.prepare().then(() => {
     const pagePath = '/article'
     return ssrCache({ req, res, pagePath, queryParams })
   })
-  
+
   server.get('/author/:id', (req, res) => {
     const queryParams = { id: req.params.id }
     const pagePath = '/author'
