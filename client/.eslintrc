@@ -23,6 +23,7 @@
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "import/extensions": "off",
         "prettier/prettier": "error",
+        "react/destructuring-assignment": 0,
         "react/react-in-jsx-scope" : "off",
         "no-console":1,
         "jsx-a11y/anchor-is-valid": [ "error", {

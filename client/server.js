@@ -9,7 +9,7 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 const ssrCache = cacheableResponse({
-  ttl: 1000 * 60 * 60, // 1hour
+  ttl: 1000 * 60 * 60 * 24, // 1hour
   get: async ({ req, res, pagePath, queryParams }) => ({
     data: await app.renderToHTML(req, res, pagePath, queryParams),
   }),
@@ -19,18 +19,12 @@ const ssrCache = cacheableResponse({
 app.prepare().then(() => {
   const server = express()
 
-  if (dev) {
-    server.get('/article/:slug', (req, res) => {
-      return app.render(req, res, '/article', { slug: req.params.slug })
-    })
-  } else {
-    server.get('/article/:slug', (req, res) => {
-      const queryParams = { slug: req.params.slug }
-      const pagePath = '/article'
-      return ssrCache({ req, res, pagePath, queryParams })
-    })
-  }
-
+  server.get('/article/:slug', (req, res) => {
+    const queryParams = { slug: req.params.slug }
+    const pagePath = '/article'
+    return ssrCache({ req, res, pagePath, queryParams })
+  })
+  
   server.get('/author/:id', (req, res) => {
     const queryParams = { id: req.params.id }
     const pagePath = '/author'
