@@ -24,7 +24,7 @@
     "koa2": "^2.0.0-alpha.7",
     "koa2-ratelimit": "^0.6.3",
     "lodash": "^4.17.10",
-    "strapi": "^3.0.0-alpha.14.3",
+    "strapi": "^3.2.5",
     "strapi-hook-mongoose": "^3.0.0-alpha.13.0.1",
     "strapi-upload-aws-s3": "^3.0.0-alpha.14.3",
     "strapi-upload-cloudinary": "^3.0.0-alpha.13.0.1"
