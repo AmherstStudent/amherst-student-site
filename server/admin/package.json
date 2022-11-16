@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "sanitize.css": "^4.1.0",
-    "strapi-helper-plugin": "3.0.0-alpha.13.0.1",
+    "strapi-helper-plugin": "3.6.10",
     "strapi-utils": "3.0.0-alpha.13.0.1"
   },
   "author": {
